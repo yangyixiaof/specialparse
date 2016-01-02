@@ -13,4 +13,5 @@ public class TODOList {
 	// TODO class declaration must be post-fixed with '@CD'
 	// TODO typeArguments not handled, such as '<? extends Integer>'.
 	// TODO catch exceptionTypeList such as catch (AException || BException || CException);. Plus catch#...#... change to catch(...||...)
+	// TODO extends, implements doesn't take into consideration.
 }

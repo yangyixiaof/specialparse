@@ -30,8 +30,8 @@ type
 	;
 
 primitiveType
-	:	annotation* numericType
-	|	annotation* 'boolean'
+	:	numericType
+	|	'boolean'
 	;
 
 numericType
@@ -68,16 +68,16 @@ classOrInterfaceType
 	;
 
 classType
-	:	annotation* Identifier typeArguments?
-	|	classOrInterfaceType '.' annotation* Identifier typeArguments?
+	:	Identifier typeArguments?
+	|	classOrInterfaceType '.' Identifier typeArguments?
 	;
 
 classType_lf_classOrInterfaceType
-	:	'.' annotation* Identifier typeArguments?
+	:	'.' Identifier typeArguments?
 	;
 
 classType_lfno_classOrInterfaceType
-	:	annotation* Identifier typeArguments?
+	:	Identifier typeArguments?
 	;
 
 interfaceType
@@ -103,15 +103,11 @@ arrayType
 	;
 
 dims
-	:	annotation* '[' ']' (annotation* '[' ']')*
+	:	'[' ']' ('[' ']')*
 	;
 
 typeParameter
-	:	typeParameterModifier* Identifier typeBound?
-	;
-
-typeParameterModifier
-	:	annotation
+	:	Identifier typeBound?
 	;
 
 typeBound
@@ -190,7 +186,7 @@ variableDeclarator
 	;
 
 variableDeclaratorId
-	:	Identifier dims?
+	:	Identifier
 	;
 
 variableInitializer
@@ -225,11 +221,11 @@ unannClassOrInterfaceType
 
 unannClassType
 	:	Identifier typeArguments?
-	|	unannClassOrInterfaceType '.' annotation* Identifier typeArguments?
+	|	unannClassOrInterfaceType '.' Identifier typeArguments?
 	;
 
 unannClassType_lf_unannClassOrInterfaceType
-	:	'.' annotation* Identifier typeArguments?
+	:	'.' Identifier typeArguments?
 	;
 
 unannClassType_lfno_unannClassOrInterfaceType
@@ -368,9 +364,9 @@ switchStatement
 	;
 
 CaseStatement
-	:	'case' constantExpression ':'
-	|	'case' enumConstantName ':'
-	|	'default' ':'
+	:	'case' constantExpression
+	|	'case' enumConstantName
+	|	'default'
 	;
 
 whileStatement
@@ -386,19 +382,19 @@ forStatement
 	;
 
 breakStatement
-	:	'break' Identifier? ';'
+	:	'break' Identifier?
 	;
 
 continueStatement
-	:	'continue' Identifier? ';'
+	:	'continue' Identifier?
 	;
 
 returnStatement
-	:	'return' expression? ';'
+	:	'return' expression?
 	;
 
 throwStatement
-	:	'throw' expression ';'
+	:	'throw' expression
 	;
 
 synchronizedStatement
@@ -426,7 +422,7 @@ finally
 	;
 
 resource
-	:	variableModifier* unannType variableDeclaratorId '=' expression
+	:	unannType variableDeclaratorId '=' expression
 	;
 
 primary
@@ -927,7 +923,7 @@ URSHIFT_ASSIGN : '>>>=';
 
 Identifier
 	:	JavaLetter JavaLetterOrDigit*
-	| CodeHole | NoDeclaredType | ClassRef | FinalFieldRef | FinalVarRef | CommonFieldRef | CommonVarRef
+	| NoDeclaredType | ClassRef | FinalFieldRef | FinalVarRef | CommonFieldRef | CommonVarRef
 	;
 
 fragment

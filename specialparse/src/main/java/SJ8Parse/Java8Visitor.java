@@ -96,12 +96,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitInterfaceType_lfno_classOrInterfaceType(Java8Parser.InterfaceType_lfno_classOrInterfaceTypeContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#typeVariable}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitTypeVariable(Java8Parser.TypeVariableContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#arrayType}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -119,12 +113,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitTypeParameter(Java8Parser.TypeParameterContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#typeParameterModifier}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitTypeParameterModifier(Java8Parser.TypeParameterModifierContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#typeBound}.
 	 * @param ctx the parse tree
@@ -168,12 +156,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitWildcardBounds(Java8Parser.WildcardBoundsContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#packageName}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPackageName(Java8Parser.PackageNameContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#typeName}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -204,77 +186,11 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAmbiguousName(Java8Parser.AmbiguousNameContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#compilationUnit}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitCompilationUnit(Java8Parser.CompilationUnitContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#packageDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPackageDeclaration(Java8Parser.PackageDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#packageModifier}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPackageModifier(Java8Parser.PackageModifierContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#importDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitImportDeclaration(Java8Parser.ImportDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#singleTypeImportDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSingleTypeImportDeclaration(Java8Parser.SingleTypeImportDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#typeImportOnDemandDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitTypeImportOnDemandDeclaration(Java8Parser.TypeImportOnDemandDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#singleStaticImportDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSingleStaticImportDeclaration(Java8Parser.SingleStaticImportDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#staticImportOnDemandDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitStaticImportOnDemandDeclaration(Java8Parser.StaticImportOnDemandDeclarationContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#typeDeclaration}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitTypeDeclaration(Java8Parser.TypeDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#classDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitClassDeclaration(Java8Parser.ClassDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#normalClassDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitNormalClassDeclaration(Java8Parser.NormalClassDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#classModifier}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitClassModifier(Java8Parser.ClassModifierContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#typeParameters}.
 	 * @param ctx the parse tree
@@ -287,54 +203,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitTypeParameterList(Java8Parser.TypeParameterListContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#superclass}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSuperclass(Java8Parser.SuperclassContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#superinterfaces}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSuperinterfaces(Java8Parser.SuperinterfacesContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#interfaceTypeList}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitInterfaceTypeList(Java8Parser.InterfaceTypeListContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#classBody}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitClassBody(Java8Parser.ClassBodyContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#classBodyDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitClassBodyDeclaration(Java8Parser.ClassBodyDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#classMemberDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitClassMemberDeclaration(Java8Parser.ClassMemberDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#fieldDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFieldDeclaration(Java8Parser.FieldDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#fieldModifier}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFieldModifier(Java8Parser.FieldModifierContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#variableDeclaratorList}.
 	 * @param ctx the parse tree
@@ -438,36 +306,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMethodDeclaration(Java8Parser.MethodDeclarationContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#methodModifier}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMethodModifier(Java8Parser.MethodModifierContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#methodHeader}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMethodHeader(Java8Parser.MethodHeaderContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#result}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitResult(Java8Parser.ResultContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#methodDeclarator}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMethodDeclarator(Java8Parser.MethodDeclaratorContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#formalParameterList}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFormalParameterList(Java8Parser.FormalParameterListContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#formalParameters}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -480,29 +318,11 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFormalParameter(Java8Parser.FormalParameterContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#variableModifier}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitVariableModifier(Java8Parser.VariableModifierContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#lastFormalParameter}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitLastFormalParameter(Java8Parser.LastFormalParameterContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#receiverParameter}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitReceiverParameter(Java8Parser.ReceiverParameterContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#throws_}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitThrows_(Java8Parser.Throws_Context ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#exceptionTypeList}.
 	 * @param ctx the parse tree
@@ -516,275 +336,17 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExceptionType(Java8Parser.ExceptionTypeContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#methodBody}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMethodBody(Java8Parser.MethodBodyContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#instanceInitializer}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitInstanceInitializer(Java8Parser.InstanceInitializerContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#staticInitializer}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitStaticInitializer(Java8Parser.StaticInitializerContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#constructorDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitConstructorDeclaration(Java8Parser.ConstructorDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#constructorModifier}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitConstructorModifier(Java8Parser.ConstructorModifierContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#constructorDeclarator}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitConstructorDeclarator(Java8Parser.ConstructorDeclaratorContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#simpleTypeName}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitSimpleTypeName(Java8Parser.SimpleTypeNameContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#constructorBody}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitConstructorBody(Java8Parser.ConstructorBodyContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#explicitConstructorInvocation}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitExplicitConstructorInvocation(Java8Parser.ExplicitConstructorInvocationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#enumDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitEnumDeclaration(Java8Parser.EnumDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#enumBody}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitEnumBody(Java8Parser.EnumBodyContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#enumConstantList}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitEnumConstantList(Java8Parser.EnumConstantListContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#enumConstant}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitEnumConstant(Java8Parser.EnumConstantContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#enumConstantModifier}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitEnumConstantModifier(Java8Parser.EnumConstantModifierContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#enumBodyDeclarations}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitEnumBodyDeclarations(Java8Parser.EnumBodyDeclarationsContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#interfaceDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitInterfaceDeclaration(Java8Parser.InterfaceDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#normalInterfaceDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitNormalInterfaceDeclaration(Java8Parser.NormalInterfaceDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#interfaceModifier}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitInterfaceModifier(Java8Parser.InterfaceModifierContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#extendsInterfaces}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExtendsInterfaces(Java8Parser.ExtendsInterfacesContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#interfaceBody}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitInterfaceBody(Java8Parser.InterfaceBodyContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#interfaceMemberDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitInterfaceMemberDeclaration(Java8Parser.InterfaceMemberDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#constantDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitConstantDeclaration(Java8Parser.ConstantDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#constantModifier}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitConstantModifier(Java8Parser.ConstantModifierContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#interfaceMethodDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitInterfaceMethodDeclaration(Java8Parser.InterfaceMethodDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#interfaceMethodModifier}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitInterfaceMethodModifier(Java8Parser.InterfaceMethodModifierContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#annotationTypeDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAnnotationTypeDeclaration(Java8Parser.AnnotationTypeDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#annotationTypeBody}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAnnotationTypeBody(Java8Parser.AnnotationTypeBodyContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#annotationTypeMemberDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAnnotationTypeMemberDeclaration(Java8Parser.AnnotationTypeMemberDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#annotationTypeElementDeclaration}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAnnotationTypeElementDeclaration(Java8Parser.AnnotationTypeElementDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#annotationTypeElementModifier}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAnnotationTypeElementModifier(Java8Parser.AnnotationTypeElementModifierContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#defaultValue}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDefaultValue(Java8Parser.DefaultValueContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#annotation}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAnnotation(Java8Parser.AnnotationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#normalAnnotation}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitNormalAnnotation(Java8Parser.NormalAnnotationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#elementValuePairList}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitElementValuePairList(Java8Parser.ElementValuePairListContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#elementValuePair}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitElementValuePair(Java8Parser.ElementValuePairContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#elementValue}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitElementValue(Java8Parser.ElementValueContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#elementValueArrayInitializer}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitElementValueArrayInitializer(Java8Parser.ElementValueArrayInitializerContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#elementValueList}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitElementValueList(Java8Parser.ElementValueListContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#markerAnnotation}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMarkerAnnotation(Java8Parser.MarkerAnnotationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#singleElementAnnotation}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSingleElementAnnotation(Java8Parser.SingleElementAnnotationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#arrayInitializer}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitArrayInitializer(Java8Parser.ArrayInitializerContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#variableInitializerList}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitVariableInitializerList(Java8Parser.VariableInitializerListContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#block}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBlock(Java8Parser.BlockContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#blockStatements}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBlockStatements(Java8Parser.BlockStatementsContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#blockStatement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBlockStatement(Java8Parser.BlockStatementContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#localVariableDeclarationStatement}.
 	 * @param ctx the parse tree
@@ -804,12 +366,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStatement(Java8Parser.StatementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#statementNoShortIf}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitStatementNoShortIf(Java8Parser.StatementNoShortIfContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#statementWithoutTrailingSubstatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -828,12 +384,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitLabeledStatement(Java8Parser.LabeledStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#labeledStatementNoShortIf}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitLabeledStatementNoShortIf(Java8Parser.LabeledStatementNoShortIfContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#expressionStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -846,23 +396,11 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStatementExpression(Java8Parser.StatementExpressionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#ifThenStatement}.
+	 * Visit a parse tree produced by {@link Java8Parser#ifStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitIfThenStatement(Java8Parser.IfThenStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#ifThenElseStatement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitIfThenElseStatement(Java8Parser.IfThenElseStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#ifThenElseStatementNoShortIf}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitIfThenElseStatementNoShortIf(Java8Parser.IfThenElseStatementNoShortIfContext ctx);
+	T visitIfStatement(Java8Parser.IfStatementContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#assertStatement}.
 	 * @param ctx the parse tree
@@ -876,47 +414,17 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSwitchStatement(Java8Parser.SwitchStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#switchBlock}.
+	 * Visit a parse tree produced by {@link Java8Parser#caseStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSwitchBlock(Java8Parser.SwitchBlockContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#switchBlockStatementGroup}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSwitchBlockStatementGroup(Java8Parser.SwitchBlockStatementGroupContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#switchLabels}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSwitchLabels(Java8Parser.SwitchLabelsContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#switchLabel}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSwitchLabel(Java8Parser.SwitchLabelContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#enumConstantName}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitEnumConstantName(Java8Parser.EnumConstantNameContext ctx);
+	T visitCaseStatement(Java8Parser.CaseStatementContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#whileStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitWhileStatement(Java8Parser.WhileStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#whileStatementNoShortIf}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitWhileStatementNoShortIf(Java8Parser.WhileStatementNoShortIfContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#doStatement}.
 	 * @param ctx the parse tree
@@ -929,54 +437,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitForStatement(Java8Parser.ForStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#forStatementNoShortIf}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitForStatementNoShortIf(Java8Parser.ForStatementNoShortIfContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#basicForStatement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBasicForStatement(Java8Parser.BasicForStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#basicForStatementNoShortIf}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBasicForStatementNoShortIf(Java8Parser.BasicForStatementNoShortIfContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#forInit}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitForInit(Java8Parser.ForInitContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#forUpdate}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitForUpdate(Java8Parser.ForUpdateContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#statementExpressionList}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitStatementExpressionList(Java8Parser.StatementExpressionListContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#enhancedForStatement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitEnhancedForStatement(Java8Parser.EnhancedForStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#enhancedForStatementNoShortIf}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitEnhancedForStatementNoShortIf(Java8Parser.EnhancedForStatementNoShortIfContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#breakStatement}.
 	 * @param ctx the parse tree
@@ -1014,12 +474,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitTryStatement(Java8Parser.TryStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#catches}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitCatches(Java8Parser.CatchesContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#catchClause}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -1037,30 +491,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitCatchType(Java8Parser.CatchTypeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#finally_}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFinally_(Java8Parser.Finally_Context ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#tryWithResourcesStatement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitTryWithResourcesStatement(Java8Parser.TryWithResourcesStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#resourceSpecification}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitResourceSpecification(Java8Parser.ResourceSpecificationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#resourceList}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitResourceList(Java8Parser.ResourceListContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#resource}.
 	 * @param ctx the parse tree
@@ -1236,6 +666,18 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitArrayCreationExpression(Java8Parser.ArrayCreationExpressionContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#arrayInitializer}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArrayInitializer(Java8Parser.ArrayInitializerContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#variableInitializerList}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVariableInitializerList(Java8Parser.VariableInitializerListContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#dimExprs}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -1271,12 +713,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitLambdaParameters(Java8Parser.LambdaParametersContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#inferredFormalParameterList}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitInferredFormalParameterList(Java8Parser.InferredFormalParameterListContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#lambdaBody}.
 	 * @param ctx the parse tree
@@ -1433,4 +869,10 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitCastExpression(Java8Parser.CastExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#additionalBoundOrClassRef}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAdditionalBoundOrClassRef(Java8Parser.AdditionalBoundOrClassRefContext ctx);
 }

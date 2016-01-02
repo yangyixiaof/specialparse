@@ -17,7 +17,6 @@ CodeHole : AT 'HO' ;
 
 literal
 	:	NumberLiteral
-	|	FloatingPointLiteral
 	|	BooleanLiteral
 	|	CharacterLiteral
 	|	StringLiteral
@@ -54,7 +53,7 @@ floatingPointType
 
 referenceType
 	:	classOrInterfaceType
-	|	typeVariable
+	|	Identifier
 	|	arrayType
 	;
 
@@ -92,14 +91,10 @@ interfaceType_lfno_classOrInterfaceType
 	:	classType_lfno_classOrInterfaceType
 	;
 
-typeVariable
-	:	annotation* Identifier
-	;
-
 arrayType
 	:	primitiveType dims
 	|	classOrInterfaceType dims
-	|	typeVariable dims
+	|	Identifier dims
 	;
 
 dims
@@ -111,7 +106,7 @@ typeParameter
 	;
 
 typeBound
-	:	'extends' typeVariable
+	:	'extends' Identifier
 	|	'extends' classOrInterfaceType additionalBound*
 	;
 
@@ -277,7 +272,7 @@ exceptionTypeList
 
 exceptionType
 	:	classType
-	|	typeVariable
+	|	Identifier
 	;
 
 simpleTypeName
@@ -296,7 +291,7 @@ localVariableDeclarationStatement
 	;
 
 localVariableDeclaration
-	:	unannType (,unannType)*
+	:	unannType (',' unannType)*
 	;
 
 statement
@@ -309,8 +304,7 @@ statement
 	;
 
 statementWithoutTrailingSubstatement
-	:	block
-	|	emptyStatement
+	:	emptyStatement
 	|	expressionStatement
 	|	assertStatement
 	|	switchStatement
@@ -363,9 +357,9 @@ switchStatement
 	:	'switch' '(' expression ')'
 	;
 
-CaseStatement
-	:	'case' constantExpression
-	|	'case' enumConstantName
+caseStatement
+	:	'case' expression
+	|	'case' Identifier
 	|	'default'
 	;
 
@@ -415,10 +409,6 @@ catchFormalParameter
 
 catchType
 	:	unannClassType ('|' classType)*
-	;
-
-finally
-	:	'finally'
 	;
 
 resource
@@ -629,6 +619,14 @@ arrayCreationExpression
 	|	'new' classOrInterfaceType dims arrayInitializer
 	;
 
+arrayInitializer
+	:	'{' variableInitializerList? ','? '}'
+	;
+
+variableInitializerList
+	:	variableInitializer (',' variableInitializer)*
+	;
+
 dimExprs
 	:	dimExpr dimExpr*
 	;
@@ -658,7 +656,7 @@ lambdaParameters
 
 lambdaBody
 	:	expression
-	|	block
+	|	
 	;
 
 assignmentExpression

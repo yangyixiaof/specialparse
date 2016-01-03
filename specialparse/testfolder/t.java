@@ -1,1 +1,1 @@
-System.out.print(@Chr)
+System.out.print(@CHR)

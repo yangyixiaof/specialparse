@@ -60,12 +60,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitClassOrInterfaceType(Java8Parser.ClassOrInterfaceTypeContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#classType}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitClassType(Java8Parser.ClassTypeContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#classType_lf_classOrInterfaceType}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -77,12 +71,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitClassType_lfno_classOrInterfaceType(Java8Parser.ClassType_lfno_classOrInterfaceTypeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#interfaceType}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitInterfaceType(Java8Parser.InterfaceTypeContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#interfaceType_lf_classOrInterfaceType}.
 	 * @param ctx the parse tree
@@ -227,78 +215,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitVariableInitializer(Java8Parser.VariableInitializerContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#unannType}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitUnannType(Java8Parser.UnannTypeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#unannPrimitiveType}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitUnannPrimitiveType(Java8Parser.UnannPrimitiveTypeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#unannReferenceType}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitUnannReferenceType(Java8Parser.UnannReferenceTypeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#unannClassOrInterfaceType}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitUnannClassOrInterfaceType(Java8Parser.UnannClassOrInterfaceTypeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#unannClassType}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitUnannClassType(Java8Parser.UnannClassTypeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#unannClassType_lf_unannClassOrInterfaceType}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitUnannClassType_lf_unannClassOrInterfaceType(Java8Parser.UnannClassType_lf_unannClassOrInterfaceTypeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#unannClassType_lfno_unannClassOrInterfaceType}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitUnannClassType_lfno_unannClassOrInterfaceType(Java8Parser.UnannClassType_lfno_unannClassOrInterfaceTypeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#unannInterfaceType}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitUnannInterfaceType(Java8Parser.UnannInterfaceTypeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#unannInterfaceType_lf_unannClassOrInterfaceType}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitUnannInterfaceType_lf_unannClassOrInterfaceType(Java8Parser.UnannInterfaceType_lf_unannClassOrInterfaceTypeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#unannInterfaceType_lfno_unannClassOrInterfaceType}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitUnannInterfaceType_lfno_unannClassOrInterfaceType(Java8Parser.UnannInterfaceType_lfno_unannClassOrInterfaceTypeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#unannTypeVariable}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitUnannTypeVariable(Java8Parser.UnannTypeVariableContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#unannArrayType}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitUnannArrayType(Java8Parser.UnannArrayTypeContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#methodDeclaration}.
 	 * @param ctx the parse tree

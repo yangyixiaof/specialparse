@@ -89,16 +89,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitClassOrInterfaceType(Java8Parser.ClassOrInterfaceTypeContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#classType}.
-	 * @param ctx the parse tree
-	 */
-	void enterClassType(Java8Parser.ClassTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#classType}.
-	 * @param ctx the parse tree
-	 */
-	void exitClassType(Java8Parser.ClassTypeContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link Java8Parser#classType_lf_classOrInterfaceType}.
 	 * @param ctx the parse tree
 	 */
@@ -118,16 +108,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitClassType_lfno_classOrInterfaceType(Java8Parser.ClassType_lfno_classOrInterfaceTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#interfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void enterInterfaceType(Java8Parser.InterfaceTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#interfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void exitInterfaceType(Java8Parser.InterfaceTypeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#interfaceType_lf_classOrInterfaceType}.
 	 * @param ctx the parse tree
@@ -368,126 +348,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitVariableInitializer(Java8Parser.VariableInitializerContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#unannType}.
-	 * @param ctx the parse tree
-	 */
-	void enterUnannType(Java8Parser.UnannTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#unannType}.
-	 * @param ctx the parse tree
-	 */
-	void exitUnannType(Java8Parser.UnannTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#unannPrimitiveType}.
-	 * @param ctx the parse tree
-	 */
-	void enterUnannPrimitiveType(Java8Parser.UnannPrimitiveTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#unannPrimitiveType}.
-	 * @param ctx the parse tree
-	 */
-	void exitUnannPrimitiveType(Java8Parser.UnannPrimitiveTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#unannReferenceType}.
-	 * @param ctx the parse tree
-	 */
-	void enterUnannReferenceType(Java8Parser.UnannReferenceTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#unannReferenceType}.
-	 * @param ctx the parse tree
-	 */
-	void exitUnannReferenceType(Java8Parser.UnannReferenceTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#unannClassOrInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void enterUnannClassOrInterfaceType(Java8Parser.UnannClassOrInterfaceTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#unannClassOrInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void exitUnannClassOrInterfaceType(Java8Parser.UnannClassOrInterfaceTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#unannClassType}.
-	 * @param ctx the parse tree
-	 */
-	void enterUnannClassType(Java8Parser.UnannClassTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#unannClassType}.
-	 * @param ctx the parse tree
-	 */
-	void exitUnannClassType(Java8Parser.UnannClassTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#unannClassType_lf_unannClassOrInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void enterUnannClassType_lf_unannClassOrInterfaceType(Java8Parser.UnannClassType_lf_unannClassOrInterfaceTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#unannClassType_lf_unannClassOrInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void exitUnannClassType_lf_unannClassOrInterfaceType(Java8Parser.UnannClassType_lf_unannClassOrInterfaceTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#unannClassType_lfno_unannClassOrInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void enterUnannClassType_lfno_unannClassOrInterfaceType(Java8Parser.UnannClassType_lfno_unannClassOrInterfaceTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#unannClassType_lfno_unannClassOrInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void exitUnannClassType_lfno_unannClassOrInterfaceType(Java8Parser.UnannClassType_lfno_unannClassOrInterfaceTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#unannInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void enterUnannInterfaceType(Java8Parser.UnannInterfaceTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#unannInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void exitUnannInterfaceType(Java8Parser.UnannInterfaceTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#unannInterfaceType_lf_unannClassOrInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void enterUnannInterfaceType_lf_unannClassOrInterfaceType(Java8Parser.UnannInterfaceType_lf_unannClassOrInterfaceTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#unannInterfaceType_lf_unannClassOrInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void exitUnannInterfaceType_lf_unannClassOrInterfaceType(Java8Parser.UnannInterfaceType_lf_unannClassOrInterfaceTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#unannInterfaceType_lfno_unannClassOrInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void enterUnannInterfaceType_lfno_unannClassOrInterfaceType(Java8Parser.UnannInterfaceType_lfno_unannClassOrInterfaceTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#unannInterfaceType_lfno_unannClassOrInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void exitUnannInterfaceType_lfno_unannClassOrInterfaceType(Java8Parser.UnannInterfaceType_lfno_unannClassOrInterfaceTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#unannTypeVariable}.
-	 * @param ctx the parse tree
-	 */
-	void enterUnannTypeVariable(Java8Parser.UnannTypeVariableContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#unannTypeVariable}.
-	 * @param ctx the parse tree
-	 */
-	void exitUnannTypeVariable(Java8Parser.UnannTypeVariableContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#unannArrayType}.
-	 * @param ctx the parse tree
-	 */
-	void enterUnannArrayType(Java8Parser.UnannArrayTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#unannArrayType}.
-	 * @param ctx the parse tree
-	 */
-	void exitUnannArrayType(Java8Parser.UnannArrayTypeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#methodDeclaration}.
 	 * @param ctx the parse tree

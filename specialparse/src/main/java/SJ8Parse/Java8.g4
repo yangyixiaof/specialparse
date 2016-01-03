@@ -66,21 +66,12 @@ classOrInterfaceType
 		)*
 	;
 
-classType
-	:	Identifier typeArguments?
-	|	classOrInterfaceType '.' Identifier typeArguments?
-	;
-
 classType_lf_classOrInterfaceType
 	:	'.' Identifier typeArguments?
 	;
 
 classType_lfno_classOrInterfaceType
 	:	Identifier typeArguments?
-	;
-
-interfaceType
-	:	classType
 	;
 
 interfaceType_lf_classOrInterfaceType
@@ -111,7 +102,7 @@ typeBound
 	;
 
 additionalBound
-	:	'&' interfaceType
+	:	'&' classOrInterfaceType
 	;
 
 typeArguments
@@ -147,7 +138,7 @@ packageOrTypeName
 	;
 
 expressionName
-	:	Identifier
+	:	type
 	|	ambiguousName '.' Identifier
 	;
 
@@ -189,66 +180,6 @@ variableInitializer
 	|	arrayInitializer
 	;
 
-unannType
-	:	unannPrimitiveType
-	|	unannReferenceType
-	;
-
-unannPrimitiveType
-	:	numericType
-	|	'boolean'
-	;
-
-unannReferenceType
-	:	unannClassOrInterfaceType
-	|	unannTypeVariable
-	|	unannArrayType
-	;
-
-unannClassOrInterfaceType
-	:	(	unannClassType_lfno_unannClassOrInterfaceType
-		|	unannInterfaceType_lfno_unannClassOrInterfaceType
-		)
-		(	unannClassType_lf_unannClassOrInterfaceType
-		|	unannInterfaceType_lf_unannClassOrInterfaceType
-		)*
-	;
-
-unannClassType
-	:	Identifier typeArguments?
-	|	unannClassOrInterfaceType '.' Identifier typeArguments?
-	;
-
-unannClassType_lf_unannClassOrInterfaceType
-	:	'.' Identifier typeArguments?
-	;
-
-unannClassType_lfno_unannClassOrInterfaceType
-	:	Identifier typeArguments?
-	;
-
-unannInterfaceType
-	:	unannClassType
-	;
-
-unannInterfaceType_lf_unannClassOrInterfaceType
-	:	unannClassType_lf_unannClassOrInterfaceType
-	;
-
-unannInterfaceType_lfno_unannClassOrInterfaceType
-	:	unannClassType_lfno_unannClassOrInterfaceType
-	;
-
-unannTypeVariable
-	:	Identifier
-	;
-
-unannArrayType
-	:	unannPrimitiveType dims
-	|	unannClassOrInterfaceType dims
-	|	unannTypeVariable dims
-	;
-
 methodDeclaration
 	:	Identifier '(' formalParameters? ')' AT MD
 	;
@@ -259,11 +190,11 @@ formalParameters
 	;
 
 formalParameter
-	:	unannType
+	:	type
 	;
 
 receiverParameter
-	:	unannType ((Identifier) '.')? 'this'
+	:	type ((Identifier) '.')? 'this'
 	;
 
 exceptionTypeList
@@ -271,7 +202,7 @@ exceptionTypeList
 	;
 
 exceptionType
-	:	classType
+	:	classOrInterfaceType
 	|	Identifier
 	;
 
@@ -291,7 +222,7 @@ localVariableDeclarationStatement
 	;
 
 localVariableDeclaration
-	:	unannType (',' unannType)*
+	:	type (',' type)*
 	;
 
 statement
@@ -403,11 +334,11 @@ catchFormalParameter
 	;
 
 catchType
-	:	unannClassType ('|' classType)*
+	:	classOrInterfaceType ('|' classOrInterfaceType)*
 	;
 
 resource
-	:	unannType variableDeclaratorId '=' expression
+	:	type variableDeclaratorId '=' expression
 	;
 
 primary
@@ -471,7 +402,7 @@ primaryNoNewArray_lf_primary_lfno_arrayAccess_lf_primary
 primaryNoNewArray_lfno_primary
 	:	literal
 	|	typeName ('[' ']')* '.' 'class'
-	|	unannPrimitiveType ('[' ']')* '.' 'class'
+	|	primitiveType ('[' ']')* '.' 'class'
 	|	'void' '.' 'class'
 	|	'this'
 	|	typeName '.' 'this'
@@ -490,7 +421,7 @@ primaryNoNewArray_lfno_primary_lf_arrayAccess_lfno_primary
 primaryNoNewArray_lfno_primary_lfno_arrayAccess_lfno_primary
 	:	literal
 	|	typeName ('[' ']')* '.' 'class'
-	|	unannPrimitiveType ('[' ']')* '.' 'class'
+	|	primitiveType ('[' ']')* '.' 'class'
 	|	'void' '.' 'class'
 	|	'this'
 	|	typeName '.' 'this'
@@ -590,7 +521,7 @@ methodReference
 	|	primary '::' typeArguments? Identifier
 	|	'super' '::' typeArguments? Identifier
 	|	typeName '.' 'super' '::' typeArguments? Identifier
-	|	classType '::' typeArguments? 'new'
+	|	classOrInterfaceType '::' typeArguments? 'new'
 	|	arrayType '::' 'new'
 	;
 
@@ -603,7 +534,7 @@ methodReference_lfno_primary
 	|	referenceType '::' typeArguments? Identifier
 	|	'super' '::' typeArguments? Identifier
 	|	typeName '.' 'super' '::' typeArguments? Identifier
-	|	classType '::' typeArguments? 'new'
+	|	classOrInterfaceType '::' typeArguments? 'new'
 	|	arrayType '::' 'new'
 	;
 
@@ -807,7 +738,7 @@ castExpression
 	;
 	
 additionalBoundOrClassRef
-	:	'&' (interfaceType | ClassRef)
+	:	'&' (classOrInterfaceType | ClassRef)
 	;
 
 ASSERT : 'assert';

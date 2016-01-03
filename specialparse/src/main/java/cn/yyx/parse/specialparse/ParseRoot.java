@@ -34,7 +34,8 @@ public class ParseRoot
         System.out.println(tree.toStringTree(parser));
 
         SpecialJava8Visitor evalVisitor = new SpecialJava8Visitor();
-        int result = evalVisitor.visit(tree);
-        System.out.println("visitor result = "+result);
+        // int result = 
+        evalVisitor.visit(tree);
+        // System.out.println("visitor result = "+result);
     }
 }

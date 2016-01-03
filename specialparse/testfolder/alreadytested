@@ -1,0 +1,20 @@
+int=@NUB
+(statement (statementWithoutTrailingSubstatement (expressionStatement (statementExpression (assignment (leftHandSide (expressionName (type (primitiveType (numericType (integralType int)))))) (assignmentOperator =) (expression (assignmentExpression (conditionalExpression (conditionalOrExpression (conditionalAndExpression (inclusiveOrExpression (exclusiveOrExpression (andExpression (equalityExpression (relationalExpression (shiftExpression (additiveExpression (multiplicativeExpression (unaryExpression (unaryExpressionNotPlusMinus (postfixExpression (primary (primaryNoNewArray_lfno_primary (literal @NUB))))))))))))))))))))))))
+
+$C0?0=@NUB
+
+System.out.print(@Chr)
+
+$C0?7=-@NUB
+
+*$C0?1[@NUB]-$F0?9
+
+$F0?0.setStep(true)
+
+!$F0?0.alg.isAlive()
+
+$C0?0++
+
+dispose()
+
+$C0?2[@NUB]=$C0?1[@NUB]

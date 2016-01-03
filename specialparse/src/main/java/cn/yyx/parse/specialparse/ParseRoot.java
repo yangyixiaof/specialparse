@@ -18,24 +18,25 @@ import SJ8Parse.SpecialJava8Visitor;
 public class ParseRoot 
 {
 	public static void main(String[] args) throws Exception {
-        String inputFile = null;
-        if ( args.length>0 ) inputFile = args[0];
-        InputStream is = System.in;
-        if ( inputFile!=null ) {
-            is = new FileInputStream(inputFile);
-        }
-        ANTLRInputStream input = new ANTLRInputStream(is);
-        Java8Lexer lexer = new Java8Lexer(input);
-        CommonTokenStream tokens = new CommonTokenStream(lexer);
-        Java8Parser parser = new Java8Parser(tokens);
-        parser.setBuildParseTree(true);      // tell ANTLR to build a parse tree
-        ParseTree tree = parser.statement(); // parse
-        // show tree in text form
-        System.out.println(tree.toStringTree(parser));
+		String inputFile = null;
+		if (args.length > 0)
+			inputFile = args[0];
+		InputStream is = System.in;
+		if (inputFile != null) {
+			is = new FileInputStream(inputFile);
+		}
+		ANTLRInputStream input = new ANTLRInputStream(is);
+		Java8Lexer lexer = new Java8Lexer(input);
+		CommonTokenStream tokens = new CommonTokenStream(lexer);
+		Java8Parser parser = new Java8Parser(tokens);
+		parser.setBuildParseTree(true); // tell ANTLR to build a parse tree
+		ParseTree tree = parser.statement(); // parse
+		// show tree in text form
+		System.out.println(tree.toStringTree(parser));
 
-        SpecialJava8Visitor evalVisitor = new SpecialJava8Visitor();
-        // int result = 
-        evalVisitor.visit(tree);
-        // System.out.println("visitor result = "+result);
+		SpecialJava8Visitor evalVisitor = new SpecialJava8Visitor();
+		// int result =
+		evalVisitor.visit(tree);
+		// System.out.println("visitor result = "+result);
     }
 }

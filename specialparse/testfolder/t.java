@@ -1,1 +1,1 @@
-$C0?0=@NUB
+System.out.print(@Chr)

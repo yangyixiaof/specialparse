@@ -212,7 +212,6 @@ localVariableDeclaration
 
 statement
 	:	statementWithoutTrailingSubstatement
-	|	labeledStatement
 	|	ifStatement
 	|	ElseStatement
 	|	whileStatement
@@ -220,7 +219,7 @@ statement
 	;
 
 statementWithoutTrailingSubstatement
-	:	expressionStatement
+	:	expression
 	|	assertStatement
 	|	switchStatement
 	|	caseStatement
@@ -233,15 +232,7 @@ statementWithoutTrailingSubstatement
 	|	tryStatement
 	;
 
-labeledStatement
-	:	Identifier 
-	;
-
-expressionStatement
-	:	statementExpression
-	;
-
-statementExpression
+/*statementExpression
 	:	assignment
 	|	preIncrementExpression
 	|	preDecrementExpression
@@ -249,7 +240,7 @@ statementExpression
 	|	postDecrementExpression
 	|	methodInvocation
 	|	classInstanceCreationExpression
-	;
+	;*/
 
 ifStatement
 	:	'if' 
@@ -837,6 +828,7 @@ Identifier
 	|	FinalVarRef
 	|	CommonFieldRef
 	|	CommonVarRef
+	|	EmptyHolder
 	;
 
 fragment
@@ -860,20 +852,21 @@ JavaLetterOrDigit
 		[\uD800-\uDBFF] [\uDC00-\uDFFF]
 		{Character.isJavaIdentifierPart(Character.toCodePoint((char)_input.LA(-2), (char)_input.LA(-1)))}?
 	;
-	
-AT : '@';
-MD : 'MD';
-CD : 'CD';
 
 ClassRef : '$K' [0-9]+ '?' [0-9]+ ;
 FinalFieldRef : '$D' [0-9]+ '?' [0-9]+ ;
 FinalVarRef : '$X' [0-9]+ '?' [0-9]+ ;
 CommonFieldRef : '$F' [0-9]+ '?' [0-9]+ ;
 CommonVarRef : '$C' [0-9]+ '?' [0-9]+ ;
+EmptyHolder : AT 'E' ;
 
 // for lambda only
 NoDeclaredType : AT 'NT' ;
 // for hole
 CodeHole : AT 'HO' ;
+
+AT : '@';
+MD : 'MD';
+CD : 'CD';
 
 WS  :  [ '#' ]+ -> skip;

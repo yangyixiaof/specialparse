@@ -469,36 +469,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitStatementWithoutTrailingSubstatement(Java8Parser.StatementWithoutTrailingSubstatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#labeledStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterLabeledStatement(Java8Parser.LabeledStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#labeledStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitLabeledStatement(Java8Parser.LabeledStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#expressionStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterExpressionStatement(Java8Parser.ExpressionStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#expressionStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitExpressionStatement(Java8Parser.ExpressionStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#statementExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterStatementExpression(Java8Parser.StatementExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#statementExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitStatementExpression(Java8Parser.StatementExpressionContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link Java8Parser#ifStatement}.
 	 * @param ctx the parse tree
 	 */

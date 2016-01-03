@@ -341,13 +341,13 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTypeDeclaration(Java8Parser.TypeDeclarationContext ctx) { }
+	@Override public void enterTypeDeclarationStatement(Java8Parser.TypeDeclarationStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTypeDeclaration(Java8Parser.TypeDeclarationContext ctx) { }
+	@Override public void exitTypeDeclarationStatement(Java8Parser.TypeDeclarationStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -279,15 +279,15 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitAmbiguousName(Java8Parser.AmbiguousNameContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#typeDeclaration}.
+	 * Enter a parse tree produced by {@link Java8Parser#typeDeclarationStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterTypeDeclaration(Java8Parser.TypeDeclarationContext ctx);
+	void enterTypeDeclarationStatement(Java8Parser.TypeDeclarationStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#typeDeclaration}.
+	 * Exit a parse tree produced by {@link Java8Parser#typeDeclarationStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitTypeDeclaration(Java8Parser.TypeDeclarationContext ctx);
+	void exitTypeDeclarationStatement(Java8Parser.TypeDeclarationStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#typeParameters}.
 	 * @param ctx the parse tree

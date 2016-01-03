@@ -136,8 +136,8 @@ ambiguousName
 	|	ambiguousName '.' Identifier
 	;
 
-typeDeclaration
-	:	Identifier AT CD
+typeDeclarationStatement
+	:	Identifier AT 'CD'
 	;
 
 typeParameters
@@ -231,6 +231,7 @@ statementWithoutTrailingSubstatement
 	|	synchronizedStatement
 	|	throwStatement
 	|	tryStatement
+	|	typeDeclarationStatement
 	;
 
 /*statementExpression
@@ -868,6 +869,5 @@ CodeHole : AT 'HO' ;
 
 AT : '@';
 MD : 'MD';
-CD : 'CD';
 
 WS  :  [ '#' ]+ -> skip;

@@ -174,11 +174,11 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAmbiguousName(Java8Parser.AmbiguousNameContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#typeDeclaration}.
+	 * Visit a parse tree produced by {@link Java8Parser#typeDeclarationStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTypeDeclaration(Java8Parser.TypeDeclarationContext ctx);
+	T visitTypeDeclarationStatement(Java8Parser.TypeDeclarationStatementContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#typeParameters}.
 	 * @param ctx the parse tree

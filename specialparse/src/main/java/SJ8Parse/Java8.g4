@@ -212,6 +212,7 @@ localVariableDeclaration
 
 statement
 	:	statementWithoutTrailingSubstatement
+	|	localVariableDeclarationStatement
 	|	ifStatement
 	|	ElseStatement
 	|	whileStatement

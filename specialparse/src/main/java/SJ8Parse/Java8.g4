@@ -280,14 +280,14 @@ simpleTypeName
 	;
 
 explicitConstructorInvocation
-	:	typeArguments? 'this' '(' argumentList? ')' ';'
-	|	typeArguments? 'super' '(' argumentList? ')' ';'
-	|	expressionName '.' typeArguments? 'super' '(' argumentList? ')' ';'
-	|	primary '.' typeArguments? 'super' '(' argumentList? ')' ';'
+	:	typeArguments? 'this' '(' argumentList? ')'
+	|	typeArguments? 'super' '(' argumentList? ')'
+	|	expressionName '.' typeArguments? 'super' '(' argumentList? ')'
+	|	primary '.' typeArguments? 'super' '(' argumentList? ')'
 	;
 
 localVariableDeclarationStatement
-	:	localVariableDeclaration ';'
+	:	localVariableDeclaration
 	;
 
 localVariableDeclaration
@@ -304,8 +304,7 @@ statement
 	;
 
 statementWithoutTrailingSubstatement
-	:	emptyStatement
-	|	expressionStatement
+	:	expressionStatement
 	|	assertStatement
 	|	switchStatement
 	|	caseStatement
@@ -318,16 +317,12 @@ statementWithoutTrailingSubstatement
 	|	tryStatement
 	;
 
-emptyStatement
-	:	';'
-	;
-
 labeledStatement
 	:	Identifier 
 	;
 
 expressionStatement
-	:	statementExpression ';'
+	:	statementExpression
 	;
 
 statementExpression
@@ -349,8 +344,8 @@ ElseStatement
 	;
 
 assertStatement
-	:	'assert' expression ';'
-	|	'assert' expression ':' expression ';'
+	:	'assert' expression
+	|	'assert' expression ':' expression
 	;
 
 switchStatement
@@ -877,7 +872,6 @@ LBRACE : '{';
 RBRACE : '}';
 LBRACK : '[';
 RBRACK : ']';
-SEMI : ';';
 COMMA : ',';
 DOT : '.';
 

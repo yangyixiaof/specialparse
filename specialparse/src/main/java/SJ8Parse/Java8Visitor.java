@@ -372,12 +372,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStatementWithoutTrailingSubstatement(Java8Parser.StatementWithoutTrailingSubstatementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#emptyStatement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitEmptyStatement(Java8Parser.EmptyStatementContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#labeledStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

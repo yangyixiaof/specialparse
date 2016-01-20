@@ -1,1 +1,1 @@
-AlgAnimApp@CD
+$C0?2[@NUB]=$C0?1[@NUB]

@@ -38,3 +38,4 @@ int,int,int,int
 (statement (localVariableDeclarationStatement (localVariableDeclaration (type (primitiveType (numericType (integralType int)))) , (type (primitiveType (numericType (integralType int)))) , (type (primitiveType (numericType (integralType int)))) , (type (primitiveType (numericType (integralType int)))))))
 
 AlgAnimApp@CD
+(statement (statementWithoutTrailingSubstatement (typeDeclarationStatement AlgAnimApp @ CD)))

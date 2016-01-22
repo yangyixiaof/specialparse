@@ -1,6 +1,0 @@
-package cn.yyx.parse.specialparse;
-
-@FunctionalInterface
-interface Converter<F, T> {
-    T convert(F from);
-}

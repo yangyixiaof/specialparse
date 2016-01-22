@@ -1,5 +1,8 @@
 package cn.yyx.parse.specialparse;
 
+import SJ8Parse.Java8BaseVisitor;
+import SJ8Parse.Java8Listener;
+
 public class TODOList {
 	
 	// TODO Cast Expression (type & type & type) have not been considered.
@@ -14,4 +17,21 @@ public class TODOList {
 	// TODO typeArguments not handled, such as '<? extends Integer>'.
 	// TODO catch exceptionTypeList such as catch (AException || BException || CException);. Plus catch#...#... change to catch(...||...)
 	// TODO extends, implements doesn't take into consideration.
+	
+	public static void test()
+	{
+		Object o = new Object();
+		@SuppressWarnings("unchecked")
+		Object t = (Java8BaseVisitor<Integer> & Java8Listener)o;
+		System.out.println(t);
+		
+		Converter<String, Integer> converter = Integer::valueOf;
+		Integer converted = converter.convert("123");
+		System.out.println(converted);   // 123
+	}
+	
+	public static void main(String[] args) {
+		TODOList.test();
+	}
+	
 }

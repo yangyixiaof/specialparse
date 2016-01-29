@@ -1,226 +1,48 @@
 grammar Java8;
 
-literal
-	:	NumberLiteral
-	|	BooleanLiteral
-	|	CharacterLiteral
-	|	StringLiteral
-	|	NullLiteral
-	;
-
-type
-	:	primitiveType
-	|	referenceType
-	;
-
-primitiveType
-	:	numericType
-	|	'boolean'
-	;
-
-numericType
-	:	integralType
-	|	floatingPointType
-	;
-
-integralType
-	:	'byte'
-	|	'short'
-	|	'int'
-	|	'long'
-	|	'char'
-	;
-
-floatingPointType
-	:	'float'
-	|	'double'
-	;
-
-referenceType
-	:	classOrInterfaceType
-	|	Identifier
-	|	arrayType
-	;
-
-classOrInterfaceType
-	:	(	classType_lfno_classOrInterfaceType
-		|	interfaceType_lfno_classOrInterfaceType
-		)
-		(	classType_lf_classOrInterfaceType
-		|	interfaceType_lf_classOrInterfaceType
-		)*
-	;
-
-classType_lf_classOrInterfaceType
-	:	'.' Identifier typeArguments?
-	;
-
-classType_lfno_classOrInterfaceType
-	:	Identifier typeArguments?
-	;
-
-interfaceType_lf_classOrInterfaceType
-	:	classType_lf_classOrInterfaceType
-	;
-
-interfaceType_lfno_classOrInterfaceType
-	:	classType_lfno_classOrInterfaceType
-	;
-
-arrayType
-	:	primitiveType dims
-	|	classOrInterfaceType dims
-	|	Identifier dims
-	;
-
-dims
-	:	'[' ']' ('[' ']')*
-	;
-
-typeParameter
-	:	Identifier typeBound?
-	;
-
-typeBound
-	:	'extends' Identifier
-	|	'extends' classOrInterfaceType additionalBound*
-	;
-
-additionalBound
-	:	'&' classOrInterfaceType
-	;
-
-typeArguments
-	:	'<' typeArgumentList '>'
-	;
-
-typeArgumentList
-	:	typeArgument (',' typeArgument)*
-	;
-
-typeArgument
-	:	referenceType | ClassRef
-	|	wildcard
-	;
-
-wildcard
-	:	'?' wildcardBounds?
-	;
-
-wildcardBounds
-	:	'extends' referenceType
-	|	'super' referenceType
-	;
-
-typeName
-	:	Identifier
-	|	packageOrTypeName '.' Identifier
-	;
-
-packageOrTypeName
-	:	Identifier
-	|	packageOrTypeName '.' Identifier
-	;
-
-expressionName
-	:	type
-	|	ambiguousName '.' Identifier
-	;
-
-methodName
-	:	Identifier
-	;
-
-ambiguousName
-	:	Identifier
-	|	ambiguousName '.' Identifier
-	;
-
-typeDeclarationStatement
-	:	Identifier AT 'CD'
-	;
-
-typeParameters
-	:	'<' typeParameterList '>'
-	;
-
-typeParameterList
-	:	typeParameter (',' typeParameter)*
-	;
-
-variableDeclaratorList
-	:	variableDeclarator (',' variableDeclarator)*
-	;
-
-variableDeclarator
-	:	variableDeclaratorId ('=' variableInitializer)?
-	;
-
-variableDeclaratorId
-	:	Identifier
-	;
-
-variableInitializer
-	:	expression
-	|	arrayInitializer
-	;
-
-methodDeclaration
-	:	Identifier '(' formalParameters? ')' AT MD
-	;
-
-formalParameters
-	:	formalParameter (',' formalParameter)*
-	|	receiverParameter (',' formalParameter)*
-	;
-
-formalParameter
-	:	type
-	;
-
-receiverParameter
-	:	type ((Identifier) '.')? 'this'
-	;
-
-exceptionTypeList
-	:	exceptionType (',' exceptionType)*
-	;
-
-exceptionType
-	:	classOrInterfaceType
-	|	Identifier
-	;
-
-simpleTypeName
-	:	Identifier
-	;
-
-explicitConstructorInvocation
-	:	typeArguments? 'this' '(' argumentList? ')'
-	|	typeArguments? 'super' '(' argumentList? ')'
-	|	expressionName '.' typeArguments? 'super' '(' argumentList? ')'
-	|	primary '.' typeArguments? 'super' '(' argumentList? ')'
-	;
-
-localVariableDeclarationStatement
-	:	localVariableDeclaration
-	;
-
-localVariableDeclaration
-	:	type (',' type)*
-	;
-
 statement
-	:	statementWithoutTrailingSubstatement
+	:	typeDeclarationStatement
+	|	leftParentheseStatement
+	|	leftBraceStatement
+	|	rightBraceStatement
+	|	lambdaExpressionStatement
+	|	methodReferenceStatement
+	|	castExpressionStatement
+	|	assignmentStatement
+	|	breakStatement
+	|	continueStatement
+	|	doStatement
+	|	enhancedForStatement
+	|	arrayAccessStatement
+	|	arrayInitializerStartStatement
+	|	infixExpressionStatement
+	|	instanceofExpressionStatement
+	|	labeledStatement
+	|	postfixExpressionStatement
+	|	prefixExpressionStatement
+	|	returnStatement
+	|	switchStatement
+	|	switchCaseStatement
+	|	synchronizedStatement
+	|	throwStatement
+	|	catchClause
+	|	whileStatement
+	|	ifStatement
+	|	forStatement
+	|	forIniOver
+	|	forExpOver
+	|	forUpdOver
+	|	variableDeclarationTypeStatement
+	|	condExpBegin
+	|	condExpQuestionMark
+	|	condExpColonMark
+	|	
 	|	localVariableDeclarationStatement
 	|	ifStatement
 	|	ElseStatement
 	|	whileStatement
 	|	forStatement
-	;
-
-statementWithoutTrailingSubstatement
-	:	expression
+	|	expression
 	|	assertStatement
 	|	switchStatement
 	|	caseStatement
@@ -234,603 +56,205 @@ statementWithoutTrailingSubstatement
 	|	typeDeclarationStatement
 	;
 
-/*statementExpression
-	:	assignment
-	|	preIncrementExpression
-	|	preDecrementExpression
-	|	postIncrementExpression
-	|	postDecrementExpression
-	|	methodInvocation
-	|	classInstanceCreationExpression
-	;*/
+qualified : identifier ('.' identifier)+ ;
 
-ifStatement
-	:	'if' 
-	;
+methodInvocation : identifier '(' argumentList ')' ;
 
-ElseStatement
-	:	'else'
-	;
-
-assertStatement
-	:	'assert' expression
-	|	'assert' expression ':' expression
-	;
-
-switchStatement
-	:	'switch' '(' expression ')'
-	;
-
-caseStatement
-	:	'case' expression
-	|	'case' Identifier
-	|	'default'
-	;
-
-whileStatement
-	:	'while'
-	;
-
-doStatement
-	:	'do'
-	;
-
-forStatement
-	:	'for'
-	;
-
-breakStatement
-	:	'break' Identifier?
-	;
-
-continueStatement
-	:	'continue' Identifier?
-	;
-
-returnStatement
-	:	'return' expression?
-	;
-
-throwStatement
-	:	'throw' expression
-	;
-
-synchronizedStatement
-	:	'synchronized' '(' expression ')'
-	;
-
-tryStatement
-	:	'try'
-	;
-
-catchClause
-	:	'catch' '(' catchFormalParameter ')'
-	;
-
-catchFormalParameter
-	:	catchType
-	;
-
-catchType
-	:	classOrInterfaceType ('|' classOrInterfaceType)*
-	;
-
-resource
-	:	type variableDeclaratorId '=' expression
-	;
-
-primary
-	:	(	primaryNoNewArray_lfno_primary
-		|	arrayCreationExpression
-		)
-		(	primaryNoNewArray_lf_primary
-		)*
-	;
-
-primaryNoNewArray
-	:	literal
-	|	typeName ('[' ']')* '.' 'class'
-	|	'void' '.' 'class'
-	|	'this'
-	|	typeName '.' 'this'
-	|	'(' expression ')'
-	|	classInstanceCreationExpression
-	|	fieldAccess
-	|	arrayAccess
-	|	methodInvocation
-	|	methodReference
-	;
-
-primaryNoNewArray_lf_arrayAccess
-	:
-	;
-
-primaryNoNewArray_lfno_arrayAccess
-	:	literal
-	|	typeName ('[' ']')* '.' 'class'
-	|	'void' '.' 'class'
-	|	'this'
-	|	typeName '.' 'this'
-	|	'(' expression ')'
-	|	classInstanceCreationExpression
-	|	fieldAccess
-	|	methodInvocation
-	|	methodReference
-	;
-
-primaryNoNewArray_lf_primary
-	:	classInstanceCreationExpression_lf_primary
-	|	fieldAccess_lf_primary
-	|	arrayAccess_lf_primary
-	|	methodInvocation_lf_primary
-	|	methodReference_lf_primary
-	;
-
-primaryNoNewArray_lf_primary_lf_arrayAccess_lf_primary
-	:
-	;
-
-primaryNoNewArray_lf_primary_lfno_arrayAccess_lf_primary
-	:	classInstanceCreationExpression_lf_primary
-	|	fieldAccess_lf_primary
-	|	methodInvocation_lf_primary
-	|	methodReference_lf_primary
-	;
-
-primaryNoNewArray_lfno_primary
-	:	literal
-	|	typeName ('[' ']')* '.' 'class'
-	|	primitiveType ('[' ']')* '.' 'class'
-	|	'void' '.' 'class'
-	|	'this'
-	|	typeName '.' 'this'
-	|	'(' expression ')'
-	|	classInstanceCreationExpression_lfno_primary
-	|	fieldAccess_lfno_primary
-	|	arrayAccess_lfno_primary
-	|	methodInvocation_lfno_primary
-	|	methodReference_lfno_primary
-	;
-
-primaryNoNewArray_lfno_primary_lf_arrayAccess_lfno_primary
-	:
-	;
-
-primaryNoNewArray_lfno_primary_lfno_arrayAccess_lfno_primary
-	:	literal
-	|	typeName ('[' ']')* '.' 'class'
-	|	primitiveType ('[' ']')* '.' 'class'
-	|	'void' '.' 'class'
-	|	'this'
-	|	typeName '.' 'this'
-	|	'(' expression ')'
-	|	classInstanceCreationExpression_lfno_primary
-	|	fieldAccess_lfno_primary
-	|	methodInvocation_lfno_primary
-	|	methodReference_lfno_primary
-	;
-
-classInstanceCreationExpression
-	:	'new' typeArguments? Identifier ('.' Identifier)* typeArgumentsOrDiamond? '(' argumentList? ')'
-	|	expressionName '.' 'new' typeArguments? Identifier typeArgumentsOrDiamond? '(' argumentList? ')'
-	|	primary '.' 'new' typeArguments? Identifier typeArgumentsOrDiamond? '(' argumentList? ')'
-	;
-
-classInstanceCreationExpression_lf_primary
-	:	'.' 'new' typeArguments? Identifier typeArgumentsOrDiamond? '(' argumentList? ')'
-	;
-
-classInstanceCreationExpression_lfno_primary
-	:	'new' typeArguments? Identifier ('.' Identifier)* typeArgumentsOrDiamond? '(' argumentList? ')'
-	|	expressionName '.' 'new' typeArguments? Identifier typeArgumentsOrDiamond? '(' argumentList? ')'
-	;
-
-typeArgumentsOrDiamond
-	:	typeArguments
-	|	'<' '>'
-	;
-
-fieldAccess
-	:	primary '.' Identifier
-	|	'super' '.' Identifier
-	|	typeName '.' 'super' '.' Identifier
-	;
-
-fieldAccess_lf_primary
-	:	'.' Identifier
-	;
-
-fieldAccess_lfno_primary
-	:	'super' '.' Identifier
-	|	typeName '.' 'super' '.' Identifier
-	;
-
-arrayAccess
-	:	(	expressionName '[' expression ']'
-		|	primaryNoNewArray_lfno_arrayAccess '[' expression ']'
-		)
-		(	primaryNoNewArray_lf_arrayAccess '[' expression ']'
-		)*
-	;
-
-arrayAccess_lf_primary
-	:	(	primaryNoNewArray_lf_primary_lfno_arrayAccess_lf_primary '[' expression ']'
-		)
-		(	primaryNoNewArray_lf_primary_lf_arrayAccess_lf_primary '[' expression ']'
-		)*
-	;
-
-arrayAccess_lfno_primary
-	:	(	expressionName '[' expression ']'
-		|	primaryNoNewArray_lfno_primary_lfno_arrayAccess_lfno_primary '[' expression ']'
-		)
-		(	primaryNoNewArray_lfno_primary_lf_arrayAccess_lfno_primary '[' expression ']'
-		)*
-	;
-
-methodInvocation
-	:	methodName '(' argumentList? ')'
-	|	typeName '.' typeArguments? Identifier '(' argumentList? ')'
-	|	expressionName '.' typeArguments? Identifier '(' argumentList? ')'
-	|	primary '.' typeArguments? Identifier '(' argumentList? ')'
-	|	'super' '.' typeArguments? Identifier '(' argumentList? ')'
-	|	typeName '.' 'super' '.' typeArguments? Identifier '(' argumentList? ')'
-	;
-
-methodInvocation_lf_primary
-	:	'.' typeArguments? Identifier '(' argumentList? ')'
-	;
-
-methodInvocation_lfno_primary
-	:	methodName '(' argumentList? ')'
-	|	typeName '.' typeArguments? Identifier '(' argumentList? ')'
-	|	expressionName '.' typeArguments? Identifier '(' argumentList? ')'
-	|	'super' '.' typeArguments? Identifier '(' argumentList? ')'
-	|	typeName '.' 'super' '.' typeArguments? Identifier '(' argumentList? ')'
-	;
-
-argumentList
-	:	expression (',' expression)*
-	;
-
-methodReference
-	:	expressionName '::' typeArguments? Identifier
-	|	referenceType '::' typeArguments? Identifier
-	|	primary '::' typeArguments? Identifier
-	|	'super' '::' typeArguments? Identifier
-	|	typeName '.' 'super' '::' typeArguments? Identifier
-	|	classOrInterfaceType '::' typeArguments? 'new'
-	|	arrayType '::' 'new'
-	;
-
-methodReference_lf_primary
-	:	'::' typeArguments? Identifier
-	;
-
-methodReference_lfno_primary
-	:	expressionName '::' typeArguments? Identifier
-	|	referenceType '::' typeArguments? Identifier
-	|	'super' '::' typeArguments? Identifier
-	|	typeName '.' 'super' '::' typeArguments? Identifier
-	|	classOrInterfaceType '::' typeArguments? 'new'
-	|	arrayType '::' 'new'
-	;
-
-arrayCreationExpression
-	:	'new' primitiveType dimExprs dims?
-	|	'new' classOrInterfaceType dimExprs dims?
-	|	'new' primitiveType dims arrayInitializer
-	|	'new' classOrInterfaceType dims arrayInitializer
-	;
-
-arrayInitializer
-	:	'{' variableInitializerList? ','? '}'
-	;
-
-variableInitializerList
-	:	variableInitializer (',' variableInitializer)*
-	;
-
-dimExprs
-	:	dimExpr dimExpr*
-	;
-
-dimExpr
-	:	'[' expression ']'
-	;
-
-constantExpression
-	:	expression
-	;
-
-expression
-	:	lambdaExpression
-	|	assignmentExpression
-	|	CodeHole
-	;
-
-lambdaExpression
-	:	lambdaParameters '->' lambdaBody
-	;
-
-lambdaParameters
-	:	Identifier
-	|	'(' formalParameters? ')'
-	;
-
-lambdaBody
-	:	expression
-	|	
-	;
-
-assignmentExpression
-	:	conditionalExpression
-	|	assignment
-	;
-
-assignment
-	:	leftHandSide assignmentOperator expression
-	;
-
-leftHandSide
-	:	expressionName
-	|	fieldAccess
-	|	arrayAccess
-	;
-
-assignmentOperator
-	:	'='
-	|	'*='
-	|	'/='
-	|	'%='
-	|	'+='
-	|	'-='
-	|	'<<='
-	|	'>>='
-	|	'>>>='
-	|	'&='
-	|	'^='
-	|	'|='
-	;
-
-conditionalExpression
-	:	conditionalOrExpression
-	|	conditionalOrExpression '?' expression ':' conditionalExpression
-	;
-
-conditionalOrExpression
-	:	conditionalAndExpression
-	|	conditionalOrExpression '||' conditionalAndExpression
-	;
-
-conditionalAndExpression
-	:	inclusiveOrExpression
-	|	conditionalAndExpression '&&' inclusiveOrExpression
-	;
-
-inclusiveOrExpression
-	:	exclusiveOrExpression
-	|	inclusiveOrExpression '|' exclusiveOrExpression
-	;
-
-exclusiveOrExpression
-	:	andExpression
-	|	exclusiveOrExpression '^' andExpression
-	;
-
-andExpression
-	:	equalityExpression
-	|	andExpression '&' equalityExpression
-	;
-
-equalityExpression
-	:	relationalExpression
-	|	equalityExpression '==' relationalExpression
-	|	equalityExpression '!=' relationalExpression
-	;
-
-relationalExpression
-	:	shiftExpression
-	|	relationalExpression '<' shiftExpression
-	|	relationalExpression '>' shiftExpression
-	|	relationalExpression '<=' shiftExpression
-	|	relationalExpression '>=' shiftExpression
-	|	relationalExpression 'instanceof' (referenceType | ClassRef)
-	;
-
-shiftExpression
-	:	additiveExpression
-	|	shiftExpression '<' '<' additiveExpression
-	|	shiftExpression '>' '>' additiveExpression
-	|	shiftExpression '>' '>' '>' additiveExpression
-	;
-
-additiveExpression
-	:	multiplicativeExpression
-	|	additiveExpression '+' multiplicativeExpression
-	|	additiveExpression '-' multiplicativeExpression
-	;
-
-multiplicativeExpression
-	:	unaryExpression
-	|	multiplicativeExpression '*' unaryExpression
-	|	multiplicativeExpression '/' unaryExpression
-	|	multiplicativeExpression '%' unaryExpression
-	;
-
-unaryExpression
-	:	preIncrementExpression
-	|	preDecrementExpression
-	|	'+' unaryExpression
-	|	'-' unaryExpression
-	|	unaryExpressionNotPlusMinus
-	;
-
-preIncrementExpression
-	:	'++' unaryExpression
-	;
-
-preDecrementExpression
-	:	'--' unaryExpression
-	;
-
-unaryExpressionNotPlusMinus
-	:	postfixExpression
-	|	'~' unaryExpression
-	|	'!' unaryExpression
-	|	castExpression
-	;
-
-postfixExpression
-	:	(	primary
-		|	expressionName
-		)
-		(	postIncrementExpression_lf_postfixExpression
-		|	postDecrementExpression_lf_postfixExpression
-		)*
-	;
-
-postIncrementExpression
-	:	postfixExpression '++'
-	;
-
-postIncrementExpression_lf_postfixExpression
-	:	'++'
-	;
-
-postDecrementExpression
-	:	postfixExpression '--'
-	;
-
-postDecrementExpression_lf_postfixExpression
-	:	'--'
-	;
-
-castExpression
-	:	'(' primitiveType ')' unaryExpression
-	|	'(' referenceType additionalBound* ')' unaryExpressionNotPlusMinus
-	|	'(' referenceType additionalBound* ')' lambdaExpression
-	|	'(' ClassRef ')' unaryExpression
-	|	'(' ClassRef additionalBoundOrClassRef* ')' unaryExpressionNotPlusMinus
-	|	'(' ClassRef additionalBoundOrClassRef* ')' lambdaExpression
-	;
+argumentList : expression (',' expression)* ;
 	
-additionalBoundOrClassRef
-	:	'&' (classOrInterfaceType | ClassRef)
+methodDeclaration : identifier '(' typeList? ')' AT 'MD' ;
+
+typeList : type (',' type)* ;
+
+fieldAccess : identifier '.' expression AT 'FA';
+
+condExpColonMark : 'CondExpCM' AT DH ;
+
+condExpQuestionMark : 'CondExpQM' AT DH ;
+
+condExpBegin : 'CondExpBegin' AT DH ;
+
+variableDeclarationTypeStatement : type AT 'VD' ;
+
+forUpdOver : 'forUpdOver' AT 'DH' ;
+
+forExpOver : 'forExpOver' AT 'DH' ;
+
+forIniOver : 'forIniOver' AT 'DH' ;
+
+forStatement : 'for' AT 'DH' ;
+
+ifStatement : 'if' '#' expression ;
+
+whileStatement : 'while' '#' expression ;
+
+catchClause : 'catch' '#' type;
+
+throwStatement : 'throw' '#' expression ;
+
+synchronizedStatement : 'synchronized' '#' expression ;
+
+switchCaseStatement : 'case' '#' expression ;
+	
+switchStatement : 'switch' '#' expression ;
+
+breakStatement : 'break' '#' identifier? ;
+
+continueStatement : 'continue' '#' identifier? ;
+
+doStatement : 'do' AT 'DH' ;
+
+enhancedForStatement : 'for(' type ':' expression ')' ;
+
+arrayAccessStatement : expression '@AC' expression ;
+
+arrayInitializerStartStatement : 'arrIni' AT 'DH' ;
+
+infixExpressionStatement : expression binaryOperator expression ;
+
+instanceofExpressionStatement : expression 'instanceof' type ;
+
+labeledStatement : identifier AT 'LD' ;
+
+postfixExpressionStatement : expression unaryOperator ;
+
+prefixExpressionStatement : unaryOperator expression ;
+
+returnStatement : 'return' expression? ;
+
+assignmentStatement : expression assignmentOperator expression ;
+
+castExpressionStatement : '(' type ')' expression ;
+	
+methodReferenceStatement : identifier '::' expression ;
+
+lambdaExpressionStatement : lambdaParameters '->' '{}' ;
+
+lambdaParameters : '(' formalParameterList? ')' | '(' inferredFormalParameterList ')' ;
+	
+formalParameterList : formalParameter (',' formalParameter)* ;
+
+formalParameters : formalParameter (',' formalParameter)* ;
+
+formalParameter : type identifier ;
+
+inferredFormalParameterList : identifier (',' identifier)* ;
+
+typeDeclarationStatement : identifier AT 'CD' ;
+	
+leftParentheseStatement : '(' ;
+	
+leftBraceStatement : '{' ;
+
+rightBraceStatement : '}' ;
+
+literal
+	:	NumberLiteral
+	|	BooleanLiteral
+	|	CharacterLiteral
+	|	StringLiteral
+	|	NullLiteral
 	;
 
-ASSERT : 'assert';
-BOOLEAN : 'boolean';
-BREAK : 'break';
-BYTE : 'byte';
-CASE : 'case';
-CATCH : 'catch';
-CHAR : 'char';
-CLASS : 'class';
-CONTINUE : 'continue';
-DEFAULT : 'default';
-DO : 'do';
-DOUBLE : 'double';
-ELSE : 'else';
-FINAL : 'final';
-FINALLY : 'finally';
-FLOAT : 'float';
-FOR : 'for';
-IF : 'if';
-GOTO : 'goto';
-INSTANCEOF : 'instanceof';
-INT : 'int';
-INTERFACE : 'interface';
-LONG : 'long';
-NEW : 'new';
-RETURN : 'return';
-SHORT : 'short';
-SUPER : 'super';
-SWITCH : 'switch';
-SYNCHRONIZED : 'synchronized';
-THIS : 'this';
-THROW : 'throw';
-THROWS : 'throws';
-TRY : 'try';
-WHILE : 'while';
-
-NumberLiteral
-	:	AT 'NUB'
+referenceType
+	:	classOrInterfaceType
+	|	classRef
+	|	arrayType
 	;
 
-BooleanLiteral
-	:	'true'
-	|	'false'
+classOrInterfaceType
+	:	(	identifier
+		)
+		(	'.' identifier
+		)*
 	;
 
-CharacterLiteral
-	:	AT 'CHR'
+arrayType
+	:	primitiveType dims
+	|	classOrInterfaceType dims
+	|	identifier dims
 	;
 
-StringLiteral
+numberLiteral
+	:	integerLiteral
+	|	floatingPointLiteral
+	;
+
+stringLiteral
 	:	AT 'STR'
 	;
 
-NullLiteral
-	:	AT 'NUL'
+type
+	:	primitiveType
+	|	classOrInterfaceType
+	|	arrayType
+	|	intersectionType
+	|	unionType
+	|	classRef
+	;
+	
+primitiveType
+	:	'float'
+	|	'double'
+	|	'boolean'
+	|	'byte'
+	|	'short'
+	|	'int'
+	|	'long'
+	|	'char'
 	;
 
-LPAREN : '(';
-RPAREN : ')';
-LBRACE : '{';
-RBRACE : '}';
-LBRACK : '[';
-RBRACK : ']';
-COMMA : ',';
-DOT : '.';
+classOrInterfaceType
+	:	(Identifier typeArguments?) ('.' Identifier typeArguments?)*
+	;
 
-ASSIGN : '=';
-GT : '>';
-LT : '<';
-BANG : '!';
-TILDE : '~';
-QUESTION : '?';
-COLON : ':';
-EQUAL : '==';
-LE : '<=';
-GE : '>=';
-NOTEQUAL : '!=';
-AND : '&&';
-OR : '||';
-INC : '++';
-DEC : '--';
-ADD : '+';
-SUB : '-';
-MUL : '*';
-DIV : '/';
-BITAND : '&';
-BITOR : '|';
-CARET : '^';
-MOD : '%';
-ARROW : '->';
-COLONCOLON : '::';
+arrayType
+	:	primitiveType dims
+	|	classOrInterfaceType dims
+	;
 
-ADD_ASSIGN : '+=';
-SUB_ASSIGN : '-=';
-MUL_ASSIGN : '*=';
-DIV_ASSIGN : '/=';
-AND_ASSIGN : '&=';
-OR_ASSIGN : '|=';
-XOR_ASSIGN : '^=';
-MOD_ASSIGN : '%=';
-LSHIFT_ASSIGN : '<<=';
-RSHIFT_ASSIGN : '>>=';
-URSHIFT_ASSIGN : '>>>=';
+dims
+	:	'[' ']' ('[' ']')*
+	;
 
-Identifier
+typeArguments
+	:	'<' typeArgumentList '>'
+	;
+
+typeArgumentList
+	:	typeArgument (',' typeArgument)*
+	;
+
+typeArgument
+	:	referenceType
+	|	wildCard
+	;
+
+wildCard
+	:	'?' wildcardBounds?
+	;
+
+wildcardBounds
+	:	'extends' referenceType
+	|	'super' referenceType
+	;
+	
+intersectionType
+	:	(classOrInterfaceType | primitiveType) ('&' (classOrInterfaceType | primitiveType))+
+	;
+	
+unionType
+	:	(classOrInterfaceType | primitiveType) ('|' (classOrInterfaceType | primitiveType))+
+	;
+
+identifier
 	:	JavaLetter JavaLetterOrDigit*
-	|	NoDeclaredType 
-	|	ClassRef
-	|	FinalFieldRef
-	|	FinalVarRef
-	|	CommonFieldRef
-	|	CommonVarRef
-	|	EmptyHolder
+	|	finalFieldRef
+	|	finalVarRef
+	|	commonFieldRef
+	|	commonVarRef
+	|	codeHole
+	|	preExist
 	;
 
 fragment
@@ -855,19 +279,378 @@ JavaLetterOrDigit
 		{Character.isJavaIdentifierPart(Character.toCodePoint((char)_input.LA(-2), (char)_input.LA(-1)))}?
 	;
 
-ClassRef : '$K' [0-9]+ '?' [0-9]+ ;
-FinalFieldRef : '$D' [0-9]+ '?' [0-9]+ ;
-FinalVarRef : '$X' [0-9]+ '?' [0-9]+ ;
-CommonFieldRef : '$F' [0-9]+ '?' [0-9]+ ;
-CommonVarRef : '$C' [0-9]+ '?' [0-9]+ ;
-EmptyHolder : AT 'E' ;
+classRef : '$K' [0-9]+ '?' [0-9]+ ;
+finalFieldRef : '$D' [0-9]+ '?' [0-9]+ ;
+finalVarRef : '$X' [0-9]+ '?' [0-9]+ ;
+commonFieldRef : '$F' [0-9]+ '?' [0-9]+ ;
+commonVarRef : '$C' [0-9]+ '?' [0-9]+ ;
 
-// for lambda only
-NoDeclaredType : AT 'NT' ;
-// for hole
-CodeHole : AT 'HO' ;
+codeHole : AT 'HO' ;
+preExist : AT 'PE' ;
 
-AT : '@';
-MD : 'MD';
+fullEnd : endOfAStatement ;
 
-WS  :  [ '#' ]+ -> skip;
+endOfAStatement : AT 'ED' ;
+
+partialEnd : onePartialEnd* ;
+
+onePartialEnd : endOfAPartialStatement | endOfArrayDeclarationIndexExpression | rightParenthese ;
+
+endOfAPartialStatement : AT 'PD' ;
+
+endOfArrayDeclarationIndexExpression : AT 'AD' ;
+
+rightParenthese : ')' ;
+
+AT : '@' ;
+
+WS  :  [ '#' ]+ -> skip ;
+
+integerLiteral
+	:	DecimalIntegerLiteral
+	|	HexIntegerLiteral
+	|	OctalIntegerLiteral
+	|	BinaryIntegerLiteral
+	;
+
+fragment
+DecimalIntegerLiteral
+	:	DecimalNumeral IntegerTypeSuffix?
+	;
+
+fragment
+HexIntegerLiteral
+	:	HexNumeral IntegerTypeSuffix?
+	;
+
+fragment
+OctalIntegerLiteral
+	:	OctalNumeral IntegerTypeSuffix?
+	;
+
+fragment
+BinaryIntegerLiteral
+	:	BinaryNumeral IntegerTypeSuffix?
+	;
+
+fragment
+IntegerTypeSuffix
+	:	[lL]
+	;
+
+fragment
+DecimalNumeral
+	:	'0'
+	|	NonZeroDigit (Digits? | Underscores Digits)
+	;
+
+fragment
+Digits
+	:	Digit (DigitsAndUnderscores? Digit)?
+	;
+
+fragment
+Digit
+	:	'0'
+	|	NonZeroDigit
+	;
+
+fragment
+NonZeroDigit
+	:	[1-9]
+	;
+
+fragment
+DigitsAndUnderscores
+	:	DigitOrUnderscore+
+	;
+
+fragment
+DigitOrUnderscore
+	:	Digit
+	|	'_'
+	;
+
+fragment
+Underscores
+	:	'_'+
+	;
+
+fragment
+HexNumeral
+	:	'0' [xX] HexDigits
+	;
+
+fragment
+HexDigits
+	:	HexDigit (HexDigitsAndUnderscores? HexDigit)?
+	;
+
+fragment
+HexDigit
+	:	[0-9a-fA-F]
+	;
+
+fragment
+HexDigitsAndUnderscores
+	:	HexDigitOrUnderscore+
+	;
+
+fragment
+HexDigitOrUnderscore
+	:	HexDigit
+	|	'_'
+	;
+
+fragment
+OctalNumeral
+	:	'0' Underscores? OctalDigits
+	;
+
+fragment
+OctalDigits
+	:	OctalDigit (OctalDigitsAndUnderscores? OctalDigit)?
+	;
+
+fragment
+OctalDigit
+	:	[0-7]
+	;
+
+fragment
+OctalDigitsAndUnderscores
+	:	OctalDigitOrUnderscore+
+	;
+
+fragment
+OctalDigitOrUnderscore
+	:	OctalDigit
+	|	'_'
+	;
+
+fragment
+BinaryNumeral
+	:	'0' [bB] BinaryDigits
+	;
+
+fragment
+BinaryDigits
+	:	BinaryDigit (BinaryDigitsAndUnderscores? BinaryDigit)?
+	;
+
+fragment
+BinaryDigit
+	:	[01]
+	;
+
+fragment
+BinaryDigitsAndUnderscores
+	:	BinaryDigitOrUnderscore+
+	;
+
+fragment
+BinaryDigitOrUnderscore
+	:	BinaryDigit
+	|	'_'
+	;
+
+//  Floating-Point Literals
+
+floatingPointLiteral
+	:	DecimalFloatingPointLiteral
+	|	HexadecimalFloatingPointLiteral
+	;
+
+fragment
+DecimalFloatingPointLiteral
+	:	Digits '.' Digits? ExponentPart? FloatTypeSuffix?
+	|	'.' Digits ExponentPart? FloatTypeSuffix?
+	|	Digits ExponentPart FloatTypeSuffix?
+	|	Digits FloatTypeSuffix
+	;
+
+fragment
+ExponentPart
+	:	ExponentIndicator SignedInteger
+	;
+
+fragment
+ExponentIndicator
+	:	[eE]
+	;
+
+fragment
+SignedInteger
+	:	Sign? Digits
+	;
+
+fragment
+Sign
+	:	[+-]
+	;
+
+fragment
+FloatTypeSuffix
+	:	[fFdD]
+	;
+
+fragment
+HexadecimalFloatingPointLiteral
+	:	HexSignificand BinaryExponent FloatTypeSuffix?
+	;
+
+fragment
+HexSignificand
+	:	HexNumeral '.'?
+	|	'0' [xX] HexDigits? '.' HexDigits
+	;
+
+fragment
+BinaryExponent
+	:	BinaryExponentIndicator SignedInteger
+	;
+
+fragment
+BinaryExponentIndicator
+	:	[pP]
+	;
+
+// Boolean Literals
+
+booleanLiteral
+	:	'true'
+	|	'false'
+	;
+
+// Character Literals
+
+characterLiteral
+	:	'\'' SingleCharacter '\''
+	|	'\'' EscapeSequence '\''
+	;
+
+fragment
+SingleCharacter
+	:	~['\\]
+	;
+
+// String Literals
+
+// Escape Sequences for Character Literals
+
+fragment
+EscapeSequence
+	:	'\\' [btnfr"'\\]
+	|	OctalEscape
+    |   UnicodeEscape // This is not in the spec but prevents having to preprocess the input
+	;
+
+fragment
+OctalEscape
+	:	'\\' OctalDigit
+	|	'\\' OctalDigit OctalDigit
+	|	'\\' ZeroToThree OctalDigit OctalDigit
+	;
+
+fragment
+ZeroToThree
+	:	[0-3]
+	;
+
+fragment
+UnicodeEscape
+    :   '\\' 'u' HexDigit HexDigit HexDigit HexDigit
+    ;
+
+nullLiteral
+	:	'null'
+	;
+	
+unaryOperator
+	:	BANG
+	|	TILDE
+	|	INC
+	|	DEC
+	|	ADD
+	|	SUB
+	;
+
+binaryOperator
+	:	GT
+	|	LT
+	|	EQUAL
+	|	LE
+	|	GE
+	|	NOTEQUAL
+	|	AND
+	|	OR
+	|	ADD
+	|	SUB
+	|	MUL
+	|	DIV
+	|	BITAND
+	|	BITOR
+	|	CARET
+	|	MOD
+	|	LSHIFT
+	|	RSHIFT
+	|	URSHIFT
+	;
+
+assignmentOperator
+	:	ASSIGN
+	|	MUL_ASSIGN
+	|	DIV_ASSIGN
+	|	MOD_ASSIGN
+	|	ADD_ASSIGN
+	|	SUB_ASSIGN
+	|	LSHIFT_ASSIGN
+	|	RSHIFT_ASSIGN
+	|	URSHIFT_ASSIGN
+	|	AND_ASSIGN
+	|	XOR_ASSIGN
+	|	OR_ASSIGN
+	;
+
+COMMA : ',';
+DOT : '.';
+
+GT : '>';
+LT : '<';
+BANG : '!';
+TILDE : '~';
+QUESTION : '?';
+COLON : ':';
+EQUAL : '==';
+LE : '<=';
+GE : '>=';
+NOTEQUAL : '!=';
+AND : '&&';
+OR : '||';
+INC : '++';
+DEC : '--';
+ADD : '+';
+SUB : '-';
+MUL : '*';
+DIV : '/';
+BITAND : '&';
+BITOR : '|';
+CARET : '^';
+MOD : '%';
+LSHIFT : '<<';
+RSHIFT : '>>';
+URSHIFT : '>>>';
+COLONCOLON : '::';
+
+ASSIGN : '=';
+ADD_ASSIGN : '+=';
+SUB_ASSIGN : '-=';
+MUL_ASSIGN : '*=';
+DIV_ASSIGN : '/=';
+AND_ASSIGN : '&=';
+OR_ASSIGN : '|=';
+XOR_ASSIGN : '^=';
+MOD_ASSIGN : '%=';
+LSHIFT_ASSIGN : '<<=';
+RSHIFT_ASSIGN : '>>=';
+URSHIFT_ASSIGN : '>>>=';

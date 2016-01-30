@@ -7,9 +7,9 @@ import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
+import AeroSpikeHandle.AeroSpikeJava8Visitor;
 import SJ8Parse.Java8Lexer;
 import SJ8Parse.Java8Parser;
-import SJ8Parse.SpecialJava8Visitor;
 
 /**
  * Hello world!
@@ -34,7 +34,7 @@ public class ParseRoot
 		// show tree in text form
 		System.out.println(tree.toStringTree(parser));
 
-		SpecialJava8Visitor evalVisitor = new SpecialJava8Visitor();
+		AeroSpikeJava8Visitor evalVisitor = new AeroSpikeJava8Visitor();
 		// int result =
 		evalVisitor.visit(tree);
 		// System.out.println("visitor result = "+result);

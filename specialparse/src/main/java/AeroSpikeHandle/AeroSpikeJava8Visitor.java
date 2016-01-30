@@ -1,6 +1,93 @@
-package SJ8Parse;
+package AeroSpikeHandle;
 
-public class SpecialJava8Visitor extends Java8BaseVisitor<Integer> {
+import SJ8Parse.Java8BaseVisitor;
+import SJ8Parse.Java8Parser;
+import SJ8Parse.Java8Parser.ArgumentListContext;
+import SJ8Parse.Java8Parser.ArrayAccessStatementContext;
+import SJ8Parse.Java8Parser.ArrayInitializerStartStatementContext;
+import SJ8Parse.Java8Parser.ArrayTypeContext;
+import SJ8Parse.Java8Parser.AssignmentContext;
+import SJ8Parse.Java8Parser.AssignmentOperatorContext;
+import SJ8Parse.Java8Parser.BinaryOperatorContext;
+import SJ8Parse.Java8Parser.BooleanLiteralContext;
+import SJ8Parse.Java8Parser.BreakStatementContext;
+import SJ8Parse.Java8Parser.CastExpressionContext;
+import SJ8Parse.Java8Parser.CatchClauseContext;
+import SJ8Parse.Java8Parser.CharacterLiteralContext;
+import SJ8Parse.Java8Parser.ClassOrInterfaceTypeContext;
+import SJ8Parse.Java8Parser.CodeHoleContext;
+import SJ8Parse.Java8Parser.CondExpBeginStatementContext;
+import SJ8Parse.Java8Parser.CondExpColonMarkStatementContext;
+import SJ8Parse.Java8Parser.CondExpQuestionMarkStatementContext;
+import SJ8Parse.Java8Parser.ContinueStatementContext;
+import SJ8Parse.Java8Parser.DimsContext;
+import SJ8Parse.Java8Parser.DoStatementContext;
+import SJ8Parse.Java8Parser.EndOfAPartialStatementContext;
+import SJ8Parse.Java8Parser.EndOfAStatementContext;
+import SJ8Parse.Java8Parser.EndOfArrayDeclarationIndexExpressionContext;
+import SJ8Parse.Java8Parser.EndOfStatementContext;
+import SJ8Parse.Java8Parser.EnhancedForStatementContext;
+import SJ8Parse.Java8Parser.ExpressionContext;
+import SJ8Parse.Java8Parser.ExpressionStatementContext;
+import SJ8Parse.Java8Parser.FieldAccessContext;
+import SJ8Parse.Java8Parser.FloatingPointLiteralContext;
+import SJ8Parse.Java8Parser.ForExpOverStatementContext;
+import SJ8Parse.Java8Parser.ForIniOverStatementContext;
+import SJ8Parse.Java8Parser.ForStatementContext;
+import SJ8Parse.Java8Parser.ForUpdOverStatementContext;
+import SJ8Parse.Java8Parser.FormalParameterContext;
+import SJ8Parse.Java8Parser.FormalParameterListContext;
+import SJ8Parse.Java8Parser.FormalParametersContext;
+import SJ8Parse.Java8Parser.FullEndContext;
+import SJ8Parse.Java8Parser.IdentifierContext;
+import SJ8Parse.Java8Parser.IfStatementContext;
+import SJ8Parse.Java8Parser.InferredFormalParameterListContext;
+import SJ8Parse.Java8Parser.InfixExpressionContext;
+import SJ8Parse.Java8Parser.InstanceofExpressionContext;
+import SJ8Parse.Java8Parser.IntegerLiteralContext;
+import SJ8Parse.Java8Parser.IntersectionTypeContext;
+import SJ8Parse.Java8Parser.LabeledStatementContext;
+import SJ8Parse.Java8Parser.LambdaExpressionStatementContext;
+import SJ8Parse.Java8Parser.LambdaParametersContext;
+import SJ8Parse.Java8Parser.LeftBraceStatementContext;
+import SJ8Parse.Java8Parser.LeftParentheseStatementContext;
+import SJ8Parse.Java8Parser.LiteralContext;
+import SJ8Parse.Java8Parser.MethodDeclarationContext;
+import SJ8Parse.Java8Parser.MethodInvocationContext;
+import SJ8Parse.Java8Parser.MethodReferenceContext;
+import SJ8Parse.Java8Parser.NullLiteralContext;
+import SJ8Parse.Java8Parser.NumberLiteralContext;
+import SJ8Parse.Java8Parser.OnePartialEndContext;
+import SJ8Parse.Java8Parser.PartialEndContext;
+import SJ8Parse.Java8Parser.PostfixExpressionContext;
+import SJ8Parse.Java8Parser.PreExistContext;
+import SJ8Parse.Java8Parser.PrefixExpressionContext;
+import SJ8Parse.Java8Parser.PrimitiveTypeContext;
+import SJ8Parse.Java8Parser.ReferedExpressionContext;
+import SJ8Parse.Java8Parser.ReferenceTypeContext;
+import SJ8Parse.Java8Parser.ReturnStatementContext;
+import SJ8Parse.Java8Parser.RightBraceStatementContext;
+import SJ8Parse.Java8Parser.RightParentheseContext;
+import SJ8Parse.Java8Parser.StatementContext;
+import SJ8Parse.Java8Parser.StringLiteralContext;
+import SJ8Parse.Java8Parser.SwitchCaseStatementContext;
+import SJ8Parse.Java8Parser.SwitchStatementContext;
+import SJ8Parse.Java8Parser.SynchronizedStatementContext;
+import SJ8Parse.Java8Parser.ThrowStatementContext;
+import SJ8Parse.Java8Parser.TypeArgumentContext;
+import SJ8Parse.Java8Parser.TypeArgumentListContext;
+import SJ8Parse.Java8Parser.TypeArgumentsContext;
+import SJ8Parse.Java8Parser.TypeContext;
+import SJ8Parse.Java8Parser.TypeDeclarationStatementContext;
+import SJ8Parse.Java8Parser.TypeListContext;
+import SJ8Parse.Java8Parser.UnaryOperatorContext;
+import SJ8Parse.Java8Parser.UnionTypeContext;
+import SJ8Parse.Java8Parser.VariableDeclarationTypeStatementContext;
+import SJ8Parse.Java8Parser.WhileStatementContext;
+import SJ8Parse.Java8Parser.WildCardContext;
+import SJ8Parse.Java8Parser.WildcardBoundsContext;
+
+public class AeroSpikeJava8Visitor extends Java8BaseVisitor<Integer> {
 	@Override
 	public Integer visitStatement(Java8Parser.StatementContext ctx) {
 		return visitChildren(ctx);
@@ -500,4 +587,7 @@ public class SpecialJava8Visitor extends Java8BaseVisitor<Integer> {
 	public Integer visitAssignmentOperator(Java8Parser.AssignmentOperatorContext ctx) {
 		return visitChildren(ctx);
 	}
+	
+	
+	
 }

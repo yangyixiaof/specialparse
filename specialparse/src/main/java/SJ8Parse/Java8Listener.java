@@ -1,6 +1,6 @@
+// Generated from Java8.g4 by ANTLR 4.5.1
 package SJ8Parse;
 
-// Generated from Java8.g4 by ANTLR 4.5.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -8,6 +8,496 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  * {@link Java8Parser}.
  */
 public interface Java8Listener extends ParseTreeListener {
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void enterStatement(Java8Parser.StatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#statement}.
+	 * @param ctx the parse tree
+	 */
+	void exitStatement(Java8Parser.StatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#expressionStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterExpressionStatement(Java8Parser.ExpressionStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#expressionStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitExpressionStatement(Java8Parser.ExpressionStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void enterExpression(Java8Parser.ExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#expression}.
+	 * @param ctx the parse tree
+	 */
+	void exitExpression(Java8Parser.ExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#referedExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterReferedExpression(Java8Parser.ReferedExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#referedExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitReferedExpression(Java8Parser.ReferedExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#assignment}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssignment(Java8Parser.AssignmentContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#assignment}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssignment(Java8Parser.AssignmentContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#methodInvocation}.
+	 * @param ctx the parse tree
+	 */
+	void enterMethodInvocation(Java8Parser.MethodInvocationContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#methodInvocation}.
+	 * @param ctx the parse tree
+	 */
+	void exitMethodInvocation(Java8Parser.MethodInvocationContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#argumentList}.
+	 * @param ctx the parse tree
+	 */
+	void enterArgumentList(Java8Parser.ArgumentListContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#argumentList}.
+	 * @param ctx the parse tree
+	 */
+	void exitArgumentList(Java8Parser.ArgumentListContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#methodDeclaration}.
+	 * @param ctx the parse tree
+	 */
+	void enterMethodDeclaration(Java8Parser.MethodDeclarationContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#methodDeclaration}.
+	 * @param ctx the parse tree
+	 */
+	void exitMethodDeclaration(Java8Parser.MethodDeclarationContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#typeList}.
+	 * @param ctx the parse tree
+	 */
+	void enterTypeList(Java8Parser.TypeListContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#typeList}.
+	 * @param ctx the parse tree
+	 */
+	void exitTypeList(Java8Parser.TypeListContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#fieldAccess}.
+	 * @param ctx the parse tree
+	 */
+	void enterFieldAccess(Java8Parser.FieldAccessContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#fieldAccess}.
+	 * @param ctx the parse tree
+	 */
+	void exitFieldAccess(Java8Parser.FieldAccessContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#condExpColonMarkStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterCondExpColonMarkStatement(Java8Parser.CondExpColonMarkStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#condExpColonMarkStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitCondExpColonMarkStatement(Java8Parser.CondExpColonMarkStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#condExpQuestionMarkStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterCondExpQuestionMarkStatement(Java8Parser.CondExpQuestionMarkStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#condExpQuestionMarkStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitCondExpQuestionMarkStatement(Java8Parser.CondExpQuestionMarkStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#condExpBeginStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterCondExpBeginStatement(Java8Parser.CondExpBeginStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#condExpBeginStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitCondExpBeginStatement(Java8Parser.CondExpBeginStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#variableDeclarationTypeStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterVariableDeclarationTypeStatement(Java8Parser.VariableDeclarationTypeStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#variableDeclarationTypeStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitVariableDeclarationTypeStatement(Java8Parser.VariableDeclarationTypeStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#forUpdOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterForUpdOverStatement(Java8Parser.ForUpdOverStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#forUpdOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitForUpdOverStatement(Java8Parser.ForUpdOverStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#forExpOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterForExpOverStatement(Java8Parser.ForExpOverStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#forExpOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitForExpOverStatement(Java8Parser.ForExpOverStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#forIniOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterForIniOverStatement(Java8Parser.ForIniOverStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#forIniOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitForIniOverStatement(Java8Parser.ForIniOverStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#forStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterForStatement(Java8Parser.ForStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#forStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitForStatement(Java8Parser.ForStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#ifStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterIfStatement(Java8Parser.IfStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#ifStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitIfStatement(Java8Parser.IfStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#whileStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterWhileStatement(Java8Parser.WhileStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#whileStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitWhileStatement(Java8Parser.WhileStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#catchClause}.
+	 * @param ctx the parse tree
+	 */
+	void enterCatchClause(Java8Parser.CatchClauseContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#catchClause}.
+	 * @param ctx the parse tree
+	 */
+	void exitCatchClause(Java8Parser.CatchClauseContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#throwStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterThrowStatement(Java8Parser.ThrowStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#throwStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitThrowStatement(Java8Parser.ThrowStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#synchronizedStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterSynchronizedStatement(Java8Parser.SynchronizedStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#synchronizedStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitSynchronizedStatement(Java8Parser.SynchronizedStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#switchCaseStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterSwitchCaseStatement(Java8Parser.SwitchCaseStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#switchCaseStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitSwitchCaseStatement(Java8Parser.SwitchCaseStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#switchStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterSwitchStatement(Java8Parser.SwitchStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#switchStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitSwitchStatement(Java8Parser.SwitchStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#breakStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterBreakStatement(Java8Parser.BreakStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#breakStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitBreakStatement(Java8Parser.BreakStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#continueStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterContinueStatement(Java8Parser.ContinueStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#continueStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitContinueStatement(Java8Parser.ContinueStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#doStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterDoStatement(Java8Parser.DoStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#doStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitDoStatement(Java8Parser.DoStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#enhancedForStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterEnhancedForStatement(Java8Parser.EnhancedForStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#enhancedForStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitEnhancedForStatement(Java8Parser.EnhancedForStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#arrayAccessStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterArrayAccessStatement(Java8Parser.ArrayAccessStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#arrayAccessStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitArrayAccessStatement(Java8Parser.ArrayAccessStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#arrayInitializerStartStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterArrayInitializerStartStatement(Java8Parser.ArrayInitializerStartStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#arrayInitializerStartStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitArrayInitializerStartStatement(Java8Parser.ArrayInitializerStartStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#infixExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterInfixExpression(Java8Parser.InfixExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#infixExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitInfixExpression(Java8Parser.InfixExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#instanceofExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterInstanceofExpression(Java8Parser.InstanceofExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#instanceofExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitInstanceofExpression(Java8Parser.InstanceofExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#labeledStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterLabeledStatement(Java8Parser.LabeledStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#labeledStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitLabeledStatement(Java8Parser.LabeledStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#postfixExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterPostfixExpression(Java8Parser.PostfixExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#postfixExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitPostfixExpression(Java8Parser.PostfixExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#prefixExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterPrefixExpression(Java8Parser.PrefixExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#prefixExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitPrefixExpression(Java8Parser.PrefixExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#returnStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterReturnStatement(Java8Parser.ReturnStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#returnStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitReturnStatement(Java8Parser.ReturnStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#castExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterCastExpression(Java8Parser.CastExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#castExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitCastExpression(Java8Parser.CastExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#methodReference}.
+	 * @param ctx the parse tree
+	 */
+	void enterMethodReference(Java8Parser.MethodReferenceContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#methodReference}.
+	 * @param ctx the parse tree
+	 */
+	void exitMethodReference(Java8Parser.MethodReferenceContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#lambdaExpressionStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterLambdaExpressionStatement(Java8Parser.LambdaExpressionStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#lambdaExpressionStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitLambdaExpressionStatement(Java8Parser.LambdaExpressionStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#lambdaParameters}.
+	 * @param ctx the parse tree
+	 */
+	void enterLambdaParameters(Java8Parser.LambdaParametersContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#lambdaParameters}.
+	 * @param ctx the parse tree
+	 */
+	void exitLambdaParameters(Java8Parser.LambdaParametersContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#formalParameterList}.
+	 * @param ctx the parse tree
+	 */
+	void enterFormalParameterList(Java8Parser.FormalParameterListContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#formalParameterList}.
+	 * @param ctx the parse tree
+	 */
+	void exitFormalParameterList(Java8Parser.FormalParameterListContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#formalParameters}.
+	 * @param ctx the parse tree
+	 */
+	void enterFormalParameters(Java8Parser.FormalParametersContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#formalParameters}.
+	 * @param ctx the parse tree
+	 */
+	void exitFormalParameters(Java8Parser.FormalParametersContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#formalParameter}.
+	 * @param ctx the parse tree
+	 */
+	void enterFormalParameter(Java8Parser.FormalParameterContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#formalParameter}.
+	 * @param ctx the parse tree
+	 */
+	void exitFormalParameter(Java8Parser.FormalParameterContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#inferredFormalParameterList}.
+	 * @param ctx the parse tree
+	 */
+	void enterInferredFormalParameterList(Java8Parser.InferredFormalParameterListContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#inferredFormalParameterList}.
+	 * @param ctx the parse tree
+	 */
+	void exitInferredFormalParameterList(Java8Parser.InferredFormalParameterListContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#typeDeclarationStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterTypeDeclarationStatement(Java8Parser.TypeDeclarationStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#typeDeclarationStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitTypeDeclarationStatement(Java8Parser.TypeDeclarationStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#leftParentheseStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterLeftParentheseStatement(Java8Parser.LeftParentheseStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#leftParentheseStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitLeftParentheseStatement(Java8Parser.LeftParentheseStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#leftBraceStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterLeftBraceStatement(Java8Parser.LeftBraceStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#leftBraceStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitLeftBraceStatement(Java8Parser.LeftBraceStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#rightBraceStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterRightBraceStatement(Java8Parser.RightBraceStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#rightBraceStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitRightBraceStatement(Java8Parser.RightBraceStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#literal}.
 	 * @param ctx the parse tree
@@ -18,6 +508,36 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitLiteral(Java8Parser.LiteralContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#referenceType}.
+	 * @param ctx the parse tree
+	 */
+	void enterReferenceType(Java8Parser.ReferenceTypeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#referenceType}.
+	 * @param ctx the parse tree
+	 */
+	void exitReferenceType(Java8Parser.ReferenceTypeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#numberLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterNumberLiteral(Java8Parser.NumberLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#numberLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitNumberLiteral(Java8Parser.NumberLiteralContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#stringLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterStringLiteral(Java8Parser.StringLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#stringLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitStringLiteral(Java8Parser.StringLiteralContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#type}.
 	 * @param ctx the parse tree
@@ -39,46 +559,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitPrimitiveType(Java8Parser.PrimitiveTypeContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#numericType}.
-	 * @param ctx the parse tree
-	 */
-	void enterNumericType(Java8Parser.NumericTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#numericType}.
-	 * @param ctx the parse tree
-	 */
-	void exitNumericType(Java8Parser.NumericTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#integralType}.
-	 * @param ctx the parse tree
-	 */
-	void enterIntegralType(Java8Parser.IntegralTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#integralType}.
-	 * @param ctx the parse tree
-	 */
-	void exitIntegralType(Java8Parser.IntegralTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#floatingPointType}.
-	 * @param ctx the parse tree
-	 */
-	void enterFloatingPointType(Java8Parser.FloatingPointTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#floatingPointType}.
-	 * @param ctx the parse tree
-	 */
-	void exitFloatingPointType(Java8Parser.FloatingPointTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#referenceType}.
-	 * @param ctx the parse tree
-	 */
-	void enterReferenceType(Java8Parser.ReferenceTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#referenceType}.
-	 * @param ctx the parse tree
-	 */
-	void exitReferenceType(Java8Parser.ReferenceTypeContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link Java8Parser#classOrInterfaceType}.
 	 * @param ctx the parse tree
 	 */
@@ -88,46 +568,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitClassOrInterfaceType(Java8Parser.ClassOrInterfaceTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#classType_lf_classOrInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void enterClassType_lf_classOrInterfaceType(Java8Parser.ClassType_lf_classOrInterfaceTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#classType_lf_classOrInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void exitClassType_lf_classOrInterfaceType(Java8Parser.ClassType_lf_classOrInterfaceTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#classType_lfno_classOrInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void enterClassType_lfno_classOrInterfaceType(Java8Parser.ClassType_lfno_classOrInterfaceTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#classType_lfno_classOrInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void exitClassType_lfno_classOrInterfaceType(Java8Parser.ClassType_lfno_classOrInterfaceTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#interfaceType_lf_classOrInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void enterInterfaceType_lf_classOrInterfaceType(Java8Parser.InterfaceType_lf_classOrInterfaceTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#interfaceType_lf_classOrInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void exitInterfaceType_lf_classOrInterfaceType(Java8Parser.InterfaceType_lf_classOrInterfaceTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#interfaceType_lfno_classOrInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void enterInterfaceType_lfno_classOrInterfaceType(Java8Parser.InterfaceType_lfno_classOrInterfaceTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#interfaceType_lfno_classOrInterfaceType}.
-	 * @param ctx the parse tree
-	 */
-	void exitInterfaceType_lfno_classOrInterfaceType(Java8Parser.InterfaceType_lfno_classOrInterfaceTypeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#arrayType}.
 	 * @param ctx the parse tree
@@ -148,36 +588,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitDims(Java8Parser.DimsContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#typeParameter}.
-	 * @param ctx the parse tree
-	 */
-	void enterTypeParameter(Java8Parser.TypeParameterContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#typeParameter}.
-	 * @param ctx the parse tree
-	 */
-	void exitTypeParameter(Java8Parser.TypeParameterContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#typeBound}.
-	 * @param ctx the parse tree
-	 */
-	void enterTypeBound(Java8Parser.TypeBoundContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#typeBound}.
-	 * @param ctx the parse tree
-	 */
-	void exitTypeBound(Java8Parser.TypeBoundContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#additionalBound}.
-	 * @param ctx the parse tree
-	 */
-	void enterAdditionalBound(Java8Parser.AdditionalBoundContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#additionalBound}.
-	 * @param ctx the parse tree
-	 */
-	void exitAdditionalBound(Java8Parser.AdditionalBoundContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#typeArguments}.
 	 * @param ctx the parse tree
@@ -209,15 +619,15 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitTypeArgument(Java8Parser.TypeArgumentContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#wildcard}.
+	 * Enter a parse tree produced by {@link Java8Parser#wildCard}.
 	 * @param ctx the parse tree
 	 */
-	void enterWildcard(Java8Parser.WildcardContext ctx);
+	void enterWildCard(Java8Parser.WildCardContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#wildcard}.
+	 * Exit a parse tree produced by {@link Java8Parser#wildCard}.
 	 * @param ctx the parse tree
 	 */
-	void exitWildcard(Java8Parser.WildcardContext ctx);
+	void exitWildCard(Java8Parser.WildCardContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#wildcardBounds}.
 	 * @param ctx the parse tree
@@ -229,815 +639,205 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitWildcardBounds(Java8Parser.WildcardBoundsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#typeName}.
+	 * Enter a parse tree produced by {@link Java8Parser#intersectionType}.
 	 * @param ctx the parse tree
 	 */
-	void enterTypeName(Java8Parser.TypeNameContext ctx);
+	void enterIntersectionType(Java8Parser.IntersectionTypeContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#typeName}.
+	 * Exit a parse tree produced by {@link Java8Parser#intersectionType}.
 	 * @param ctx the parse tree
 	 */
-	void exitTypeName(Java8Parser.TypeNameContext ctx);
+	void exitIntersectionType(Java8Parser.IntersectionTypeContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#packageOrTypeName}.
+	 * Enter a parse tree produced by {@link Java8Parser#unionType}.
 	 * @param ctx the parse tree
 	 */
-	void enterPackageOrTypeName(Java8Parser.PackageOrTypeNameContext ctx);
+	void enterUnionType(Java8Parser.UnionTypeContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#packageOrTypeName}.
+	 * Exit a parse tree produced by {@link Java8Parser#unionType}.
 	 * @param ctx the parse tree
 	 */
-	void exitPackageOrTypeName(Java8Parser.PackageOrTypeNameContext ctx);
+	void exitUnionType(Java8Parser.UnionTypeContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#expressionName}.
+	 * Enter a parse tree produced by {@link Java8Parser#identifier}.
 	 * @param ctx the parse tree
 	 */
-	void enterExpressionName(Java8Parser.ExpressionNameContext ctx);
+	void enterIdentifier(Java8Parser.IdentifierContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#expressionName}.
+	 * Exit a parse tree produced by {@link Java8Parser#identifier}.
 	 * @param ctx the parse tree
 	 */
-	void exitExpressionName(Java8Parser.ExpressionNameContext ctx);
+	void exitIdentifier(Java8Parser.IdentifierContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#methodName}.
+	 * Enter a parse tree produced by {@link Java8Parser#codeHole}.
 	 * @param ctx the parse tree
 	 */
-	void enterMethodName(Java8Parser.MethodNameContext ctx);
+	void enterCodeHole(Java8Parser.CodeHoleContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#methodName}.
+	 * Exit a parse tree produced by {@link Java8Parser#codeHole}.
 	 * @param ctx the parse tree
 	 */
-	void exitMethodName(Java8Parser.MethodNameContext ctx);
+	void exitCodeHole(Java8Parser.CodeHoleContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#ambiguousName}.
+	 * Enter a parse tree produced by {@link Java8Parser#preExist}.
 	 * @param ctx the parse tree
 	 */
-	void enterAmbiguousName(Java8Parser.AmbiguousNameContext ctx);
+	void enterPreExist(Java8Parser.PreExistContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#ambiguousName}.
+	 * Exit a parse tree produced by {@link Java8Parser#preExist}.
 	 * @param ctx the parse tree
 	 */
-	void exitAmbiguousName(Java8Parser.AmbiguousNameContext ctx);
+	void exitPreExist(Java8Parser.PreExistContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#typeDeclarationStatement}.
+	 * Enter a parse tree produced by {@link Java8Parser#endOfStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterTypeDeclarationStatement(Java8Parser.TypeDeclarationStatementContext ctx);
+	void enterEndOfStatement(Java8Parser.EndOfStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#typeDeclarationStatement}.
+	 * Exit a parse tree produced by {@link Java8Parser#endOfStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitTypeDeclarationStatement(Java8Parser.TypeDeclarationStatementContext ctx);
+	void exitEndOfStatement(Java8Parser.EndOfStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#typeParameters}.
+	 * Enter a parse tree produced by {@link Java8Parser#fullEnd}.
 	 * @param ctx the parse tree
 	 */
-	void enterTypeParameters(Java8Parser.TypeParametersContext ctx);
+	void enterFullEnd(Java8Parser.FullEndContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#typeParameters}.
+	 * Exit a parse tree produced by {@link Java8Parser#fullEnd}.
 	 * @param ctx the parse tree
 	 */
-	void exitTypeParameters(Java8Parser.TypeParametersContext ctx);
+	void exitFullEnd(Java8Parser.FullEndContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#typeParameterList}.
+	 * Enter a parse tree produced by {@link Java8Parser#endOfAStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterTypeParameterList(Java8Parser.TypeParameterListContext ctx);
+	void enterEndOfAStatement(Java8Parser.EndOfAStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#typeParameterList}.
+	 * Exit a parse tree produced by {@link Java8Parser#endOfAStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitTypeParameterList(Java8Parser.TypeParameterListContext ctx);
+	void exitEndOfAStatement(Java8Parser.EndOfAStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#variableDeclaratorList}.
+	 * Enter a parse tree produced by {@link Java8Parser#partialEnd}.
 	 * @param ctx the parse tree
 	 */
-	void enterVariableDeclaratorList(Java8Parser.VariableDeclaratorListContext ctx);
+	void enterPartialEnd(Java8Parser.PartialEndContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#variableDeclaratorList}.
+	 * Exit a parse tree produced by {@link Java8Parser#partialEnd}.
 	 * @param ctx the parse tree
 	 */
-	void exitVariableDeclaratorList(Java8Parser.VariableDeclaratorListContext ctx);
+	void exitPartialEnd(Java8Parser.PartialEndContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#variableDeclarator}.
+	 * Enter a parse tree produced by {@link Java8Parser#onePartialEnd}.
 	 * @param ctx the parse tree
 	 */
-	void enterVariableDeclarator(Java8Parser.VariableDeclaratorContext ctx);
+	void enterOnePartialEnd(Java8Parser.OnePartialEndContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#variableDeclarator}.
+	 * Exit a parse tree produced by {@link Java8Parser#onePartialEnd}.
 	 * @param ctx the parse tree
 	 */
-	void exitVariableDeclarator(Java8Parser.VariableDeclaratorContext ctx);
+	void exitOnePartialEnd(Java8Parser.OnePartialEndContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#variableDeclaratorId}.
+	 * Enter a parse tree produced by {@link Java8Parser#endOfAPartialStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterVariableDeclaratorId(Java8Parser.VariableDeclaratorIdContext ctx);
+	void enterEndOfAPartialStatement(Java8Parser.EndOfAPartialStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#variableDeclaratorId}.
+	 * Exit a parse tree produced by {@link Java8Parser#endOfAPartialStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitVariableDeclaratorId(Java8Parser.VariableDeclaratorIdContext ctx);
+	void exitEndOfAPartialStatement(Java8Parser.EndOfAPartialStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#variableInitializer}.
+	 * Enter a parse tree produced by {@link Java8Parser#endOfArrayDeclarationIndexExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterVariableInitializer(Java8Parser.VariableInitializerContext ctx);
+	void enterEndOfArrayDeclarationIndexExpression(Java8Parser.EndOfArrayDeclarationIndexExpressionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#variableInitializer}.
+	 * Exit a parse tree produced by {@link Java8Parser#endOfArrayDeclarationIndexExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitVariableInitializer(Java8Parser.VariableInitializerContext ctx);
+	void exitEndOfArrayDeclarationIndexExpression(Java8Parser.EndOfArrayDeclarationIndexExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#methodDeclaration}.
+	 * Enter a parse tree produced by {@link Java8Parser#rightParenthese}.
 	 * @param ctx the parse tree
 	 */
-	void enterMethodDeclaration(Java8Parser.MethodDeclarationContext ctx);
+	void enterRightParenthese(Java8Parser.RightParentheseContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#methodDeclaration}.
+	 * Exit a parse tree produced by {@link Java8Parser#rightParenthese}.
 	 * @param ctx the parse tree
 	 */
-	void exitMethodDeclaration(Java8Parser.MethodDeclarationContext ctx);
+	void exitRightParenthese(Java8Parser.RightParentheseContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#formalParameters}.
+	 * Enter a parse tree produced by {@link Java8Parser#integerLiteral}.
 	 * @param ctx the parse tree
 	 */
-	void enterFormalParameters(Java8Parser.FormalParametersContext ctx);
+	void enterIntegerLiteral(Java8Parser.IntegerLiteralContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#formalParameters}.
+	 * Exit a parse tree produced by {@link Java8Parser#integerLiteral}.
 	 * @param ctx the parse tree
 	 */
-	void exitFormalParameters(Java8Parser.FormalParametersContext ctx);
+	void exitIntegerLiteral(Java8Parser.IntegerLiteralContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#formalParameter}.
+	 * Enter a parse tree produced by {@link Java8Parser#floatingPointLiteral}.
 	 * @param ctx the parse tree
 	 */
-	void enterFormalParameter(Java8Parser.FormalParameterContext ctx);
+	void enterFloatingPointLiteral(Java8Parser.FloatingPointLiteralContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#formalParameter}.
+	 * Exit a parse tree produced by {@link Java8Parser#floatingPointLiteral}.
 	 * @param ctx the parse tree
 	 */
-	void exitFormalParameter(Java8Parser.FormalParameterContext ctx);
+	void exitFloatingPointLiteral(Java8Parser.FloatingPointLiteralContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#receiverParameter}.
+	 * Enter a parse tree produced by {@link Java8Parser#booleanLiteral}.
 	 * @param ctx the parse tree
 	 */
-	void enterReceiverParameter(Java8Parser.ReceiverParameterContext ctx);
+	void enterBooleanLiteral(Java8Parser.BooleanLiteralContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#receiverParameter}.
+	 * Exit a parse tree produced by {@link Java8Parser#booleanLiteral}.
 	 * @param ctx the parse tree
 	 */
-	void exitReceiverParameter(Java8Parser.ReceiverParameterContext ctx);
+	void exitBooleanLiteral(Java8Parser.BooleanLiteralContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#exceptionTypeList}.
+	 * Enter a parse tree produced by {@link Java8Parser#characterLiteral}.
 	 * @param ctx the parse tree
 	 */
-	void enterExceptionTypeList(Java8Parser.ExceptionTypeListContext ctx);
+	void enterCharacterLiteral(Java8Parser.CharacterLiteralContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#exceptionTypeList}.
+	 * Exit a parse tree produced by {@link Java8Parser#characterLiteral}.
 	 * @param ctx the parse tree
 	 */
-	void exitExceptionTypeList(Java8Parser.ExceptionTypeListContext ctx);
+	void exitCharacterLiteral(Java8Parser.CharacterLiteralContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#exceptionType}.
+	 * Enter a parse tree produced by {@link Java8Parser#nullLiteral}.
 	 * @param ctx the parse tree
 	 */
-	void enterExceptionType(Java8Parser.ExceptionTypeContext ctx);
+	void enterNullLiteral(Java8Parser.NullLiteralContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#exceptionType}.
+	 * Exit a parse tree produced by {@link Java8Parser#nullLiteral}.
 	 * @param ctx the parse tree
 	 */
-	void exitExceptionType(Java8Parser.ExceptionTypeContext ctx);
+	void exitNullLiteral(Java8Parser.NullLiteralContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#simpleTypeName}.
+	 * Enter a parse tree produced by {@link Java8Parser#unaryOperator}.
 	 * @param ctx the parse tree
 	 */
-	void enterSimpleTypeName(Java8Parser.SimpleTypeNameContext ctx);
+	void enterUnaryOperator(Java8Parser.UnaryOperatorContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#simpleTypeName}.
+	 * Exit a parse tree produced by {@link Java8Parser#unaryOperator}.
 	 * @param ctx the parse tree
 	 */
-	void exitSimpleTypeName(Java8Parser.SimpleTypeNameContext ctx);
+	void exitUnaryOperator(Java8Parser.UnaryOperatorContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#explicitConstructorInvocation}.
+	 * Enter a parse tree produced by {@link Java8Parser#binaryOperator}.
 	 * @param ctx the parse tree
 	 */
-	void enterExplicitConstructorInvocation(Java8Parser.ExplicitConstructorInvocationContext ctx);
+	void enterBinaryOperator(Java8Parser.BinaryOperatorContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#explicitConstructorInvocation}.
+	 * Exit a parse tree produced by {@link Java8Parser#binaryOperator}.
 	 * @param ctx the parse tree
 	 */
-	void exitExplicitConstructorInvocation(Java8Parser.ExplicitConstructorInvocationContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#localVariableDeclarationStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterLocalVariableDeclarationStatement(Java8Parser.LocalVariableDeclarationStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#localVariableDeclarationStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitLocalVariableDeclarationStatement(Java8Parser.LocalVariableDeclarationStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#localVariableDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void enterLocalVariableDeclaration(Java8Parser.LocalVariableDeclarationContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#localVariableDeclaration}.
-	 * @param ctx the parse tree
-	 */
-	void exitLocalVariableDeclaration(Java8Parser.LocalVariableDeclarationContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#statement}.
-	 * @param ctx the parse tree
-	 */
-	void enterStatement(Java8Parser.StatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#statement}.
-	 * @param ctx the parse tree
-	 */
-	void exitStatement(Java8Parser.StatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#statementWithoutTrailingSubstatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterStatementWithoutTrailingSubstatement(Java8Parser.StatementWithoutTrailingSubstatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#statementWithoutTrailingSubstatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitStatementWithoutTrailingSubstatement(Java8Parser.StatementWithoutTrailingSubstatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#ifStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterIfStatement(Java8Parser.IfStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#ifStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitIfStatement(Java8Parser.IfStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#assertStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterAssertStatement(Java8Parser.AssertStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#assertStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitAssertStatement(Java8Parser.AssertStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#switchStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterSwitchStatement(Java8Parser.SwitchStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#switchStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitSwitchStatement(Java8Parser.SwitchStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#caseStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterCaseStatement(Java8Parser.CaseStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#caseStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitCaseStatement(Java8Parser.CaseStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#whileStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterWhileStatement(Java8Parser.WhileStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#whileStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitWhileStatement(Java8Parser.WhileStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#doStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterDoStatement(Java8Parser.DoStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#doStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitDoStatement(Java8Parser.DoStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#forStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterForStatement(Java8Parser.ForStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#forStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitForStatement(Java8Parser.ForStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#breakStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterBreakStatement(Java8Parser.BreakStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#breakStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitBreakStatement(Java8Parser.BreakStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#continueStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterContinueStatement(Java8Parser.ContinueStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#continueStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitContinueStatement(Java8Parser.ContinueStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#returnStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterReturnStatement(Java8Parser.ReturnStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#returnStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitReturnStatement(Java8Parser.ReturnStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#throwStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterThrowStatement(Java8Parser.ThrowStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#throwStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitThrowStatement(Java8Parser.ThrowStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#synchronizedStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterSynchronizedStatement(Java8Parser.SynchronizedStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#synchronizedStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitSynchronizedStatement(Java8Parser.SynchronizedStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#tryStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterTryStatement(Java8Parser.TryStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#tryStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitTryStatement(Java8Parser.TryStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#catchClause}.
-	 * @param ctx the parse tree
-	 */
-	void enterCatchClause(Java8Parser.CatchClauseContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#catchClause}.
-	 * @param ctx the parse tree
-	 */
-	void exitCatchClause(Java8Parser.CatchClauseContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#catchFormalParameter}.
-	 * @param ctx the parse tree
-	 */
-	void enterCatchFormalParameter(Java8Parser.CatchFormalParameterContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#catchFormalParameter}.
-	 * @param ctx the parse tree
-	 */
-	void exitCatchFormalParameter(Java8Parser.CatchFormalParameterContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#catchType}.
-	 * @param ctx the parse tree
-	 */
-	void enterCatchType(Java8Parser.CatchTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#catchType}.
-	 * @param ctx the parse tree
-	 */
-	void exitCatchType(Java8Parser.CatchTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#resource}.
-	 * @param ctx the parse tree
-	 */
-	void enterResource(Java8Parser.ResourceContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#resource}.
-	 * @param ctx the parse tree
-	 */
-	void exitResource(Java8Parser.ResourceContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#primary}.
-	 * @param ctx the parse tree
-	 */
-	void enterPrimary(Java8Parser.PrimaryContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#primary}.
-	 * @param ctx the parse tree
-	 */
-	void exitPrimary(Java8Parser.PrimaryContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#primaryNoNewArray}.
-	 * @param ctx the parse tree
-	 */
-	void enterPrimaryNoNewArray(Java8Parser.PrimaryNoNewArrayContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#primaryNoNewArray}.
-	 * @param ctx the parse tree
-	 */
-	void exitPrimaryNoNewArray(Java8Parser.PrimaryNoNewArrayContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#primaryNoNewArray_lf_arrayAccess}.
-	 * @param ctx the parse tree
-	 */
-	void enterPrimaryNoNewArray_lf_arrayAccess(Java8Parser.PrimaryNoNewArray_lf_arrayAccessContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#primaryNoNewArray_lf_arrayAccess}.
-	 * @param ctx the parse tree
-	 */
-	void exitPrimaryNoNewArray_lf_arrayAccess(Java8Parser.PrimaryNoNewArray_lf_arrayAccessContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#primaryNoNewArray_lfno_arrayAccess}.
-	 * @param ctx the parse tree
-	 */
-	void enterPrimaryNoNewArray_lfno_arrayAccess(Java8Parser.PrimaryNoNewArray_lfno_arrayAccessContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#primaryNoNewArray_lfno_arrayAccess}.
-	 * @param ctx the parse tree
-	 */
-	void exitPrimaryNoNewArray_lfno_arrayAccess(Java8Parser.PrimaryNoNewArray_lfno_arrayAccessContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#primaryNoNewArray_lf_primary}.
-	 * @param ctx the parse tree
-	 */
-	void enterPrimaryNoNewArray_lf_primary(Java8Parser.PrimaryNoNewArray_lf_primaryContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#primaryNoNewArray_lf_primary}.
-	 * @param ctx the parse tree
-	 */
-	void exitPrimaryNoNewArray_lf_primary(Java8Parser.PrimaryNoNewArray_lf_primaryContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#primaryNoNewArray_lf_primary_lf_arrayAccess_lf_primary}.
-	 * @param ctx the parse tree
-	 */
-	void enterPrimaryNoNewArray_lf_primary_lf_arrayAccess_lf_primary(Java8Parser.PrimaryNoNewArray_lf_primary_lf_arrayAccess_lf_primaryContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#primaryNoNewArray_lf_primary_lf_arrayAccess_lf_primary}.
-	 * @param ctx the parse tree
-	 */
-	void exitPrimaryNoNewArray_lf_primary_lf_arrayAccess_lf_primary(Java8Parser.PrimaryNoNewArray_lf_primary_lf_arrayAccess_lf_primaryContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#primaryNoNewArray_lf_primary_lfno_arrayAccess_lf_primary}.
-	 * @param ctx the parse tree
-	 */
-	void enterPrimaryNoNewArray_lf_primary_lfno_arrayAccess_lf_primary(Java8Parser.PrimaryNoNewArray_lf_primary_lfno_arrayAccess_lf_primaryContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#primaryNoNewArray_lf_primary_lfno_arrayAccess_lf_primary}.
-	 * @param ctx the parse tree
-	 */
-	void exitPrimaryNoNewArray_lf_primary_lfno_arrayAccess_lf_primary(Java8Parser.PrimaryNoNewArray_lf_primary_lfno_arrayAccess_lf_primaryContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#primaryNoNewArray_lfno_primary}.
-	 * @param ctx the parse tree
-	 */
-	void enterPrimaryNoNewArray_lfno_primary(Java8Parser.PrimaryNoNewArray_lfno_primaryContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#primaryNoNewArray_lfno_primary}.
-	 * @param ctx the parse tree
-	 */
-	void exitPrimaryNoNewArray_lfno_primary(Java8Parser.PrimaryNoNewArray_lfno_primaryContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#primaryNoNewArray_lfno_primary_lf_arrayAccess_lfno_primary}.
-	 * @param ctx the parse tree
-	 */
-	void enterPrimaryNoNewArray_lfno_primary_lf_arrayAccess_lfno_primary(Java8Parser.PrimaryNoNewArray_lfno_primary_lf_arrayAccess_lfno_primaryContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#primaryNoNewArray_lfno_primary_lf_arrayAccess_lfno_primary}.
-	 * @param ctx the parse tree
-	 */
-	void exitPrimaryNoNewArray_lfno_primary_lf_arrayAccess_lfno_primary(Java8Parser.PrimaryNoNewArray_lfno_primary_lf_arrayAccess_lfno_primaryContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#primaryNoNewArray_lfno_primary_lfno_arrayAccess_lfno_primary}.
-	 * @param ctx the parse tree
-	 */
-	void enterPrimaryNoNewArray_lfno_primary_lfno_arrayAccess_lfno_primary(Java8Parser.PrimaryNoNewArray_lfno_primary_lfno_arrayAccess_lfno_primaryContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#primaryNoNewArray_lfno_primary_lfno_arrayAccess_lfno_primary}.
-	 * @param ctx the parse tree
-	 */
-	void exitPrimaryNoNewArray_lfno_primary_lfno_arrayAccess_lfno_primary(Java8Parser.PrimaryNoNewArray_lfno_primary_lfno_arrayAccess_lfno_primaryContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#classInstanceCreationExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterClassInstanceCreationExpression(Java8Parser.ClassInstanceCreationExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#classInstanceCreationExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitClassInstanceCreationExpression(Java8Parser.ClassInstanceCreationExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#classInstanceCreationExpression_lf_primary}.
-	 * @param ctx the parse tree
-	 */
-	void enterClassInstanceCreationExpression_lf_primary(Java8Parser.ClassInstanceCreationExpression_lf_primaryContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#classInstanceCreationExpression_lf_primary}.
-	 * @param ctx the parse tree
-	 */
-	void exitClassInstanceCreationExpression_lf_primary(Java8Parser.ClassInstanceCreationExpression_lf_primaryContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#classInstanceCreationExpression_lfno_primary}.
-	 * @param ctx the parse tree
-	 */
-	void enterClassInstanceCreationExpression_lfno_primary(Java8Parser.ClassInstanceCreationExpression_lfno_primaryContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#classInstanceCreationExpression_lfno_primary}.
-	 * @param ctx the parse tree
-	 */
-	void exitClassInstanceCreationExpression_lfno_primary(Java8Parser.ClassInstanceCreationExpression_lfno_primaryContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#typeArgumentsOrDiamond}.
-	 * @param ctx the parse tree
-	 */
-	void enterTypeArgumentsOrDiamond(Java8Parser.TypeArgumentsOrDiamondContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#typeArgumentsOrDiamond}.
-	 * @param ctx the parse tree
-	 */
-	void exitTypeArgumentsOrDiamond(Java8Parser.TypeArgumentsOrDiamondContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#fieldAccess}.
-	 * @param ctx the parse tree
-	 */
-	void enterFieldAccess(Java8Parser.FieldAccessContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#fieldAccess}.
-	 * @param ctx the parse tree
-	 */
-	void exitFieldAccess(Java8Parser.FieldAccessContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#fieldAccess_lf_primary}.
-	 * @param ctx the parse tree
-	 */
-	void enterFieldAccess_lf_primary(Java8Parser.FieldAccess_lf_primaryContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#fieldAccess_lf_primary}.
-	 * @param ctx the parse tree
-	 */
-	void exitFieldAccess_lf_primary(Java8Parser.FieldAccess_lf_primaryContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#fieldAccess_lfno_primary}.
-	 * @param ctx the parse tree
-	 */
-	void enterFieldAccess_lfno_primary(Java8Parser.FieldAccess_lfno_primaryContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#fieldAccess_lfno_primary}.
-	 * @param ctx the parse tree
-	 */
-	void exitFieldAccess_lfno_primary(Java8Parser.FieldAccess_lfno_primaryContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#arrayAccess}.
-	 * @param ctx the parse tree
-	 */
-	void enterArrayAccess(Java8Parser.ArrayAccessContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#arrayAccess}.
-	 * @param ctx the parse tree
-	 */
-	void exitArrayAccess(Java8Parser.ArrayAccessContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#arrayAccess_lf_primary}.
-	 * @param ctx the parse tree
-	 */
-	void enterArrayAccess_lf_primary(Java8Parser.ArrayAccess_lf_primaryContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#arrayAccess_lf_primary}.
-	 * @param ctx the parse tree
-	 */
-	void exitArrayAccess_lf_primary(Java8Parser.ArrayAccess_lf_primaryContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#arrayAccess_lfno_primary}.
-	 * @param ctx the parse tree
-	 */
-	void enterArrayAccess_lfno_primary(Java8Parser.ArrayAccess_lfno_primaryContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#arrayAccess_lfno_primary}.
-	 * @param ctx the parse tree
-	 */
-	void exitArrayAccess_lfno_primary(Java8Parser.ArrayAccess_lfno_primaryContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#methodInvocation}.
-	 * @param ctx the parse tree
-	 */
-	void enterMethodInvocation(Java8Parser.MethodInvocationContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#methodInvocation}.
-	 * @param ctx the parse tree
-	 */
-	void exitMethodInvocation(Java8Parser.MethodInvocationContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#methodInvocation_lf_primary}.
-	 * @param ctx the parse tree
-	 */
-	void enterMethodInvocation_lf_primary(Java8Parser.MethodInvocation_lf_primaryContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#methodInvocation_lf_primary}.
-	 * @param ctx the parse tree
-	 */
-	void exitMethodInvocation_lf_primary(Java8Parser.MethodInvocation_lf_primaryContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#methodInvocation_lfno_primary}.
-	 * @param ctx the parse tree
-	 */
-	void enterMethodInvocation_lfno_primary(Java8Parser.MethodInvocation_lfno_primaryContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#methodInvocation_lfno_primary}.
-	 * @param ctx the parse tree
-	 */
-	void exitMethodInvocation_lfno_primary(Java8Parser.MethodInvocation_lfno_primaryContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#argumentList}.
-	 * @param ctx the parse tree
-	 */
-	void enterArgumentList(Java8Parser.ArgumentListContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#argumentList}.
-	 * @param ctx the parse tree
-	 */
-	void exitArgumentList(Java8Parser.ArgumentListContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#methodReference}.
-	 * @param ctx the parse tree
-	 */
-	void enterMethodReference(Java8Parser.MethodReferenceContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#methodReference}.
-	 * @param ctx the parse tree
-	 */
-	void exitMethodReference(Java8Parser.MethodReferenceContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#methodReference_lf_primary}.
-	 * @param ctx the parse tree
-	 */
-	void enterMethodReference_lf_primary(Java8Parser.MethodReference_lf_primaryContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#methodReference_lf_primary}.
-	 * @param ctx the parse tree
-	 */
-	void exitMethodReference_lf_primary(Java8Parser.MethodReference_lf_primaryContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#methodReference_lfno_primary}.
-	 * @param ctx the parse tree
-	 */
-	void enterMethodReference_lfno_primary(Java8Parser.MethodReference_lfno_primaryContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#methodReference_lfno_primary}.
-	 * @param ctx the parse tree
-	 */
-	void exitMethodReference_lfno_primary(Java8Parser.MethodReference_lfno_primaryContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#arrayCreationExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterArrayCreationExpression(Java8Parser.ArrayCreationExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#arrayCreationExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitArrayCreationExpression(Java8Parser.ArrayCreationExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#arrayInitializer}.
-	 * @param ctx the parse tree
-	 */
-	void enterArrayInitializer(Java8Parser.ArrayInitializerContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#arrayInitializer}.
-	 * @param ctx the parse tree
-	 */
-	void exitArrayInitializer(Java8Parser.ArrayInitializerContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#variableInitializerList}.
-	 * @param ctx the parse tree
-	 */
-	void enterVariableInitializerList(Java8Parser.VariableInitializerListContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#variableInitializerList}.
-	 * @param ctx the parse tree
-	 */
-	void exitVariableInitializerList(Java8Parser.VariableInitializerListContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#dimExprs}.
-	 * @param ctx the parse tree
-	 */
-	void enterDimExprs(Java8Parser.DimExprsContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#dimExprs}.
-	 * @param ctx the parse tree
-	 */
-	void exitDimExprs(Java8Parser.DimExprsContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#dimExpr}.
-	 * @param ctx the parse tree
-	 */
-	void enterDimExpr(Java8Parser.DimExprContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#dimExpr}.
-	 * @param ctx the parse tree
-	 */
-	void exitDimExpr(Java8Parser.DimExprContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#constantExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterConstantExpression(Java8Parser.ConstantExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#constantExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitConstantExpression(Java8Parser.ConstantExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void enterExpression(Java8Parser.ExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#expression}.
-	 * @param ctx the parse tree
-	 */
-	void exitExpression(Java8Parser.ExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#lambdaExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterLambdaExpression(Java8Parser.LambdaExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#lambdaExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitLambdaExpression(Java8Parser.LambdaExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#lambdaParameters}.
-	 * @param ctx the parse tree
-	 */
-	void enterLambdaParameters(Java8Parser.LambdaParametersContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#lambdaParameters}.
-	 * @param ctx the parse tree
-	 */
-	void exitLambdaParameters(Java8Parser.LambdaParametersContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#lambdaBody}.
-	 * @param ctx the parse tree
-	 */
-	void enterLambdaBody(Java8Parser.LambdaBodyContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#lambdaBody}.
-	 * @param ctx the parse tree
-	 */
-	void exitLambdaBody(Java8Parser.LambdaBodyContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#assignmentExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterAssignmentExpression(Java8Parser.AssignmentExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#assignmentExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitAssignmentExpression(Java8Parser.AssignmentExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#assignment}.
-	 * @param ctx the parse tree
-	 */
-	void enterAssignment(Java8Parser.AssignmentContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#assignment}.
-	 * @param ctx the parse tree
-	 */
-	void exitAssignment(Java8Parser.AssignmentContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#leftHandSide}.
-	 * @param ctx the parse tree
-	 */
-	void enterLeftHandSide(Java8Parser.LeftHandSideContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#leftHandSide}.
-	 * @param ctx the parse tree
-	 */
-	void exitLeftHandSide(Java8Parser.LeftHandSideContext ctx);
+	void exitBinaryOperator(Java8Parser.BinaryOperatorContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#assignmentOperator}.
 	 * @param ctx the parse tree
@@ -1048,224 +848,4 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitAssignmentOperator(Java8Parser.AssignmentOperatorContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#conditionalExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterConditionalExpression(Java8Parser.ConditionalExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#conditionalExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitConditionalExpression(Java8Parser.ConditionalExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#conditionalOrExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterConditionalOrExpression(Java8Parser.ConditionalOrExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#conditionalOrExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitConditionalOrExpression(Java8Parser.ConditionalOrExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#conditionalAndExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterConditionalAndExpression(Java8Parser.ConditionalAndExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#conditionalAndExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitConditionalAndExpression(Java8Parser.ConditionalAndExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#inclusiveOrExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterInclusiveOrExpression(Java8Parser.InclusiveOrExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#inclusiveOrExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitInclusiveOrExpression(Java8Parser.InclusiveOrExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#exclusiveOrExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterExclusiveOrExpression(Java8Parser.ExclusiveOrExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#exclusiveOrExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitExclusiveOrExpression(Java8Parser.ExclusiveOrExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#andExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterAndExpression(Java8Parser.AndExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#andExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitAndExpression(Java8Parser.AndExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#equalityExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterEqualityExpression(Java8Parser.EqualityExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#equalityExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitEqualityExpression(Java8Parser.EqualityExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#relationalExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterRelationalExpression(Java8Parser.RelationalExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#relationalExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitRelationalExpression(Java8Parser.RelationalExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#shiftExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterShiftExpression(Java8Parser.ShiftExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#shiftExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitShiftExpression(Java8Parser.ShiftExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#additiveExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterAdditiveExpression(Java8Parser.AdditiveExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#additiveExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitAdditiveExpression(Java8Parser.AdditiveExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#multiplicativeExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterMultiplicativeExpression(Java8Parser.MultiplicativeExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#multiplicativeExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitMultiplicativeExpression(Java8Parser.MultiplicativeExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#unaryExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterUnaryExpression(Java8Parser.UnaryExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#unaryExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitUnaryExpression(Java8Parser.UnaryExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#preIncrementExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterPreIncrementExpression(Java8Parser.PreIncrementExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#preIncrementExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitPreIncrementExpression(Java8Parser.PreIncrementExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#preDecrementExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterPreDecrementExpression(Java8Parser.PreDecrementExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#preDecrementExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitPreDecrementExpression(Java8Parser.PreDecrementExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#unaryExpressionNotPlusMinus}.
-	 * @param ctx the parse tree
-	 */
-	void enterUnaryExpressionNotPlusMinus(Java8Parser.UnaryExpressionNotPlusMinusContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#unaryExpressionNotPlusMinus}.
-	 * @param ctx the parse tree
-	 */
-	void exitUnaryExpressionNotPlusMinus(Java8Parser.UnaryExpressionNotPlusMinusContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#postfixExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterPostfixExpression(Java8Parser.PostfixExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#postfixExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitPostfixExpression(Java8Parser.PostfixExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#postIncrementExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterPostIncrementExpression(Java8Parser.PostIncrementExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#postIncrementExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitPostIncrementExpression(Java8Parser.PostIncrementExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#postIncrementExpression_lf_postfixExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterPostIncrementExpression_lf_postfixExpression(Java8Parser.PostIncrementExpression_lf_postfixExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#postIncrementExpression_lf_postfixExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitPostIncrementExpression_lf_postfixExpression(Java8Parser.PostIncrementExpression_lf_postfixExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#postDecrementExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterPostDecrementExpression(Java8Parser.PostDecrementExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#postDecrementExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitPostDecrementExpression(Java8Parser.PostDecrementExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#postDecrementExpression_lf_postfixExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterPostDecrementExpression_lf_postfixExpression(Java8Parser.PostDecrementExpression_lf_postfixExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#postDecrementExpression_lf_postfixExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitPostDecrementExpression_lf_postfixExpression(Java8Parser.PostDecrementExpression_lf_postfixExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#castExpression}.
-	 * @param ctx the parse tree
-	 */
-	void enterCastExpression(Java8Parser.CastExpressionContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#castExpression}.
-	 * @param ctx the parse tree
-	 */
-	void exitCastExpression(Java8Parser.CastExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#additionalBoundOrClassRef}.
-	 * @param ctx the parse tree
-	 */
-	void enterAdditionalBoundOrClassRef(Java8Parser.AdditionalBoundOrClassRefContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#additionalBoundOrClassRef}.
-	 * @param ctx the parse tree
-	 */
-	void exitAdditionalBoundOrClassRef(Java8Parser.AdditionalBoundOrClassRefContext ctx);
 }

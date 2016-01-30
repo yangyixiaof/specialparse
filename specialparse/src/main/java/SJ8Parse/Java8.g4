@@ -6,20 +6,13 @@ statement
 	|	leftBraceStatement
 	|	rightBraceStatement
 	|	lambdaExpressionStatement
-	|	methodReferenceStatement
-	|	castExpressionStatement
-	|	assignmentStatement
 	|	breakStatement
 	|	continueStatement
 	|	doStatement
 	|	enhancedForStatement
 	|	arrayAccessStatement
 	|	arrayInitializerStartStatement
-	|	infixExpressionStatement
-	|	instanceofExpressionStatement
 	|	labeledStatement
-	|	postfixExpressionStatement
-	|	prefixExpressionStatement
 	|	returnStatement
 	|	switchStatement
 	|	switchCaseStatement
@@ -53,10 +46,15 @@ expression
 	|	identifier
 	|	postfixExpression
 	|	prefixExpression
-	|	
 	;
 	
-assignment : expression assignmentOperator expression ;
+referedExpression
+	:	identifier
+	|	fieldAccess
+	|	literal
+	;
+	
+assignment : referedExpression assignmentOperator expression ;
 
 methodInvocation : identifier '(' argumentList ')' ;
 
@@ -68,11 +66,11 @@ typeList : type (',' type)* ;
 
 fieldAccess : identifier '.' expression ;
 
-condExpColonMarkStatement : 'CondExpCM' AT DH endOfStatement ;
+condExpColonMarkStatement : 'CondExpCM' AT 'DH' endOfStatement ;
 
-condExpQuestionMarkStatement : 'CondExpQM' AT DH endOfStatement ;
+condExpQuestionMarkStatement : 'CondExpQM' AT 'DH' endOfStatement ;
 
-condExpBeginStatement : 'CondExpBegin' AT DH endOfStatement ;
+condExpBeginStatement : 'CondExpBegin' AT 'DH' endOfStatement ;
 
 variableDeclarationTypeStatement : type AT 'VD' endOfStatement ;
 
@@ -98,9 +96,9 @@ switchCaseStatement : 'case' '#' expression endOfStatement ;
 	
 switchStatement : 'switch' '#' expression endOfStatement ;
 
-breakStatement : 'break' '#' identifier? endOfStatement ;
+breakStatement : 'break' ('#' identifier)? endOfStatement ;
 
-continueStatement : 'continue' '#' identifier? endOfStatement ;
+continueStatement : 'continue' ('#' identifier)? endOfStatement ;
 
 doStatement : 'do' AT 'DH' endOfStatement ;
 
@@ -110,21 +108,21 @@ arrayAccessStatement : expression '@AC' expression endOfStatement ;
 
 arrayInitializerStartStatement : 'arrIni' AT 'DH' endOfStatement ;
 
-infixExpression : expression binaryOperator expression ;
+infixExpression : referedExpression binaryOperator expression ;
 
-instanceofExpression : expression 'instanceof' type ;
+instanceofExpression : referedExpression 'instanceof' type ;
 
 labeledStatement : identifier AT 'LD' endOfStatement ;
 
-postfixExpression : expression unaryOperator ;
+postfixExpression : referedExpression unaryOperator ;
 
 prefixExpression : unaryOperator expression ;
 
-returnStatement : 'return' expression? endOfStatement ;
+returnStatement : 'return' ('#' expression)? endOfStatement ;
 
 castExpression : '(' type ')' expression ;
 	
-methodReferenceStatement : identifier '::' expression endOfStatement ;
+methodReference : identifier '::' expression ;
 
 lambdaExpressionStatement : lambdaParameters '->' '{}' endOfStatement ;
 
@@ -147,30 +145,17 @@ leftBraceStatement : '{' ;
 rightBraceStatement : '}' ;
 
 literal
-	:	NumberLiteral
-	|	BooleanLiteral
-	|	CharacterLiteral
-	|	StringLiteral
-	|	NullLiteral
+	:	numberLiteral
+	|	booleanLiteral
+	|	characterLiteral
+	|	stringLiteral
+	|	nullLiteral
 	;
 
 referenceType
 	:	classOrInterfaceType
-	|	classRef
+	|	ClassRef
 	|	arrayType
-	;
-
-classOrInterfaceType
-	:	(	identifier
-		)
-		(	'.' identifier
-		)*
-	;
-
-arrayType
-	:	primitiveType dims
-	|	classOrInterfaceType dims
-	|	identifier dims
 	;
 
 numberLiteral
@@ -188,7 +173,7 @@ type
 	|	arrayType
 	|	intersectionType
 	|	unionType
-	|	classRef
+	|	ClassRef
 	;
 	
 primitiveType
@@ -203,7 +188,7 @@ primitiveType
 	;
 
 classOrInterfaceType
-	:	(Identifier typeArguments?) ('.' Identifier typeArguments?)*
+	:	(identifier typeArguments?) ('.' identifier typeArguments?)*
 	;
 
 arrayType
@@ -247,15 +232,14 @@ unionType
 
 identifier
 	:	JavaLetter JavaLetterOrDigit*
-	|	finalFieldRef
-	|	finalVarRef
-	|	commonFieldRef
-	|	commonVarRef
+	|	FinalFieldRef
+	|	FinalVarRef
+	|	CommonFieldRef
+	|	CommonVarRef
 	|	codeHole
 	|	preExist
 	;
 
-fragment
 JavaLetter
 	:	[a-zA-Z$_] // these are the "java letters" below 0xFF
 	|	// covers all characters above 0xFF which are not a surrogate
@@ -266,7 +250,6 @@ JavaLetter
 		{Character.isJavaIdentifierStart(Character.toCodePoint((char)_input.LA(-2), (char)_input.LA(-1)))}?
 	;
 
-fragment
 JavaLetterOrDigit
 	:	[a-zA-Z0-9$_] // these are the "java letters or digits" below 0xFF
 	|	// covers all characters above 0xFF which are not a surrogate
@@ -277,11 +260,11 @@ JavaLetterOrDigit
 		{Character.isJavaIdentifierPart(Character.toCodePoint((char)_input.LA(-2), (char)_input.LA(-1)))}?
 	;
 
-classRef : '$K' [0-9]+ '?' [0-9]+ ;
-finalFieldRef : '$D' [0-9]+ '?' [0-9]+ ;
-finalVarRef : '$X' [0-9]+ '?' [0-9]+ ;
-commonFieldRef : '$F' [0-9]+ '?' [0-9]+ ;
-commonVarRef : '$C' [0-9]+ '?' [0-9]+ ;
+ClassRef : '$K' [0-9]+ '?' [0-9]+ ;
+FinalFieldRef : '$D' [0-9]+ '?' [0-9]+ ;
+FinalVarRef : '$X' [0-9]+ '?' [0-9]+ ;
+CommonFieldRef : '$F' [0-9]+ '?' [0-9]+ ;
+CommonVarRef : '$C' [0-9]+ '?' [0-9]+ ;
 
 codeHole : AT 'HO' ;
 preExist : AT 'PE' ;
@@ -313,142 +296,115 @@ integerLiteral
 	|	BinaryIntegerLiteral
 	;
 
-fragment
 DecimalIntegerLiteral
 	:	DecimalNumeral IntegerTypeSuffix?
 	;
 
-fragment
 HexIntegerLiteral
 	:	HexNumeral IntegerTypeSuffix?
 	;
 
-fragment
 OctalIntegerLiteral
 	:	OctalNumeral IntegerTypeSuffix?
 	;
 
-fragment
 BinaryIntegerLiteral
 	:	BinaryNumeral IntegerTypeSuffix?
 	;
 
-fragment
 IntegerTypeSuffix
 	:	[lL]
 	;
 
-fragment
 DecimalNumeral
 	:	'0'
 	|	NonZeroDigit (Digits? | Underscores Digits)
 	;
 
-fragment
 Digits
 	:	Digit (DigitsAndUnderscores? Digit)?
 	;
 
-fragment
 Digit
 	:	'0'
 	|	NonZeroDigit
 	;
 
-fragment
 NonZeroDigit
 	:	[1-9]
 	;
 
-fragment
 DigitsAndUnderscores
 	:	DigitOrUnderscore+
 	;
 
-fragment
 DigitOrUnderscore
 	:	Digit
 	|	'_'
 	;
 
-fragment
 Underscores
 	:	'_'+
 	;
 
-fragment
 HexNumeral
 	:	'0' [xX] HexDigits
 	;
 
-fragment
 HexDigits
 	:	HexDigit (HexDigitsAndUnderscores? HexDigit)?
 	;
 
-fragment
 HexDigit
 	:	[0-9a-fA-F]
 	;
 
-fragment
 HexDigitsAndUnderscores
 	:	HexDigitOrUnderscore+
 	;
 
-fragment
 HexDigitOrUnderscore
 	:	HexDigit
 	|	'_'
 	;
 
-fragment
 OctalNumeral
 	:	'0' Underscores? OctalDigits
 	;
 
-fragment
 OctalDigits
 	:	OctalDigit (OctalDigitsAndUnderscores? OctalDigit)?
 	;
 
-fragment
 OctalDigit
 	:	[0-7]
 	;
 
-fragment
 OctalDigitsAndUnderscores
 	:	OctalDigitOrUnderscore+
 	;
 
-fragment
 OctalDigitOrUnderscore
 	:	OctalDigit
 	|	'_'
 	;
 
-fragment
 BinaryNumeral
 	:	'0' [bB] BinaryDigits
 	;
 
-fragment
 BinaryDigits
 	:	BinaryDigit (BinaryDigitsAndUnderscores? BinaryDigit)?
 	;
 
-fragment
 BinaryDigit
 	:	[01]
 	;
 
-fragment
 BinaryDigitsAndUnderscores
 	:	BinaryDigitOrUnderscore+
 	;
 
-fragment
 BinaryDigitOrUnderscore
 	:	BinaryDigit
 	|	'_'
@@ -461,7 +417,6 @@ floatingPointLiteral
 	|	HexadecimalFloatingPointLiteral
 	;
 
-fragment
 DecimalFloatingPointLiteral
 	:	Digits '.' Digits? ExponentPart? FloatTypeSuffix?
 	|	'.' Digits ExponentPart? FloatTypeSuffix?
@@ -469,48 +424,39 @@ DecimalFloatingPointLiteral
 	|	Digits FloatTypeSuffix
 	;
 
-fragment
 ExponentPart
 	:	ExponentIndicator SignedInteger
 	;
 
-fragment
 ExponentIndicator
 	:	[eE]
 	;
 
-fragment
 SignedInteger
 	:	Sign? Digits
 	;
 
-fragment
 Sign
 	:	[+-]
 	;
 
-fragment
 FloatTypeSuffix
 	:	[fFdD]
 	;
 
-fragment
 HexadecimalFloatingPointLiteral
 	:	HexSignificand BinaryExponent FloatTypeSuffix?
 	;
 
-fragment
 HexSignificand
 	:	HexNumeral '.'?
 	|	'0' [xX] HexDigits? '.' HexDigits
 	;
 
-fragment
 BinaryExponent
 	:	BinaryExponentIndicator SignedInteger
 	;
 
-fragment
 BinaryExponentIndicator
 	:	[pP]
 	;
@@ -529,7 +475,6 @@ characterLiteral
 	|	'\'' EscapeSequence '\''
 	;
 
-fragment
 SingleCharacter
 	:	~['\\]
 	;
@@ -538,26 +483,22 @@ SingleCharacter
 
 // Escape Sequences for Character Literals
 
-fragment
 EscapeSequence
 	:	'\\' [btnfr"'\\]
 	|	OctalEscape
     |   UnicodeEscape // This is not in the spec but prevents having to preprocess the input
 	;
 
-fragment
 OctalEscape
 	:	'\\' OctalDigit
 	|	'\\' OctalDigit OctalDigit
 	|	'\\' ZeroToThree OctalDigit OctalDigit
 	;
 
-fragment
 ZeroToThree
 	:	[0-3]
 	;
 
-fragment
 UnicodeEscape
     :   '\\' 'u' HexDigit HexDigit HexDigit HexDigit
     ;

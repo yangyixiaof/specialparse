@@ -2,6 +2,8 @@ package AeroSpikeHandle;
 
 import SJ8Parse.Java8BaseVisitor;
 import SJ8Parse.Java8Parser;
+import SJ8Parse.Java8Parser.ExpressionContext;
+import SJ8Parse.Java8Parser.LiteralContext;
 
 public class AeroSpikeKeyJava8Visitor extends Java8BaseVisitor<Integer> {
 	
@@ -9,6 +11,187 @@ public class AeroSpikeKeyJava8Visitor extends Java8BaseVisitor<Integer> {
 	
 	@Override
 	public Integer visitStatement(Java8Parser.StatementContext ctx) {
+		if (ctx.typeDeclarationStatement() != null)
+		{
+			key = ctx.typeDeclarationStatement().getText();
+			
+		}
+		if (ctx.leftParentheseStatement() != null)
+		{
+			key = ctx.leftParentheseStatement().getText();
+		}
+		if (ctx.leftBraceStatement() != null)
+		{
+			key = ctx.leftBraceStatement().getText();
+		}
+		if (ctx.rightBraceStatement() != null)
+		{
+			key = ctx.rightBraceStatement().getText();
+		}
+		if (ctx.lambdaExpressionStatement() != null)
+		{
+			key = ctx.lambdaExpressionStatement().getText();
+		}
+		if (ctx.breakStatement() != null)
+		{
+			key = "break";
+		}
+		if (ctx.continueStatement() != null)
+		{
+			key = "continue";
+		}
+		if (ctx.doStatement() != null)
+		{
+			key = "do";
+		}
+		if (ctx.enhancedForStatement() != null)
+		{
+			key = "enhancedFor";
+		}
+		if (ctx.arrayAccessStatement() != null)
+		{
+			key = "arrAcc";
+		}
+		if (ctx.arrayInitializerStartStatement() != null)
+		{
+			key = ctx.arrayInitializerStartStatement().getText();
+		}
+		if (ctx.labeledStatement() != null)
+		{
+			key = ctx.labeledStatement().getText();
+		}
+		if (ctx.returnStatement() != null)
+		{
+			key = "return";
+		}
+		if (ctx.switchStatement() != null)
+		{
+			key = "switch";
+		}
+		if (ctx.switchCaseStatement() != null)
+		{
+			key = "case";
+		}
+		if (ctx.synchronizedStatement() != null)
+		{
+			key = "synchronized";
+		}
+		if (ctx.throwStatement() != null)
+		{
+			key = "throw";
+		}
+		if (ctx.catchClause() != null)
+		{
+			key = "catch";
+		}
+		if (ctx.whileStatement() != null)
+		{
+			key = "while";
+		}
+		if (ctx.ifStatement() != null)
+		{
+			key = "if";
+		}
+		if (ctx.forStatement() != null)
+		{
+			key = "for";
+		}
+		if (ctx.forIniOverStatement() != null)
+		{
+			key = "forIniOver";
+		}
+		if (ctx.forExpOverStatement() != null)
+		{
+			key = "forExpOver";
+		}
+		if (ctx.forUpdOverStatement() != null)
+		{
+			key = "forUpdOver";
+		}
+		if (ctx.variableDeclarationTypeStatement() != null)
+		{
+			key = ctx.variableDeclarationTypeStatement().getText();
+		}
+		if (ctx.condExpBeginStatement() != null)
+		{
+			key = "condExpBegin";
+		}
+		if (ctx.condExpQuestionMarkStatement() != null)
+		{
+			key = "condExpQuestionMark";
+		}
+		if (ctx.condExpColonMarkStatement() != null)
+		{
+			key = "condExpColonMark";
+		}
+		if (ctx.expressionStatement() != null)
+		{
+			ExpressionContext expr = ctx.expressionStatement().expression();
+			if (expr.assignment() != null)
+			{
+				key = expr.assignment().assignmentOperator().getText();
+			}
+			if (expr.literal() != null)
+			{
+				LiteralContext literal = expr.literal();
+				if (literal.numberLiteral() != null)
+				{
+					key = "number@L";
+				}
+				if (literal.booleanLiteral() != null)
+				{
+					key = "boolean@L";
+				}
+				if (literal.characterLiteral() != null)
+				{
+					key = "character@L";
+				}
+				if (literal.stringLiteral() != null)
+				{
+					key = "string@L";
+				}
+				if (literal.nullLiteral() != null)
+				{
+					key = "null@L";
+				}
+			}
+			if (expr.castExpression() != null)
+			{
+				key = "castExp";
+			}
+			if (expr.methodInvocation() != null)
+			{
+				key = expr.methodInvocation().identifier().getText()+"@MI";
+			}
+			if (expr.fieldAccess() != null)
+			{
+				key = expr.fieldAccess().identifier()+"@FA";
+			}
+			if (expr.infixExpression() != null)
+			{
+				key = expr.infixExpression().binaryOperator().getText();
+			}
+			if (expr.instanceofExpression() != null)
+			{
+				key = "instanceof";
+			}
+			if (expr.methodReference() != null)
+			{
+				key = expr.methodReference().identifier().getText()+"@MR";
+			}
+			if (expr.identifier() != null)
+			{
+				key = expr.identifier().getText()+"@ID";
+			}
+			if (expr.postfixExpression() != null)
+			{
+				key = expr.postfixExpression().unaryOperator().getText()+"@Post";
+			}
+			if (expr.prefixExpression() != null)
+			{
+				key = expr.postfixExpression().unaryOperator().getText()+"@Pre";
+			}
+		}
 		return visitChildren(ctx);
 	}
 
@@ -509,6 +692,11 @@ public class AeroSpikeKeyJava8Visitor extends Java8BaseVisitor<Integer> {
 	
 	public String GetKey()
 	{
+		if (key == null || key.equals(""))
+		{
+			System.err.println("What the fuck, no key?");
+			System.exit(1);
+		}
 		return key;
 	}
 	

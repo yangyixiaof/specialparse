@@ -29,34 +29,34 @@ statement
 	|	whileStatement
 	|	ifStatement
 	|	forStatement
-	|	forIniOver
-	|	forExpOver
-	|	forUpdOver
+	|	forIniOverStatement
+	|	forExpOverStatement
+	|	forUpdOverStatement
 	|	variableDeclarationTypeStatement
-	|	condExpBegin
-	|	condExpQuestionMark
-	|	condExpColonMark
-	|	
-	|	localVariableDeclarationStatement
-	|	ifStatement
-	|	ElseStatement
-	|	whileStatement
-	|	forStatement
-	|	expression
-	|	assertStatement
-	|	switchStatement
-	|	caseStatement
-	|	doStatement
-	|	breakStatement
-	|	continueStatement
-	|	returnStatement
-	|	synchronizedStatement
-	|	throwStatement
-	|	tryStatement
-	|	typeDeclarationStatement
+	|	condExpBeginStatement
+	|	condExpQuestionMarkStatement
+	|	condExpColonMarkStatement
+	|	expressionStatement
 	;
-
-qualified : identifier ('.' identifier)+ ;
+	
+expressionStatement : expression endOfStatement ;
+	
+expression
+	:	assignment
+	|	literal
+	|	castExpression
+	|	methodInvocation
+	|	fieldAccess
+	|	infixExpression
+	|	instanceofExpression
+	|	methodReference
+	|	identifier
+	|	postfixExpression
+	|	prefixExpression
+	|	
+	;
+	
+assignment : expression assignmentOperator expression ;
 
 methodInvocation : identifier '(' argumentList ')' ;
 
@@ -66,69 +66,67 @@ methodDeclaration : identifier '(' typeList? ')' AT 'MD' ;
 
 typeList : type (',' type)* ;
 
-fieldAccess : identifier '.' expression AT 'FA';
+fieldAccess : identifier '.' expression ;
 
-condExpColonMark : 'CondExpCM' AT DH ;
+condExpColonMarkStatement : 'CondExpCM' AT DH endOfStatement ;
 
-condExpQuestionMark : 'CondExpQM' AT DH ;
+condExpQuestionMarkStatement : 'CondExpQM' AT DH endOfStatement ;
 
-condExpBegin : 'CondExpBegin' AT DH ;
+condExpBeginStatement : 'CondExpBegin' AT DH endOfStatement ;
 
-variableDeclarationTypeStatement : type AT 'VD' ;
+variableDeclarationTypeStatement : type AT 'VD' endOfStatement ;
 
-forUpdOver : 'forUpdOver' AT 'DH' ;
+forUpdOverStatement : 'forUpdOver' AT 'DH' endOfStatement ;
 
-forExpOver : 'forExpOver' AT 'DH' ;
+forExpOverStatement : 'forExpOver' AT 'DH' endOfStatement ;
 
-forIniOver : 'forIniOver' AT 'DH' ;
+forIniOverStatement : 'forIniOver' AT 'DH' endOfStatement ;
 
-forStatement : 'for' AT 'DH' ;
+forStatement : 'for' AT 'DH' endOfStatement ;
 
-ifStatement : 'if' '#' expression ;
+ifStatement : 'if' '#' expression endOfStatement ;
 
-whileStatement : 'while' '#' expression ;
+whileStatement : 'while' '#' expression endOfStatement ;
 
 catchClause : 'catch' '#' type;
 
-throwStatement : 'throw' '#' expression ;
+throwStatement : 'throw' '#' expression endOfStatement ;
 
-synchronizedStatement : 'synchronized' '#' expression ;
+synchronizedStatement : 'synchronized' '#' expression endOfStatement ;
 
-switchCaseStatement : 'case' '#' expression ;
+switchCaseStatement : 'case' '#' expression endOfStatement ;
 	
-switchStatement : 'switch' '#' expression ;
+switchStatement : 'switch' '#' expression endOfStatement ;
 
-breakStatement : 'break' '#' identifier? ;
+breakStatement : 'break' '#' identifier? endOfStatement ;
 
-continueStatement : 'continue' '#' identifier? ;
+continueStatement : 'continue' '#' identifier? endOfStatement ;
 
-doStatement : 'do' AT 'DH' ;
+doStatement : 'do' AT 'DH' endOfStatement ;
 
-enhancedForStatement : 'for(' type ':' expression ')' ;
+enhancedForStatement : 'for(' type ':' expression ')' endOfStatement ;
 
-arrayAccessStatement : expression '@AC' expression ;
+arrayAccessStatement : expression '@AC' expression endOfStatement ;
 
-arrayInitializerStartStatement : 'arrIni' AT 'DH' ;
+arrayInitializerStartStatement : 'arrIni' AT 'DH' endOfStatement ;
 
-infixExpressionStatement : expression binaryOperator expression ;
+infixExpression : expression binaryOperator expression ;
 
-instanceofExpressionStatement : expression 'instanceof' type ;
+instanceofExpression : expression 'instanceof' type ;
 
-labeledStatement : identifier AT 'LD' ;
+labeledStatement : identifier AT 'LD' endOfStatement ;
 
-postfixExpressionStatement : expression unaryOperator ;
+postfixExpression : expression unaryOperator ;
 
-prefixExpressionStatement : unaryOperator expression ;
+prefixExpression : unaryOperator expression ;
 
-returnStatement : 'return' expression? ;
+returnStatement : 'return' expression? endOfStatement ;
 
-assignmentStatement : expression assignmentOperator expression ;
-
-castExpressionStatement : '(' type ')' expression ;
+castExpression : '(' type ')' expression ;
 	
-methodReferenceStatement : identifier '::' expression ;
+methodReferenceStatement : identifier '::' expression endOfStatement ;
 
-lambdaExpressionStatement : lambdaParameters '->' '{}' ;
+lambdaExpressionStatement : lambdaParameters '->' '{}' endOfStatement ;
 
 lambdaParameters : '(' formalParameterList? ')' | '(' inferredFormalParameterList ')' ;
 	
@@ -140,7 +138,7 @@ formalParameter : type identifier ;
 
 inferredFormalParameterList : identifier (',' identifier)* ;
 
-typeDeclarationStatement : identifier AT 'CD' ;
+typeDeclarationStatement : identifier AT 'CD' endOfStatement ;
 	
 leftParentheseStatement : '(' ;
 	
@@ -287,6 +285,8 @@ commonVarRef : '$C' [0-9]+ '?' [0-9]+ ;
 
 codeHole : AT 'HO' ;
 preExist : AT 'PE' ;
+
+endOfStatement : partialEnd fullEnd? ;
 
 fullEnd : endOfAStatement ;
 

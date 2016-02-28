@@ -1,8 +1,18 @@
 grammar Java8;
 
 statement
-	:	typeDeclarationStatement
+	:	anonymousClassBeginStatement
+	|	anonymousClassPreHintStatement
+	|	atInterfaceStatement
+	|	annotationTypeMemberDeclarationStatement
+	|	classDeclarationStatement
+	|	classInnerDeclarationStatement
+	|	enumDeclarationStatement
+	|	methodDeclarationStatement
+	|	enumConstantDeclarationStatement
+	|	
 	|	leftParentheseStatement
+	|	rightParentheseStatement
 	|	leftBraceStatement
 	|	rightBraceStatement
 	|	lambdaExpressionStatement
@@ -11,6 +21,7 @@ statement
 	|	doStatement
 	|	enhancedForStatement
 	|	arrayAccessStatement
+	|	partialEndArrayAccessStatement
 	|	arrayInitializerStartStatement
 	|	labeledStatement
 	|	returnStatement
@@ -30,11 +41,11 @@ statement
 	|	condExpQuestionMarkStatement
 	|	condExpColonMarkStatement
 	|	expressionStatement
+	|	fullEndStatement
+	|	partialEndStatement
 	;
 	
-expressionStatement : expression endOfStatement ;
-	
-expression
+expressionStatement
 	:	assignment
 	|	literal
 	|	castExpression
@@ -54,95 +65,121 @@ referedExpression
 	|	literal
 	;
 	
-assignment : referedExpression assignmentOperator expression ;
+anonymousClassBeginStatement : 'AB@' identifier;
 
-methodInvocation : identifier '(' argumentList ')' ;
+anonymousClassPreStatement : 'HT@' identifier;
 
-argumentList : expression (',' expression)* ;
+atInterfaceStatement : 'AT@' identifier;
+
+annotationTypeMemberDeclarationStatement : 'AM@' type '()' ('default' referedExpression)?;
+
+classDeclarationStatement : 'CD@' identifier;
+
+classInnerDeclarationStatement : 'ICD@' identifier;
+
+enumDeclarationStatement : 'ED@' identifier;
+
+methodDeclarationStatement : 'MD@' '(' typeList? ')' identifier;
+
+enumConstantDeclarationStatement : 'EMD@' identifier '(' argumentList ')';
+
+labeledStatement : 'LD@' identifier;
+
+variableDeclarationStatement : 'VD@' type dims;
+
+lambdaExpressionStatement : 'LE@' lambdaParameters '->' '{}';
+
+methodReferenceStatement : 'MR@' identifier '::' referedExpression;
+
+castExpressionStatement : 'CE@' '(' type ')' referedExpression;
+
+assignmentStatement : 'A@' referedExpression assignmentOperator referedExpression;
+
+breakStatement : 'B@' 'break' ('#' identifier)?;
+
+continueStatement : 'C@' 'continue' ('#' identifier)?;
+
+dowhileStatement : 'DW@' 'while' '#' referedExpression;
+
+whileStatement : 'WS@' 'while' '#' referedExpression;
+
+infixExpressionStatement : 'IxE@' referedExpression binaryOperator referedExpression;
+
+instanceofExpressionStatement : 'InE@' referedExpression 'instanceof' type;
+
+prefixExpressionStatement : 'PeE@' unaryOperator referedExpression;
+
+postfixExpressionStatement : 'PtE@' referedExpression unaryOperator;
+
+returnStatement : 'RT@' 'return' ('#' referedExpression)?;
+
+switchStatement : 'SW@' 'switch' '#' referedExpression;
+
+switchCaseStatement : 'CS@' 'case' '#' referedExpression;
+
+defaultStatement : 'DF@' 'default';
+
+synchronizedStatement : 'SC@' 'synchronized' '#' referedExpression;
+
+throwStatement : 'TS@' 'throw' '#' referedExpression;
+
+catchClause : 'CT@' 'catch' '#' type;
+
+ifStatement : 'IF@' 'if' '#' referedExpression;
+
+methodInvocationStatement : 'MI@' identifier '(' argumentList ')';
+
+arrayCreationStatement : 'AC@' type '(new)';
+
+literalStatement : 'L@' literal;
+
+nameStatement : 'N@' identifier;
+
+fieldAccessStatement : 'FA@' identifier '.' referedExpression;
+
+initializerStatement : 'IB@' 'InitialBlock';
+
+variableDeclarationHolderStatement : 'VH@' (= referedExpression)?;
+
+enhancedForStatement : 'EF@' 'for(' type ':' referedExpression ')';
+
+arrayAccessStatement : '[@' referedExpression '#' referedExpression endOfArrayDeclarationIndexExpression;
+
+partialEndArrayAccessStatement : expressionStatement endOfArrayDeclarationIndexExpression;
+
+condExpColonMarkStatement : 'DH@' 'CondExpCM';
+
+condExpQuestionMarkStatement : 'DH@' 'CondExpQM';
+
+condExpBeginStatement : 'DH@' 'CondExpBegin';
+
+forUpdOverStatement : 'DH@' 'forUpdOver';
+
+forExpOverStatement : 'DH@' 'forExpOver';
+
+forIniOverStatement : 'DH@' 'forIniOver';
+
+forStatement : 'DH@' 'for';
+
+doStatement : 'DH@' 'do';
+
+leftParentheseStatement : 'DH@' '(';
+
+rightParentheseStatement : 'DH@' ')';
 	
-methodDeclaration : identifier '(' typeList? ')' AT 'MD' ;
+leftBraceStatement : 'DH@' '{';
+
+rightBraceStatement : 'DH@' '}';
+
+arrayInitializerStartStatement : 'DH' AT 'arrIni';
+
+argumentList : referedExpression (',' referedExpression)* ;
 
 typeList : type (',' type)* ;
 
-fieldAccess : identifier '.' expression ;
-
-condExpColonMarkStatement : 'CondExpCM' AT 'DH' endOfStatement ;
-
-condExpQuestionMarkStatement : 'CondExpQM' AT 'DH' endOfStatement ;
-
-condExpBeginStatement : 'CondExpBegin' AT 'DH' endOfStatement ;
-
-variableDeclarationTypeStatement : type AT 'VD' endOfStatement ;
-
-forUpdOverStatement : 'forUpdOver' AT 'DH' endOfStatement ;
-
-forExpOverStatement : 'forExpOver' AT 'DH' endOfStatement ;
-
-forIniOverStatement : 'forIniOver' AT 'DH' endOfStatement ;
-
-forStatement : 'for' AT 'DH' endOfStatement ;
-
-ifStatement : 'if' '#' expression endOfStatement ;
-
-whileStatement : 'while' '#' expression endOfStatement ;
-
-catchClause : 'catch' '#' type;
-
-throwStatement : 'throw' '#' expression endOfStatement ;
-
-synchronizedStatement : 'synchronized' '#' expression endOfStatement ;
-
-switchCaseStatement : 'case' '#' expression endOfStatement ;
+lambdaParameters : '(' formalParameterList? ')';
 	
-switchStatement : 'switch' '#' expression endOfStatement ;
-
-breakStatement : 'break' ('#' identifier)? endOfStatement ;
-
-continueStatement : 'continue' ('#' identifier)? endOfStatement ;
-
-doStatement : 'do' AT 'DH' endOfStatement ;
-
-enhancedForStatement : 'for(' type ':' expression ')' endOfStatement ;
-
-arrayAccessStatement : expression '@AC' expression endOfStatement ;
-
-arrayInitializerStartStatement : 'arrIni' AT 'DH' endOfStatement ;
-
-infixExpression : referedExpression binaryOperator expression ;
-
-instanceofExpression : referedExpression 'instanceof' type ;
-
-labeledStatement : identifier AT 'LD' endOfStatement ;
-
-postfixExpression : referedExpression unaryOperator ;
-
-prefixExpression : unaryOperator expression ;
-
-returnStatement : 'return' ('#' expression)? endOfStatement ;
-
-castExpression : '(' type ')' expression ;
-	
-methodReference : identifier '::' expression ;
-
-lambdaExpressionStatement : lambdaParameters '->' '{}' endOfStatement ;
-
-lambdaParameters : '(' formalParameterList? ')' | '(' inferredFormalParameterList ')' ;
-	
-formalParameterList : formalParameter (',' formalParameter)* ;
-
-formalParameters : formalParameter (',' formalParameter)* ;
-
-formalParameter : type identifier ;
-
-inferredFormalParameterList : identifier (',' identifier)* ;
-
-typeDeclarationStatement : identifier AT 'CD' endOfStatement ;
-	
-leftParentheseStatement : '(' ;
-	
-leftBraceStatement : '{' ;
-
-rightBraceStatement : '}' ;
+formalParameterList : type (',' type)*;
 
 literal
 	:	numberLiteral
@@ -164,7 +201,7 @@ numberLiteral
 	;
 
 stringLiteral
-	:	AT 'STR'
+	:	'@STR'
 	;
 
 type
@@ -266,24 +303,12 @@ FinalVarRef : '$X' [0-9]+ '?' [0-9]+ ;
 CommonFieldRef : '$F' [0-9]+ '?' [0-9]+ ;
 CommonVarRef : '$C' [0-9]+ '?' [0-9]+ ;
 
-codeHole : AT 'HO' ;
-preExist : AT 'PE' ;
+codeHole : '@HO';
+preExist : '@PE';
 
-endOfStatement : partialEnd fullEnd? ;
+endOfStatement : partialEnd | fullEnd ;
 
-fullEnd : endOfAStatement ;
-
-endOfAStatement : AT 'ED' ;
-
-partialEnd : onePartialEnd* ;
-
-onePartialEnd : endOfAPartialStatement | endOfArrayDeclarationIndexExpression | rightParenthese ;
-
-endOfAPartialStatement : AT 'PD' ;
-
-endOfArrayDeclarationIndexExpression : AT 'AD' ;
-
-rightParenthese : ')' ;
+endOfArrayDeclarationIndexExpression : '@]' ;
 
 AT : '@' ;
 

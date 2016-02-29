@@ -10,14 +10,21 @@ import SJ8Parse.Java8Parser;
 
 public class ParseRoot 
 {
-	public static String ParseOneSentence(String onesentence, Java8BaseVisitor<Integer> evalVisitor) throws Exception {
+	public static String ParseOneSentence(String onesentence, Java8BaseVisitor<Integer> evalVisitor, boolean returnTreeContent) throws Exception {
 		ANTLRInputStream input = new ANTLRInputStream(onesentence);
 		Java8Lexer lexer = new Java8Lexer(input);
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		Java8Parser parser = new Java8Parser(tokens);
 		parser.setBuildParseTree(true); // tell ANTLR to build a parse tree
 		ParseTree tree = parser.statement(); // parse
-		evalVisitor.visit(tree);
-		return tree.toStringTree(parser);
+		if (evalVisitor != null)
+		{
+			evalVisitor.visit(tree);
+		}
+		if (returnTreeContent)
+		{
+			return tree.toStringTree(parser);
+		}
+		return null;
     }
 }

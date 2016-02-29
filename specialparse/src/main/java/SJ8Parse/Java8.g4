@@ -10,55 +10,83 @@ statement
 	|	enumDeclarationStatement
 	|	methodDeclarationStatement
 	|	enumConstantDeclarationStatement
+	|	labeledStatement
+	|	variableDeclarationStatement
+	|	lambdaExpressionStatement
+	|	breakStatement
+	|	continueStatement
+	|	doWhileStatement
+	|	whileStatement
+	|	returnStatement
+	|	switchStatement
+	|	switchCaseStatement
+	|	defaultStatement
+	|	synchronizedStatement
+	|	throwStatement
+	|	catchClause
+	|	ifStatement
+	|	arrayCreationStatement
+	|	initializerStatement
+	|	variableDeclarationHolderStatement
+	|	enhancedForStatement
+	|	arrayAccessStatement
+	|	partialEndArrayAccessStatement
+	|	
+	|	
 	|	
 	|	leftParentheseStatement
 	|	rightParentheseStatement
 	|	leftBraceStatement
 	|	rightBraceStatement
-	|	lambdaExpressionStatement
-	|	breakStatement
-	|	continueStatement
 	|	doStatement
-	|	enhancedForStatement
-	|	arrayAccessStatement
-	|	partialEndArrayAccessStatement
 	|	arrayInitializerStartStatement
-	|	labeledStatement
-	|	returnStatement
-	|	switchStatement
-	|	switchCaseStatement
-	|	synchronizedStatement
-	|	throwStatement
-	|	catchClause
-	|	whileStatement
-	|	ifStatement
 	|	forStatement
 	|	forIniOverStatement
 	|	forExpOverStatement
 	|	forUpdOverStatement
-	|	variableDeclarationTypeStatement
 	|	condExpBeginStatement
 	|	condExpQuestionMarkStatement
 	|	condExpColonMarkStatement
+	|	endOfStatement
 	|	expressionStatement
-	|	fullEndStatement
-	|	partialEndStatement
 	;
 	
 expressionStatement
-	:	assignment
-	|	literal
-	|	castExpression
-	|	methodInvocation
-	|	fieldAccess
-	|	infixExpression
-	|	instanceofExpression
-	|	methodReference
-	|	identifier
-	|	postfixExpression
-	|	prefixExpression
+	:	assignmentStatement
+	|	literalStatement
+	|	castExpressionStatement
+	|	methodInvocationStatement
+	|	fieldAccessStatement
+	|	infixExpressionStatement
+	|	instanceofExpressionStatement
+	|	methodReferenceStatement
+	|	nameStatement
+	|	prefixExpressionStatement
+	|	postfixExpressionStatement
 	;
-	
+
+assignmentStatement : 'A@' referedExpression assignmentOperator referedExpression;
+
+literalStatement : 'L@' literal;
+
+castExpressionStatement : 'CE@' '(' type ')' referedExpression;
+
+methodInvocationStatement : 'MI@' identifier '(' argumentList ')';
+
+fieldAccessStatement : 'FA@' identifier '.' referedExpression;
+
+infixExpressionStatement : 'IxE@' referedExpression binaryOperator referedExpression;
+
+instanceofExpressionStatement : 'InE@' referedExpression 'instanceof' type;
+
+methodReferenceStatement : 'MR@' identifier '::' referedExpression;
+
+nameStatement : 'N@' identifier;
+
+prefixExpressionStatement : 'PeE@' unaryOperator referedExpression;
+
+postfixExpressionStatement : 'PtE@' referedExpression unaryOperator;
+
 referedExpression
 	:	identifier
 	|	fieldAccess
@@ -89,27 +117,13 @@ variableDeclarationStatement : 'VD@' type dims;
 
 lambdaExpressionStatement : 'LE@' lambdaParameters '->' '{}';
 
-methodReferenceStatement : 'MR@' identifier '::' referedExpression;
-
-castExpressionStatement : 'CE@' '(' type ')' referedExpression;
-
-assignmentStatement : 'A@' referedExpression assignmentOperator referedExpression;
-
 breakStatement : 'B@' 'break' ('#' identifier)?;
 
 continueStatement : 'C@' 'continue' ('#' identifier)?;
 
-dowhileStatement : 'DW@' 'while' '#' referedExpression;
+doWhileStatement : 'DW@' 'while' '#' referedExpression;
 
 whileStatement : 'WS@' 'while' '#' referedExpression;
-
-infixExpressionStatement : 'IxE@' referedExpression binaryOperator referedExpression;
-
-instanceofExpressionStatement : 'InE@' referedExpression 'instanceof' type;
-
-prefixExpressionStatement : 'PeE@' unaryOperator referedExpression;
-
-postfixExpressionStatement : 'PtE@' referedExpression unaryOperator;
 
 returnStatement : 'RT@' 'return' ('#' referedExpression)?;
 
@@ -127,15 +141,7 @@ catchClause : 'CT@' 'catch' '#' type;
 
 ifStatement : 'IF@' 'if' '#' referedExpression;
 
-methodInvocationStatement : 'MI@' identifier '(' argumentList ')';
-
 arrayCreationStatement : 'AC@' type '(new)';
-
-literalStatement : 'L@' literal;
-
-nameStatement : 'N@' identifier;
-
-fieldAccessStatement : 'FA@' identifier '.' referedExpression;
 
 initializerStatement : 'IB@' 'InitialBlock';
 
@@ -147,22 +153,6 @@ arrayAccessStatement : '[@' referedExpression '#' referedExpression endOfArrayDe
 
 partialEndArrayAccessStatement : expressionStatement endOfArrayDeclarationIndexExpression;
 
-condExpColonMarkStatement : 'DH@' 'CondExpCM';
-
-condExpQuestionMarkStatement : 'DH@' 'CondExpQM';
-
-condExpBeginStatement : 'DH@' 'CondExpBegin';
-
-forUpdOverStatement : 'DH@' 'forUpdOver';
-
-forExpOverStatement : 'DH@' 'forExpOver';
-
-forIniOverStatement : 'DH@' 'forIniOver';
-
-forStatement : 'DH@' 'for';
-
-doStatement : 'DH@' 'do';
-
 leftParentheseStatement : 'DH@' '(';
 
 rightParentheseStatement : 'DH@' ')';
@@ -171,7 +161,25 @@ leftBraceStatement : 'DH@' '{';
 
 rightBraceStatement : 'DH@' '}';
 
-arrayInitializerStartStatement : 'DH' AT 'arrIni';
+doStatement : 'DH@' 'do';
+
+arrayInitializerStartStatement : 'DH@' 'arrIni';
+
+forStatement : 'DH@' 'for';
+
+forIniOverStatement : 'DH@' 'forIniOver';
+
+forExpOverStatement : 'DH@' 'forExpOver';
+
+forUpdOverStatement : 'DH@' 'forUpdOver';
+
+condExpBeginStatement : 'DH@' 'CondExpBegin';
+
+condExpQuestionMarkStatement : 'DH@' 'CondExpQM';
+
+condExpColonMarkStatement : 'DH@' 'CondExpCM';
+
+endOfStatement : partialEnd | fullEnd;
 
 argumentList : referedExpression (',' referedExpression)* ;
 
@@ -305,8 +313,6 @@ CommonVarRef : '$C' [0-9]+ '?' [0-9]+ ;
 
 codeHole : '@HO';
 preExist : '@PE';
-
-endOfStatement : partialEnd | fullEnd ;
 
 endOfArrayDeclarationIndexExpression : '@]' ;
 

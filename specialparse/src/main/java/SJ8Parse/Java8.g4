@@ -31,9 +31,6 @@ statement
 	|	enhancedForStatement
 	|	arrayAccessStatement
 	|	partialEndArrayAccessStatement
-	|	
-	|	
-	|	
 	|	leftParentheseStatement
 	|	rightParentheseStatement
 	|	leftBraceStatement

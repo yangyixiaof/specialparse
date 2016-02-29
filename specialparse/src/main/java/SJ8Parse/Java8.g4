@@ -2,7 +2,7 @@ grammar Java8;
 
 statement
 	:	anonymousClassBeginStatement
-	|	anonymousClassPreHintStatement
+	|	anonymousClassPreStatement
 	|	atInterfaceStatement
 	|	annotationTypeMemberDeclarationStatement
 	|	classDeclarationStatement
@@ -73,7 +73,9 @@ castExpressionStatement : 'CE@' '(' type ')' referedExpression;
 
 methodInvocationStatement : 'MI@' identifier '(' argumentList ')';
 
-fieldAccessStatement : 'FA@' identifier '.' referedExpression;
+fieldAccessStatement : 'FA@' fieldAccess;
+
+fieldAccess : identifier '.' referedExpression;
 
 infixExpressionStatement : 'IxE@' referedExpression binaryOperator referedExpression;
 
@@ -145,7 +147,7 @@ arrayCreationStatement : 'AC@' type '(new)';
 
 initializerStatement : 'IB@' 'InitialBlock';
 
-variableDeclarationHolderStatement : 'VH@' (= referedExpression)?;
+variableDeclarationHolderStatement : 'VH@' ('=' referedExpression)?;
 
 enhancedForStatement : 'EF@' 'for(' type ':' referedExpression ')';
 
@@ -180,6 +182,10 @@ condExpQuestionMarkStatement : 'DH@' 'CondExpQM';
 condExpColonMarkStatement : 'DH@' 'CondExpCM';
 
 endOfStatement : partialEnd | fullEnd;
+
+partialEnd : 'DH@,';
+
+fullEnd : 'DH@;';
 
 argumentList : referedExpression (',' referedExpression)* ;
 

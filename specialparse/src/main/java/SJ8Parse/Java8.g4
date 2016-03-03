@@ -23,7 +23,7 @@ statement
 	|	defaultStatement
 	|	synchronizedStatement
 	|	throwStatement
-	|	catchClause
+	|	catchClauseStatement
 	|	ifStatement
 	|	arrayCreationStatement
 	|	initializerStatement
@@ -136,7 +136,7 @@ synchronizedStatement : 'SC@' 'synchronized' '#' referedExpression;
 
 throwStatement : 'TS@' 'throw' '#' referedExpression;
 
-catchClause : 'CT@' 'catch' '#' type;
+catchClauseStatement : 'CT@' 'catch' '#' type;
 
 ifStatement : 'IF@' 'if' '#' referedExpression;
 

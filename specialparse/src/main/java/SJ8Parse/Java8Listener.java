@@ -379,15 +379,15 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitThrowStatement(Java8Parser.ThrowStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#catchClause}.
+	 * Enter a parse tree produced by {@link Java8Parser#catchClauseStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterCatchClause(Java8Parser.CatchClauseContext ctx);
+	void enterCatchClauseStatement(Java8Parser.CatchClauseStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#catchClause}.
+	 * Exit a parse tree produced by {@link Java8Parser#catchClauseStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitCatchClause(Java8Parser.CatchClauseContext ctx);
+	void exitCatchClauseStatement(Java8Parser.CatchClauseStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#ifStatement}.
 	 * @param ctx the parse tree
@@ -638,26 +638,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitTypeList(Java8Parser.TypeListContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#lambdaParameters}.
-	 * @param ctx the parse tree
-	 */
-	void enterLambdaParameters(Java8Parser.LambdaParametersContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#lambdaParameters}.
-	 * @param ctx the parse tree
-	 */
-	void exitLambdaParameters(Java8Parser.LambdaParametersContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#formalParameterList}.
-	 * @param ctx the parse tree
-	 */
-	void enterFormalParameterList(Java8Parser.FormalParameterListContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#formalParameterList}.
-	 * @param ctx the parse tree
-	 */
-	void exitFormalParameterList(Java8Parser.FormalParameterListContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#literal}.
 	 * @param ctx the parse tree

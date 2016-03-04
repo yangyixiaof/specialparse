@@ -114,7 +114,7 @@ labeledStatement : 'LD@' identifier;
 
 variableDeclarationStatement : 'VD@' type dims;
 
-lambdaExpressionStatement : 'LE@' lambdaParameters '->' '{}';
+lambdaExpressionStatement : 'LE@' '(' typeList? ')' '->' '{}';
 
 breakStatement : 'B@' 'break' ('#' identifier)?;
 
@@ -187,10 +187,6 @@ fullEnd : 'DH@;';
 argumentList : referedExpression (',' referedExpression)* ;
 
 typeList : type (',' type)* ;
-
-lambdaParameters : '(' formalParameterList? ')';
-	
-formalParameterList : type (',' type)*;
 
 literal
 	:	numberLiteral

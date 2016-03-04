@@ -3,7 +3,7 @@ package cn.yyx.parse.specialparse;
 import SJ8Parse.Java8BaseVisitor;
 import SJ8Parse.Java8Parser;
 
-public class OneSentenceVisitor extends Java8BaseVisitor<Integer> {
+public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	
 	@Override
 	public Integer visitStatement(Java8Parser.StatementContext ctx) {
@@ -193,7 +193,7 @@ public class OneSentenceVisitor extends Java8BaseVisitor<Integer> {
 	}
 
 	@Override
-	public Integer visitCatchClause(Java8Parser.CatchClauseContext ctx) {
+	public Integer visitCatchClauseStatement(Java8Parser.CatchClauseStatementContext ctx) {
 		return visitChildren(ctx);
 	}
 
@@ -319,16 +319,6 @@ public class OneSentenceVisitor extends Java8BaseVisitor<Integer> {
 
 	@Override
 	public Integer visitTypeList(Java8Parser.TypeListContext ctx) {
-		return visitChildren(ctx);
-	}
-
-	@Override
-	public Integer visitLambdaParameters(Java8Parser.LambdaParametersContext ctx) {
-		return visitChildren(ctx);
-	}
-
-	@Override
-	public Integer visitFormalParameterList(Java8Parser.FormalParameterListContext ctx) {
 		return visitChildren(ctx);
 	}
 

@@ -461,13 +461,13 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCatchClause(Java8Parser.CatchClauseContext ctx) { }
+	@Override public void enterCatchClauseStatement(Java8Parser.CatchClauseStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCatchClause(Java8Parser.CatchClauseContext ctx) { }
+	@Override public void exitCatchClauseStatement(Java8Parser.CatchClauseStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -768,30 +768,6 @@ public class Java8BaseListener implements Java8Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitTypeList(Java8Parser.TypeListContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterLambdaParameters(Java8Parser.LambdaParametersContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitLambdaParameters(Java8Parser.LambdaParametersContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterFormalParameterList(Java8Parser.FormalParameterListContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitFormalParameterList(Java8Parser.FormalParameterListContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

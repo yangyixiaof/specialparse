@@ -234,11 +234,11 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitThrowStatement(Java8Parser.ThrowStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#catchClause}.
+	 * Visit a parse tree produced by {@link Java8Parser#catchClauseStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCatchClause(Java8Parser.CatchClauseContext ctx);
+	T visitCatchClauseStatement(Java8Parser.CatchClauseStatementContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#ifStatement}.
 	 * @param ctx the parse tree
@@ -389,18 +389,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitTypeList(Java8Parser.TypeListContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#lambdaParameters}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitLambdaParameters(Java8Parser.LambdaParametersContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#formalParameterList}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFormalParameterList(Java8Parser.FormalParameterListContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#literal}.
 	 * @param ctx the parse tree

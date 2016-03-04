@@ -149,6 +149,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitPostfixExpressionStatement(Java8Parser.PostfixExpressionStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#arrayAccessStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterArrayAccessStatement(Java8Parser.ArrayAccessStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#arrayAccessStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitArrayAccessStatement(Java8Parser.ArrayAccessStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#referedExpression}.
 	 * @param ctx the parse tree
 	 */
@@ -438,16 +448,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitEnhancedForStatement(Java8Parser.EnhancedForStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#arrayAccessStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterArrayAccessStatement(Java8Parser.ArrayAccessStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#arrayAccessStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitArrayAccessStatement(Java8Parser.ArrayAccessStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#partialEndArrayAccessStatement}.
 	 * @param ctx the parse tree

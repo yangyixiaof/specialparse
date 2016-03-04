@@ -96,6 +96,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitPostfixExpressionStatement(Java8Parser.PostfixExpressionStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#arrayAccessStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArrayAccessStatement(Java8Parser.ArrayAccessStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#referedExpression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -269,12 +275,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitEnhancedForStatement(Java8Parser.EnhancedForStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#arrayAccessStatement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitArrayAccessStatement(Java8Parser.ArrayAccessStatementContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#partialEndArrayAccessStatement}.
 	 * @param ctx the parse tree

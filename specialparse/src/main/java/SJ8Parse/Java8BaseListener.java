@@ -185,6 +185,18 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterArrayAccessStatement(Java8Parser.ArrayAccessStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArrayAccessStatement(Java8Parser.ArrayAccessStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterReferedExpression(Java8Parser.ReferedExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -528,18 +540,6 @@ public class Java8BaseListener implements Java8Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitEnhancedForStatement(Java8Parser.EnhancedForStatementContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterArrayAccessStatement(Java8Parser.ArrayAccessStatementContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitArrayAccessStatement(Java8Parser.ArrayAccessStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

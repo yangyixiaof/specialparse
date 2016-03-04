@@ -29,7 +29,6 @@ statement
 	|	initializerStatement
 	|	variableDeclarationHolderStatement
 	|	enhancedForStatement
-	|	arrayAccessStatement
 	|	partialEndArrayAccessStatement
 	|	leftParentheseStatement
 	|	rightParentheseStatement
@@ -60,6 +59,7 @@ expressionStatement
 	|	nameStatement
 	|	prefixExpressionStatement
 	|	postfixExpressionStatement
+	|	arrayAccessStatement
 	;
 
 assignmentStatement : 'A@' referedExpression assignmentOperator referedExpression;
@@ -85,6 +85,8 @@ nameStatement : 'N@' identifier;
 prefixExpressionStatement : 'PeE@' unaryOperator referedExpression;
 
 postfixExpressionStatement : 'PtE@' referedExpression unaryOperator;
+
+arrayAccessStatement : '[@' referedExpression '#' referedExpression;
 
 referedExpression
 	:	identifier
@@ -147,8 +149,6 @@ initializerStatement : 'IB@' 'InitialBlock';
 variableDeclarationHolderStatement : 'VH@' ('=' referedExpression)?;
 
 enhancedForStatement : 'EF@' 'for(' type ':' referedExpression ')';
-
-arrayAccessStatement : '[@' referedExpression '#' referedExpression endOfArrayDeclarationIndexExpression?;
 
 partialEndArrayAccessStatement : expressionStatement endOfArrayDeclarationIndexExpression;
 

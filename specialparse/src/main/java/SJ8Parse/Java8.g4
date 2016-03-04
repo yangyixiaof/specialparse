@@ -273,7 +273,7 @@ unionType
 	;
 
 identifier
-	:	JavaLetter JavaLetterOrDigit*
+	:	IdJavaLetter
 	|	FinalFieldRef
 	|	FinalVarRef
 	|	CommonFieldRef
@@ -281,6 +281,8 @@ identifier
 	|	codeHole
 	|	preExist
 	;
+	
+IdJavaLetter : JavaLetter JavaLetterOrDigit*;
 
 JavaLetter
 	:	[a-zA-Z$_] // these are the "java letters" below 0xFF

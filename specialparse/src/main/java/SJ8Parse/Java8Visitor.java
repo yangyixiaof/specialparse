@@ -396,12 +396,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitLiteral(Java8Parser.LiteralContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#referenceType}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitReferenceType(Java8Parser.ReferenceTypeContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#numberLiteral}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -450,23 +444,11 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitTypeArguments(Java8Parser.TypeArgumentsContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#typeArgumentList}.
+	 * Visit a parse tree produced by {@link Java8Parser#wildCardType}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTypeArgumentList(Java8Parser.TypeArgumentListContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#typeArgument}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitTypeArgument(Java8Parser.TypeArgumentContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#wildCard}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitWildCard(Java8Parser.WildCardContext ctx);
+	T visitWildCardType(Java8Parser.WildCardTypeContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#wildcardBounds}.
 	 * @param ctx the parse tree

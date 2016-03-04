@@ -785,18 +785,6 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterReferenceType(Java8Parser.ReferenceTypeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitReferenceType(Java8Parser.ReferenceTypeContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterNumberLiteral(Java8Parser.NumberLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -893,37 +881,13 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTypeArgumentList(Java8Parser.TypeArgumentListContext ctx) { }
+	@Override public void enterWildCardType(Java8Parser.WildCardTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTypeArgumentList(Java8Parser.TypeArgumentListContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterTypeArgument(Java8Parser.TypeArgumentContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitTypeArgument(Java8Parser.TypeArgumentContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterWildCard(Java8Parser.WildCardContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitWildCard(Java8Parser.WildCardContext ctx) { }
+	@Override public void exitWildCardType(Java8Parser.WildCardTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -649,16 +649,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitLiteral(Java8Parser.LiteralContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#referenceType}.
-	 * @param ctx the parse tree
-	 */
-	void enterReferenceType(Java8Parser.ReferenceTypeContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#referenceType}.
-	 * @param ctx the parse tree
-	 */
-	void exitReferenceType(Java8Parser.ReferenceTypeContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link Java8Parser#numberLiteral}.
 	 * @param ctx the parse tree
 	 */
@@ -739,35 +729,15 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitTypeArguments(Java8Parser.TypeArgumentsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#typeArgumentList}.
+	 * Enter a parse tree produced by {@link Java8Parser#wildCardType}.
 	 * @param ctx the parse tree
 	 */
-	void enterTypeArgumentList(Java8Parser.TypeArgumentListContext ctx);
+	void enterWildCardType(Java8Parser.WildCardTypeContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#typeArgumentList}.
+	 * Exit a parse tree produced by {@link Java8Parser#wildCardType}.
 	 * @param ctx the parse tree
 	 */
-	void exitTypeArgumentList(Java8Parser.TypeArgumentListContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#typeArgument}.
-	 * @param ctx the parse tree
-	 */
-	void enterTypeArgument(Java8Parser.TypeArgumentContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#typeArgument}.
-	 * @param ctx the parse tree
-	 */
-	void exitTypeArgument(Java8Parser.TypeArgumentContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#wildCard}.
-	 * @param ctx the parse tree
-	 */
-	void enterWildCard(Java8Parser.WildCardContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#wildCard}.
-	 * @param ctx the parse tree
-	 */
-	void exitWildCard(Java8Parser.WildCardContext ctx);
+	void exitWildCardType(Java8Parser.WildCardTypeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#wildcardBounds}.
 	 * @param ctx the parse tree

@@ -328,11 +328,6 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	}
 
 	@Override
-	public Integer visitReferenceType(Java8Parser.ReferenceTypeContext ctx) {
-		return visitChildren(ctx);
-	}
-
-	@Override
 	public Integer visitNumberLiteral(Java8Parser.NumberLiteralContext ctx) {
 		return visitChildren(ctx);
 	}
@@ -373,17 +368,7 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	}
 
 	@Override
-	public Integer visitTypeArgumentList(Java8Parser.TypeArgumentListContext ctx) {
-		return visitChildren(ctx);
-	}
-
-	@Override
-	public Integer visitTypeArgument(Java8Parser.TypeArgumentContext ctx) {
-		return visitChildren(ctx);
-	}
-
-	@Override
-	public Integer visitWildCard(Java8Parser.WildCardContext ctx) {
+	public Integer visitWildCardType(Java8Parser.WildCardTypeContext ctx) {
 		return visitChildren(ctx);
 	}
 

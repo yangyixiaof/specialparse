@@ -152,13 +152,13 @@ enhancedForStatement : 'EF@' 'for(' type ':' referedExpression ')';
 
 partialEndArrayAccessStatement : expressionStatement endOfArrayDeclarationIndexExpression;
 
-leftParentheseStatement : 'DH@' '(';
+leftParentheseStatement : 'DH@' ('(')+;
 
-rightParentheseStatement : 'DH@' ')';
+rightParentheseStatement : 'DH@' (')')+;
 	
-leftBraceStatement : 'DH@' '{';
+leftBraceStatement : 'DH@' ('{')+;
 
-rightBraceStatement : 'DH@' '}';
+rightBraceStatement : 'DH@' ('}')+;
 
 doStatement : 'DH@' 'do';
 
@@ -196,12 +196,6 @@ literal
 	|	nullLiteral
 	;
 
-referenceType
-	:	classOrInterfaceType
-	|	ClassRef
-	|	arrayType
-	;
-
 numberLiteral
 	:	integerLiteral
 	|	floatingPointLiteral
@@ -217,6 +211,7 @@ type
 	|	arrayType
 	|	intersectionType
 	|	unionType
+	|	wildCardType
 	|	ClassRef
 	;
 	
@@ -245,33 +240,36 @@ dims
 	;
 
 typeArguments
-	:	'<' typeArgumentList '>'
+	:	'<' typeList '>'
 	;
 
-typeArgumentList
-	:	typeArgument (',' typeArgument)*
-	;
-
-typeArgument
-	:	referenceType
-	|	wildCard
-	;
-
-wildCard
+wildCardType
 	:	'?' wildcardBounds?
 	;
 
 wildcardBounds
-	:	'extends' referenceType
-	|	'super' referenceType
+	:	'extends' type
+	|	'super' type
 	;
+	
+intersectionFirstType
+	:	classOrInterfaceType | primitiveType | arrayType | ClassRef;
+	
+intersectionSecondType
+	:	classOrInterfaceType | primitiveType | arrayType | ClassRef | unionType;
 	
 intersectionType
-	:	(classOrInterfaceType | primitiveType) ('&' (classOrInterfaceType | primitiveType))+
+	:	(intersectionFirstType) ('&' (intersectionSecondType))+
 	;
 	
+unionFirstType
+	:	classOrInterfaceType | primitiveType | arrayType | ClassRef;
+	
+unionSecondType
+	:	classOrInterfaceType | primitiveType | arrayType | ClassRef | intersectionType;
+	
 unionType
-	:	(classOrInterfaceType | primitiveType) ('|' (classOrInterfaceType | primitiveType))+
+	:	(unionFirstType) ('|' (unionSecondType))+
 	;
 
 identifier

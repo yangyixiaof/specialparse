@@ -148,7 +148,7 @@ variableDeclarationHolderStatement : 'VH@' ('=' referedExpression)?;
 
 enhancedForStatement : 'EF@' 'for(' type ':' referedExpression ')';
 
-arrayAccessStatement : '[@' referedExpression '#' referedExpression endOfArrayDeclarationIndexExpression;
+arrayAccessStatement : '[@' referedExpression '#' referedExpression endOfArrayDeclarationIndexExpression?;
 
 partialEndArrayAccessStatement : expressionStatement endOfArrayDeclarationIndexExpression;
 

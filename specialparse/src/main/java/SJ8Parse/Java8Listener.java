@@ -749,6 +749,26 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitWildcardBounds(Java8Parser.WildcardBoundsContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#intersectionFirstType}.
+	 * @param ctx the parse tree
+	 */
+	void enterIntersectionFirstType(Java8Parser.IntersectionFirstTypeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#intersectionFirstType}.
+	 * @param ctx the parse tree
+	 */
+	void exitIntersectionFirstType(Java8Parser.IntersectionFirstTypeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#intersectionSecondType}.
+	 * @param ctx the parse tree
+	 */
+	void enterIntersectionSecondType(Java8Parser.IntersectionSecondTypeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#intersectionSecondType}.
+	 * @param ctx the parse tree
+	 */
+	void exitIntersectionSecondType(Java8Parser.IntersectionSecondTypeContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#intersectionType}.
 	 * @param ctx the parse tree
 	 */
@@ -758,6 +778,26 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitIntersectionType(Java8Parser.IntersectionTypeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#unionFirstType}.
+	 * @param ctx the parse tree
+	 */
+	void enterUnionFirstType(Java8Parser.UnionFirstTypeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#unionFirstType}.
+	 * @param ctx the parse tree
+	 */
+	void exitUnionFirstType(Java8Parser.UnionFirstTypeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#unionSecondType}.
+	 * @param ctx the parse tree
+	 */
+	void enterUnionSecondType(Java8Parser.UnionSecondTypeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#unionSecondType}.
+	 * @param ctx the parse tree
+	 */
+	void exitUnionSecondType(Java8Parser.UnionSecondTypeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#unionType}.
 	 * @param ctx the parse tree

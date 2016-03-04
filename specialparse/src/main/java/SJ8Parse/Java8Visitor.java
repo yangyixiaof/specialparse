@@ -456,11 +456,35 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitWildcardBounds(Java8Parser.WildcardBoundsContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#intersectionFirstType}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIntersectionFirstType(Java8Parser.IntersectionFirstTypeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#intersectionSecondType}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIntersectionSecondType(Java8Parser.IntersectionSecondTypeContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#intersectionType}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitIntersectionType(Java8Parser.IntersectionTypeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#unionFirstType}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitUnionFirstType(Java8Parser.UnionFirstTypeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#unionSecondType}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitUnionSecondType(Java8Parser.UnionSecondTypeContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#unionType}.
 	 * @param ctx the parse tree

@@ -212,7 +212,7 @@ type
 	|	intersectionType
 	|	unionType
 	|	wildCardType
-	|	ClassRef
+	|	classRef
 	;
 	
 primitiveType
@@ -253,36 +253,36 @@ wildcardBounds
 	;
 	
 intersectionFirstType
-	:	classOrInterfaceType | primitiveType | arrayType | ClassRef;
+	:	classOrInterfaceType | primitiveType | arrayType | classRef;
 	
 intersectionSecondType
-	:	classOrInterfaceType | primitiveType | arrayType | ClassRef | unionType;
+	:	classOrInterfaceType | primitiveType | arrayType | classRef | unionType;
 	
 intersectionType
 	:	(intersectionFirstType) ('&' (intersectionSecondType))+
 	;
 	
 unionFirstType
-	:	classOrInterfaceType | primitiveType | arrayType | ClassRef;
+	:	classOrInterfaceType | primitiveType | arrayType | classRef;
 	
 unionSecondType
-	:	classOrInterfaceType | primitiveType | arrayType | ClassRef | intersectionType;
+	:	classOrInterfaceType | primitiveType | arrayType | classRef | intersectionType;
 	
 unionType
 	:	(unionFirstType) ('|' (unionSecondType))+
 	;
 
 identifier
-	:	IdJavaLetter
-	|	FinalFieldRef
-	|	FinalVarRef
-	|	CommonFieldRef
-	|	CommonVarRef
+	:	idRawLetter
+	|	finalFieldRef
+	|	finalVarRef
+	|	commonFieldRef
+	|	commonVarRef
 	|	codeHole
 	|	preExist
 	;
 	
-IdJavaLetter : JavaLetter JavaLetterOrDigit*;
+idRawLetter : JavaLetter JavaLetterOrDigit*;
 
 JavaLetter
 	:	[a-zA-Z$_] // these are the "java letters" below 0xFF
@@ -304,11 +304,15 @@ JavaLetterOrDigit
 		{Character.isJavaIdentifierPart(Character.toCodePoint((char)_input.LA(-2), (char)_input.LA(-1)))}?
 	;
 
-ClassRef : '$K' [0-9]+ '?' [0-9]+ ;
-FinalFieldRef : '$D' [0-9]+ '?' [0-9]+ ;
-FinalVarRef : '$X' [0-9]+ '?' [0-9]+ ;
-CommonFieldRef : '$F' [0-9]+ '?' [0-9]+ ;
-CommonVarRef : '$C' [0-9]+ '?' [0-9]+ ;
+classRef : '$K' offset '?' offset;
+finalFieldRef : '$D' offset '?' offset;
+finalVarRef : '$X' offset '?' offset;
+commonFieldRef : '$F' offset '?' offset;
+commonVarRef : '$C' offset '?' offset;
+
+offset : OffsetDesc;
+
+OffsetDesc : [0-9]+;
 
 codeHole : '@HO';
 preExist : '@PE';

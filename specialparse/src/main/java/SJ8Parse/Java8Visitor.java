@@ -498,6 +498,48 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitIdentifier(Java8Parser.IdentifierContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#idRawLetter}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIdRawLetter(Java8Parser.IdRawLetterContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#classRef}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitClassRef(Java8Parser.ClassRefContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#finalFieldRef}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFinalFieldRef(Java8Parser.FinalFieldRefContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#finalVarRef}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFinalVarRef(Java8Parser.FinalVarRefContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#commonFieldRef}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCommonFieldRef(Java8Parser.CommonFieldRefContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#commonVarRef}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCommonVarRef(Java8Parser.CommonVarRefContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#offset}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOffset(Java8Parser.OffsetContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#codeHole}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

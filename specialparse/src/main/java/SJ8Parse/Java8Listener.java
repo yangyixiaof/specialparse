@@ -819,6 +819,76 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitIdentifier(Java8Parser.IdentifierContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#idRawLetter}.
+	 * @param ctx the parse tree
+	 */
+	void enterIdRawLetter(Java8Parser.IdRawLetterContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#idRawLetter}.
+	 * @param ctx the parse tree
+	 */
+	void exitIdRawLetter(Java8Parser.IdRawLetterContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#classRef}.
+	 * @param ctx the parse tree
+	 */
+	void enterClassRef(Java8Parser.ClassRefContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#classRef}.
+	 * @param ctx the parse tree
+	 */
+	void exitClassRef(Java8Parser.ClassRefContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#finalFieldRef}.
+	 * @param ctx the parse tree
+	 */
+	void enterFinalFieldRef(Java8Parser.FinalFieldRefContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#finalFieldRef}.
+	 * @param ctx the parse tree
+	 */
+	void exitFinalFieldRef(Java8Parser.FinalFieldRefContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#finalVarRef}.
+	 * @param ctx the parse tree
+	 */
+	void enterFinalVarRef(Java8Parser.FinalVarRefContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#finalVarRef}.
+	 * @param ctx the parse tree
+	 */
+	void exitFinalVarRef(Java8Parser.FinalVarRefContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#commonFieldRef}.
+	 * @param ctx the parse tree
+	 */
+	void enterCommonFieldRef(Java8Parser.CommonFieldRefContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#commonFieldRef}.
+	 * @param ctx the parse tree
+	 */
+	void exitCommonFieldRef(Java8Parser.CommonFieldRefContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#commonVarRef}.
+	 * @param ctx the parse tree
+	 */
+	void enterCommonVarRef(Java8Parser.CommonVarRefContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#commonVarRef}.
+	 * @param ctx the parse tree
+	 */
+	void exitCommonVarRef(Java8Parser.CommonVarRefContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#offset}.
+	 * @param ctx the parse tree
+	 */
+	void enterOffset(Java8Parser.OffsetContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#offset}.
+	 * @param ctx the parse tree
+	 */
+	void exitOffset(Java8Parser.OffsetContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#codeHole}.
 	 * @param ctx the parse tree
 	 */

@@ -450,12 +450,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitDims(Java8Parser.DimsContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#typeArguments}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitTypeArguments(Java8Parser.TypeArgumentsContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#wildCardType}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

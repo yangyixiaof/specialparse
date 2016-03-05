@@ -739,16 +739,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitDims(Java8Parser.DimsContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#typeArguments}.
-	 * @param ctx the parse tree
-	 */
-	void enterTypeArguments(Java8Parser.TypeArgumentsContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#typeArguments}.
-	 * @param ctx the parse tree
-	 */
-	void exitTypeArguments(Java8Parser.TypeArgumentsContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link Java8Parser#wildCardType}.
 	 * @param ctx the parse tree
 	 */

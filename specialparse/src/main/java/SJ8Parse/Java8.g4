@@ -233,7 +233,7 @@ simpleType
 	;
 
 parameterizedType
-	:	identifier typeArguments
+	:	identifier '<' typeList '>'
 	;
 
 classOrInterfaceType
@@ -248,10 +248,6 @@ arrayType
 
 dims
 	:	'[' ']' ('[' ']')*
-	;
-
-typeArguments
-	:	'<' typeList '>'
 	;
 
 wildCardType

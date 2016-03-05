@@ -432,6 +432,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitParameterizedType(Java8Parser.ParameterizedTypeContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#bothType}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBothType(Java8Parser.BothTypeContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#classOrInterfaceType}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

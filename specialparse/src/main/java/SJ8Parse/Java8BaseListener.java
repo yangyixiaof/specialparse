@@ -857,6 +857,18 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterBothType(Java8Parser.BothTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBothType(Java8Parser.BothTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterClassOrInterfaceType(Java8Parser.ClassOrInterfaceTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}

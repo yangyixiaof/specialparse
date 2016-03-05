@@ -235,10 +235,13 @@ simpleType
 parameterizedType
 	:	identifier '<' typeList '>'
 	;
+	
+bothType
+	:	simpleType | parameterizedType
+	;
 
 classOrInterfaceType
-	:	(parameterizedType) ('.' parameterizedType)*
-	|	(simpleType) ('.' simpleType)*
+	:	(bothType) ('.' bothType)*
 	;
 
 arrayType

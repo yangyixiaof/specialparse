@@ -759,6 +759,26 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitWildCardType(Java8Parser.WildCardTypeContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#extendBound}.
+	 * @param ctx the parse tree
+	 */
+	void enterExtendBound(Java8Parser.ExtendBoundContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#extendBound}.
+	 * @param ctx the parse tree
+	 */
+	void exitExtendBound(Java8Parser.ExtendBoundContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#superBound}.
+	 * @param ctx the parse tree
+	 */
+	void enterSuperBound(Java8Parser.SuperBoundContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#superBound}.
+	 * @param ctx the parse tree
+	 */
+	void exitSuperBound(Java8Parser.SuperBoundContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#wildcardBounds}.
 	 * @param ctx the parse tree
 	 */

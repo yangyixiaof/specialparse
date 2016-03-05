@@ -462,6 +462,18 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitWildCardType(Java8Parser.WildCardTypeContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#extendBound}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExtendBound(Java8Parser.ExtendBoundContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#superBound}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSuperBound(Java8Parser.SuperBoundContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#wildcardBounds}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

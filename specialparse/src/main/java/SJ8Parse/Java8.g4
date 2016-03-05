@@ -114,7 +114,7 @@ enumConstantDeclarationStatement : 'EMD@' identifier '(' argumentList ')';
 
 labeledStatement : 'LD@' identifier;
 
-variableDeclarationStatement : 'VD@' type dims;
+variableDeclarationStatement : 'VD@' type;
 
 lambdaExpressionStatement : 'LE@' '(' typeList? ')' '->' '{}';
 
@@ -256,10 +256,14 @@ dims
 wildCardType
 	:	'?' wildcardBounds?
 	;
+	
+extendBound : 'extends' type;
+	
+superBound : 'super' type;
 
 wildcardBounds
-	:	'extends' type
-	|	'super' type
+	:	extendBound
+	|	superBound
 	;
 	
 intersectionFirstType

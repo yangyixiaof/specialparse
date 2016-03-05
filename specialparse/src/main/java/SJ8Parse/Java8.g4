@@ -207,6 +207,8 @@ stringLiteral
 
 type
 	:	primitiveType
+	|	parameterizedType
+	|	simpleType
 	|	classOrInterfaceType
 	|	arrayType
 	|	intersectionType
@@ -226,8 +228,17 @@ primitiveType
 	|	'char'
 	;
 
+simpleType
+	:	identifier
+	;
+
+parameterizedType
+	:	identifier typeArguments
+	;
+
 classOrInterfaceType
-	:	(identifier typeArguments?) ('.' identifier typeArguments?)*
+	:	(parameterizedType) ('.' parameterizedType)*
+	|	(simpleType) ('.' simpleType)*
 	;
 
 arrayType

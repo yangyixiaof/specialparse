@@ -420,6 +420,18 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitPrimitiveType(Java8Parser.PrimitiveTypeContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#simpleType}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSimpleType(Java8Parser.SimpleTypeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#parameterizedType}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParameterizedType(Java8Parser.ParameterizedTypeContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#classOrInterfaceType}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

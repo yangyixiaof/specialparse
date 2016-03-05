@@ -689,6 +689,26 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitPrimitiveType(Java8Parser.PrimitiveTypeContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#simpleType}.
+	 * @param ctx the parse tree
+	 */
+	void enterSimpleType(Java8Parser.SimpleTypeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#simpleType}.
+	 * @param ctx the parse tree
+	 */
+	void exitSimpleType(Java8Parser.SimpleTypeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#parameterizedType}.
+	 * @param ctx the parse tree
+	 */
+	void enterParameterizedType(Java8Parser.ParameterizedTypeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#parameterizedType}.
+	 * @param ctx the parse tree
+	 */
+	void exitParameterizedType(Java8Parser.ParameterizedTypeContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#classOrInterfaceType}.
 	 * @param ctx the parse tree
 	 */

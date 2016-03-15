@@ -86,7 +86,7 @@ prefixExpressionStatement : 'PeE@' unaryOperator referedExpression;
 
 postfixExpressionStatement : 'PtE@' referedExpression unaryOperator;
 
-arrayAccessStatement : '[@' referedExpression '#' referedExpression;
+arrayAccessStatement : '[@' referedExpression '#' referedExpression endOfArrayDeclarationIndexExpression?;
 
 referedExpression
 	:	identifier
@@ -331,7 +331,7 @@ OffsetDesc : [0-9]+;
 codeHole : '@HO';
 preExist : '@PE';
 
-endOfArrayDeclarationIndexExpression : '@]' ;
+endOfArrayDeclarationIndexExpression : '@]';
 
 AT : '@' ;
 

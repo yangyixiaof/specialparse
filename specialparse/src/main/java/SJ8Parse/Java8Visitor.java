@@ -282,6 +282,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitPartialEndArrayAccessStatement(Java8Parser.PartialEndArrayAccessStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#partialEndArrayInitializerStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPartialEndArrayInitializerStatement(Java8Parser.PartialEndArrayInitializerStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#leftParentheseStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -581,6 +587,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitEndOfArrayDeclarationIndexExpression(Java8Parser.EndOfArrayDeclarationIndexExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#endOfArrayInitializerElementExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEndOfArrayInitializerElementExpression(Java8Parser.EndOfArrayInitializerElementExpressionContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#integerLiteral}.
 	 * @param ctx the parse tree

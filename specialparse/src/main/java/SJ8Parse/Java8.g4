@@ -30,6 +30,7 @@ statement
 	|	variableDeclarationHolderStatement
 	|	enhancedForStatement
 	|	partialEndArrayAccessStatement
+	|	partialEndArrayInitializerStatement
 	|	leftParentheseStatement
 	|	rightParentheseStatement
 	|	leftBraceStatement
@@ -151,6 +152,8 @@ variableDeclarationHolderStatement : 'VH@' ('=' referedExpression)?;
 enhancedForStatement : 'EF@' 'for(' type ':' referedExpression ')';
 
 partialEndArrayAccessStatement : expressionStatement endOfArrayDeclarationIndexExpression;
+
+partialEndArrayInitializerStatement : expressionStatement endOfArrayInitializerElementExpression;
 
 leftParentheseStatement : 'DH@' ('(')+;
 
@@ -332,6 +335,7 @@ codeHole : '@HO';
 preExist : '@PE';
 
 endOfArrayDeclarationIndexExpression : '@]';
+endOfArrayInitializerElementExpression : '@I]';
 
 AT : '@' ;
 

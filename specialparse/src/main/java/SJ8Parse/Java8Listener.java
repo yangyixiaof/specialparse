@@ -459,6 +459,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitPartialEndArrayAccessStatement(Java8Parser.PartialEndArrayAccessStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#partialEndArrayInitializerStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterPartialEndArrayInitializerStatement(Java8Parser.PartialEndArrayInitializerStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#partialEndArrayInitializerStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitPartialEndArrayInitializerStatement(Java8Parser.PartialEndArrayInitializerStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#leftParentheseStatement}.
 	 * @param ctx the parse tree
 	 */
@@ -958,6 +968,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitEndOfArrayDeclarationIndexExpression(Java8Parser.EndOfArrayDeclarationIndexExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#endOfArrayInitializerElementExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterEndOfArrayInitializerElementExpression(Java8Parser.EndOfArrayInitializerElementExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#endOfArrayInitializerElementExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitEndOfArrayInitializerElementExpression(Java8Parser.EndOfArrayInitializerElementExpressionContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#integerLiteral}.
 	 * @param ctx the parse tree

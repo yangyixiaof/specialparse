@@ -2,7 +2,6 @@ package cn.yyx.parse.specialparse;
 
 import SJ8Parse.Java8BaseVisitor;
 import SJ8Parse.Java8Parser;
-import SJ8Parse.Java8Parser.PartialEndArrayInitializerStatementContext;
 
 public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	
@@ -234,7 +233,7 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	}
 	
 	@Override
-	public Integer visitPartialEndArrayInitializerStatement(PartialEndArrayInitializerStatementContext ctx) {
+	public Integer visitPartialEndArrayInitializerStatement(Java8Parser.PartialEndArrayInitializerStatementContext ctx) {
 		return visitChildren(ctx);
 	}
 

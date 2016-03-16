@@ -258,7 +258,7 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	}
 
 	@Override
-	public Integer visitDoStatement(Java8Parser.DoStatementContext ctx) {
+	public Integer visitEnterMethodParamStatement(Java8Parser.EnterMethodParamStatementContext ctx) {
 		return visitChildren(ctx);
 	}
 

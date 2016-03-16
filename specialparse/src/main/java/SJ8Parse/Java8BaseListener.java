@@ -617,13 +617,13 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDoStatement(Java8Parser.DoStatementContext ctx) { }
+	@Override public void enterEnterMethodParamStatement(Java8Parser.EnterMethodParamStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDoStatement(Java8Parser.DoStatementContext ctx) { }
+	@Override public void exitEnterMethodParamStatement(Java8Parser.EnterMethodParamStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

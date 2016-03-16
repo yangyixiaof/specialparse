@@ -35,7 +35,7 @@ statement
 	|	rightParentheseStatement
 	|	leftBraceStatement
 	|	rightBraceStatement
-	|	doStatement
+	|	enterMethodParamStatement
 	|	arrayInitializerStartStatement
 	|	forStatement
 	|	forIniOverStatement
@@ -163,7 +163,7 @@ leftBraceStatement : 'DH@' ('{')+;
 
 rightBraceStatement : 'DH@' ('}')+;
 
-doStatement : 'DH@' 'do';
+enterMethodParamStatement : 'DH@' ('Em')+;
 
 arrayInitializerStartStatement : 'DH@' 'arrIni';
 

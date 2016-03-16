@@ -96,7 +96,7 @@ public class Java8Lexer extends Lexer {
 		"'RT@'", "'return'", "'SW@'", "'switch'", "'CS@'", "'case'", "'DF@'", 
 		"'SC@'", "'synchronized'", "'TS@'", "'throw'", "'CT@'", "'catch'", "'IF@'", 
 		"'if'", "'AC@'", "'(new)'", "'IB@'", "'InitialBlock'", "'VH@'", "'EF@'", 
-		"'for('", "'DH@'", "'{'", "'}'", "'do'", "'arrIni'", "'for'", "'forIniOver'", 
+		"'for('", "'DH@'", "'{'", "'}'", "'Em'", "'arrIni'", "'for'", "'forIniOver'", 
 		"'forExpOver'", "'forUpdOver'", "'CondExpBegin'", "'CondExpQM'", "'CondExpCM'", 
 		"'DH@,'", "'DH@;'", "'@STR'", "'float'", "'double'", "'boolean'", "'byte'", 
 		"'short'", "'int'", "'long'", "'char'", "'['", "']'", "'extends'", "'super'", 
@@ -499,7 +499,7 @@ public class Java8Lexer extends Lexer {
 		"\7q\2\2\u0296\u0297\7t\2\2\u0297\u0298\7*\2\2\u0298|\3\2\2\2\u0299\u029a"+
 		"\7F\2\2\u029a\u029b\7J\2\2\u029b\u029c\7B\2\2\u029c~\3\2\2\2\u029d\u029e"+
 		"\7}\2\2\u029e\u0080\3\2\2\2\u029f\u02a0\7\177\2\2\u02a0\u0082\3\2\2\2"+
-		"\u02a1\u02a2\7f\2\2\u02a2\u02a3\7q\2\2\u02a3\u0084\3\2\2\2\u02a4\u02a5"+
+		"\u02a1\u02a2\7G\2\2\u02a2\u02a3\7o\2\2\u02a3\u0084\3\2\2\2\u02a4\u02a5"+
 		"\7c\2\2\u02a5\u02a6\7t\2\2\u02a6\u02a7\7t\2\2\u02a7\u02a8\7K\2\2\u02a8"+
 		"\u02a9\7p\2\2\u02a9\u02aa\7k\2\2\u02aa\u0086\3\2\2\2\u02ab\u02ac\7h\2"+
 		"\2\u02ac\u02ad\7q\2\2\u02ad\u02ae\7t\2\2\u02ae\u0088\3\2\2\2\u02af\u02b0"+

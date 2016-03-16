@@ -312,11 +312,11 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitRightBraceStatement(Java8Parser.RightBraceStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#doStatement}.
+	 * Visit a parse tree produced by {@link Java8Parser#enterMethodParamStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDoStatement(Java8Parser.DoStatementContext ctx);
+	T visitEnterMethodParamStatement(Java8Parser.EnterMethodParamStatementContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#arrayInitializerStartStatement}.
 	 * @param ctx the parse tree

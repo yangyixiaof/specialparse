@@ -509,15 +509,15 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitRightBraceStatement(Java8Parser.RightBraceStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#doStatement}.
+	 * Enter a parse tree produced by {@link Java8Parser#enterMethodParamStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterDoStatement(Java8Parser.DoStatementContext ctx);
+	void enterEnterMethodParamStatement(Java8Parser.EnterMethodParamStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#doStatement}.
+	 * Exit a parse tree produced by {@link Java8Parser#enterMethodParamStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitDoStatement(Java8Parser.DoStatementContext ctx);
+	void exitEnterMethodParamStatement(Java8Parser.EnterMethodParamStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#arrayInitializerStartStatement}.
 	 * @param ctx the parse tree

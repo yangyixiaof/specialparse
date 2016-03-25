@@ -384,6 +384,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFullEnd(Java8Parser.FullEndContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#firstArg}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFirstArg(Java8Parser.FirstArgContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#argumentList}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

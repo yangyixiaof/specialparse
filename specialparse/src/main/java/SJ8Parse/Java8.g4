@@ -187,7 +187,9 @@ partialEnd : 'DH@,';
 
 fullEnd : 'DH@;';
 
-argumentList : referedExpression (',' referedExpression)* ;
+firstArg : referedExpression;
+
+argumentList : firstArg (',' referedExpression)*;
 
 typeList : type (',' type)* ;
 

@@ -629,6 +629,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitFullEnd(Java8Parser.FullEndContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#firstArg}.
+	 * @param ctx the parse tree
+	 */
+	void enterFirstArg(Java8Parser.FirstArgContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#firstArg}.
+	 * @param ctx the parse tree
+	 */
+	void exitFirstArg(Java8Parser.FirstArgContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#argumentList}.
 	 * @param ctx the parse tree
 	 */

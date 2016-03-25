@@ -2,6 +2,7 @@ package cn.yyx.parse.specialparse;
 
 import SJ8Parse.Java8BaseVisitor;
 import SJ8Parse.Java8Parser;
+import SJ8Parse.Java8Parser.FirstArgContext;
 
 public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	
@@ -316,7 +317,12 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	public Integer visitFullEnd(Java8Parser.FullEndContext ctx) {
 		return visitChildren(ctx);
 	}
-
+	
+	@Override
+	public Integer visitFirstArg(FirstArgContext ctx) {
+		return super.visitFirstArg(ctx);
+	}
+	
 	@Override
 	public Integer visitArgumentList(Java8Parser.ArgumentListContext ctx) {
 		return visitChildren(ctx);

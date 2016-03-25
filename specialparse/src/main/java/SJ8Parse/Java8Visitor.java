@@ -384,6 +384,24 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFullEnd(Java8Parser.FullEndContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#selfClassMemberInvoke}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSelfClassMemberInvoke(Java8Parser.SelfClassMemberInvokeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#superClassMemberInvoke}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSuperClassMemberInvoke(Java8Parser.SuperClassMemberInvokeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#newClassInvoke}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNewClassInvoke(Java8Parser.NewClassInvokeContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#firstArg}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

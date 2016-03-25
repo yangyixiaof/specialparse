@@ -93,6 +93,7 @@ referedExpression
 	:	identifier
 	|	fieldAccess
 	|	literal
+	|	firstArg
 	;
 	
 anonymousClassBeginStatement : 'AB@' identifier;
@@ -187,7 +188,17 @@ partialEnd : 'DH@,';
 
 fullEnd : 'DH@;';
 
-firstArg : referedExpression;
+selfClassMemberInvoke : 'this' ('.' referedExpression)?;
+
+superClassMemberInvoke : 'super' ('.' referedExpression)?;
+
+newClassInvoke : 'new' ('.' referedExpression)?;
+
+firstArg : 
+	| selfClassMemberInvoke
+	| superClassMemberInvoke
+	| newClassInvoke
+	;
 
 argumentList : firstArg (',' referedExpression)*;
 

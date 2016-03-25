@@ -3,6 +3,9 @@ package cn.yyx.parse.specialparse;
 import SJ8Parse.Java8BaseVisitor;
 import SJ8Parse.Java8Parser;
 import SJ8Parse.Java8Parser.FirstArgContext;
+import SJ8Parse.Java8Parser.NewClassInvokeContext;
+import SJ8Parse.Java8Parser.SelfClassMemberInvokeContext;
+import SJ8Parse.Java8Parser.SuperClassMemberInvokeContext;
 
 public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	
@@ -316,6 +319,21 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	@Override
 	public Integer visitFullEnd(Java8Parser.FullEndContext ctx) {
 		return visitChildren(ctx);
+	}
+	
+	@Override
+	public Integer visitSelfClassMemberInvoke(SelfClassMemberInvokeContext ctx) {
+		return super.visitSelfClassMemberInvoke(ctx);
+	}
+
+	@Override
+	public Integer visitSuperClassMemberInvoke(SuperClassMemberInvokeContext ctx) {
+		return super.visitSuperClassMemberInvoke(ctx);
+	}
+
+	@Override
+	public Integer visitNewClassInvoke(NewClassInvokeContext ctx) {
+		return super.visitNewClassInvoke(ctx);
 	}
 	
 	@Override

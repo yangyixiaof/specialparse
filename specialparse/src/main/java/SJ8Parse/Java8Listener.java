@@ -629,6 +629,36 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitFullEnd(Java8Parser.FullEndContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#selfClassMemberInvoke}.
+	 * @param ctx the parse tree
+	 */
+	void enterSelfClassMemberInvoke(Java8Parser.SelfClassMemberInvokeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#selfClassMemberInvoke}.
+	 * @param ctx the parse tree
+	 */
+	void exitSelfClassMemberInvoke(Java8Parser.SelfClassMemberInvokeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#superClassMemberInvoke}.
+	 * @param ctx the parse tree
+	 */
+	void enterSuperClassMemberInvoke(Java8Parser.SuperClassMemberInvokeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#superClassMemberInvoke}.
+	 * @param ctx the parse tree
+	 */
+	void exitSuperClassMemberInvoke(Java8Parser.SuperClassMemberInvokeContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#newClassInvoke}.
+	 * @param ctx the parse tree
+	 */
+	void enterNewClassInvoke(Java8Parser.NewClassInvokeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#newClassInvoke}.
+	 * @param ctx the parse tree
+	 */
+	void exitNewClassInvoke(Java8Parser.NewClassInvokeContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#firstArg}.
 	 * @param ctx the parse tree
 	 */

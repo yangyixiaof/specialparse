@@ -6,6 +6,7 @@ import SJ8Parse.Java8Parser.FirstArgContext;
 import SJ8Parse.Java8Parser.NewClassInvokeContext;
 import SJ8Parse.Java8Parser.SelfClassMemberInvokeContext;
 import SJ8Parse.Java8Parser.SuperClassMemberInvokeContext;
+import SJ8Parse.Java8Parser.VirtualInferredTypeContext;
 
 public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	
@@ -368,6 +369,11 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 
 	@Override
 	public Integer visitType(Java8Parser.TypeContext ctx) {
+		return visitChildren(ctx);
+	}
+	
+	@Override
+	public Integer visitVirtualInferredType(VirtualInferredTypeContext ctx) {
 		return visitChildren(ctx);
 	}
 

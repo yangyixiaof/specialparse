@@ -881,6 +881,18 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterVirtualInferredType(Java8Parser.VirtualInferredTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVirtualInferredType(Java8Parser.VirtualInferredTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterPrimitiveType(Java8Parser.PrimitiveTypeContext ctx) { }
 	/**
 	 * {@inheritDoc}

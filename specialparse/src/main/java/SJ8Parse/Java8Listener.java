@@ -729,6 +729,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitType(Java8Parser.TypeContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#virtualInferredType}.
+	 * @param ctx the parse tree
+	 */
+	void enterVirtualInferredType(Java8Parser.VirtualInferredTypeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#virtualInferredType}.
+	 * @param ctx the parse tree
+	 */
+	void exitVirtualInferredType(Java8Parser.VirtualInferredTypeContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#primitiveType}.
 	 * @param ctx the parse tree
 	 */

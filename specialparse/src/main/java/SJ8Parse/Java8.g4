@@ -222,7 +222,8 @@ stringLiteral
 	;
 
 type
-	:	primitiveType
+	:	virtualInferredType
+	|	primitiveType
 	|	parameterizedType
 	|	simpleType
 	|	classOrInterfaceType
@@ -231,6 +232,10 @@ type
 	|	unionType
 	|	wildCardType
 	|	classRef
+	;
+	
+virtualInferredType
+	:	'@IT'
 	;
 	
 primitiveType

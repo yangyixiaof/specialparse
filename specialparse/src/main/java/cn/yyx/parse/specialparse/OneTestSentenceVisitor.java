@@ -3,6 +3,7 @@ package cn.yyx.parse.specialparse;
 import SJ8Parse.Java8BaseVisitor;
 import SJ8Parse.Java8Parser;
 import SJ8Parse.Java8Parser.FirstArgContext;
+import SJ8Parse.Java8Parser.MethodReferenceExpressionContext;
 import SJ8Parse.Java8Parser.NewClassInvokeContext;
 import SJ8Parse.Java8Parser.SelfClassMemberInvokeContext;
 import SJ8Parse.Java8Parser.SuperClassMemberInvokeContext;
@@ -61,6 +62,11 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 		return visitChildren(ctx);
 	}
 
+	@Override
+	public Integer visitMethodReferenceExpression(MethodReferenceExpressionContext ctx) {
+		return visitChildren(ctx);
+	}
+	
 	@Override
 	public Integer visitMethodReferenceStatement(Java8Parser.MethodReferenceStatementContext ctx) {
 		return visitChildren(ctx);

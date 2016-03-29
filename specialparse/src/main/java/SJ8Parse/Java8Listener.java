@@ -469,16 +469,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitPartialEndArrayAccessStatement(Java8Parser.PartialEndArrayAccessStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#partialEndArrayInitializerStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterPartialEndArrayInitializerStatement(Java8Parser.PartialEndArrayInitializerStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#partialEndArrayInitializerStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitPartialEndArrayInitializerStatement(Java8Parser.PartialEndArrayInitializerStatementContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link Java8Parser#leftParentheseStatement}.
 	 * @param ctx the parse tree
 	 */
@@ -538,6 +528,26 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitArrayInitializerStartStatement(Java8Parser.ArrayInitializerStartStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#arrayInitializerSplitCommaStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterArrayInitializerSplitCommaStatement(Java8Parser.ArrayInitializerSplitCommaStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#arrayInitializerSplitCommaStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitArrayInitializerSplitCommaStatement(Java8Parser.ArrayInitializerSplitCommaStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#arrayInitializerEndStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterArrayInitializerEndStatement(Java8Parser.ArrayInitializerEndStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#arrayInitializerEndStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitArrayInitializerEndStatement(Java8Parser.ArrayInitializerEndStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#forStatement}.
 	 * @param ctx the parse tree

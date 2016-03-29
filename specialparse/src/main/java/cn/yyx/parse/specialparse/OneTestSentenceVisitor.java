@@ -2,6 +2,8 @@ package cn.yyx.parse.specialparse;
 
 import SJ8Parse.Java8BaseVisitor;
 import SJ8Parse.Java8Parser;
+import SJ8Parse.Java8Parser.ArrayInitializerEndStatementContext;
+import SJ8Parse.Java8Parser.ArrayInitializerSplitCommaStatementContext;
 import SJ8Parse.Java8Parser.FirstArgContext;
 import SJ8Parse.Java8Parser.MethodReferenceExpressionContext;
 import SJ8Parse.Java8Parser.NewClassInvokeContext;
@@ -244,11 +246,6 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	}
 	
 	@Override
-	public Integer visitPartialEndArrayInitializerStatement(Java8Parser.PartialEndArrayInitializerStatementContext ctx) {
-		return visitChildren(ctx);
-	}
-
-	@Override
 	public Integer visitLeftParentheseStatement(Java8Parser.LeftParentheseStatementContext ctx) {
 		return visitChildren(ctx);
 	}
@@ -275,6 +272,16 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 
 	@Override
 	public Integer visitArrayInitializerStartStatement(Java8Parser.ArrayInitializerStartStatementContext ctx) {
+		return visitChildren(ctx);
+	}
+	
+	@Override
+	public Integer visitArrayInitializerSplitCommaStatement(ArrayInitializerSplitCommaStatementContext ctx) {
+		return visitChildren(ctx);
+	}
+	
+	@Override
+	public Integer visitArrayInitializerEndStatement(ArrayInitializerEndStatementContext ctx) {
 		return visitChildren(ctx);
 	}
 

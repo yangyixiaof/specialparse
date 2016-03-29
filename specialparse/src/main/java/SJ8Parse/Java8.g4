@@ -30,13 +30,14 @@ statement
 	|	variableDeclarationHolderStatement
 	|	enhancedForStatement
 	|	partialEndArrayAccessStatement
-	|	partialEndArrayInitializerStatement
 	|	leftParentheseStatement
 	|	rightParentheseStatement
 	|	leftBraceStatement
 	|	rightBraceStatement
 	|	enterMethodParamStatement
 	|	arrayInitializerStartStatement
+	|	arrayInitializerSplitCommaStatement
+	|	arrayInitializerEndStatement
 	|	forStatement
 	|	forIniOverStatement
 	|	forExpOverStatement
@@ -156,8 +157,6 @@ enhancedForStatement : 'EF@' 'for(' type ':' referedExpression ')';
 
 partialEndArrayAccessStatement : expressionStatement endOfArrayDeclarationIndexExpression;
 
-partialEndArrayInitializerStatement : expressionStatement endOfArrayInitializerElementExpression;
-
 leftParentheseStatement : 'DH@' ('(')+;
 
 rightParentheseStatement : 'DH@' (')')+;
@@ -168,7 +167,11 @@ rightBraceStatement : 'DH@' ('}')+;
 
 enterMethodParamStatement : 'DH@' ('Em')+;
 
-arrayInitializerStartStatement : 'DH@' 'arrIni';
+arrayInitializerStartStatement : 'DH@' 'A{';
+
+arrayInitializerSplitCommaStatement : 'DH@' 'A,';
+
+arrayInitializerEndStatement : 'DH@' 'A}';
 
 forStatement : 'DH@' 'for';
 

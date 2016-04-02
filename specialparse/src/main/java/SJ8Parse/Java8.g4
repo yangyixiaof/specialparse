@@ -45,7 +45,8 @@ statement
 	|	condExpBeginStatement
 	|	condExpQuestionMarkStatement
 	|	condExpColonMarkStatement
-	|	endOfStatement
+	|	partialEndStatement
+	|	fullEndStatement
 	|	expressionStatement
 	;
 	
@@ -187,11 +188,9 @@ condExpQuestionMarkStatement : 'DH@' 'CondExpQM';
 
 condExpColonMarkStatement : 'DH@' 'CondExpCM';
 
-endOfStatement : partialEnd | fullEnd;
+partialEndStatement : 'DH@,';
 
-partialEnd : 'DH@,';
-
-fullEnd : 'DH@;';
+fullEndStatement : 'DH@;';
 
 selfClassMemberInvoke : 'this' ('.' referedExpression)?;
 

@@ -619,35 +619,25 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitCondExpColonMarkStatement(Java8Parser.CondExpColonMarkStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#endOfStatement}.
+	 * Enter a parse tree produced by {@link Java8Parser#partialEndStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterEndOfStatement(Java8Parser.EndOfStatementContext ctx);
+	void enterPartialEndStatement(Java8Parser.PartialEndStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#endOfStatement}.
+	 * Exit a parse tree produced by {@link Java8Parser#partialEndStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitEndOfStatement(Java8Parser.EndOfStatementContext ctx);
+	void exitPartialEndStatement(Java8Parser.PartialEndStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#partialEnd}.
+	 * Enter a parse tree produced by {@link Java8Parser#fullEndStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterPartialEnd(Java8Parser.PartialEndContext ctx);
+	void enterFullEndStatement(Java8Parser.FullEndStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#partialEnd}.
+	 * Exit a parse tree produced by {@link Java8Parser#fullEndStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitPartialEnd(Java8Parser.PartialEndContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#fullEnd}.
-	 * @param ctx the parse tree
-	 */
-	void enterFullEnd(Java8Parser.FullEndContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#fullEnd}.
-	 * @param ctx the parse tree
-	 */
-	void exitFullEnd(Java8Parser.FullEndContext ctx);
+	void exitFullEndStatement(Java8Parser.FullEndStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#selfClassMemberInvoke}.
 	 * @param ctx the parse tree

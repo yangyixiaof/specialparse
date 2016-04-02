@@ -321,17 +321,12 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	}
 
 	@Override
-	public Integer visitEndOfStatement(Java8Parser.EndOfStatementContext ctx) {
+	public Integer visitPartialEndStatement(Java8Parser.PartialEndStatementContext ctx) {
 		return visitChildren(ctx);
 	}
 
 	@Override
-	public Integer visitPartialEnd(Java8Parser.PartialEndContext ctx) {
-		return visitChildren(ctx);
-	}
-
-	@Override
-	public Integer visitFullEnd(Java8Parser.FullEndContext ctx) {
+	public Integer visitFullEndStatement(Java8Parser.FullEndStatementContext ctx) {
 		return visitChildren(ctx);
 	}
 	

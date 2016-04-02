@@ -445,21 +445,14 @@ public class Java8BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitEndOfStatement(Java8Parser.EndOfStatementContext ctx) { return visitChildren(ctx); }
+	@Override public T visitPartialEndStatement(Java8Parser.PartialEndStatementContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPartialEnd(Java8Parser.PartialEndContext ctx) { return visitChildren(ctx); }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation returns the result of calling
-	 * {@link #visitChildren} on {@code ctx}.</p>
-	 */
-	@Override public T visitFullEnd(Java8Parser.FullEndContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFullEndStatement(Java8Parser.FullEndStatementContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

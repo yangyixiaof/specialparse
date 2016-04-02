@@ -378,23 +378,17 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCondExpColonMarkStatement(Java8Parser.CondExpColonMarkStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#endOfStatement}.
+	 * Visit a parse tree produced by {@link Java8Parser#partialEndStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitEndOfStatement(Java8Parser.EndOfStatementContext ctx);
+	T visitPartialEndStatement(Java8Parser.PartialEndStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#partialEnd}.
+	 * Visit a parse tree produced by {@link Java8Parser#fullEndStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPartialEnd(Java8Parser.PartialEndContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#fullEnd}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFullEnd(Java8Parser.FullEndContext ctx);
+	T visitFullEndStatement(Java8Parser.FullEndStatementContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#selfClassMemberInvoke}.
 	 * @param ctx the parse tree

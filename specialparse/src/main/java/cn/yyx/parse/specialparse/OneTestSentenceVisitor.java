@@ -98,6 +98,11 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	public Integer visitAnonymousClassBeginStatement(Java8Parser.AnonymousClassBeginStatementContext ctx) {
 		return visitChildren(ctx);
 	}
+	
+	@Override
+	public Integer visitAnonymousClassPlaceHolderStatement(Java8Parser.AnonymousClassPlaceHolderStatementContext ctx) {
+		return visitChildren(ctx);
+	}
 
 	@Override
 	public Integer visitAnonymousClassPreStatement(Java8Parser.AnonymousClassPreStatementContext ctx) {

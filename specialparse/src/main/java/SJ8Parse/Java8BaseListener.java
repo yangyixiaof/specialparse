@@ -785,6 +785,30 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterPartialMethodArgumentEndStatement(Java8Parser.PartialMethodArgumentEndStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPartialMethodArgumentEndStatement(Java8Parser.PartialMethodArgumentEndStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPartialMethodPreRerferedExpressionEndStatement(Java8Parser.PartialMethodPreRerferedExpressionEndStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPartialMethodPreRerferedExpressionEndStatement(Java8Parser.PartialMethodPreRerferedExpressionEndStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterSelfClassMemberInvoke(Java8Parser.SelfClassMemberInvokeContext ctx) { }
 	/**
 	 * {@inheritDoc}

@@ -336,6 +336,17 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	}
 	
 	@Override
+	public Integer visitPartialMethodArgumentEndStatement(Java8Parser.PartialMethodArgumentEndStatementContext ctx) {
+		return visitChildren(ctx);
+	}
+	
+	@Override
+	public Integer visitPartialMethodPreRerferedExpressionEndStatement(
+			Java8Parser.PartialMethodPreRerferedExpressionEndStatementContext ctx) {
+		return visitChildren(ctx);
+	}
+	
+	@Override
 	public Integer visitSelfClassMemberInvoke(SelfClassMemberInvokeContext ctx) {
 		return super.visitSelfClassMemberInvoke(ctx);
 	}

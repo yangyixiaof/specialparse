@@ -396,6 +396,18 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFullEndStatement(Java8Parser.FullEndStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#partialMethodArgumentEndStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPartialMethodArgumentEndStatement(Java8Parser.PartialMethodArgumentEndStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#partialMethodPreRerferedExpressionEndStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPartialMethodPreRerferedExpressionEndStatement(Java8Parser.PartialMethodPreRerferedExpressionEndStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#selfClassMemberInvoke}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

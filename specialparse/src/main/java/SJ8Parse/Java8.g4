@@ -48,6 +48,8 @@ statement
 	|	condExpColonMarkStatement
 	|	partialEndStatement
 	|	fullEndStatement
+	|	partialMethodArgumentEndStatement
+	|	partialMethodPreRerferedExpressionEndStatement
 	|	expressionStatement
 	;
 	
@@ -194,6 +196,10 @@ condExpColonMarkStatement : 'DH@' 'CondExpCM';
 partialEndStatement : 'DH@,';
 
 fullEndStatement : 'DH@;';
+
+partialMethodArgumentEndStatement : 'DH@Ps';
+
+partialMethodPreRerferedExpressionEndStatement : 'DH@Pr';
 
 selfClassMemberInvoke : 'this' ('.' referedExpression)?;
 

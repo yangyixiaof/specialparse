@@ -649,6 +649,26 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitFullEndStatement(Java8Parser.FullEndStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#partialMethodArgumentEndStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterPartialMethodArgumentEndStatement(Java8Parser.PartialMethodArgumentEndStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#partialMethodArgumentEndStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitPartialMethodArgumentEndStatement(Java8Parser.PartialMethodArgumentEndStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#partialMethodPreRerferedExpressionEndStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterPartialMethodPreRerferedExpressionEndStatement(Java8Parser.PartialMethodPreRerferedExpressionEndStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#partialMethodPreRerferedExpressionEndStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitPartialMethodPreRerferedExpressionEndStatement(Java8Parser.PartialMethodPreRerferedExpressionEndStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#selfClassMemberInvoke}.
 	 * @param ctx the parse tree
 	 */

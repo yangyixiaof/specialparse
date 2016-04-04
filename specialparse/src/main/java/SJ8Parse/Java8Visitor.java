@@ -120,6 +120,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAnonymousClassBeginStatement(Java8Parser.AnonymousClassBeginStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#anonymousClassPlaceHolderStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAnonymousClassPlaceHolderStatement(Java8Parser.AnonymousClassPlaceHolderStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#anonymousClassPreStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

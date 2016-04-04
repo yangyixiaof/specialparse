@@ -2,6 +2,7 @@ grammar Java8;
 
 statement
 	:	anonymousClassBeginStatement
+	|	anonymousClassPlaceHolderStatement
 	|	anonymousClassPreStatement
 	|	atInterfaceStatement
 	|	annotationTypeMemberDeclarationStatement
@@ -101,6 +102,8 @@ referedExpression
 	;
 	
 anonymousClassBeginStatement : 'AB@' identifier;
+
+anonymousClassPlaceHolderStatement : 'DH@AnonymousDeclaration';
 
 anonymousClassPreStatement : 'HT@' identifier;
 

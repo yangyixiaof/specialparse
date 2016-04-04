@@ -101,7 +101,7 @@ referedExpression
 	|	firstArg
 	;
 	
-anonymousClassBeginStatement : 'AB@' identifier;
+anonymousClassBeginStatement : 'AB@AnonymousBegin';
 
 anonymousClassPlaceHolderStatement : 'DH@AnonymousDeclaration';
 

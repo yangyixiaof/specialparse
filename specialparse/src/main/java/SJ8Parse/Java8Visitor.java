@@ -444,6 +444,18 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFirstArg(Java8Parser.FirstArgContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#methodArgPreExist}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMethodArgPreExist(Java8Parser.MethodArgPreExistContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#methodArgReferedExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMethodArgReferedExpression(Java8Parser.MethodArgReferedExpressionContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#argumentList}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

@@ -729,6 +729,26 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitFirstArg(Java8Parser.FirstArgContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#methodArgPreExist}.
+	 * @param ctx the parse tree
+	 */
+	void enterMethodArgPreExist(Java8Parser.MethodArgPreExistContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#methodArgPreExist}.
+	 * @param ctx the parse tree
+	 */
+	void exitMethodArgPreExist(Java8Parser.MethodArgPreExistContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#methodArgReferedExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterMethodArgReferedExpression(Java8Parser.MethodArgReferedExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#methodArgReferedExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitMethodArgReferedExpression(Java8Parser.MethodArgReferedExpressionContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#argumentList}.
 	 * @param ctx the parse tree
 	 */

@@ -7,6 +7,8 @@ import SJ8Parse.Java8Parser.ArrayInitializerSplitCommaStatementContext;
 import SJ8Parse.Java8Parser.FirstArgContext;
 import SJ8Parse.Java8Parser.FirstArgPreExistContext;
 import SJ8Parse.Java8Parser.FirstArgReferedExpressionContext;
+import SJ8Parse.Java8Parser.MethodArgPreExistContext;
+import SJ8Parse.Java8Parser.MethodArgReferedExpressionContext;
 import SJ8Parse.Java8Parser.MethodReferenceExpressionContext;
 import SJ8Parse.Java8Parser.NewClassInvokeContext;
 import SJ8Parse.Java8Parser.SelfClassMemberInvokeContext;
@@ -376,6 +378,16 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	@Override
 	public Integer visitFirstArg(FirstArgContext ctx) {
 		return super.visitFirstArg(ctx);
+	}
+	
+	@Override
+	public Integer visitMethodArgPreExist(MethodArgPreExistContext ctx) {
+		return super.visitMethodArgPreExist(ctx);
+	}
+	
+	@Override
+	public Integer visitMethodArgReferedExpression(MethodArgReferedExpressionContext ctx) {
+		return super.visitMethodArgReferedExpression(ctx);
 	}
 	
 	@Override

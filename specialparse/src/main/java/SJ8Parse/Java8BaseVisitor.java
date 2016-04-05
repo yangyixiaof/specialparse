@@ -522,6 +522,20 @@ public class Java8BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitMethodArgPreExist(Java8Parser.MethodArgPreExistContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitMethodArgReferedExpression(Java8Parser.MethodArgReferedExpressionContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitArgumentList(Java8Parser.ArgumentListContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}

@@ -881,6 +881,30 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterMethodArgPreExist(Java8Parser.MethodArgPreExistContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMethodArgPreExist(Java8Parser.MethodArgPreExistContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMethodArgReferedExpression(Java8Parser.MethodArgReferedExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMethodArgReferedExpression(Java8Parser.MethodArgReferedExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterArgumentList(Java8Parser.ArgumentListContext ctx) { }
 	/**
 	 * {@inheritDoc}

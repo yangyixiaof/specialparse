@@ -224,7 +224,17 @@ firstArg :
 	| newClassInvoke
 	;
 
-argumentList : firstArg (',' referedExpression)*;
+methodArgPreExist : '@PE';
+	
+methodArgReferedExpression
+	:	identifier
+	|	fieldAccess
+	|	literal
+	|	codeHole
+	|	methodArgPreExist
+	;
+
+argumentList : firstArg (',' methodArgReferedExpression)*;
 
 typeList : type (',' type)* ;
 

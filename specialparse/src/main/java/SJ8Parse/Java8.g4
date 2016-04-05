@@ -212,7 +212,7 @@ firstArgReferedExpression
 	|	firstArgPreExist
 	;
 	
-commonClassMemberInvoke : identifier ('.' firstArgReferedExpression)?;
+commonClassMemberInvoke : firstArgReferedExpression;
 
 selfClassMemberInvoke : 'this' ('.' firstArgReferedExpression)?;
 
@@ -221,9 +221,10 @@ superClassMemberInvoke : 'super' ('.' firstArgReferedExpression)?;
 newClassInvoke : 'new' ('.' firstArgReferedExpression)?;
 
 firstArg : 
-	| selfClassMemberInvoke
-	| superClassMemberInvoke
-	| newClassInvoke
+	|	selfClassMemberInvoke
+	|	superClassMemberInvoke
+	|	newClassInvoke
+	|	commonClassMemberInvoke
 	;
 
 methodArgPreExist : '@PE';

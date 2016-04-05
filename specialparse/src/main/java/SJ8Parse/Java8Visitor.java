@@ -420,6 +420,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFirstArgReferedExpression(Java8Parser.FirstArgReferedExpressionContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#commonClassMemberInvoke}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCommonClassMemberInvoke(Java8Parser.CommonClassMemberInvokeContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#selfClassMemberInvoke}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

@@ -833,6 +833,18 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterCommonClassMemberInvoke(Java8Parser.CommonClassMemberInvokeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCommonClassMemberInvoke(Java8Parser.CommonClassMemberInvokeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterSelfClassMemberInvoke(Java8Parser.SelfClassMemberInvokeContext ctx) { }
 	/**
 	 * {@inheritDoc}

@@ -211,6 +211,8 @@ firstArgReferedExpression
 	|	codeHole
 	|	firstArgPreExist
 	;
+	
+commonClassMemberInvoke : identifier ('.' firstArgReferedExpression)?;
 
 selfClassMemberInvoke : 'this' ('.' firstArgReferedExpression)?;
 

@@ -689,6 +689,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitFirstArgReferedExpression(Java8Parser.FirstArgReferedExpressionContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#commonClassMemberInvoke}.
+	 * @param ctx the parse tree
+	 */
+	void enterCommonClassMemberInvoke(Java8Parser.CommonClassMemberInvokeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#commonClassMemberInvoke}.
+	 * @param ctx the parse tree
+	 */
+	void exitCommonClassMemberInvoke(Java8Parser.CommonClassMemberInvokeContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#selfClassMemberInvoke}.
 	 * @param ctx the parse tree
 	 */

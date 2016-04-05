@@ -100,7 +100,8 @@ referedExpression
 	:	identifier
 	|	fieldAccess
 	|	literal
-	|	firstArg
+	|	codeHole
+	|	preExist
 	;
 	
 anonymousClassBeginStatement : 'AB@AnonymousBegin';
@@ -201,11 +202,21 @@ partialMethodArgumentEndStatement : 'DH@Ps';
 
 partialMethodPreRerferedExpressionEndStatement : 'DH@Pr';
 
-selfClassMemberInvoke : 'this' ('.' referedExpression)?;
+firstArgPreExist : '@PE';
+	
+firstArgReferedExpression
+	:	identifier
+	|	fieldAccess
+	|	literal
+	|	codeHole
+	|	firstArgPreExist
+	;
 
-superClassMemberInvoke : 'super' ('.' referedExpression)?;
+selfClassMemberInvoke : 'this' ('.' firstArgReferedExpression)?;
 
-newClassInvoke : 'new' ('.' referedExpression)?;
+superClassMemberInvoke : 'super' ('.' firstArgReferedExpression)?;
+
+newClassInvoke : 'new' ('.' firstArgReferedExpression)?;
 
 firstArg : 
 	| selfClassMemberInvoke
@@ -326,8 +337,6 @@ identifier
 	|	finalVarRef
 	|	commonFieldRef
 	|	commonVarRef
-	|	codeHole
-	|	preExist
 	;
 	
 idRawLetter : JavaLetter JavaLetterOrDigit*;

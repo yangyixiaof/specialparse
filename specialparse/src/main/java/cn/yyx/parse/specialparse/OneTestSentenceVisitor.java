@@ -5,6 +5,8 @@ import SJ8Parse.Java8Parser;
 import SJ8Parse.Java8Parser.ArrayInitializerEndStatementContext;
 import SJ8Parse.Java8Parser.ArrayInitializerSplitCommaStatementContext;
 import SJ8Parse.Java8Parser.FirstArgContext;
+import SJ8Parse.Java8Parser.FirstArgPreExistContext;
+import SJ8Parse.Java8Parser.FirstArgReferedExpressionContext;
 import SJ8Parse.Java8Parser.MethodReferenceExpressionContext;
 import SJ8Parse.Java8Parser.NewClassInvokeContext;
 import SJ8Parse.Java8Parser.SelfClassMemberInvokeContext;
@@ -344,6 +346,16 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	public Integer visitPartialMethodPreRerferedExpressionEndStatement(
 			Java8Parser.PartialMethodPreRerferedExpressionEndStatementContext ctx) {
 		return visitChildren(ctx);
+	}
+	
+	@Override
+	public Integer visitFirstArgPreExist(FirstArgPreExistContext ctx) {
+		return visitChildren(ctx);
+	}
+	
+	@Override
+	public Integer visitFirstArgReferedExpression(FirstArgReferedExpressionContext ctx) {
+		return super.visitFirstArgReferedExpression(ctx);
 	}
 	
 	@Override

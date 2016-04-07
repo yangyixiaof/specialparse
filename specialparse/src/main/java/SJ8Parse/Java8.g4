@@ -287,7 +287,7 @@ primitiveType
 	;
 
 simpleType
-	:	identifier
+	:	identifier ('.' identifier)*
 	;
 
 parameterizedType

@@ -769,6 +769,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitTypeList(Java8Parser.TypeListContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#argTypeList}.
+	 * @param ctx the parse tree
+	 */
+	void enterArgTypeList(Java8Parser.ArgTypeListContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#argTypeList}.
+	 * @param ctx the parse tree
+	 */
+	void exitArgTypeList(Java8Parser.ArgTypeListContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#literal}.
 	 * @param ctx the parse tree
 	 */

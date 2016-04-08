@@ -468,6 +468,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitTypeList(Java8Parser.TypeListContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#argTypeList}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArgTypeList(Java8Parser.ArgTypeListContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#literal}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

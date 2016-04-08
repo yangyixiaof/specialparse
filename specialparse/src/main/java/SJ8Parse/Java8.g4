@@ -118,7 +118,7 @@ classInnerDeclarationStatement : 'ICD@' identifier;
 
 enumDeclarationStatement : 'ED@' identifier;
 
-methodDeclarationStatement : 'MD@' '(' typeList? ')' identifier;
+methodDeclarationStatement : 'MD@' '(' argTypeList? ')' identifier;
 
 enumConstantDeclarationStatement : 'EMD@' identifier '(' argumentList ')';
 
@@ -126,7 +126,7 @@ labeledStatement : 'LD@' identifier;
 
 variableDeclarationStatement : 'VD@' type;
 
-lambdaExpressionStatement : 'LE@' '(' typeList? ')' '->' '{}';
+lambdaExpressionStatement : 'LE@' '(' argTypeList? ')' '->' '{}';
 
 breakStatement : 'B@' 'break' ('#' identifier)?;
 
@@ -237,7 +237,9 @@ methodArgReferedExpression
 
 argumentList : firstArg (',' methodArgReferedExpression)*;
 
-typeList : type (',' type)* ;
+typeList : type (',' type)*;
+
+argTypeList : type (',' type)*;
 
 literal
 	:	numberLiteral

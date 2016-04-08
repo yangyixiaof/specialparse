@@ -2,6 +2,7 @@ package cn.yyx.parse.specialparse;
 
 import SJ8Parse.Java8BaseVisitor;
 import SJ8Parse.Java8Parser;
+import SJ8Parse.Java8Parser.ArgTypeListContext;
 import SJ8Parse.Java8Parser.ArrayInitializerEndStatementContext;
 import SJ8Parse.Java8Parser.ArrayInitializerSplitCommaStatementContext;
 import SJ8Parse.Java8Parser.CommonClassMemberInvokeContext;
@@ -398,6 +399,11 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	@Override
 	public Integer visitTypeList(Java8Parser.TypeListContext ctx) {
 		return visitChildren(ctx);
+	}
+	
+	@Override
+	public Integer visitArgTypeList(ArgTypeListContext ctx) {
+		return super.visitArgTypeList(ctx);
 	}
 
 	@Override

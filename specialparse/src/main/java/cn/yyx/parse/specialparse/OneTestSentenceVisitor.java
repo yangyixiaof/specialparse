@@ -10,7 +10,6 @@ import SJ8Parse.Java8Parser.FirstArgPreExistContext;
 import SJ8Parse.Java8Parser.FirstArgReferedExpressionContext;
 import SJ8Parse.Java8Parser.MethodArgPreExistContext;
 import SJ8Parse.Java8Parser.MethodArgReferedExpressionContext;
-import SJ8Parse.Java8Parser.MethodReferenceExpressionContext;
 import SJ8Parse.Java8Parser.NewClassInvokeContext;
 import SJ8Parse.Java8Parser.SelfClassMemberInvokeContext;
 import SJ8Parse.Java8Parser.SuperClassMemberInvokeContext;
@@ -66,11 +65,6 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 
 	@Override
 	public Integer visitInstanceofExpressionStatement(Java8Parser.InstanceofExpressionStatementContext ctx) {
-		return visitChildren(ctx);
-	}
-
-	@Override
-	public Integer visitMethodReferenceExpression(MethodReferenceExpressionContext ctx) {
 		return visitChildren(ctx);
 	}
 	

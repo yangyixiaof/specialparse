@@ -84,9 +84,7 @@ infixExpressionStatement : 'IxE@' referedExpression binaryOperator referedExpres
 
 instanceofExpressionStatement : 'InE@' referedExpression 'instanceof' type;
 
-methodReferenceExpression : referedExpression;
-
-methodReferenceStatement : 'MR@' identifier '::' methodReferenceExpression;
+methodReferenceStatement : 'MR@' identifier '::' referedExpression;
 
 nameStatement : 'N@' identifier;
 

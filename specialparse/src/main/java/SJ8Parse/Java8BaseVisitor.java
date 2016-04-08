@@ -550,6 +550,13 @@ public class Java8BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitArgType(Java8Parser.ArgTypeContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitArgTypeList(Java8Parser.ArgTypeListContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}

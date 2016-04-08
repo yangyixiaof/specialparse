@@ -929,6 +929,18 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterArgType(Java8Parser.ArgTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitArgType(Java8Parser.ArgTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterArgTypeList(Java8Parser.ArgTypeListContext ctx) { }
 	/**
 	 * {@inheritDoc}

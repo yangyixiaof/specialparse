@@ -239,7 +239,9 @@ argumentList : firstArg (',' methodArgReferedExpression)*;
 
 typeList : type (',' type)*;
 
-argTypeList : type (',' type)*;
+argType : type;
+
+argTypeList : argType (',' argType)*;
 
 literal
 	:	numberLiteral

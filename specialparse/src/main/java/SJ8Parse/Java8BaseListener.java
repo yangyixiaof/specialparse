@@ -1421,13 +1421,25 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterUnaryOperator(Java8Parser.UnaryOperatorContext ctx) { }
+	@Override public void enterPrefixUnaryOperator(Java8Parser.PrefixUnaryOperatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitUnaryOperator(Java8Parser.UnaryOperatorContext ctx) { }
+	@Override public void exitPrefixUnaryOperator(Java8Parser.PrefixUnaryOperatorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPostfixUnaryOperator(Java8Parser.PostfixUnaryOperatorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPostfixUnaryOperator(Java8Parser.PostfixUnaryOperatorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

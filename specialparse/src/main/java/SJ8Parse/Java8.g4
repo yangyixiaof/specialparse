@@ -88,9 +88,9 @@ methodReferenceStatement : 'MR@' identifier '::' referedExpression;
 
 nameStatement : 'N@' identifier;
 
-prefixExpressionStatement : 'PeE@' unaryOperator referedExpression;
+prefixExpressionStatement : 'PeE@' prefixUnaryOperator referedExpression;
 
-postfixExpressionStatement : 'PtE@' referedExpression unaryOperator;
+postfixExpressionStatement : 'PtE@' referedExpression postfixUnaryOperator;
 
 arrayAccessStatement : '[@' referedExpression '#' referedExpression endOfArrayDeclarationIndexExpression?;
 
@@ -614,13 +614,18 @@ nullLiteral
 	:	'null'
 	;
 	
-unaryOperator
+prefixUnaryOperator
 	:	BANG
 	|	TILDE
 	|	INC
 	|	DEC
 	|	ADD
 	|	SUB
+	;
+	
+postfixUnaryOperator
+	:	INC
+	|	DEC
 	;
 
 binaryOperator

@@ -1179,15 +1179,25 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitNullLiteral(Java8Parser.NullLiteralContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#unaryOperator}.
+	 * Enter a parse tree produced by {@link Java8Parser#prefixUnaryOperator}.
 	 * @param ctx the parse tree
 	 */
-	void enterUnaryOperator(Java8Parser.UnaryOperatorContext ctx);
+	void enterPrefixUnaryOperator(Java8Parser.PrefixUnaryOperatorContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#unaryOperator}.
+	 * Exit a parse tree produced by {@link Java8Parser#prefixUnaryOperator}.
 	 * @param ctx the parse tree
 	 */
-	void exitUnaryOperator(Java8Parser.UnaryOperatorContext ctx);
+	void exitPrefixUnaryOperator(Java8Parser.PrefixUnaryOperatorContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#postfixUnaryOperator}.
+	 * @param ctx the parse tree
+	 */
+	void enterPostfixUnaryOperator(Java8Parser.PostfixUnaryOperatorContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#postfixUnaryOperator}.
+	 * @param ctx the parse tree
+	 */
+	void exitPostfixUnaryOperator(Java8Parser.PostfixUnaryOperatorContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#binaryOperator}.
 	 * @param ctx the parse tree

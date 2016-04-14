@@ -524,7 +524,12 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	}
 
 	@Override
-	public Integer visitUnaryOperator(Java8Parser.UnaryOperatorContext ctx) {
+	public Integer visitPrefixUnaryOperator(Java8Parser.PrefixUnaryOperatorContext ctx) {
+		return visitChildren(ctx);
+	}
+	
+	@Override
+	public Integer visitPostfixUnaryOperator(Java8Parser.PostfixUnaryOperatorContext ctx) {
 		return visitChildren(ctx);
 	}
 

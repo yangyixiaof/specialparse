@@ -714,11 +714,17 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitNullLiteral(Java8Parser.NullLiteralContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#unaryOperator}.
+	 * Visit a parse tree produced by {@link Java8Parser#prefixUnaryOperator}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitUnaryOperator(Java8Parser.UnaryOperatorContext ctx);
+	T visitPrefixUnaryOperator(Java8Parser.PrefixUnaryOperatorContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#postfixUnaryOperator}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPostfixUnaryOperator(Java8Parser.PostfixUnaryOperatorContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#binaryOperator}.
 	 * @param ctx the parse tree

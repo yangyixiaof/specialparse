@@ -118,7 +118,7 @@ classInnerDeclarationStatement : 'ICD@' identifier;
 
 enumDeclarationStatement : 'ED@' identifier;
 
-methodDeclarationStatement : 'MD@' '(' argTypeList? ')' identifier;
+methodDeclarationStatement : 'MD@' type '(' argTypeList? ')' identifier;
 
 enumConstantDeclarationStatement : 'EMD@' identifier '(' argumentList ')';
 

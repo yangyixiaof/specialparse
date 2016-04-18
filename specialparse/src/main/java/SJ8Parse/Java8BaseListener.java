@@ -665,6 +665,18 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterEnumConstantDeclarationSplitCommaStatement(Java8Parser.EnumConstantDeclarationSplitCommaStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitEnumConstantDeclarationSplitCommaStatement(Java8Parser.EnumConstantDeclarationSplitCommaStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterForStatement(Java8Parser.ForStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}

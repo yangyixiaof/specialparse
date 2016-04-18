@@ -178,6 +178,8 @@ arrayInitializerSplitCommaStatement : 'DH@' 'A,';
 
 arrayInitializerEndStatement : 'DH@' 'A}';
 
+enumConstantDeclarationSplitCommaStatement : 'DH@' 'E,';
+
 forStatement : 'DH@' 'for';
 
 forIniOverStatement : 'DH@' 'forIniOver';

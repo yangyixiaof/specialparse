@@ -336,6 +336,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitArrayInitializerEndStatement(Java8Parser.ArrayInitializerEndStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#enumConstantDeclarationSplitCommaStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEnumConstantDeclarationSplitCommaStatement(Java8Parser.EnumConstantDeclarationSplitCommaStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#forStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

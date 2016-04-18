@@ -549,6 +549,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitArrayInitializerEndStatement(Java8Parser.ArrayInitializerEndStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#enumConstantDeclarationSplitCommaStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterEnumConstantDeclarationSplitCommaStatement(Java8Parser.EnumConstantDeclarationSplitCommaStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#enumConstantDeclarationSplitCommaStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitEnumConstantDeclarationSplitCommaStatement(Java8Parser.EnumConstantDeclarationSplitCommaStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#forStatement}.
 	 * @param ctx the parse tree
 	 */

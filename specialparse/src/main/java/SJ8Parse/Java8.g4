@@ -391,7 +391,7 @@ OffsetDesc : [0-9]+;
 codeHole : '@HO';
 preExist : '@PE';
 
-endOfArrayDeclarationIndexExpression : '@]';
+endOfArrayDeclarationIndexExpression : ('@]')+;
 endOfArrayInitializerElementExpression : '@I]';
 
 AT : '@' ;

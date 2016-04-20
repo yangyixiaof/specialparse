@@ -10,6 +10,7 @@ statement
 	|	classInnerDeclarationStatement
 	|	enumDeclarationStatement
 	|	methodDeclarationStatement
+	|	constructionDeclarationStatement
 	|	enumConstantDeclarationStatement
 	|	labeledStatement
 	|	variableDeclarationStatement
@@ -119,6 +120,8 @@ classInnerDeclarationStatement : 'ICD@' identifier;
 enumDeclarationStatement : 'ED@' identifier;
 
 methodDeclarationStatement : 'MD@' type '(' argTypeList? ')' identifier;
+
+constructionDeclarationStatement : 'MD@' 'CR@' '(' argTypeList? ')' identifier;
 
 enumConstantDeclarationStatement : 'EMD@' identifier '(' argumentList ')';
 

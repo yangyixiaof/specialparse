@@ -162,6 +162,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMethodDeclarationStatement(Java8Parser.MethodDeclarationStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#constructionDeclarationStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitConstructionDeclarationStatement(Java8Parser.ConstructionDeclarationStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#enumConstantDeclarationStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

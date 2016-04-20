@@ -141,6 +141,11 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	public Integer visitMethodDeclarationStatement(Java8Parser.MethodDeclarationStatementContext ctx) {
 		return visitChildren(ctx);
 	}
+	
+	@Override
+	public Integer visitConstructionDeclarationStatement(Java8Parser.ConstructionDeclarationStatementContext ctx) {
+		return visitChildren(ctx);
+	}
 
 	@Override
 	public Integer visitEnumConstantDeclarationStatement(Java8Parser.EnumConstantDeclarationStatementContext ctx) {

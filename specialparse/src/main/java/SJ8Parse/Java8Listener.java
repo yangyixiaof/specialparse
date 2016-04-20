@@ -259,6 +259,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitMethodDeclarationStatement(Java8Parser.MethodDeclarationStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#constructionDeclarationStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterConstructionDeclarationStatement(Java8Parser.ConstructionDeclarationStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#constructionDeclarationStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitConstructionDeclarationStatement(Java8Parser.ConstructionDeclarationStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#enumConstantDeclarationStatement}.
 	 * @param ctx the parse tree
 	 */

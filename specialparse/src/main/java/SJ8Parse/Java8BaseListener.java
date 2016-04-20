@@ -317,6 +317,18 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterConstructionDeclarationStatement(Java8Parser.ConstructionDeclarationStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitConstructionDeclarationStatement(Java8Parser.ConstructionDeclarationStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterEnumConstantDeclarationStatement(Java8Parser.EnumConstantDeclarationStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}

@@ -27,4 +27,14 @@ public class ParseRoot
 		}
 		return null;
     }
+	
+	public static void main(String[] args)
+	{
+		try {
+			ParseOneSentence("A@$C0?0=3", null, true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 }

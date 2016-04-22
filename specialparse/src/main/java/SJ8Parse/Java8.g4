@@ -106,6 +106,10 @@ referedExpression
 	|	commonFieldRef
 	|	commonVarRef
 	;
+
+identifier
+	:	Identifier
+	;
 	
 anonymousClassBeginStatement : 'AB@AnonymousBegin';
 
@@ -266,27 +270,27 @@ numberLiteral
 	;
 	
 integerLiteral
-	:	IntegerLiteral
+	:	IntegerLiteralX
 	;
 	
 floatingPointLiteral
-	:	FloatingPointLiteral
+	:	FloatingPointLiteralX
 	;
 	
 booleanLiteral
-	:	BooleanLiteral
+	:	BooleanLiteralX
 	;
 	
 characterLiteral
-	:	CharacterLiteral
+	:	CharacterLiteralX
 	;
 	
 stringLiteral
-	:	StringLiteral
+	:	StringLiteralX
 	;
 
 nullLiteral
-	:	NullLiteral
+	:	NullLiteralX
 	;
 
 type
@@ -375,9 +379,9 @@ unionType
 	:	(unionFirstType) ('|' (unionSecondType))+
 	;
 
-identifier : JavaLetter JavaLetterOrDigit*;
+Identifier : JavaLetter JavaLetterOrDigit*;
 
-JavaLetter
+fragment JavaLetter
 	:	[a-zA-Z$_] // these are the "java letters" below 0xFF
 	|	// covers all characters above 0xFF which are not a surrogate
 		~[\u0000-\u00FF\uD800-\uDBFF]
@@ -387,7 +391,7 @@ JavaLetter
 		{Character.isJavaIdentifierStart(Character.toCodePoint((char)_input.LA(-2), (char)_input.LA(-1)))}?
 	;
 
-JavaLetterOrDigit
+fragment JavaLetterOrDigit
 	:	[a-zA-Z0-9$_] // these are the "java letters or digits" below 0xFF
 	|	// covers all characters above 0xFF which are not a surrogate
 		~[\u0000-\u00FF\uD800-\uDBFF]
@@ -397,11 +401,11 @@ JavaLetterOrDigit
 		{Character.isJavaIdentifierPart(Character.toCodePoint((char)_input.LA(-2), (char)_input.LA(-1)))}?
 	;
 
-classRef : '@K' IntegerLiteral '?' IntegerLiteral;
-finalFieldRef : '@D' IntegerLiteral '?' IntegerLiteral;
-finalVarRef : '@X' IntegerLiteral '?' IntegerLiteral;
-commonFieldRef : '@F' IntegerLiteral '?' IntegerLiteral;
-commonVarRef : '@C' IntegerLiteral '?' IntegerLiteral;
+classRef : '@K' integerLiteral '?' integerLiteral;
+finalFieldRef : '@D' integerLiteral '?' integerLiteral;
+finalVarRef : '@X' integerLiteral '?' integerLiteral;
+commonFieldRef : '@F' integerLiteral '?' integerLiteral;
+commonVarRef : '@C' integerLiteral '?' integerLiteral;
 
 codeHole : '@HO';
 preExist : '@PE';
@@ -409,11 +413,60 @@ preExist : '@PE';
 endOfArrayDeclarationIndexExpression : ('@]')+;
 endOfArrayInitializerElementExpression : '@I]';
 
+prefixUnaryOperator
+	:	BANG
+	|	TILDE
+	|	INC
+	|	DEC
+	|	ADD
+	|	SUB
+	;
+	
+postfixUnaryOperator
+	:	INC
+	|	DEC
+	;
+
+binaryOperator
+	:	GT
+	|	LT
+	|	EQUAL
+	|	LE
+	|	GE
+	|	NOTEQUAL
+	|	AND
+	|	OR
+	|	ADD
+	|	SUB
+	|	MUL
+	|	DIV
+	|	BITAND
+	|	BITOR
+	|	CARET
+	|	MOD
+	|	LSHIFT
+	|	RSHIFT
+	|	URSHIFT
+	;
+
+assignmentOperator
+	:	ASSIGN
+	|	MUL_ASSIGN
+	|	DIV_ASSIGN
+	|	MOD_ASSIGN
+	|	ADD_ASSIGN
+	|	SUB_ASSIGN
+	|	LSHIFT_ASSIGN
+	|	RSHIFT_ASSIGN
+	|	URSHIFT_ASSIGN
+	|	AND_ASSIGN
+	|	XOR_ASSIGN
+	|	OR_ASSIGN
+	;
+
 AT : '@' ;
 
-WS  :  [ #]+ -> skip ;
-
-IntegerLiteral
+IntegerLiteralX
 	:	DecimalIntegerLiteral
 	|	HexIntegerLiteral
 	|	OctalIntegerLiteral
@@ -543,7 +596,7 @@ BinaryDigitOrUnderscore
 
 // §3.10.2 Floating-Point Literals
 
-FloatingPointLiteral
+FloatingPointLiteralX
     :   DecimalFloatingPointLiteral
     |   HexadecimalFloatingPointLiteral
     ;
@@ -604,14 +657,14 @@ BinaryExponentIndicator
 
 // §3.10.3 Boolean Literals
 
-BooleanLiteral
+BooleanLiteralX
     :   'true'
     |   'false'
     ;
 
 // §3.10.4 Character Literals
 
-CharacterLiteral
+CharacterLiteralX
     :   '\'' SingleCharacter '\''
     |   '\'' EscapeSequence '\''
     ;
@@ -620,8 +673,9 @@ fragment
 SingleCharacter
     :   ~['\\]
     ;
+    
 // §3.10.5 String Literals
-StringLiteral
+StringLiteralX
     :   '"' StringCharacters? '"'
     |	'@STR'
     ;
@@ -659,61 +713,10 @@ ZeroToThree
     :   [0-3]
     ;
 
-NullLiteral
+NullLiteralX
 	:	'null'
 	;
 	
-prefixUnaryOperator
-	:	BANG
-	|	TILDE
-	|	INC
-	|	DEC
-	|	ADD
-	|	SUB
-	;
-	
-postfixUnaryOperator
-	:	INC
-	|	DEC
-	;
-
-binaryOperator
-	:	GT
-	|	LT
-	|	EQUAL
-	|	LE
-	|	GE
-	|	NOTEQUAL
-	|	AND
-	|	OR
-	|	ADD
-	|	SUB
-	|	MUL
-	|	DIV
-	|	BITAND
-	|	BITOR
-	|	CARET
-	|	MOD
-	|	LSHIFT
-	|	RSHIFT
-	|	URSHIFT
-	;
-
-assignmentOperator
-	:	ASSIGN
-	|	MUL_ASSIGN
-	|	DIV_ASSIGN
-	|	MOD_ASSIGN
-	|	ADD_ASSIGN
-	|	SUB_ASSIGN
-	|	LSHIFT_ASSIGN
-	|	RSHIFT_ASSIGN
-	|	URSHIFT_ASSIGN
-	|	AND_ASSIGN
-	|	XOR_ASSIGN
-	|	OR_ASSIGN
-	;
-
 COMMA : ',';
 DOT : '.';
 
@@ -756,3 +759,5 @@ MOD_ASSIGN : '%=';
 LSHIFT_ASSIGN : '<<=';
 RSHIFT_ASSIGN : '>>=';
 URSHIFT_ASSIGN : '>>>=';
+
+WS  :  [ #\t\r\n\u000C]+ -> skip ;

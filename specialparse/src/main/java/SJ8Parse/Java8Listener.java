@@ -169,6 +169,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitReferedExpression(Java8Parser.ReferedExpressionContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#identifier}.
+	 * @param ctx the parse tree
+	 */
+	void enterIdentifier(Java8Parser.IdentifierContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#identifier}.
+	 * @param ctx the parse tree
+	 */
+	void exitIdentifier(Java8Parser.IdentifierContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#anonymousClassBeginStatement}.
 	 * @param ctx the parse tree
 	 */
@@ -1078,16 +1088,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitUnionType(Java8Parser.UnionTypeContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#identifier}.
-	 * @param ctx the parse tree
-	 */
-	void enterIdentifier(Java8Parser.IdentifierContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#identifier}.
-	 * @param ctx the parse tree
-	 */
-	void exitIdentifier(Java8Parser.IdentifierContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#classRef}.
 	 * @param ctx the parse tree

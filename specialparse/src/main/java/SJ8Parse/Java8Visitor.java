@@ -108,6 +108,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitReferedExpression(Java8Parser.ReferedExpressionContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#identifier}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIdentifier(Java8Parser.IdentifierContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#anonymousClassBeginStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -653,12 +659,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitUnionType(Java8Parser.UnionTypeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#identifier}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitIdentifier(Java8Parser.IdentifierContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#classRef}.
 	 * @param ctx the parse tree

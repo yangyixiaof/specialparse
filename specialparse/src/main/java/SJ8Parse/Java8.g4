@@ -381,11 +381,11 @@ JavaLetterOrDigit
 		{Character.isJavaIdentifierPart(Character.toCodePoint((char)_input.LA(-2), (char)_input.LA(-1)))}?
 	;
 
-classRef : '$K' offset '?' offset;
-finalFieldRef : '$D' offset '?' offset;
-finalVarRef : '$X' offset '?' offset;
-commonFieldRef : '$F' offset '?' offset;
-commonVarRef : '$C' offset '?' offset;
+classRef : '@K' offset '?' offset;
+finalFieldRef : '@D' offset '?' offset;
+finalVarRef : '@X' offset '?' offset;
+commonFieldRef : '@F' offset '?' offset;
+commonVarRef : '@C' offset '?' offset;
 
 offset : OffsetDesc;
 

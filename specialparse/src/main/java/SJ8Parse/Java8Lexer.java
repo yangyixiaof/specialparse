@@ -105,8 +105,8 @@ public class Java8Lexer extends Lexer {
 		"'forExpOver'", "'forUpdOver'", "'CondExpBegin'", "'CondExpQM'", "'CondExpCM'", 
 		"'DH@,'", "'DH@;'", "'DH@Ps'", "'DH@Pr'", "'@PE'", "'this'", "'super'", 
 		"'new'", "'@STR'", "'@IT'", "'float'", "'double'", "'boolean'", "'byte'", 
-		"'short'", "'int'", "'long'", "'char'", "'['", "']'", "'extends'", "'$K'", 
-		"'$D'", "'$X'", "'$F'", "'$C'", "'@HO'", "'@]'", "'@I]'", "'true'", "'false'", 
+		"'short'", "'int'", "'long'", "'char'", "'['", "']'", "'extends'", "'@K'", 
+		"'@D'", "'@X'", "'@F'", "'@C'", "'@HO'", "'@]'", "'@I]'", "'true'", "'false'", 
 		"'''", "'null'", null, null, null, "'@'", null, null, null, null, null, 
 		null, null, null, null, null, null, null, null, null, null, null, null, 
 		null, null, null, null, null, null, null, null, null, null, null, null, 
@@ -587,10 +587,10 @@ public class Java8Lexer extends Lexer {
 		"\u00c4\3\2\2\2\u0396\u0397\7_\2\2\u0397\u00c6\3\2\2\2\u0398\u0399\7g\2"+
 		"\2\u0399\u039a\7z\2\2\u039a\u039b\7v\2\2\u039b\u039c\7g\2\2\u039c\u039d"+
 		"\7p\2\2\u039d\u039e\7f\2\2\u039e\u039f\7u\2\2\u039f\u00c8\3\2\2\2\u03a0"+
-		"\u03a1\7&\2\2\u03a1\u03a2\7M\2\2\u03a2\u00ca\3\2\2\2\u03a3\u03a4\7&\2"+
-		"\2\u03a4\u03a5\7F\2\2\u03a5\u00cc\3\2\2\2\u03a6\u03a7\7&\2\2\u03a7\u03a8"+
-		"\7Z\2\2\u03a8\u00ce\3\2\2\2\u03a9\u03aa\7&\2\2\u03aa\u03ab\7H\2\2\u03ab"+
-		"\u00d0\3\2\2\2\u03ac\u03ad\7&\2\2\u03ad\u03ae\7E\2\2\u03ae\u00d2\3\2\2"+
+		"\u03a1\7B\2\2\u03a1\u03a2\7M\2\2\u03a2\u00ca\3\2\2\2\u03a3\u03a4\7B\2"+
+		"\2\u03a4\u03a5\7F\2\2\u03a5\u00cc\3\2\2\2\u03a6\u03a7\7B\2\2\u03a7\u03a8"+
+		"\7Z\2\2\u03a8\u00ce\3\2\2\2\u03a9\u03aa\7B\2\2\u03aa\u03ab\7H\2\2\u03ab"+
+		"\u00d0\3\2\2\2\u03ac\u03ad\7B\2\2\u03ad\u03ae\7E\2\2\u03ae\u00d2\3\2\2"+
 		"\2\u03af\u03b0\7B\2\2\u03b0\u03b1\7J\2\2\u03b1\u03b2\7Q\2\2\u03b2\u00d4"+
 		"\3\2\2\2\u03b3\u03b4\7B\2\2\u03b4\u03b5\7_\2\2\u03b5\u00d6\3\2\2\2\u03b6"+
 		"\u03b7\7B\2\2\u03b7\u03b8\7K\2\2\u03b8\u03b9\7_\2\2\u03b9\u00d8\3\2\2"+

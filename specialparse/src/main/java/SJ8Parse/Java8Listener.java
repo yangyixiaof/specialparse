@@ -829,6 +829,46 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitNumberLiteral(Java8Parser.NumberLiteralContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#integerLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterIntegerLiteral(Java8Parser.IntegerLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#integerLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitIntegerLiteral(Java8Parser.IntegerLiteralContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#floatingPointLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterFloatingPointLiteral(Java8Parser.FloatingPointLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#floatingPointLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitFloatingPointLiteral(Java8Parser.FloatingPointLiteralContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#booleanLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterBooleanLiteral(Java8Parser.BooleanLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#booleanLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitBooleanLiteral(Java8Parser.BooleanLiteralContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#characterLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterCharacterLiteral(Java8Parser.CharacterLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#characterLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitCharacterLiteral(Java8Parser.CharacterLiteralContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#stringLiteral}.
 	 * @param ctx the parse tree
 	 */
@@ -838,6 +878,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitStringLiteral(Java8Parser.StringLiteralContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#nullLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterNullLiteral(Java8Parser.NullLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#nullLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitNullLiteral(Java8Parser.NullLiteralContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#type}.
 	 * @param ctx the parse tree
@@ -1039,16 +1089,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitIdentifier(Java8Parser.IdentifierContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#idRawLetter}.
-	 * @param ctx the parse tree
-	 */
-	void enterIdRawLetter(Java8Parser.IdRawLetterContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#idRawLetter}.
-	 * @param ctx the parse tree
-	 */
-	void exitIdRawLetter(Java8Parser.IdRawLetterContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link Java8Parser#classRef}.
 	 * @param ctx the parse tree
 	 */
@@ -1099,16 +1139,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitCommonVarRef(Java8Parser.CommonVarRefContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#offset}.
-	 * @param ctx the parse tree
-	 */
-	void enterOffset(Java8Parser.OffsetContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#offset}.
-	 * @param ctx the parse tree
-	 */
-	void exitOffset(Java8Parser.OffsetContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link Java8Parser#codeHole}.
 	 * @param ctx the parse tree
 	 */
@@ -1148,56 +1178,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitEndOfArrayInitializerElementExpression(Java8Parser.EndOfArrayInitializerElementExpressionContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#integerLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void enterIntegerLiteral(Java8Parser.IntegerLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#integerLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void exitIntegerLiteral(Java8Parser.IntegerLiteralContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#floatingPointLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void enterFloatingPointLiteral(Java8Parser.FloatingPointLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#floatingPointLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void exitFloatingPointLiteral(Java8Parser.FloatingPointLiteralContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#booleanLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void enterBooleanLiteral(Java8Parser.BooleanLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#booleanLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void exitBooleanLiteral(Java8Parser.BooleanLiteralContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#characterLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void enterCharacterLiteral(Java8Parser.CharacterLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#characterLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void exitCharacterLiteral(Java8Parser.CharacterLiteralContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#nullLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void enterNullLiteral(Java8Parser.NullLiteralContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#nullLiteral}.
-	 * @param ctx the parse tree
-	 */
-	void exitNullLiteral(Java8Parser.NullLiteralContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#prefixUnaryOperator}.
 	 * @param ctx the parse tree

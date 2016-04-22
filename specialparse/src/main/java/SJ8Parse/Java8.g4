@@ -101,6 +101,10 @@ referedExpression
 	|	literal
 	|	codeHole
 	|	preExist
+	|	finalFieldRef
+	|	finalVarRef
+	|	commonFieldRef
+	|	commonVarRef
 	;
 	
 anonymousClassBeginStatement : 'AB@AnonymousBegin';
@@ -260,9 +264,29 @@ numberLiteral
 	:	integerLiteral
 	|	floatingPointLiteral
 	;
-
+	
+integerLiteral
+	:	IntegerLiteral
+	;
+	
+floatingPointLiteral
+	:	FloatingPointLiteral
+	;
+	
+booleanLiteral
+	:	BooleanLiteral
+	;
+	
+characterLiteral
+	:	CharacterLiteral
+	;
+	
 stringLiteral
-	:	'@STR'
+	:	StringLiteral
+	;
+
+nullLiteral
+	:	NullLiteral
 	;
 
 type
@@ -351,15 +375,7 @@ unionType
 	:	(unionFirstType) ('|' (unionSecondType))+
 	;
 
-identifier
-	:	idRawLetter
-	|	finalFieldRef
-	|	finalVarRef
-	|	commonFieldRef
-	|	commonVarRef
-	;
-	
-idRawLetter : JavaLetter JavaLetterOrDigit*;
+identifier : JavaLetter JavaLetterOrDigit*;
 
 JavaLetter
 	:	[a-zA-Z$_] // these are the "java letters" below 0xFF
@@ -381,15 +397,11 @@ JavaLetterOrDigit
 		{Character.isJavaIdentifierPart(Character.toCodePoint((char)_input.LA(-2), (char)_input.LA(-1)))}?
 	;
 
-classRef : '@K' offset '?' offset;
-finalFieldRef : '@D' offset '?' offset;
-finalVarRef : '@X' offset '?' offset;
-commonFieldRef : '@F' offset '?' offset;
-commonVarRef : '@C' offset '?' offset;
-
-offset : OffsetDesc;
-
-OffsetDesc : [0-9]+;
+classRef : '@K' IntegerLiteral '?' IntegerLiteral;
+finalFieldRef : '@D' IntegerLiteral '?' IntegerLiteral;
+finalVarRef : '@X' IntegerLiteral '?' IntegerLiteral;
+commonFieldRef : '@F' IntegerLiteral '?' IntegerLiteral;
+commonVarRef : '@C' IntegerLiteral '?' IntegerLiteral;
 
 codeHole : '@HO';
 preExist : '@PE';
@@ -399,223 +411,255 @@ endOfArrayInitializerElementExpression : '@I]';
 
 AT : '@' ;
 
-WS  :  [ '#' ]+ -> skip ;
+WS  :  [ #]+ -> skip ;
 
-integerLiteral
+IntegerLiteral
 	:	DecimalIntegerLiteral
 	|	HexIntegerLiteral
 	|	OctalIntegerLiteral
 	|	BinaryIntegerLiteral
 	;
 
+fragment
 DecimalIntegerLiteral
-	:	DecimalNumeral IntegerTypeSuffix?
-	;
+    :   DecimalNumeral IntegerTypeSuffix?
+    ;
 
+fragment
 HexIntegerLiteral
-	:	HexNumeral IntegerTypeSuffix?
-	;
+    :   HexNumeral IntegerTypeSuffix?
+    ;
 
+fragment
 OctalIntegerLiteral
-	:	OctalNumeral IntegerTypeSuffix?
-	;
+    :   OctalNumeral IntegerTypeSuffix?
+    ;
 
+fragment
 BinaryIntegerLiteral
-	:	BinaryNumeral IntegerTypeSuffix?
-	;
+    :   BinaryNumeral IntegerTypeSuffix?
+    ;
 
+fragment
 IntegerTypeSuffix
-	:	[lL]
-	;
+    :   [lL]
+    ;
 
+fragment
 DecimalNumeral
-	:	'0'
-	|	NonZeroDigit (Digits? | Underscores Digits)
-	;
+    :   '0'
+    |   NonZeroDigit (Digits? | Underscores Digits)
+    ;
 
+fragment
 Digits
-	:	Digit (DigitsAndUnderscores? Digit)?
-	;
+    :   Digit (DigitOrUnderscore* Digit)?
+    ;
 
+fragment
 Digit
-	:	'0'
-	|	NonZeroDigit
-	;
+    :   '0'
+    |   NonZeroDigit
+    ;
 
+fragment
 NonZeroDigit
-	:	[1-9]
-	;
+    :   [1-9]
+    ;
 
-DigitsAndUnderscores
-	:	DigitOrUnderscore+
-	;
-
+fragment
 DigitOrUnderscore
-	:	Digit
-	|	'_'
-	;
+    :   Digit
+    |   '_'
+    ;
 
+fragment
 Underscores
-	:	'_'+
-	;
+    :   '_'+
+    ;
 
+fragment
 HexNumeral
-	:	'0' [xX] HexDigits
-	;
+    :   '0' [xX] HexDigits
+    ;
 
+fragment
 HexDigits
-	:	HexDigit (HexDigitsAndUnderscores? HexDigit)?
-	;
+    :   HexDigit (HexDigitOrUnderscore* HexDigit)?
+    ;
 
+fragment
 HexDigit
-	:	[0-9a-fA-F]
-	;
+    :   [0-9a-fA-F]
+    ;
 
-HexDigitsAndUnderscores
-	:	HexDigitOrUnderscore+
-	;
-
+fragment
 HexDigitOrUnderscore
-	:	HexDigit
-	|	'_'
-	;
+    :   HexDigit
+    |   '_'
+    ;
 
+fragment
 OctalNumeral
-	:	'0' Underscores? OctalDigits
-	;
+    :   '0' Underscores? OctalDigits
+    ;
 
+fragment
 OctalDigits
-	:	OctalDigit (OctalDigitsAndUnderscores? OctalDigit)?
-	;
+    :   OctalDigit (OctalDigitOrUnderscore* OctalDigit)?
+    ;
 
+fragment
 OctalDigit
-	:	[0-7]
-	;
+    :   [0-7]
+    ;
 
-OctalDigitsAndUnderscores
-	:	OctalDigitOrUnderscore+
-	;
-
+fragment
 OctalDigitOrUnderscore
-	:	OctalDigit
-	|	'_'
-	;
+    :   OctalDigit
+    |   '_'
+    ;
 
+fragment
 BinaryNumeral
-	:	'0' [bB] BinaryDigits
-	;
+    :   '0' [bB] BinaryDigits
+    ;
 
+fragment
 BinaryDigits
-	:	BinaryDigit (BinaryDigitsAndUnderscores? BinaryDigit)?
-	;
+    :   BinaryDigit (BinaryDigitOrUnderscore* BinaryDigit)?
+    ;
 
+fragment
 BinaryDigit
-	:	[01]
-	;
+    :   [01]
+    ;
 
-BinaryDigitsAndUnderscores
-	:	BinaryDigitOrUnderscore+
-	;
-
+fragment
 BinaryDigitOrUnderscore
-	:	BinaryDigit
-	|	'_'
-	;
+    :   BinaryDigit
+    |   '_'
+    ;
 
-//  Floating-Point Literals
+// §3.10.2 Floating-Point Literals
 
-floatingPointLiteral
-	:	DecimalFloatingPointLiteral
-	|	HexadecimalFloatingPointLiteral
-	;
+FloatingPointLiteral
+    :   DecimalFloatingPointLiteral
+    |   HexadecimalFloatingPointLiteral
+    ;
 
+fragment
 DecimalFloatingPointLiteral
-	:	Digits '.' Digits? ExponentPart? FloatTypeSuffix?
-	|	'.' Digits ExponentPart? FloatTypeSuffix?
-	|	Digits ExponentPart FloatTypeSuffix?
-	|	Digits FloatTypeSuffix
-	;
+    :   Digits '.' Digits? ExponentPart? FloatTypeSuffix?
+    |   '.' Digits ExponentPart? FloatTypeSuffix?
+    |   Digits ExponentPart FloatTypeSuffix?
+    |   Digits FloatTypeSuffix
+    ;
 
+fragment
 ExponentPart
-	:	ExponentIndicator SignedInteger
-	;
+    :   ExponentIndicator SignedInteger
+    ;
 
+fragment
 ExponentIndicator
-	:	[eE]
-	;
+    :   [eE]
+    ;
 
+fragment
 SignedInteger
-	:	Sign? Digits
-	;
+    :   Sign? Digits
+    ;
 
+fragment
 Sign
-	:	[+-]
-	;
+    :   [+-]
+    ;
 
+fragment
 FloatTypeSuffix
-	:	[fFdD]
-	;
+    :   [fFdD]
+    ;
 
+fragment
 HexadecimalFloatingPointLiteral
-	:	HexSignificand BinaryExponent FloatTypeSuffix?
-	;
+    :   HexSignificand BinaryExponent FloatTypeSuffix?
+    ;
 
+fragment
 HexSignificand
-	:	HexNumeral '.'?
-	|	'0' [xX] HexDigits? '.' HexDigits
-	;
+    :   HexNumeral '.'?
+    |   '0' [xX] HexDigits? '.' HexDigits
+    ;
 
+fragment
 BinaryExponent
-	:	BinaryExponentIndicator SignedInteger
-	;
+    :   BinaryExponentIndicator SignedInteger
+    ;
 
+fragment
 BinaryExponentIndicator
-	:	[pP]
-	;
+    :   [pP]
+    ;
 
-// Boolean Literals
+// §3.10.3 Boolean Literals
 
-booleanLiteral
-	:	'true'
-	|	'false'
-	;
+BooleanLiteral
+    :   'true'
+    |   'false'
+    ;
 
-// Character Literals
+// §3.10.4 Character Literals
 
-characterLiteral
-	:	'\'' SingleCharacter '\''
-	|	'\'' EscapeSequence '\''
-	;
+CharacterLiteral
+    :   '\'' SingleCharacter '\''
+    |   '\'' EscapeSequence '\''
+    ;
 
+fragment
 SingleCharacter
-	:	~['\\]
-	;
-
-// String Literals
-
-// Escape Sequences for Character Literals
-
+    :   ~['\\]
+    ;
+// §3.10.5 String Literals
+StringLiteral
+    :   '"' StringCharacters? '"'
+    |	'@STR'
+    ;
+fragment
+StringCharacters
+    :   StringCharacter+
+    ;
+fragment
+StringCharacter
+    :   ~["\\]
+    |   EscapeSequence
+    ;
+// §3.10.6 Escape Sequences for Character and String Literals
+fragment
 EscapeSequence
-	:	'\\' [btnfr"'\\]
-	|	OctalEscape
-    |   UnicodeEscape // This is not in the spec but prevents having to preprocess the input
-	;
+    :   '\\' [btnfr"'\\]
+    |   OctalEscape
+    |   UnicodeEscape
+    ;
 
+fragment
 OctalEscape
-	:	'\\' OctalDigit
-	|	'\\' OctalDigit OctalDigit
-	|	'\\' ZeroToThree OctalDigit OctalDigit
-	;
+    :   '\\' OctalDigit
+    |   '\\' OctalDigit OctalDigit
+    |   '\\' ZeroToThree OctalDigit OctalDigit
+    ;
 
-ZeroToThree
-	:	[0-3]
-	;
-
+fragment
 UnicodeEscape
     :   '\\' 'u' HexDigit HexDigit HexDigit HexDigit
     ;
 
-nullLiteral
+fragment
+ZeroToThree
+    :   [0-3]
+    ;
+
+NullLiteral
 	:	'null'
 	;
 	

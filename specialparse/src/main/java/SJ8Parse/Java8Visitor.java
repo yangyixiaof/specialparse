@@ -504,11 +504,41 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitNumberLiteral(Java8Parser.NumberLiteralContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#integerLiteral}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIntegerLiteral(Java8Parser.IntegerLiteralContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#floatingPointLiteral}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFloatingPointLiteral(Java8Parser.FloatingPointLiteralContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#booleanLiteral}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBooleanLiteral(Java8Parser.BooleanLiteralContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#characterLiteral}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCharacterLiteral(Java8Parser.CharacterLiteralContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#stringLiteral}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitStringLiteral(Java8Parser.StringLiteralContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#nullLiteral}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNullLiteral(Java8Parser.NullLiteralContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#type}.
 	 * @param ctx the parse tree
@@ -630,12 +660,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitIdentifier(Java8Parser.IdentifierContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#idRawLetter}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitIdRawLetter(Java8Parser.IdRawLetterContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#classRef}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -666,12 +690,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCommonVarRef(Java8Parser.CommonVarRefContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#offset}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitOffset(Java8Parser.OffsetContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#codeHole}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -695,36 +713,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitEndOfArrayInitializerElementExpression(Java8Parser.EndOfArrayInitializerElementExpressionContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#integerLiteral}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitIntegerLiteral(Java8Parser.IntegerLiteralContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#floatingPointLiteral}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFloatingPointLiteral(Java8Parser.FloatingPointLiteralContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#booleanLiteral}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBooleanLiteral(Java8Parser.BooleanLiteralContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#characterLiteral}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitCharacterLiteral(Java8Parser.CharacterLiteralContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#nullLiteral}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitNullLiteral(Java8Parser.NullLiteralContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#prefixUnaryOperator}.
 	 * @param ctx the parse tree

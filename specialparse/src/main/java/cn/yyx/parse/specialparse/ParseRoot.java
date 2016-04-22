@@ -31,7 +31,7 @@ public class ParseRoot
 	public static void main(String[] args)
 	{
 		try {
-			ParseOneSentence("A@@C0?3=3", null, true);
+			ParseOneSentence("A@@C0?3=", null, true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

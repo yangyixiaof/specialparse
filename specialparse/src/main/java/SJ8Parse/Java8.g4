@@ -105,6 +105,7 @@ referedExpression
 	|	finalVarRef
 	|	commonFieldRef
 	|	commonVarRef
+	|	thisExpression
 	;
 
 identifier
@@ -216,11 +217,7 @@ partialMethodPreRerferedExpressionEndStatement : 'DH@Pr';
 firstArgPreExist : '@PE';
 	
 firstArgReferedExpression
-	:	identifier
-	|	fieldAccess
-	|	literal
-	|	codeHole
-	|	firstArgPreExist
+	:	referedExpression
 	;
 	
 commonClassMemberInvoke : firstArgReferedExpression;
@@ -241,11 +238,7 @@ firstArg :
 methodArgPreExist : '@PE';
 	
 methodArgReferedExpression
-	:	identifier
-	|	fieldAccess
-	|	literal
-	|	codeHole
-	|	methodArgPreExist
+	:	referedExpression
 	;
 
 argumentList : firstArg (',' methodArgReferedExpression)*;
@@ -406,6 +399,8 @@ finalFieldRef : '@D' integerLiteral '?' integerLiteral;
 finalVarRef : '@X' integerLiteral '?' integerLiteral;
 commonFieldRef : '@F' integerLiteral '?' integerLiteral;
 commonVarRef : '@C' integerLiteral '?' integerLiteral;
+
+thisExpression : 'this';
 
 codeHole : '@HO';
 preExist : '@PE';

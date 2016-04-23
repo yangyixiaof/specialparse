@@ -1139,6 +1139,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitCommonVarRef(Java8Parser.CommonVarRefContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#thisExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterThisExpression(Java8Parser.ThisExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#thisExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitThisExpression(Java8Parser.ThisExpressionContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#codeHole}.
 	 * @param ctx the parse tree
 	 */

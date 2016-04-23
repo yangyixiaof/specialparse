@@ -690,6 +690,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCommonVarRef(Java8Parser.CommonVarRefContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#thisExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitThisExpression(Java8Parser.ThisExpressionContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#codeHole}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

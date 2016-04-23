@@ -113,6 +113,18 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterClassFieldAccess(Java8Parser.ClassFieldAccessContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitClassFieldAccess(Java8Parser.ClassFieldAccessContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterInfixExpressionStatement(Java8Parser.InfixExpressionStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}

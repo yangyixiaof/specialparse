@@ -81,6 +81,8 @@ fieldAccessStatement : 'FA@' fieldAccess;
 
 fieldAccess : identifier '.' referedExpression;
 
+classFieldAccess : 'class' '.' type;
+
 infixExpressionStatement : 'IxE@' referedExpression binaryOperator referedExpression;
 
 instanceofExpressionStatement : 'InE@' referedExpression 'instanceof' type;
@@ -106,10 +108,11 @@ referedExpression
 	|	commonFieldRef
 	|	commonVarRef
 	|	thisExpression
+	|	classFieldAccess
 	;
 
 identifier
-	:	Identifier
+	:	IdentifierX
 	;
 	
 anonymousClassBeginStatement : 'AB@AnonymousBegin';
@@ -218,6 +221,7 @@ firstArgPreExist : '@PE';
 	
 firstArgReferedExpression
 	:	referedExpression
+	|	type
 	;
 	
 commonClassMemberInvoke : firstArgReferedExpression;
@@ -372,7 +376,7 @@ unionType
 	:	(unionFirstType) ('|' (unionSecondType))+
 	;
 
-Identifier : JavaLetter JavaLetterOrDigit*;
+IdentifierX : JavaLetter JavaLetterOrDigit*;
 
 fragment JavaLetter
 	:	[a-zA-Z$_] // these are the "java letters" below 0xFF
@@ -400,7 +404,7 @@ finalVarRef : '@X' integerLiteral '?' integerLiteral;
 commonFieldRef : '@F' integerLiteral '?' integerLiteral;
 commonVarRef : '@C' integerLiteral '?' integerLiteral;
 
-thisExpression : 'this';
+thisExpression : 'this' ('.' type)?;
 
 codeHole : '@HO';
 preExist : '@PE';

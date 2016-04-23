@@ -89,6 +89,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitFieldAccess(Java8Parser.FieldAccessContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#classFieldAccess}.
+	 * @param ctx the parse tree
+	 */
+	void enterClassFieldAccess(Java8Parser.ClassFieldAccessContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#classFieldAccess}.
+	 * @param ctx the parse tree
+	 */
+	void exitClassFieldAccess(Java8Parser.ClassFieldAccessContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#infixExpressionStatement}.
 	 * @param ctx the parse tree
 	 */

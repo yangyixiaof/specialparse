@@ -677,6 +677,7 @@ BooleanLiteralX
 CharacterLiteralX
     :   '\'' SingleCharacter '\''
     |   '\'' EscapeSequence '\''
+    |	'\'@w\''
     ;
 
 fragment

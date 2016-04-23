@@ -81,6 +81,12 @@ fieldAccessStatement : 'FA@' fieldAccess;
 
 fieldAccess : identifier '.' referedExpression;
 
+superFieldAccess
+	:	identifier '.' 'super' '.' referedExpression
+	|	identifier '.' 'super' '.' type
+	|	identifier '.' 'super'
+	;
+
 classFieldAccess : 'class' '.' type;
 
 infixExpressionStatement : 'IxE@' referedExpression binaryOperator referedExpression;
@@ -109,6 +115,7 @@ referedExpression
 	|	commonVarRef
 	|	thisExpression
 	|	classFieldAccess
+	|	superFieldAccess
 	;
 
 identifier
@@ -405,8 +412,9 @@ commonFieldRef : '@F' integerLiteral '?' integerLiteral;
 commonVarRef : '@C' integerLiteral '?' integerLiteral;
 
 thisExpression
-	:	'this' ('.' referedExpression)?
-	|	'this' ('.' type)?
+	:	'this' '.' referedExpression
+	|	'this' '.' type
+	|	'this'
 	;
 
 codeHole : '@HO';

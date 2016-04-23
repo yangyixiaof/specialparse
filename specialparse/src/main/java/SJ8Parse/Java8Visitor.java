@@ -60,6 +60,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFieldAccess(Java8Parser.FieldAccessContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#superFieldAccess}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSuperFieldAccess(Java8Parser.SuperFieldAccessContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#classFieldAccess}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

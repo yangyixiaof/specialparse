@@ -113,6 +113,18 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterSuperFieldAccess(Java8Parser.SuperFieldAccessContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSuperFieldAccess(Java8Parser.SuperFieldAccessContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterClassFieldAccess(Java8Parser.ClassFieldAccessContext ctx) { }
 	/**
 	 * {@inheritDoc}

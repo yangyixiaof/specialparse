@@ -1,6 +1,7 @@
 package cn.yyx.parse.specialparse;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.BailErrorStrategy;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
@@ -16,6 +17,7 @@ public class ParseRoot
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		Java8Parser parser = new Java8Parser(tokens);
 		parser.setBuildParseTree(true); // tell ANTLR to build a parse tree
+		parser.setErrorHandler(new BailErrorStrategy());
 		ParseTree tree = parser.statement(); // parse
 		if (evalVisitor != null)
 		{
@@ -31,7 +33,8 @@ public class ParseRoot
 	public static void main(String[] args)
 	{
 		try {
-			ParseOneSentence("A@@C0?3=", null, true);
+			// ParseOneSentence("A@@C0?3=", null, true);
+			ParseOneSentence("A@@C0?0=class.int", null, true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

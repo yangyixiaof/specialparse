@@ -404,7 +404,10 @@ finalVarRef : '@X' integerLiteral '?' integerLiteral;
 commonFieldRef : '@F' integerLiteral '?' integerLiteral;
 commonVarRef : '@C' integerLiteral '?' integerLiteral;
 
-thisExpression : 'this' ('.' type)?;
+thisExpression
+	:	'this' ('.' referedExpression)?
+	|	'this' ('.' type)?
+	;
 
 codeHole : '@HO';
 preExist : '@PE';

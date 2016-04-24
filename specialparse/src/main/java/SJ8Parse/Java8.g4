@@ -103,7 +103,7 @@ castExpressionStatement : 'CE@' '(' type ')' referedExpression;
 
 methodInvocationStatement : 'MI@' identifier '(' argumentList ')';
 
-fieldAccessStatement : 'FA@' fieldAccess;
+fieldAccessStatement : 'FA' '@' fieldAccess;
 
 fieldAccess : identifier '.' referedExpression;
 
@@ -518,8 +518,7 @@ thisExpression
 codeHole : '@HO';
 preExist : '@PE';
 
-endOfArrayDeclarationIndexExpression : ('@]')+;
-endOfArrayInitializerElementExpression : '@I]';
+endOfArrayDeclarationIndexExpression : (']')+;
 
 AT : '@' ;
 

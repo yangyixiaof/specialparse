@@ -278,29 +278,29 @@ leftBraceStatement : 'DH@' ('{')+;
 
 rightBraceStatement : 'DH@' ('}')+;
 
-enterMethodParamStatement : 'DH@' ('Em')+;
+enterMethodParamStatement : 'DH@' ('@Em')+;
 
-arrayInitializerStartStatement : 'DH@' 'A{';
+arrayInitializerStartStatement : 'DH@A{';
 
-arrayInitializerSplitCommaStatement : 'DH@' 'A,';
+arrayInitializerSplitCommaStatement : 'DH@A,';
 
-arrayInitializerEndStatement : 'DH@' 'A}';
+arrayInitializerEndStatement : 'DH@A}';
 
-enumConstantDeclarationSplitCommaStatement : 'DH@' 'E,';
+enumConstantDeclarationSplitCommaStatement : 'DH@E,';
 
-forStatement : 'DH@' 'for';
+forStatement : 'DH@for';
 
-forIniOverStatement : 'DH@' 'forIniOver';
+forIniOverStatement : 'DH@forIniOver';
 
-forExpOverStatement : 'DH@' 'forExpOver';
+forExpOverStatement : 'DH@forExpOver';
 
-forUpdOverStatement : 'DH@' 'forUpdOver';
+forUpdOverStatement : 'DH@forUpdOver';
 
-condExpBeginStatement : 'DH@' 'CondExpBegin';
+condExpBeginStatement : 'DH@CondExpBegin';
 
-condExpQuestionMarkStatement : 'DH@' 'CondExpQM';
+condExpQuestionMarkStatement : 'DH@CondExpQM';
 
-condExpColonMarkStatement : 'DH@' 'CondExpCM';
+condExpColonMarkStatement : 'DH@CondExpCM';
 
 partialEndStatement : 'DH@,';
 

@@ -101,7 +101,7 @@ prefixExpressionStatement : 'PeE@' prefixUnaryOperator referedExpression;
 
 postfixExpressionStatement : 'PtE@' referedExpression postfixUnaryOperator;
 
-arrayAccessStatement : '[@' referedExpression '#' referedExpression endOfArrayDeclarationIndexExpression?;
+arrayAccessStatement : '[@' referedExpression referedExpression endOfArrayDeclarationIndexExpression?;
 
 referedExpression
 	:	identifier
@@ -130,7 +130,7 @@ anonymousClassPreStatement : 'HT@' identifier;
 
 atInterfaceStatement : 'AT@' identifier;
 
-annotationTypeMemberDeclarationStatement : 'AM@' type '#' identifier '()' ('default' '#' referedExpression)?;
+annotationTypeMemberDeclarationStatement : 'AM@' type identifier '()' ('default' referedExpression)?;
 
 classDeclarationStatement : 'CD@' identifier;
 
@@ -150,29 +150,29 @@ variableDeclarationStatement : 'VD@' type;
 
 lambdaExpressionStatement : 'LE@' '(' argTypeList? ')' '->' '{}';
 
-breakStatement : 'B@' 'break' ('#' identifier)?;
+breakStatement : 'B@' 'break' (identifier)?;
 
-continueStatement : 'C@' 'continue' ('#' identifier)?;
+continueStatement : 'C@' 'continue' (identifier)?;
 
-doWhileStatement : 'DW@' 'while' '#' referedExpression;
+doWhileStatement : 'DW@' 'while' referedExpression;
 
-whileStatement : 'WS@' 'while' '#' referedExpression;
+whileStatement : 'WS@' 'while' referedExpression;
 
-returnStatement : 'RT@' 'return' ('#' referedExpression)?;
+returnStatement : 'RT@' 'return' (referedExpression)?;
 
-switchStatement : 'SW@' 'switch' '#' referedExpression;
+switchStatement : 'SW@' 'switch' referedExpression;
 
-switchCaseStatement : 'CS@' 'case' '#' referedExpression;
+switchCaseStatement : 'CS@' 'case' referedExpression;
 
 defaultStatement : 'DF@' 'default';
 
-synchronizedStatement : 'SC@' 'synchronized' '#' referedExpression;
+synchronizedStatement : 'SC@' 'synchronized' referedExpression;
 
-throwStatement : 'TS@' 'throw' '#' referedExpression;
+throwStatement : 'TS@' 'throw' referedExpression;
 
-catchClauseStatement : 'CT@' 'catch' '#' type;
+catchClauseStatement : 'CT@' 'catch' type;
 
-ifStatement : 'IF@' 'if' '#' referedExpression;
+ifStatement : 'IF@' 'if' referedExpression;
 
 arrayCreationStatement : 'AC@' type '(new)';
 

@@ -819,6 +819,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitSynchronizedStatement(Java8Parser.SynchronizedStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#tryStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterTryStatement(Java8Parser.TryStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#tryStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitTryStatement(Java8Parser.TryStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#throwStatement}.
 	 * @param ctx the parse tree
 	 */

@@ -24,6 +24,7 @@ statement
 	|	switchCaseStatement
 	|	defaultStatement
 	|	synchronizedStatement
+	|	tryStatement
 	|	throwStatement
 	|	catchClauseStatement
 	|	finallyStatement
@@ -257,6 +258,8 @@ switchCaseStatement : 'CS@' 'case' referedExpression;
 defaultStatement : 'DF@' 'default';
 
 synchronizedStatement : 'SC@' 'synchronized' referedExpression;
+
+tryStatement : 'DH@try';
 
 throwStatement : 'TS@' 'throw' referedExpression;
 

@@ -498,6 +498,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSynchronizedStatement(Java8Parser.SynchronizedStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#tryStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTryStatement(Java8Parser.TryStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#throwStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

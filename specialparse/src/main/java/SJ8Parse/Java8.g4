@@ -69,7 +69,7 @@ expressionStatement
 	|	arrayAccessStatement
 	;
 
-assignmentStatement : 'A@' referedExpression assignmentOperator referedExpression;
+assignmentStatement : 'A@' referedExpression AssignmentOperator referedExpression;
 
 literalStatement : 'L@' literal;
 
@@ -89,7 +89,7 @@ superFieldAccess
 
 classFieldAccess : 'class' '.' type;
 
-infixExpressionStatement : 'IxE@' referedExpression binaryOperator referedExpression;
+infixExpressionStatement : 'IxE@' referedExpression BinaryOperator referedExpression;
 
 instanceofExpressionStatement : 'InE@' referedExpression 'instanceof' type;
 
@@ -97,9 +97,9 @@ methodReferenceStatement : 'MR@' identifier '::' referedExpression;
 
 nameStatement : 'N@' identifier;
 
-prefixExpressionStatement : 'PeE@' prefixUnaryOperator referedExpression;
+prefixExpressionStatement : 'PeE@' PrefixUnaryOperator referedExpression;
 
-postfixExpressionStatement : 'PtE@' referedExpression postfixUnaryOperator;
+postfixExpressionStatement : 'PtE@' referedExpression PostfixUnaryOperator;
 
 arrayAccessStatement : '[@' referedExpression referedExpression endOfArrayDeclarationIndexExpression?;
 
@@ -300,13 +300,13 @@ nullLiteral
 type
 	:	virtualInferredType
 	|	primitiveType
-	|	parameterizedType
-	|	simpleType
+//	|	parameterizedType
+//	|	simpleType
 	|	classOrInterfaceType
 	|	arrayType
 	|	intersectionType
 	|	unionType
-	|	wildCardType
+//	|	wildCardType
 	|	classRef
 	;
 	
@@ -326,11 +326,34 @@ primitiveType
 	;
 
 simpleType
-	:	identifier ('.' identifier)*
+	:	identifier
+	;
+	
+extendBound : 'extends' type;
+	
+superBound : 'super' type;
+
+wildcardBounds
+	:	extendBound
+	|	superBound
+	;
+	
+
+wildCardType
+	:	'?' wildcardBounds?
+	;
+	
+typeArgument
+	:	type
+    |   wildCardType
+	;
+	
+typeArguments
+	:	'<' typeArgument (',' typeArgument)* '>'
 	;
 
 parameterizedType
-	:	identifier '<' typeList '>'
+	:	identifier typeArguments
 	;
 	
 bothType
@@ -348,19 +371,6 @@ arrayType
 
 dims
 	:	'[' ']' ('[' ']')*
-	;
-
-wildCardType
-	:	'?' wildcardBounds?
-	;
-	
-extendBound : 'extends' type;
-	
-superBound : 'super' type;
-
-wildcardBounds
-	:	extendBound
-	|	superBound
 	;
 	
 intersectionFirstType
@@ -423,7 +433,7 @@ preExist : '@PE';
 endOfArrayDeclarationIndexExpression : ('@]')+;
 endOfArrayInitializerElementExpression : '@I]';
 
-prefixUnaryOperator
+PrefixUnaryOperator
 	:	BANG
 	|	TILDE
 	|	INC
@@ -432,12 +442,12 @@ prefixUnaryOperator
 	|	SUB
 	;
 	
-postfixUnaryOperator
+PostfixUnaryOperator
 	:	INC
 	|	DEC
 	;
 
-binaryOperator
+BinaryOperator
 	:	GT
 	|	LT
 	|	EQUAL
@@ -459,7 +469,7 @@ binaryOperator
 	|	URSHIFT
 	;
 
-assignmentOperator
+AssignmentOperator
 	:	ASSIGN
 	|	MUL_ASSIGN
 	|	DIV_ASSIGN
@@ -731,44 +741,44 @@ NullLiteralX
 COMMA : ',';
 DOT : '.';
 
-GT : '>';
-LT : '<';
-BANG : '!';
-TILDE : '~';
-QUESTION : '?';
-COLON : ':';
-EQUAL : '==';
-LE : '<=';
-GE : '>=';
-NOTEQUAL : '!=';
-AND : '&&';
-OR : '||';
-INC : '++';
-DEC : '--';
-ADD : '+';
-SUB : '-';
-MUL : '*';
-DIV : '/';
-BITAND : '&';
-BITOR : '|';
-CARET : '^';
-MOD : '%';
-LSHIFT : '<<';
-RSHIFT : '>>';
-URSHIFT : '>>>';
+fragment GT : '>';
+fragment LT : '<';
+fragment BANG : '!';
+fragment TILDE : '~';
+fragment QUESTION : '?';
+fragment COLON : ':';
+fragment EQUAL : '==';
+fragment LE : '<=';
+fragment GE : '>=';
+fragment NOTEQUAL : '!=';
+fragment AND : '&&';
+fragment OR : '||';
+fragment INC : '++';
+fragment DEC : '--';
+fragment ADD : '+';
+fragment SUB : '-';
+fragment MUL : '*';
+fragment DIV : '/';
+fragment BITAND : '&';
+fragment BITOR : '|';
+fragment CARET : '^';
+fragment MOD : '%';
+fragment LSHIFT : '<<';
+fragment RSHIFT : '>>';
+fragment URSHIFT : '>>>';
 COLONCOLON : '::';
 
-ASSIGN : '=';
-ADD_ASSIGN : '+=';
-SUB_ASSIGN : '-=';
-MUL_ASSIGN : '*=';
-DIV_ASSIGN : '/=';
-AND_ASSIGN : '&=';
-OR_ASSIGN : '|=';
-XOR_ASSIGN : '^=';
-MOD_ASSIGN : '%=';
-LSHIFT_ASSIGN : '<<=';
-RSHIFT_ASSIGN : '>>=';
-URSHIFT_ASSIGN : '>>>=';
+fragment ASSIGN : '=';
+fragment ADD_ASSIGN : '+=';
+fragment SUB_ASSIGN : '-=';
+fragment MUL_ASSIGN : '*=';
+fragment DIV_ASSIGN : '/=';
+fragment AND_ASSIGN : '&=';
+fragment OR_ASSIGN : '|=';
+fragment XOR_ASSIGN : '^=';
+fragment MOD_ASSIGN : '%=';
+fragment LSHIFT_ASSIGN : '<<=';
+fragment RSHIFT_ASSIGN : '>>=';
+fragment URSHIFT_ASSIGN : '>>>=';
 
 WS  :  [ #\t\r\n\u000C]+ -> skip ;

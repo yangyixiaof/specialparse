@@ -40,6 +40,7 @@ statement
 	|	arrayInitializerStartStatement
 	|	arrayInitializerSplitCommaStatement
 	|	arrayInitializerEndStatement
+	|	enumConstantDeclarationSplitCommaStatement
 	|	forStatement
 	|	forIniOverStatement
 	|	forExpOverStatement

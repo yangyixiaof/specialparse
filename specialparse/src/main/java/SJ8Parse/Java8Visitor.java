@@ -24,6 +24,78 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitExpressionStatement(Java8Parser.ExpressionStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#assignAssignmentStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAssignAssignmentStatement(Java8Parser.AssignAssignmentStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#mulassignAssignmentStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMulassignAssignmentStatement(Java8Parser.MulassignAssignmentStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#divassignAssignmentStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDivassignAssignmentStatement(Java8Parser.DivassignAssignmentStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#modassignAssignmentStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitModassignAssignmentStatement(Java8Parser.ModassignAssignmentStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#addassignAssignmentStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAddassignAssignmentStatement(Java8Parser.AddassignAssignmentStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#subassignAssignmentStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSubassignAssignmentStatement(Java8Parser.SubassignAssignmentStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#lshiftassignAssignmentStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLshiftassignAssignmentStatement(Java8Parser.LshiftassignAssignmentStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#rshiftassignAssignmentStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRshiftassignAssignmentStatement(Java8Parser.RshiftassignAssignmentStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#urshiftassignAssignmentStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitUrshiftassignAssignmentStatement(Java8Parser.UrshiftassignAssignmentStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#andassignAssignmentStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAndassignAssignmentStatement(Java8Parser.AndassignAssignmentStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#xorassignAssignmentStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitXorassignAssignmentStatement(Java8Parser.XorassignAssignmentStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#orassignAssignmentStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOrassignAssignmentStatement(Java8Parser.OrassignAssignmentStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#assignmentStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -72,6 +144,120 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitClassFieldAccess(Java8Parser.ClassFieldAccessContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#gtInfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitGtInfixExpressionStatement(Java8Parser.GtInfixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#ltInfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLtInfixExpressionStatement(Java8Parser.LtInfixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#equalInfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEqualInfixExpressionStatement(Java8Parser.EqualInfixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#leInfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLeInfixExpressionStatement(Java8Parser.LeInfixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#geInfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitGeInfixExpressionStatement(Java8Parser.GeInfixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#notequalInfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNotequalInfixExpressionStatement(Java8Parser.NotequalInfixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#andInfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAndInfixExpressionStatement(Java8Parser.AndInfixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#orInfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitOrInfixExpressionStatement(Java8Parser.OrInfixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#addInfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAddInfixExpressionStatement(Java8Parser.AddInfixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#subInfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSubInfixExpressionStatement(Java8Parser.SubInfixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#mulInfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMulInfixExpressionStatement(Java8Parser.MulInfixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#divInfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDivInfixExpressionStatement(Java8Parser.DivInfixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#bitandInfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBitandInfixExpressionStatement(Java8Parser.BitandInfixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#bitorInfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBitorInfixExpressionStatement(Java8Parser.BitorInfixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#caretInfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCaretInfixExpressionStatement(Java8Parser.CaretInfixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#modInfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitModInfixExpressionStatement(Java8Parser.ModInfixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#lshiftInfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLshiftInfixExpressionStatement(Java8Parser.LshiftInfixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#rshiftInfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRshiftInfixExpressionStatement(Java8Parser.RshiftInfixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#urshiftInfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitUrshiftInfixExpressionStatement(Java8Parser.UrshiftInfixExpressionStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#infixExpressionStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -96,11 +282,59 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitNameStatement(Java8Parser.NameStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#bangPrefixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBangPrefixExpressionStatement(Java8Parser.BangPrefixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#tildePrefixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTildePrefixExpressionStatement(Java8Parser.TildePrefixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#incPrefixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIncPrefixExpressionStatement(Java8Parser.IncPrefixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#decPrefixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDecPrefixExpressionStatement(Java8Parser.DecPrefixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#addPrefixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAddPrefixExpressionStatement(Java8Parser.AddPrefixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#subPrefixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSubPrefixExpressionStatement(Java8Parser.SubPrefixExpressionStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#prefixExpressionStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitPrefixExpressionStatement(Java8Parser.PrefixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#incPostfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIncPostfixExpressionStatement(Java8Parser.IncPostfixExpressionStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#decPostfixExpressionStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDecPostfixExpressionStatement(Java8Parser.DecPostfixExpressionStatementContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#postfixExpressionStatement}.
 	 * @param ctx the parse tree
@@ -492,18 +726,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitArgumentList(Java8Parser.ArgumentListContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#typeList}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitTypeList(Java8Parser.TypeListContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#argType}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitArgType(Java8Parser.ArgTypeContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#argTypeList}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -582,6 +804,42 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSimpleType(Java8Parser.SimpleTypeContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#extendBound}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitExtendBound(Java8Parser.ExtendBoundContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#superBound}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSuperBound(Java8Parser.SuperBoundContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#wildcardBounds}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWildcardBounds(Java8Parser.WildcardBoundsContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#wildCardType}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitWildCardType(Java8Parser.WildCardTypeContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#typeArgument}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTypeArgument(Java8Parser.TypeArgumentContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#typeArguments}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTypeArguments(Java8Parser.TypeArgumentsContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#parameterizedType}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -611,30 +869,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitDims(Java8Parser.DimsContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#wildCardType}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitWildCardType(Java8Parser.WildCardTypeContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#extendBound}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitExtendBound(Java8Parser.ExtendBoundContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#superBound}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitSuperBound(Java8Parser.SuperBoundContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#wildcardBounds}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitWildcardBounds(Java8Parser.WildcardBoundsContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#intersectionFirstType}.
 	 * @param ctx the parse tree
@@ -731,28 +965,4 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitEndOfArrayInitializerElementExpression(Java8Parser.EndOfArrayInitializerElementExpressionContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#prefixUnaryOperator}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPrefixUnaryOperator(Java8Parser.PrefixUnaryOperatorContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#postfixUnaryOperator}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPostfixUnaryOperator(Java8Parser.PostfixUnaryOperatorContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#binaryOperator}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBinaryOperator(Java8Parser.BinaryOperatorContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#assignmentOperator}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitAssignmentOperator(Java8Parser.AssignmentOperatorContext ctx);
 }

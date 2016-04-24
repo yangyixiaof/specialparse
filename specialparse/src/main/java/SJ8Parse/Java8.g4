@@ -69,7 +69,33 @@ expressionStatement
 	|	arrayAccessStatement
 	;
 
-assignmentStatement : 'A@' referedExpression AssignmentOperator referedExpression;
+assignAssignmentStatement : 'A@' referedExpression '=' referedExpression;
+mulassignAssignmentStatement : 'A@' referedExpression '*=' referedExpression;
+divassignAssignmentStatement : 'A@' referedExpression '/=' referedExpression;
+modassignAssignmentStatement : 'A@' referedExpression '%=' referedExpression;
+addassignAssignmentStatement : 'A@' referedExpression '+=' referedExpression;
+subassignAssignmentStatement : 'A@' referedExpression '-=' referedExpression;
+lshiftassignAssignmentStatement : 'A@' referedExpression '<<=' referedExpression;
+rshiftassignAssignmentStatement : 'A@' referedExpression '>>=' referedExpression;
+urshiftassignAssignmentStatement : 'A@' referedExpression '>>>=' referedExpression;
+andassignAssignmentStatement : 'A@' referedExpression '&=' referedExpression;
+xorassignAssignmentStatement : 'A@' referedExpression '^=' referedExpression;
+orassignAssignmentStatement : 'A@' referedExpression '|=' referedExpression;
+
+assignmentStatement
+	:	assignAssignmentStatement
+	|	mulassignAssignmentStatement
+	|	divassignAssignmentStatement
+	|	modassignAssignmentStatement
+	|	addassignAssignmentStatement
+	|	subassignAssignmentStatement
+	|	lshiftassignAssignmentStatement
+	|	rshiftassignAssignmentStatement
+	|	urshiftassignAssignmentStatement
+	|	andassignAssignmentStatement
+	|	xorassignAssignmentStatement
+	|	orassignAssignmentStatement
+	;
 
 literalStatement : 'L@' literal;
 
@@ -89,7 +115,47 @@ superFieldAccess
 
 classFieldAccess : 'class' '.' type;
 
-infixExpressionStatement : 'IxE@' referedExpression BinaryOperator referedExpression;
+gtInfixExpressionStatement : 'IxE@' referedExpression '>' referedExpression;
+ltInfixExpressionStatement : 'IxE@' referedExpression '<' referedExpression;
+equalInfixExpressionStatement : 'IxE@' referedExpression '==' referedExpression;
+leInfixExpressionStatement : 'IxE@' referedExpression '<=' referedExpression;
+geInfixExpressionStatement : 'IxE@' referedExpression '>=' referedExpression;
+notequalInfixExpressionStatement : 'IxE@' referedExpression '!=' referedExpression;
+andInfixExpressionStatement : 'IxE@' referedExpression '&&' referedExpression;
+orInfixExpressionStatement : 'IxE@' referedExpression '||' referedExpression;
+addInfixExpressionStatement : 'IxE@' referedExpression '+' referedExpression;
+subInfixExpressionStatement : 'IxE@' referedExpression '-' referedExpression;
+mulInfixExpressionStatement : 'IxE@' referedExpression '*' referedExpression;
+divInfixExpressionStatement : 'IxE@' referedExpression '/' referedExpression;
+bitandInfixExpressionStatement : 'IxE@' referedExpression '&' referedExpression;
+bitorInfixExpressionStatement : 'IxE@' referedExpression '|' referedExpression;
+caretInfixExpressionStatement : 'IxE@' referedExpression '^' referedExpression;
+modInfixExpressionStatement : 'IxE@' referedExpression '%' referedExpression;
+lshiftInfixExpressionStatement : 'IxE@' referedExpression '<' '<' referedExpression;
+rshiftInfixExpressionStatement : 'IxE@' referedExpression '>' '>' referedExpression;
+urshiftInfixExpressionStatement : 'IxE@' referedExpression '>' '>' '>' referedExpression;
+
+infixExpressionStatement
+	:	gtInfixExpressionStatement
+	|	ltInfixExpressionStatement
+	|	equalInfixExpressionStatement
+	|	leInfixExpressionStatement
+	|	geInfixExpressionStatement
+	|	notequalInfixExpressionStatement
+	|	andInfixExpressionStatement
+	|	orInfixExpressionStatement
+	|	addInfixExpressionStatement
+	|	subInfixExpressionStatement
+	|	mulInfixExpressionStatement
+	|	divInfixExpressionStatement
+	|	bitandInfixExpressionStatement
+	|	bitorInfixExpressionStatement
+	|	caretInfixExpressionStatement
+	|	modInfixExpressionStatement
+	|	lshiftInfixExpressionStatement
+	|	rshiftInfixExpressionStatement
+	|	urshiftInfixExpressionStatement
+	;
 
 instanceofExpressionStatement : 'InE@' referedExpression 'instanceof' type;
 
@@ -97,9 +163,29 @@ methodReferenceStatement : 'MR@' identifier '::' referedExpression;
 
 nameStatement : 'N@' identifier;
 
-prefixExpressionStatement : 'PeE@' PrefixUnaryOperator referedExpression;
+bangPrefixExpressionStatement : 'PeE@' '!' referedExpression;
+tildePrefixExpressionStatement : 'PeE@' '~' referedExpression;
+incPrefixExpressionStatement : 'PeE@' '++' referedExpression;
+decPrefixExpressionStatement : 'PeE@' '--' referedExpression;
+addPrefixExpressionStatement : 'PeE@' '+' referedExpression;
+subPrefixExpressionStatement : 'PeE@' '-' referedExpression;
 
-postfixExpressionStatement : 'PtE@' referedExpression PostfixUnaryOperator;
+prefixExpressionStatement
+	:	bangPrefixExpressionStatement
+	|	tildePrefixExpressionStatement
+	|	incPrefixExpressionStatement
+	|	decPrefixExpressionStatement
+	|	addPrefixExpressionStatement
+	|	subPrefixExpressionStatement
+	;
+
+incPostfixExpressionStatement : 'PtE@' referedExpression '++';
+decPostfixExpressionStatement : 'PtE@' referedExpression '--';
+
+postfixExpressionStatement
+	:	incPostfixExpressionStatement
+	|	decPostfixExpressionStatement
+	;
 
 arrayAccessStatement : '[@' referedExpression referedExpression endOfArrayDeclarationIndexExpression?;
 
@@ -254,11 +340,13 @@ methodArgReferedExpression
 
 argumentList : firstArg (',' methodArgReferedExpression)*;
 
-typeList : type (',' type)*;
+// typeList : type (',' type)*;
 
-argType : type;
+// argType : type;
 
-argTypeList : argType (',' argType)*;
+argTypeList : type (',' type)*;
+
+// argType (',' argType)*;
 
 literal
 	:	numberLiteral
@@ -432,57 +520,6 @@ preExist : '@PE';
 
 endOfArrayDeclarationIndexExpression : ('@]')+;
 endOfArrayInitializerElementExpression : '@I]';
-
-PrefixUnaryOperator
-	:	BANG
-	|	TILDE
-	|	INC
-	|	DEC
-	|	ADD
-	|	SUB
-	;
-	
-PostfixUnaryOperator
-	:	INC
-	|	DEC
-	;
-
-BinaryOperator
-	:	GT
-	|	LT
-	|	EQUAL
-	|	LE
-	|	GE
-	|	NOTEQUAL
-	|	AND
-	|	OR
-	|	ADD
-	|	SUB
-	|	MUL
-	|	DIV
-	|	BITAND
-	|	BITOR
-	|	CARET
-	|	MOD
-	|	LSHIFT
-	|	RSHIFT
-	|	URSHIFT
-	;
-
-AssignmentOperator
-	:	ASSIGN
-	|	MUL_ASSIGN
-	|	DIV_ASSIGN
-	|	MOD_ASSIGN
-	|	ADD_ASSIGN
-	|	SUB_ASSIGN
-	|	LSHIFT_ASSIGN
-	|	RSHIFT_ASSIGN
-	|	URSHIFT_ASSIGN
-	|	AND_ASSIGN
-	|	XOR_ASSIGN
-	|	OR_ASSIGN
-	;
 
 AT : '@' ;
 
@@ -741,44 +778,6 @@ NullLiteralX
 COMMA : ',';
 DOT : '.';
 
-fragment GT : '>';
-fragment LT : '<';
-fragment BANG : '!';
-fragment TILDE : '~';
-fragment QUESTION : '?';
-fragment COLON : ':';
-fragment EQUAL : '==';
-fragment LE : '<=';
-fragment GE : '>=';
-fragment NOTEQUAL : '!=';
-fragment AND : '&&';
-fragment OR : '||';
-fragment INC : '++';
-fragment DEC : '--';
-fragment ADD : '+';
-fragment SUB : '-';
-fragment MUL : '*';
-fragment DIV : '/';
-fragment BITAND : '&';
-fragment BITOR : '|';
-fragment CARET : '^';
-fragment MOD : '%';
-fragment LSHIFT : '<<';
-fragment RSHIFT : '>>';
-fragment URSHIFT : '>>>';
 COLONCOLON : '::';
-
-fragment ASSIGN : '=';
-fragment ADD_ASSIGN : '+=';
-fragment SUB_ASSIGN : '-=';
-fragment MUL_ASSIGN : '*=';
-fragment DIV_ASSIGN : '/=';
-fragment AND_ASSIGN : '&=';
-fragment OR_ASSIGN : '|=';
-fragment XOR_ASSIGN : '^=';
-fragment MOD_ASSIGN : '%=';
-fragment LSHIFT_ASSIGN : '<<=';
-fragment RSHIFT_ASSIGN : '>>=';
-fragment URSHIFT_ASSIGN : '>>>=';
 
 WS  :  [ #\t\r\n\u000C]+ -> skip ;

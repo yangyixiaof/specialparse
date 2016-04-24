@@ -2,7 +2,6 @@ package cn.yyx.parse.specialparse;
 
 import SJ8Parse.Java8BaseVisitor;
 import SJ8Parse.Java8Parser;
-import SJ8Parse.Java8Parser.ArgTypeContext;
 import SJ8Parse.Java8Parser.ArgTypeListContext;
 import SJ8Parse.Java8Parser.ArrayInitializerEndStatementContext;
 import SJ8Parse.Java8Parser.ArrayInitializerSplitCommaStatementContext;
@@ -408,16 +407,6 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	public Integer visitArgumentList(Java8Parser.ArgumentListContext ctx) {
 		return visitChildren(ctx);
 	}
-
-	@Override
-	public Integer visitTypeList(Java8Parser.TypeListContext ctx) {
-		return visitChildren(ctx);
-	}
-	
-	@Override
-	public Integer visitArgType(ArgTypeContext ctx) {
-		return super.visitArgType(ctx);
-	}
 	
 	@Override
 	public Integer visitArgTypeList(ArgTypeListContext ctx) {
@@ -534,25 +523,5 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	public Integer visitNullLiteral(Java8Parser.NullLiteralContext ctx) {
 		return visitChildren(ctx);
 	}
-
-	@Override
-	public Integer visitPrefixUnaryOperator(Java8Parser.PrefixUnaryOperatorContext ctx) {
-		return visitChildren(ctx);
-	}
 	
-	@Override
-	public Integer visitPostfixUnaryOperator(Java8Parser.PostfixUnaryOperatorContext ctx) {
-		return visitChildren(ctx);
-	}
-
-	@Override
-	public Integer visitBinaryOperator(Java8Parser.BinaryOperatorContext ctx) {
-		return visitChildren(ctx);
-	}
-
-	@Override
-	public Integer visitAssignmentOperator(Java8Parser.AssignmentOperatorContext ctx) {
-		return visitChildren(ctx);
-	}
-
 }

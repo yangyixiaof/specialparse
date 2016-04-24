@@ -839,6 +839,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitCatchClauseStatement(Java8Parser.CatchClauseStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#finallyStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterFinallyStatement(Java8Parser.FinallyStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#finallyStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitFinallyStatement(Java8Parser.FinallyStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#ifStatement}.
 	 * @param ctx the parse tree
 	 */

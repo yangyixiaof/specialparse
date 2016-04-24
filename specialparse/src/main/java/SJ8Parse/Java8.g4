@@ -26,6 +26,7 @@ statement
 	|	synchronizedStatement
 	|	throwStatement
 	|	catchClauseStatement
+	|	finallyStatement
 	|	ifStatement
 	|	thenStatement
 	|	elseStatement
@@ -260,6 +261,8 @@ synchronizedStatement : 'SC@' 'synchronized' referedExpression;
 throwStatement : 'TS@' 'throw' referedExpression;
 
 catchClauseStatement : 'CT@' 'catch' type;
+
+finallyStatement : 'DH@finally';
 
 ifStatement : 'IF@' 'if' referedExpression;
 

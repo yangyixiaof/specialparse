@@ -510,6 +510,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCatchClauseStatement(Java8Parser.CatchClauseStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#finallyStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFinallyStatement(Java8Parser.FinallyStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#ifStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

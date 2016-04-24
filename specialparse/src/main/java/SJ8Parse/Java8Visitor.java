@@ -516,6 +516,18 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitIfStatement(Java8Parser.IfStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#thenStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitThenStatement(Java8Parser.ThenStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#elseStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitElseStatement(Java8Parser.ElseStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#arrayCreationStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

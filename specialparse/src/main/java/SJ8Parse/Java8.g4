@@ -27,6 +27,8 @@ statement
 	|	throwStatement
 	|	catchClauseStatement
 	|	ifStatement
+	|	thenStatement
+	|	elseStatement
 	|	arrayCreationStatement
 	|	initializerStatement
 	|	variableDeclarationHolderStatement
@@ -260,6 +262,10 @@ throwStatement : 'TS@' 'throw' referedExpression;
 catchClauseStatement : 'CT@' 'catch' type;
 
 ifStatement : 'IF@' 'if' referedExpression;
+
+thenStatement : 'DH@then';
+
+elseStatement : 'DH@else';
 
 arrayCreationStatement : 'AC@' type '(new)';
 

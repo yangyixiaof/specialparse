@@ -849,6 +849,26 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitIfStatement(Java8Parser.IfStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#thenStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterThenStatement(Java8Parser.ThenStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#thenStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitThenStatement(Java8Parser.ThenStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#elseStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterElseStatement(Java8Parser.ElseStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#elseStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitElseStatement(Java8Parser.ElseStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#arrayCreationStatement}.
 	 * @param ctx the parse tree
 	 */

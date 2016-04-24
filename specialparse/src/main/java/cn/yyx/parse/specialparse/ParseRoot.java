@@ -37,6 +37,7 @@ public class ParseRoot
 			ParseOneSentence("A@@C0?0=class.int", null, true);
 			ParseOneSentence("A@acceptor.@C0?0=acceptor.this.@PE", null, true);
 			ParseOneSentence("A@accessMin.super=@C0?0", null, true);
+			ParseOneSentence("AM@Class.Class<?#extends#Annotation>[]#value()", null, true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -336,6 +336,18 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSubPrefixExpressionStatement(Java8Parser.SubPrefixExpressionStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#addPrefixExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAddPrefixExpression(Java8Parser.AddPrefixExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#subPrefixExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSubPrefixExpression(Java8Parser.SubPrefixExpressionContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#prefixExpressionStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

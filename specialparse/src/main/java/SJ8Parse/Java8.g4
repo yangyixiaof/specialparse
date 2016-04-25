@@ -185,8 +185,11 @@ bangPrefixExpressionStatement : 'PeE@' '!' referedExpression;
 tildePrefixExpressionStatement : 'PeE@' '~' referedExpression;
 incPrefixExpressionStatement : 'PeE@' '++' referedExpression;
 decPrefixExpressionStatement : 'PeE@' '--' referedExpression;
-addPrefixExpressionStatement : 'PeE@' '+' referedExpression;
-subPrefixExpressionStatement : 'PeE@' '-' referedExpression;
+addPrefixExpressionStatement : 'PeE@' addPrefixExpression;
+subPrefixExpressionStatement : 'PeE@' subPrefixExpression;
+
+addPrefixExpression : '+' referedExpression;
+subPrefixExpression : '-' referedExpression;
 
 prefixExpressionStatement
 	:	bangPrefixExpressionStatement
@@ -220,6 +223,8 @@ referedExpression
 	|	thisExpression
 	|	classFieldAccess
 	|	superFieldAccess
+	|	addPrefixExpression
+	|	subPrefixExpression
 	;
 
 identifier

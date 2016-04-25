@@ -549,6 +549,26 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitSubPrefixExpressionStatement(Java8Parser.SubPrefixExpressionStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#addPrefixExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterAddPrefixExpression(Java8Parser.AddPrefixExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#addPrefixExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitAddPrefixExpression(Java8Parser.AddPrefixExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#subPrefixExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterSubPrefixExpression(Java8Parser.SubPrefixExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#subPrefixExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitSubPrefixExpression(Java8Parser.SubPrefixExpressionContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#prefixExpressionStatement}.
 	 * @param ctx the parse tree
 	 */

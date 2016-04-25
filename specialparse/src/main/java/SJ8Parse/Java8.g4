@@ -116,7 +116,10 @@ literalStatement
 
 castExpressionStatement : 'CE@' '(' type ')' referedExpression;
 
-methodInvocationStatement : 'MI@' identifier '(' argumentList ')';
+methodInvocationStatement
+	:	'MI@' identifier '(' argumentList ')'
+	|	'MI@' type '(' argumentList ')' // MI@@K0?0(new)
+	;
 
 fieldAccessStatement : 'FA@' fieldAccess;
 

@@ -102,7 +102,17 @@ assignmentStatement
 	|	orassignAssignmentStatement
 	;
 
-literalStatement : 'L@' literal;
+positiveLiteralStatement : 'L@+' literal;
+
+negativeLiteralStatement : 'L@-' literal;
+
+normalLiteralStatement : 'L@' literal;
+
+literalStatement
+	:	normalLiteralStatement
+	|	negativeLiteralStatement
+	|	positiveLiteralStatement
+	;
 
 castExpressionStatement : 'CE@' '(' type ')' referedExpression;
 

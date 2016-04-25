@@ -197,6 +197,42 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterPositiveLiteralStatement(Java8Parser.PositiveLiteralStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPositiveLiteralStatement(Java8Parser.PositiveLiteralStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNegativeLiteralStatement(Java8Parser.NegativeLiteralStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNegativeLiteralStatement(Java8Parser.NegativeLiteralStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterNormalLiteralStatement(Java8Parser.NormalLiteralStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitNormalLiteralStatement(Java8Parser.NormalLiteralStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterLiteralStatement(Java8Parser.LiteralStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}

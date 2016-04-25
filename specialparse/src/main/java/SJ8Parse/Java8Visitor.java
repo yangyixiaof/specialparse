@@ -102,6 +102,24 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAssignmentStatement(Java8Parser.AssignmentStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#positiveLiteralStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPositiveLiteralStatement(Java8Parser.PositiveLiteralStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#negativeLiteralStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNegativeLiteralStatement(Java8Parser.NegativeLiteralStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#normalLiteralStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNormalLiteralStatement(Java8Parser.NormalLiteralStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#literalStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

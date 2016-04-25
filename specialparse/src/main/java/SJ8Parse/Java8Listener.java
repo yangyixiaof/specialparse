@@ -159,6 +159,36 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitAssignmentStatement(Java8Parser.AssignmentStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#positiveLiteralStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterPositiveLiteralStatement(Java8Parser.PositiveLiteralStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#positiveLiteralStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitPositiveLiteralStatement(Java8Parser.PositiveLiteralStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#negativeLiteralStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterNegativeLiteralStatement(Java8Parser.NegativeLiteralStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#negativeLiteralStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitNegativeLiteralStatement(Java8Parser.NegativeLiteralStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#normalLiteralStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterNormalLiteralStatement(Java8Parser.NormalLiteralStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#normalLiteralStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitNormalLiteralStatement(Java8Parser.NormalLiteralStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#literalStatement}.
 	 * @param ctx the parse tree
 	 */

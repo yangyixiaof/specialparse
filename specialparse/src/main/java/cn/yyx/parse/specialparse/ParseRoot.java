@@ -42,6 +42,7 @@ public class ParseRoot
 			ParseOneSentence("FA@Damage.@PE", null, true);
 			ParseOneSentence("FA@@F0?0", null, true);
 			ParseOneSentence("IxE@@C0?0==-2147483648", null, true);
+			ParseOneSentence("L@-2147483648", null, true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

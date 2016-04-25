@@ -39,6 +39,7 @@ public class ParseRoot
 			ParseOneSentence("A@accessMin.super=@C0?0", null, true);
 			// ParseOneSentence("AM@Class.Class<?#extends#Annotation>[]#value()", null, true);
 			ParseOneSentence("[@@C0?0#A]", null, true);
+			ParseOneSentence("FA@Damage.@PE", null, true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

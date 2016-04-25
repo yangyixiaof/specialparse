@@ -425,7 +425,7 @@ stringLiteral
 	;
 
 nullLiteral
-	:	NullLiteralX
+	:	'null'
 	;
 	
 typeLiteral
@@ -811,10 +811,6 @@ fragment
 ZeroToThree
     :   [0-3]
     ;
-
-NullLiteralX
-	:	'null'
-	;
 	
 COMMA : ',';
 DOT : '.';

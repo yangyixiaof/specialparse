@@ -264,7 +264,10 @@ labeledStatement : 'LD@' identifier;
 
 variableDeclarationStatement : 'VD@' type;
 
-lambdaExpressionStatement : 'LE@' '(' argTypeList? ')' '->' '{}';
+lambdaExpressionStatement
+	:	'LE@' '(' argTypeList? ')' '->' '{}'
+	|	'LE@' '(' argTypeList? ')' '->' referedExpression
+	;
 
 breakStatement : 'B@' 'break' (identifier)?;
 

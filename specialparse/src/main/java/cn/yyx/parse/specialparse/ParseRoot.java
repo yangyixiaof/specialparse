@@ -45,6 +45,7 @@ public class ParseRoot
 			ParseOneSentence("L@-2147483648", null, true);
 			ParseOneSentence("L@class.A", null, true);
 			ParseOneSentence("LE@()->{}", null, true);
+			ParseOneSentence("LE@()->i", null, true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

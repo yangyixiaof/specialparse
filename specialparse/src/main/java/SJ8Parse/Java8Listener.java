@@ -519,6 +519,26 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitInstanceofExpressionStatement(Java8Parser.InstanceofExpressionStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#commonMethodReferenceStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterCommonMethodReferenceStatement(Java8Parser.CommonMethodReferenceStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#commonMethodReferenceStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitCommonMethodReferenceStatement(Java8Parser.CommonMethodReferenceStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#superMethodReferenceStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterSuperMethodReferenceStatement(Java8Parser.SuperMethodReferenceStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#superMethodReferenceStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitSuperMethodReferenceStatement(Java8Parser.SuperMethodReferenceStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#methodReferenceStatement}.
 	 * @param ctx the parse tree
 	 */

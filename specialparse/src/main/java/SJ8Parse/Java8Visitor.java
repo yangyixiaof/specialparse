@@ -318,6 +318,18 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitInstanceofExpressionStatement(Java8Parser.InstanceofExpressionStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#commonMethodReferenceStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCommonMethodReferenceStatement(Java8Parser.CommonMethodReferenceStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#superMethodReferenceStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitSuperMethodReferenceStatement(Java8Parser.SuperMethodReferenceStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#methodReferenceStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

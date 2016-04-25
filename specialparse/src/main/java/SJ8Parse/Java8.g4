@@ -195,7 +195,14 @@ infixExpressionStatement
 
 instanceofExpressionStatement : 'InE@' referedExpression 'instanceof' type;
 
-methodReferenceStatement : 'MR@' identifier '::' referedExpression;
+commonMethodReferenceStatement : 'MR@' identifier '::' referedExpression;
+
+superMethodReferenceStatement : 'MR@' identifier '::' 'super' ('.' referedExpression)?;
+
+methodReferenceStatement
+	:	commonMethodReferenceStatement
+	|	superMethodReferenceStatement
+	;
 
 nameStatement : 'N@' identifier;
 

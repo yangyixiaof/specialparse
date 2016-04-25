@@ -412,7 +412,8 @@ floatingPointLiteral
 	;
 	
 booleanLiteral
-	:	BooleanLiteralX
+	:   'true'
+    |   'false'
 	;
 	
 characterLiteral
@@ -758,11 +759,6 @@ BinaryExponentIndicator
     ;
 
 // §3.10.3 Boolean Literals
-
-BooleanLiteralX
-    :   'true'
-    |   'false'
-    ;
 
 // §3.10.4 Character Literals
 

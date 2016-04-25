@@ -39,9 +39,9 @@ public class Java8Parser extends Parser {
 		T__125=126, T__126=127, T__127=128, T__128=129, T__129=130, T__130=131, 
 		T__131=132, T__132=133, T__133=134, T__134=135, T__135=136, T__136=137, 
 		T__137=138, T__138=139, T__139=140, T__140=141, T__141=142, T__142=143, 
-		IdentifierX=144, AT=145, IntegerLiteralX=146, FloatingPointLiteralX=147, 
-		BooleanLiteralX=148, CharacterLiteralX=149, StringLiteralX=150, NullLiteralX=151, 
-		COMMA=152, DOT=153, COLONCOLON=154, WS=155;
+		T__143=144, T__144=145, IdentifierX=146, AT=147, IntegerLiteralX=148, 
+		FloatingPointLiteralX=149, CharacterLiteralX=150, StringLiteralX=151, 
+		NullLiteralX=152, COMMA=153, DOT=154, COLONCOLON=155, WS=156;
 	public static final int
 		RULE_statement = 0, RULE_expressionStatement = 1, RULE_assignAssignmentStatement = 2, 
 		RULE_mulassignAssignmentStatement = 3, RULE_divassignAssignmentStatement = 4, 
@@ -181,11 +181,11 @@ public class Java8Parser extends Parser {
 		"':'", "'DH@'", "'{'", "'}'", "'@Em'", "'DH@A{'", "'DH@A,'", "'DH@A}'", 
 		"'DH@E,'", "'DH@for'", "'DH@forIniOver'", "'DH@forExpOver'", "'DH@forUpdOver'", 
 		"'DH@CondExpBegin'", "'DH@CondExpQM'", "'DH@CondExpCM'", "'DH@,'", "'DH@;'", 
-		"'DH@Ps'", "'DH@Pr'", "'@PE'", "'new'", "'class'", "'@IT'", "'float'", 
-		"'double'", "'boolean'", "'byte'", "'short'", "'int'", "'long'", "'char'", 
-		"'extends'", "'?'", "'['", "']'", "'@K'", "'@D'", "'@X'", "'@F'", "'@C'", 
-		"'@HO'", null, "'@'", null, null, null, null, null, "'null'", "','", "'.'", 
-		"'::'"
+		"'DH@Ps'", "'DH@Pr'", "'@PE'", "'new'", "'true'", "'false'", "'class'", 
+		"'@IT'", "'float'", "'double'", "'boolean'", "'byte'", "'short'", "'int'", 
+		"'long'", "'char'", "'extends'", "'?'", "'['", "']'", "'@K'", "'@D'", 
+		"'@X'", "'@F'", "'@C'", "'@HO'", null, "'@'", null, null, null, null, 
+		"'null'", "','", "'.'", "'::'"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
 		null, null, null, null, null, null, null, null, null, null, null, null, 
@@ -200,7 +200,7 @@ public class Java8Parser extends Parser {
 		null, null, null, null, null, null, null, null, null, null, null, null, 
 		null, null, null, null, null, null, null, null, null, null, null, null, 
 		null, null, null, null, null, null, null, null, null, null, null, null, 
-		"IdentifierX", "AT", "IntegerLiteralX", "FloatingPointLiteralX", "BooleanLiteralX", 
+		null, null, "IdentifierX", "AT", "IntegerLiteralX", "FloatingPointLiteralX", 
 		"CharacterLiteralX", "StringLiteralX", "NullLiteralX", "COMMA", "DOT", 
 		"COLONCOLON", "WS"
 	};
@@ -5218,7 +5218,7 @@ public class Java8Parser extends Parser {
 			match(T__17);
 			setState(786);
 			_la = _input.LA(1);
-			if (((((_la - 125)) & ~0x3f) == 0 && ((1L << (_la - 125)) & ((1L << (T__124 - 125)) | (1L << (T__125 - 125)) | (1L << (T__126 - 125)) | (1L << (T__127 - 125)) | (1L << (T__128 - 125)) | (1L << (T__129 - 125)) | (1L << (T__130 - 125)) | (1L << (T__131 - 125)) | (1L << (T__132 - 125)) | (1L << (T__137 - 125)) | (1L << (IdentifierX - 125)))) != 0)) {
+			if (((((_la - 127)) & ~0x3f) == 0 && ((1L << (_la - 127)) & ((1L << (T__126 - 127)) | (1L << (T__127 - 127)) | (1L << (T__128 - 127)) | (1L << (T__129 - 127)) | (1L << (T__130 - 127)) | (1L << (T__131 - 127)) | (1L << (T__132 - 127)) | (1L << (T__133 - 127)) | (1L << (T__134 - 127)) | (1L << (T__139 - 127)) | (1L << (IdentifierX - 127)))) != 0)) {
 				{
 				setState(785);
 				argTypeList();
@@ -5283,7 +5283,7 @@ public class Java8Parser extends Parser {
 			match(T__17);
 			setState(795);
 			_la = _input.LA(1);
-			if (((((_la - 125)) & ~0x3f) == 0 && ((1L << (_la - 125)) & ((1L << (T__124 - 125)) | (1L << (T__125 - 125)) | (1L << (T__126 - 125)) | (1L << (T__127 - 125)) | (1L << (T__128 - 125)) | (1L << (T__129 - 125)) | (1L << (T__130 - 125)) | (1L << (T__131 - 125)) | (1L << (T__132 - 125)) | (1L << (T__137 - 125)) | (1L << (IdentifierX - 125)))) != 0)) {
+			if (((((_la - 127)) & ~0x3f) == 0 && ((1L << (_la - 127)) & ((1L << (T__126 - 127)) | (1L << (T__127 - 127)) | (1L << (T__128 - 127)) | (1L << (T__129 - 127)) | (1L << (T__130 - 127)) | (1L << (T__131 - 127)) | (1L << (T__132 - 127)) | (1L << (T__133 - 127)) | (1L << (T__134 - 127)) | (1L << (T__139 - 127)) | (1L << (IdentifierX - 127)))) != 0)) {
 				{
 				setState(794);
 				argTypeList();
@@ -5497,7 +5497,7 @@ public class Java8Parser extends Parser {
 				match(T__17);
 				setState(815);
 				_la = _input.LA(1);
-				if (((((_la - 125)) & ~0x3f) == 0 && ((1L << (_la - 125)) & ((1L << (T__124 - 125)) | (1L << (T__125 - 125)) | (1L << (T__126 - 125)) | (1L << (T__127 - 125)) | (1L << (T__128 - 125)) | (1L << (T__129 - 125)) | (1L << (T__130 - 125)) | (1L << (T__131 - 125)) | (1L << (T__132 - 125)) | (1L << (T__137 - 125)) | (1L << (IdentifierX - 125)))) != 0)) {
+				if (((((_la - 127)) & ~0x3f) == 0 && ((1L << (_la - 127)) & ((1L << (T__126 - 127)) | (1L << (T__127 - 127)) | (1L << (T__128 - 127)) | (1L << (T__129 - 127)) | (1L << (T__130 - 127)) | (1L << (T__131 - 127)) | (1L << (T__132 - 127)) | (1L << (T__133 - 127)) | (1L << (T__134 - 127)) | (1L << (T__139 - 127)) | (1L << (IdentifierX - 127)))) != 0)) {
 					{
 					setState(814);
 					argTypeList();
@@ -5521,7 +5521,7 @@ public class Java8Parser extends Parser {
 				match(T__17);
 				setState(823);
 				_la = _input.LA(1);
-				if (((((_la - 125)) & ~0x3f) == 0 && ((1L << (_la - 125)) & ((1L << (T__124 - 125)) | (1L << (T__125 - 125)) | (1L << (T__126 - 125)) | (1L << (T__127 - 125)) | (1L << (T__128 - 125)) | (1L << (T__129 - 125)) | (1L << (T__130 - 125)) | (1L << (T__131 - 125)) | (1L << (T__132 - 125)) | (1L << (T__137 - 125)) | (1L << (IdentifierX - 125)))) != 0)) {
+				if (((((_la - 127)) & ~0x3f) == 0 && ((1L << (_la - 127)) & ((1L << (T__126 - 127)) | (1L << (T__127 - 127)) | (1L << (T__128 - 127)) | (1L << (T__129 - 127)) | (1L << (T__130 - 127)) | (1L << (T__131 - 127)) | (1L << (T__132 - 127)) | (1L << (T__133 - 127)) | (1L << (T__134 - 127)) | (1L << (T__139 - 127)) | (1L << (IdentifierX - 127)))) != 0)) {
 					{
 					setState(822);
 					argTypeList();
@@ -5793,7 +5793,7 @@ public class Java8Parser extends Parser {
 			match(T__76);
 			setState(851);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__21) | (1L << T__32) | (1L << T__33))) != 0) || ((((_la - 122)) & ~0x3f) == 0 && ((1L << (_la - 122)) & ((1L << (T__121 - 122)) | (1L << (T__123 - 122)) | (1L << (T__138 - 122)) | (1L << (T__139 - 122)) | (1L << (T__140 - 122)) | (1L << (T__141 - 122)) | (1L << (T__142 - 122)) | (1L << (IdentifierX - 122)) | (1L << (IntegerLiteralX - 122)) | (1L << (FloatingPointLiteralX - 122)) | (1L << (BooleanLiteralX - 122)) | (1L << (CharacterLiteralX - 122)) | (1L << (StringLiteralX - 122)) | (1L << (NullLiteralX - 122)))) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << T__21) | (1L << T__32) | (1L << T__33))) != 0) || ((((_la - 122)) & ~0x3f) == 0 && ((1L << (_la - 122)) & ((1L << (T__121 - 122)) | (1L << (T__123 - 122)) | (1L << (T__124 - 122)) | (1L << (T__125 - 122)) | (1L << (T__140 - 122)) | (1L << (T__141 - 122)) | (1L << (T__142 - 122)) | (1L << (T__143 - 122)) | (1L << (T__144 - 122)) | (1L << (IdentifierX - 122)) | (1L << (IntegerLiteralX - 122)) | (1L << (FloatingPointLiteralX - 122)) | (1L << (CharacterLiteralX - 122)) | (1L << (StringLiteralX - 122)) | (1L << (NullLiteralX - 122)))) != 0)) {
 				{
 				setState(850);
 				referedExpression();
@@ -8122,7 +8122,8 @@ public class Java8Parser extends Parser {
 				numberLiteral();
 				}
 				break;
-			case BooleanLiteralX:
+			case T__123:
+			case T__124:
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(1021);
@@ -8150,7 +8151,7 @@ public class Java8Parser extends Parser {
 				nullLiteral();
 				}
 				break;
-			case T__123:
+			case T__125:
 				enterOuterAlt(_localctx, 6);
 				{
 				setState(1025);
@@ -8318,7 +8319,6 @@ public class Java8Parser extends Parser {
 	}
 
 	public static class BooleanLiteralContext extends ParserRuleContext {
-		public TerminalNode BooleanLiteralX() { return getToken(Java8Parser.BooleanLiteralX, 0); }
 		public BooleanLiteralContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -8341,11 +8341,17 @@ public class Java8Parser extends Parser {
 	public final BooleanLiteralContext booleanLiteral() throws RecognitionException {
 		BooleanLiteralContext _localctx = new BooleanLiteralContext(_ctx, getState());
 		enterRule(_localctx, 270, RULE_booleanLiteral);
+		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1036);
-			match(BooleanLiteralX);
+			_la = _input.LA(1);
+			if ( !(_la==T__123 || _la==T__124) ) {
+			_errHandler.recoverInline(this);
+			} else {
+				consume();
+			}
 			}
 		}
 		catch (RecognitionException re) {
@@ -8515,7 +8521,7 @@ public class Java8Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1044);
-			match(T__123);
+			match(T__125);
 			setState(1045);
 			match(DOT);
 			setState(1046);
@@ -8670,7 +8676,7 @@ public class Java8Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1057);
-			match(T__124);
+			match(T__126);
 			}
 		}
 		catch (RecognitionException re) {
@@ -8713,7 +8719,7 @@ public class Java8Parser extends Parser {
 			{
 			setState(1059);
 			_la = _input.LA(1);
-			if ( !(((((_la - 126)) & ~0x3f) == 0 && ((1L << (_la - 126)) & ((1L << (T__125 - 126)) | (1L << (T__126 - 126)) | (1L << (T__127 - 126)) | (1L << (T__128 - 126)) | (1L << (T__129 - 126)) | (1L << (T__130 - 126)) | (1L << (T__131 - 126)) | (1L << (T__132 - 126)))) != 0)) ) {
+			if ( !(((((_la - 128)) & ~0x3f) == 0 && ((1L << (_la - 128)) & ((1L << (T__127 - 128)) | (1L << (T__128 - 128)) | (1L << (T__129 - 128)) | (1L << (T__130 - 128)) | (1L << (T__131 - 128)) | (1L << (T__132 - 128)) | (1L << (T__133 - 128)) | (1L << (T__134 - 128)))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			} else {
 				consume();
@@ -8805,7 +8811,7 @@ public class Java8Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1063);
-			match(T__133);
+			match(T__135);
 			setState(1064);
 			type();
 			}
@@ -8899,7 +8905,7 @@ public class Java8Parser extends Parser {
 		try {
 			setState(1071);
 			switch (_input.LA(1)) {
-			case T__133:
+			case T__135:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(1069);
@@ -8959,10 +8965,10 @@ public class Java8Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1073);
-			match(T__134);
+			match(T__136);
 			setState(1075);
 			_la = _input.LA(1);
-			if (_la==T__22 || _la==T__133) {
+			if (_la==T__22 || _la==T__135) {
 				{
 				setState(1074);
 				wildcardBounds();
@@ -9014,8 +9020,6 @@ public class Java8Parser extends Parser {
 		try {
 			setState(1079);
 			switch (_input.LA(1)) {
-			case T__124:
-			case T__125:
 			case T__126:
 			case T__127:
 			case T__128:
@@ -9023,7 +9027,9 @@ public class Java8Parser extends Parser {
 			case T__130:
 			case T__131:
 			case T__132:
-			case T__137:
+			case T__133:
+			case T__134:
+			case T__139:
 			case IdentifierX:
 				enterOuterAlt(_localctx, 1);
 				{
@@ -9031,7 +9037,7 @@ public class Java8Parser extends Parser {
 				type();
 				}
 				break;
-			case T__134:
+			case T__136:
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(1078);
@@ -9331,14 +9337,14 @@ public class Java8Parser extends Parser {
 		try {
 			setState(1113);
 			switch (_input.LA(1)) {
-			case T__125:
-			case T__126:
 			case T__127:
 			case T__128:
 			case T__129:
 			case T__130:
 			case T__131:
 			case T__132:
+			case T__133:
+			case T__134:
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(1107);
@@ -9399,19 +9405,19 @@ public class Java8Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1115);
-			match(T__135);
+			match(T__137);
 			setState(1116);
-			match(T__136);
+			match(T__138);
 			setState(1121);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while (_la==T__135) {
+			while (_la==T__137) {
 				{
 				{
 				setState(1117);
-				match(T__135);
+				match(T__137);
 				setState(1118);
-				match(T__136);
+				match(T__138);
 				}
 				}
 				setState(1123);
@@ -9958,11 +9964,11 @@ public class Java8Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1164);
-			match(T__137);
+			match(T__139);
 			setState(1165);
 			integerLiteral();
 			setState(1166);
-			match(T__134);
+			match(T__136);
 			setState(1167);
 			integerLiteral();
 			}
@@ -10011,11 +10017,11 @@ public class Java8Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1169);
-			match(T__138);
+			match(T__140);
 			setState(1170);
 			integerLiteral();
 			setState(1171);
-			match(T__134);
+			match(T__136);
 			setState(1172);
 			integerLiteral();
 			}
@@ -10064,11 +10070,11 @@ public class Java8Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1174);
-			match(T__139);
+			match(T__141);
 			setState(1175);
 			integerLiteral();
 			setState(1176);
-			match(T__134);
+			match(T__136);
 			setState(1177);
 			integerLiteral();
 			}
@@ -10117,11 +10123,11 @@ public class Java8Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1179);
-			match(T__140);
+			match(T__142);
 			setState(1180);
 			integerLiteral();
 			setState(1181);
-			match(T__134);
+			match(T__136);
 			setState(1182);
 			integerLiteral();
 			}
@@ -10170,11 +10176,11 @@ public class Java8Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1184);
-			match(T__141);
+			match(T__143);
 			setState(1185);
 			integerLiteral();
 			setState(1186);
-			match(T__134);
+			match(T__136);
 			setState(1187);
 			integerLiteral();
 			}
@@ -10292,7 +10298,7 @@ public class Java8Parser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(1198);
-			match(T__142);
+			match(T__144);
 			}
 		}
 		catch (RecognitionException re) {
@@ -10383,7 +10389,7 @@ public class Java8Parser extends Parser {
 					{
 					{
 					setState(1202);
-					match(T__136);
+					match(T__138);
 					}
 					}
 					break;
@@ -10408,7 +10414,7 @@ public class Java8Parser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\u009d\u04ba\4\2\t"+
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\u009e\u04ba\4\2\t"+
 		"\2\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
 		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\4\25\t\25\4\26\t\26\4\27\t\27\4\30\t\30\4\31\t\31"+
@@ -10507,23 +10513,23 @@ public class Java8Parser extends Parser {
 		"\u010e\u0110\u0112\u0114\u0116\u0118\u011a\u011c\u011e\u0120\u0122\u0124"+
 		"\u0126\u0128\u012a\u012c\u012e\u0130\u0132\u0134\u0136\u0138\u013a\u013c"+
 		"\u013e\u0140\u0142\u0144\u0146\u0148\u014a\u014c\u014e\u0150\u0152\u0154"+
-		"\2\3\3\2\u0080\u0087\u04c7\2\u018e\3\2\2\2\4\u019c\3\2\2\2\6\u019e\3\2"+
-		"\2\2\b\u01a3\3\2\2\2\n\u01a8\3\2\2\2\f\u01ad\3\2\2\2\16\u01b2\3\2\2\2"+
-		"\20\u01b7\3\2\2\2\22\u01bc\3\2\2\2\24\u01c1\3\2\2\2\26\u01c6\3\2\2\2\30"+
-		"\u01cb\3\2\2\2\32\u01d0\3\2\2\2\34\u01d5\3\2\2\2\36\u01e6\3\2\2\2 \u01e8"+
-		"\3\2\2\2\"\u01eb\3\2\2\2$\u01ee\3\2\2\2&\u01f4\3\2\2\2(\u01f6\3\2\2\2"+
-		"*\u01fc\3\2\2\2,\u0202\3\2\2\2.\u0205\3\2\2\2\60\u0209\3\2\2\2\62\u020d"+
-		"\3\2\2\2\64\u0215\3\2\2\2\66\u0227\3\2\2\28\u0229\3\2\2\2:\u022e\3\2\2"+
-		"\2<\u0233\3\2\2\2>\u0238\3\2\2\2@\u023d\3\2\2\2B\u0242\3\2\2\2D\u0247"+
-		"\3\2\2\2F\u024c\3\2\2\2H\u0251\3\2\2\2J\u0256\3\2\2\2L\u025b\3\2\2\2N"+
-		"\u0260\3\2\2\2P\u0265\3\2\2\2R\u026a\3\2\2\2T\u026f\3\2\2\2V\u0274\3\2"+
-		"\2\2X\u0279\3\2\2\2Z\u027f\3\2\2\2\\\u0285\3\2\2\2^\u029f\3\2\2\2`\u02a1"+
-		"\3\2\2\2b\u02a6\3\2\2\2d\u02ab\3\2\2\2f\u02ae\3\2\2\2h\u02b2\3\2\2\2j"+
-		"\u02b6\3\2\2\2l\u02ba\3\2\2\2n\u02be\3\2\2\2p\u02c1\3\2\2\2r\u02c4\3\2"+
-		"\2\2t\u02c7\3\2\2\2v\u02d0\3\2\2\2x\u02d2\3\2\2\2z\u02d6\3\2\2\2|\u02dc"+
-		"\3\2\2\2~\u02de\3\2\2\2\u0080\u02f0\3\2\2\2\u0082\u02f2\3\2\2\2\u0084"+
-		"\u02f4\3\2\2\2\u0086\u02f6\3\2\2\2\u0088\u02f8\3\2\2\2\u008a\u02fb\3\2"+
-		"\2\2\u008c\u02fe\3\2\2\2\u008e\u0307\3\2\2\2\u0090\u030a\3\2\2\2\u0092"+
+		"\2\4\3\2~\177\3\2\u0082\u0089\u04c7\2\u018e\3\2\2\2\4\u019c\3\2\2\2\6"+
+		"\u019e\3\2\2\2\b\u01a3\3\2\2\2\n\u01a8\3\2\2\2\f\u01ad\3\2\2\2\16\u01b2"+
+		"\3\2\2\2\20\u01b7\3\2\2\2\22\u01bc\3\2\2\2\24\u01c1\3\2\2\2\26\u01c6\3"+
+		"\2\2\2\30\u01cb\3\2\2\2\32\u01d0\3\2\2\2\34\u01d5\3\2\2\2\36\u01e6\3\2"+
+		"\2\2 \u01e8\3\2\2\2\"\u01eb\3\2\2\2$\u01ee\3\2\2\2&\u01f4\3\2\2\2(\u01f6"+
+		"\3\2\2\2*\u01fc\3\2\2\2,\u0202\3\2\2\2.\u0205\3\2\2\2\60\u0209\3\2\2\2"+
+		"\62\u020d\3\2\2\2\64\u0215\3\2\2\2\66\u0227\3\2\2\28\u0229\3\2\2\2:\u022e"+
+		"\3\2\2\2<\u0233\3\2\2\2>\u0238\3\2\2\2@\u023d\3\2\2\2B\u0242\3\2\2\2D"+
+		"\u0247\3\2\2\2F\u024c\3\2\2\2H\u0251\3\2\2\2J\u0256\3\2\2\2L\u025b\3\2"+
+		"\2\2N\u0260\3\2\2\2P\u0265\3\2\2\2R\u026a\3\2\2\2T\u026f\3\2\2\2V\u0274"+
+		"\3\2\2\2X\u0279\3\2\2\2Z\u027f\3\2\2\2\\\u0285\3\2\2\2^\u029f\3\2\2\2"+
+		"`\u02a1\3\2\2\2b\u02a6\3\2\2\2d\u02ab\3\2\2\2f\u02ae\3\2\2\2h\u02b2\3"+
+		"\2\2\2j\u02b6\3\2\2\2l\u02ba\3\2\2\2n\u02be\3\2\2\2p\u02c1\3\2\2\2r\u02c4"+
+		"\3\2\2\2t\u02c7\3\2\2\2v\u02d0\3\2\2\2x\u02d2\3\2\2\2z\u02d6\3\2\2\2|"+
+		"\u02dc\3\2\2\2~\u02de\3\2\2\2\u0080\u02f0\3\2\2\2\u0082\u02f2\3\2\2\2"+
+		"\u0084\u02f4\3\2\2\2\u0086\u02f6\3\2\2\2\u0088\u02f8\3\2\2\2\u008a\u02fb"+
+		"\3\2\2\2\u008c\u02fe\3\2\2\2\u008e\u0307\3\2\2\2\u0090\u030a\3\2\2\2\u0092"+
 		"\u030d\3\2\2\2\u0094\u0310\3\2\2\2\u0096\u0319\3\2\2\2\u0098\u0322\3\2"+
 		"\2\2\u009a\u0328\3\2\2\2\u009c\u032b\3\2\2\2\u009e\u033e\3\2\2\2\u00a0"+
 		"\u0340\3\2\2\2\u00a2\u0345\3\2\2\2\u00a4\u034a\3\2\2\2\u00a6\u034e\3\2"+
@@ -10627,17 +10633,17 @@ public class Java8Parser extends Parser {
 		"\7\25\2\2\u01fa\u01fb\5\u0080A\2\u01fb)\3\2\2\2\u01fc\u01fd\7\26\2\2\u01fd"+
 		"\u01fe\5\u0082B\2\u01fe\u01ff\7\24\2\2\u01ff\u0200\5\u0104\u0083\2\u0200"+
 		"\u0201\7\25\2\2\u0201+\3\2\2\2\u0202\u0203\7\27\2\2\u0203\u0204\5\64\33"+
-		"\2\u0204-\3\2\2\2\u0205\u0206\7\30\2\2\u0206\u0207\7\u009b\2\2\u0207\u0208"+
-		"\5\u0082B\2\u0208/\3\2\2\2\u0209\u020a\5\u0082B\2\u020a\u020b\7\u009b"+
+		"\2\u0204-\3\2\2\2\u0205\u0206\7\30\2\2\u0206\u0207\7\u009c\2\2\u0207\u0208"+
+		"\5\u0082B\2\u0208/\3\2\2\2\u0209\u020a\5\u0082B\2\u020a\u020b\7\u009c"+
 		"\2\2\u020b\u020c\5\u0080A\2\u020c\61\3\2\2\2\u020d\u020e\5\u0082B\2\u020e"+
-		"\u020f\7\u009b\2\2\u020f\u0210\5\64\33\2\u0210\63\3\2\2\2\u0211\u0216"+
+		"\u020f\7\u009c\2\2\u020f\u0210\5\64\33\2\u0210\63\3\2\2\2\u0211\u0216"+
 		"\5\62\32\2\u0212\u0216\5\u014a\u00a6\2\u0213\u0216\5.\30\2\u0214\u0216"+
 		"\5\60\31\2\u0215\u0211\3\2\2\2\u0215\u0212\3\2\2\2\u0215\u0213\3\2\2\2"+
 		"\u0215\u0214\3\2\2\2\u0216\65\3\2\2\2\u0217\u0218\5\u0082B\2\u0218\u0219"+
-		"\7\u009b\2\2\u0219\u021a\7\31\2\2\u021a\u021b\7\u009b\2\2\u021b\u021c"+
-		"\5\u0080A\2\u021c\u0228\3\2\2\2\u021d\u021e\5\u0082B\2\u021e\u021f\7\u009b"+
-		"\2\2\u021f\u0220\7\31\2\2\u0220\u0221\7\u009b\2\2\u0221\u0222\5\u011a"+
-		"\u008e\2\u0222\u0228\3\2\2\2\u0223\u0224\5\u0082B\2\u0224\u0225\7\u009b"+
+		"\7\u009c\2\2\u0219\u021a\7\31\2\2\u021a\u021b\7\u009c\2\2\u021b\u021c"+
+		"\5\u0080A\2\u021c\u0228\3\2\2\2\u021d\u021e\5\u0082B\2\u021e\u021f\7\u009c"+
+		"\2\2\u021f\u0220\7\31\2\2\u0220\u0221\7\u009c\2\2\u0221\u0222\5\u011a"+
+		"\u008e\2\u0222\u0228\3\2\2\2\u0223\u0224\5\u0082B\2\u0224\u0225\7\u009c"+
 		"\2\2\u0225\u0226\7\31\2\2\u0226\u0228\3\2\2\2\u0227\u0217\3\2\2\2\u0227"+
 		"\u021d\3\2\2\2\u0227\u0223\3\2\2\2\u0228\67\3\2\2\2\u0229\u022a\7\32\2"+
 		"\2\u022a\u022b\5\u0080A\2\u022b\u022c\7\33\2\2\u022c\u022d\5\u0080A\2"+
@@ -10680,7 +10686,7 @@ public class Java8Parser extends Parser {
 		"\2\2\u029f\u029b\3\2\2\2\u029f\u029c\3\2\2\2\u029f\u029d\3\2\2\2\u029f"+
 		"\u029e\3\2\2\2\u02a0_\3\2\2\2\u02a1\u02a2\7+\2\2\u02a2\u02a3\5\u0080A"+
 		"\2\u02a3\u02a4\7,\2\2\u02a4\u02a5\5\u011a\u008e\2\u02a5a\3\2\2\2\u02a6"+
-		"\u02a7\7-\2\2\u02a7\u02a8\5\u0082B\2\u02a8\u02a9\7\u009c\2\2\u02a9\u02aa"+
+		"\u02a7\7-\2\2\u02a7\u02a8\5\u0082B\2\u02a8\u02a9\7\u009d\2\2\u02a9\u02aa"+
 		"\5\u0080A\2\u02aac\3\2\2\2\u02ab\u02ac\7.\2\2\u02ac\u02ad\5\u0082B\2\u02ad"+
 		"e\3\2\2\2\u02ae\u02af\7/\2\2\u02af\u02b0\7\60\2\2\u02b0\u02b1\5\u0080"+
 		"A\2\u02b1g\3\2\2\2\u02b2\u02b3\7/\2\2\u02b3\u02b4\7\61\2\2\u02b4\u02b5"+
@@ -10706,7 +10712,7 @@ public class Java8Parser extends Parser {
 		"t;\2\u02f0\u02e4\3\2\2\2\u02f0\u02e5\3\2\2\2\u02f0\u02e6\3\2\2\2\u02f0"+
 		"\u02e7\3\2\2\2\u02f0\u02e8\3\2\2\2\u02f0\u02e9\3\2\2\2\u02f0\u02ea\3\2"+
 		"\2\2\u02f0\u02eb\3\2\2\2\u02f0\u02ec\3\2\2\2\u02f0\u02ed\3\2\2\2\u02f0"+
-		"\u02ee\3\2\2\2\u02f0\u02ef\3\2\2\2\u02f1\u0081\3\2\2\2\u02f2\u02f3\7\u0092"+
+		"\u02ee\3\2\2\2\u02f0\u02ef\3\2\2\2\u02f1\u0081\3\2\2\2\u02f2\u02f3\7\u0094"+
 		"\2\2\u02f3\u0083\3\2\2\2\u02f4\u02f5\7\66\2\2\u02f5\u0085\3\2\2\2\u02f6"+
 		"\u02f7\7\67\2\2\u02f7\u0087\3\2\2\2\u02f8\u02f9\78\2\2\u02f9\u02fa\5\u0082"+
 		"B\2\u02fa\u0089\3\2\2\2\u02fb\u02fc\79\2\2\u02fc\u02fd\5\u0082B\2\u02fd"+
@@ -10776,20 +10782,20 @@ public class Java8Parser extends Parser {
 		"\2\u03ca\u03cb\7{\2\2\u03cb\u00f1\3\2\2\2\u03cc\u03cd\7|\2\2\u03cd\u00f3"+
 		"\3\2\2\2\u03ce\u03d1\5\u0080A\2\u03cf\u03d1\5\u011a\u008e\2\u03d0\u03ce"+
 		"\3\2\2\2\u03d0\u03cf\3\2\2\2\u03d1\u00f5\3\2\2\2\u03d2\u03d3\5\u00f4{"+
-		"\2\u03d3\u00f7\3\2\2\2\u03d4\u03d7\7\30\2\2\u03d5\u03d6\7\u009b\2\2\u03d6"+
+		"\2\u03d3\u00f7\3\2\2\2\u03d4\u03d7\7\30\2\2\u03d5\u03d6\7\u009c\2\2\u03d6"+
 		"\u03d8\5\u00f4{\2\u03d7\u03d5\3\2\2\2\u03d7\u03d8\3\2\2\2\u03d8\u00f9"+
-		"\3\2\2\2\u03d9\u03dc\7\31\2\2\u03da\u03db\7\u009b\2\2\u03db\u03dd\5\u00f4"+
+		"\3\2\2\2\u03d9\u03dc\7\31\2\2\u03da\u03db\7\u009c\2\2\u03db\u03dd\5\u00f4"+
 		"{\2\u03dc\u03da\3\2\2\2\u03dc\u03dd\3\2\2\2\u03dd\u00fb\3\2\2\2\u03de"+
-		"\u03e1\7}\2\2\u03df\u03e0\7\u009b\2\2\u03e0\u03e2\5\u00f4{\2\u03e1\u03df"+
+		"\u03e1\7}\2\2\u03df\u03e0\7\u009c\2\2\u03e0\u03e2\5\u00f4{\2\u03e1\u03df"+
 		"\3\2\2\2\u03e1\u03e2\3\2\2\2\u03e2\u00fd\3\2\2\2\u03e3\u03e9\3\2\2\2\u03e4"+
 		"\u03e9\5\u00f8}\2\u03e5\u03e9\5\u00fa~\2\u03e6\u03e9\5\u00fc\177\2\u03e7"+
 		"\u03e9\5\u00f6|\2\u03e8\u03e3\3\2\2\2\u03e8\u03e4\3\2\2\2\u03e8\u03e5"+
 		"\3\2\2\2\u03e8\u03e6\3\2\2\2\u03e8\u03e7\3\2\2\2\u03e9\u00ff\3\2\2\2\u03ea"+
 		"\u03eb\7|\2\2\u03eb\u0101\3\2\2\2\u03ec\u03ed\5\u0080A\2\u03ed\u0103\3"+
-		"\2\2\2\u03ee\u03f3\5\u00fe\u0080\2\u03ef\u03f0\7\u009a\2\2\u03f0\u03f2"+
+		"\2\2\2\u03ee\u03f3\5\u00fe\u0080\2\u03ef\u03f0\7\u009b\2\2\u03f0\u03f2"+
 		"\5\u0102\u0082\2\u03f1\u03ef\3\2\2\2\u03f2\u03f5\3\2\2\2\u03f3\u03f1\3"+
 		"\2\2\2\u03f3\u03f4\3\2\2\2\u03f4\u0105\3\2\2\2\u03f5\u03f3\3\2\2\2\u03f6"+
-		"\u03fb\5\u011a\u008e\2\u03f7\u03f8\7\u009a\2\2\u03f8\u03fa\5\u011a\u008e"+
+		"\u03fb\5\u011a\u008e\2\u03f7\u03f8\7\u009b\2\2\u03f8\u03fa\5\u011a\u008e"+
 		"\2\u03f9\u03f7\3\2\2\2\u03fa\u03fd\3\2\2\2\u03fb\u03f9\3\2\2\2\u03fb\u03fc"+
 		"\3\2\2\2\u03fc\u0107\3\2\2\2\u03fd\u03fb\3\2\2\2\u03fe\u0405\5\u010a\u0086"+
 		"\2\u03ff\u0405\5\u0110\u0089\2\u0400\u0405\5\u0112\u008a\2\u0401\u0405"+
@@ -10797,39 +10803,39 @@ public class Java8Parser extends Parser {
 		"\2\u0404\u03fe\3\2\2\2\u0404\u03ff\3\2\2\2\u0404\u0400\3\2\2\2\u0404\u0401"+
 		"\3\2\2\2\u0404\u0402\3\2\2\2\u0404\u0403\3\2\2\2\u0405\u0109\3\2\2\2\u0406"+
 		"\u0409\5\u010c\u0087\2\u0407\u0409\5\u010e\u0088\2\u0408\u0406\3\2\2\2"+
-		"\u0408\u0407\3\2\2\2\u0409\u010b\3\2\2\2\u040a\u040b\7\u0094\2\2\u040b"+
-		"\u010d\3\2\2\2\u040c\u040d\7\u0095\2\2\u040d\u010f\3\2\2\2\u040e\u040f"+
-		"\7\u0096\2\2\u040f\u0111\3\2\2\2\u0410\u0411\7\u0097\2\2\u0411\u0113\3"+
-		"\2\2\2\u0412\u0413\7\u0098\2\2\u0413\u0115\3\2\2\2\u0414\u0415\7\u0099"+
-		"\2\2\u0415\u0117\3\2\2\2\u0416\u0417\7~\2\2\u0417\u0418\7\u009b\2\2\u0418"+
+		"\u0408\u0407\3\2\2\2\u0409\u010b\3\2\2\2\u040a\u040b\7\u0096\2\2\u040b"+
+		"\u010d\3\2\2\2\u040c\u040d\7\u0097\2\2\u040d\u010f\3\2\2\2\u040e\u040f"+
+		"\t\2\2\2\u040f\u0111\3\2\2\2\u0410\u0411\7\u0098\2\2\u0411\u0113\3\2\2"+
+		"\2\u0412\u0413\7\u0099\2\2\u0413\u0115\3\2\2\2\u0414\u0415\7\u009a\2\2"+
+		"\u0415\u0117\3\2\2\2\u0416\u0417\7\u0080\2\2\u0417\u0418\7\u009c\2\2\u0418"+
 		"\u0419\5\u011a\u008e\2\u0419\u0119\3\2\2\2\u041a\u0422\5\u011c\u008f\2"+
 		"\u041b\u0422\5\u011e\u0090\2\u041c\u0422\5\u0132\u009a\2\u041d\u0422\5"+
 		"\u0134\u009b\2\u041e\u0422\5\u013c\u009f\2\u041f\u0422\5\u0142\u00a2\2"+
 		"\u0420\u0422\5\u0144\u00a3\2\u0421\u041a\3\2\2\2\u0421\u041b\3\2\2\2\u0421"+
 		"\u041c\3\2\2\2\u0421\u041d\3\2\2\2\u0421\u041e\3\2\2\2\u0421\u041f\3\2"+
-		"\2\2\u0421\u0420\3\2\2\2\u0422\u011b\3\2\2\2\u0423\u0424\7\177\2\2\u0424"+
-		"\u011d\3\2\2\2\u0425\u0426\t\2\2\2\u0426\u011f\3\2\2\2\u0427\u0428\5\u0082"+
-		"B\2\u0428\u0121\3\2\2\2\u0429\u042a\7\u0088\2\2\u042a\u042b\5\u011a\u008e"+
+		"\2\2\u0421\u0420\3\2\2\2\u0422\u011b\3\2\2\2\u0423\u0424\7\u0081\2\2\u0424"+
+		"\u011d\3\2\2\2\u0425\u0426\t\3\2\2\u0426\u011f\3\2\2\2\u0427\u0428\5\u0082"+
+		"B\2\u0428\u0121\3\2\2\2\u0429\u042a\7\u008a\2\2\u042a\u042b\5\u011a\u008e"+
 		"\2\u042b\u0123\3\2\2\2\u042c\u042d\7\31\2\2\u042d\u042e\5\u011a\u008e"+
 		"\2\u042e\u0125\3\2\2\2\u042f\u0432\5\u0122\u0092\2\u0430\u0432\5\u0124"+
 		"\u0093\2\u0431\u042f\3\2\2\2\u0431\u0430\3\2\2\2\u0432\u0127\3\2\2\2\u0433"+
-		"\u0435\7\u0089\2\2\u0434\u0436\5\u0126\u0094\2\u0435\u0434\3\2\2\2\u0435"+
+		"\u0435\7\u008b\2\2\u0434\u0436\5\u0126\u0094\2\u0435\u0434\3\2\2\2\u0435"+
 		"\u0436\3\2\2\2\u0436\u0129\3\2\2\2\u0437\u043a\5\u011a\u008e\2\u0438\u043a"+
 		"\5\u0128\u0095\2\u0439\u0437\3\2\2\2\u0439\u0438\3\2\2\2\u043a\u012b\3"+
 		"\2\2\2\u043b\u043c\7\34\2\2\u043c\u0441\5\u012a\u0096\2\u043d\u043e\7"+
-		"\u009a\2\2\u043e\u0440\5\u012a\u0096\2\u043f\u043d\3\2\2\2\u0440\u0443"+
+		"\u009b\2\2\u043e\u0440\5\u012a\u0096\2\u043f\u043d\3\2\2\2\u0440\u0443"+
 		"\3\2\2\2\u0441\u043f\3\2\2\2\u0441\u0442\3\2\2\2\u0442\u0444\3\2\2\2\u0443"+
 		"\u0441\3\2\2\2\u0444\u0445\7\33\2\2\u0445\u012d\3\2\2\2\u0446\u0447\5"+
 		"\u0082B\2\u0447\u0448\5\u012c\u0097\2\u0448\u012f\3\2\2\2\u0449\u044c"+
 		"\5\u0120\u0091\2\u044a\u044c\5\u012e\u0098\2\u044b\u0449\3\2\2\2\u044b"+
 		"\u044a\3\2\2\2\u044c\u0131\3\2\2\2\u044d\u0452\5\u0130\u0099\2\u044e\u044f"+
-		"\7\u009b\2\2\u044f\u0451\5\u0130\u0099\2\u0450\u044e\3\2\2\2\u0451\u0454"+
+		"\7\u009c\2\2\u044f\u0451\5\u0130\u0099\2\u0450\u044e\3\2\2\2\u0451\u0454"+
 		"\3\2\2\2\u0452\u0450\3\2\2\2\u0452\u0453\3\2\2\2\u0453\u0133\3\2\2\2\u0454"+
 		"\u0452\3\2\2\2\u0455\u0456\5\u011e\u0090\2\u0456\u0457\5\u0136\u009c\2"+
 		"\u0457\u045c\3\2\2\2\u0458\u0459\5\u0132\u009a\2\u0459\u045a\5\u0136\u009c"+
 		"\2\u045a\u045c\3\2\2\2\u045b\u0455\3\2\2\2\u045b\u0458\3\2\2\2\u045c\u0135"+
-		"\3\2\2\2\u045d\u045e\7\u008a\2\2\u045e\u0463\7\u008b\2\2\u045f\u0460\7"+
-		"\u008a\2\2\u0460\u0462\7\u008b\2\2\u0461\u045f\3\2\2\2\u0462\u0465\3\2"+
+		"\3\2\2\2\u045d\u045e\7\u008c\2\2\u045e\u0463\7\u008d\2\2\u045f\u0460\7"+
+		"\u008c\2\2\u0460\u0462\7\u008d\2\2\u0461\u045f\3\2\2\2\u0462\u0465\3\2"+
 		"\2\2\u0463\u0461\3\2\2\2\u0463\u0464\3\2\2\2\u0464\u0137\3\2\2\2\u0465"+
 		"\u0463\3\2\2\2\u0466\u046b\5\u0132\u009a\2\u0467\u046b\5\u011e\u0090\2"+
 		"\u0468\u046b\5\u0134\u009b\2\u0469\u046b\5\u0144\u00a3\2\u046a\u0466\3"+
@@ -10849,20 +10855,20 @@ public class Java8Parser extends Parser {
 		"\u0482\3\2\2\2\u0485\u0483\3\2\2\2\u0485\u0484\3\2\2\2\u0486\u0141\3\2"+
 		"\2\2\u0487\u048a\5\u013e\u00a0\2\u0488\u0489\7(\2\2\u0489\u048b\5\u0140"+
 		"\u00a1\2\u048a\u0488\3\2\2\2\u048b\u048c\3\2\2\2\u048c\u048a\3\2\2\2\u048c"+
-		"\u048d\3\2\2\2\u048d\u0143\3\2\2\2\u048e\u048f\7\u008c\2\2\u048f\u0490"+
-		"\5\u010c\u0087\2\u0490\u0491\7\u0089\2\2\u0491\u0492\5\u010c\u0087\2\u0492"+
-		"\u0145\3\2\2\2\u0493\u0494\7\u008d\2\2\u0494\u0495\5\u010c\u0087\2\u0495"+
-		"\u0496\7\u0089\2\2\u0496\u0497\5\u010c\u0087\2\u0497\u0147\3\2\2\2\u0498"+
-		"\u0499\7\u008e\2\2\u0499\u049a\5\u010c\u0087\2\u049a\u049b\7\u0089\2\2"+
-		"\u049b\u049c\5\u010c\u0087\2\u049c\u0149\3\2\2\2\u049d\u049e\7\u008f\2"+
-		"\2\u049e\u049f\5\u010c\u0087\2\u049f\u04a0\7\u0089\2\2\u04a0\u04a1\5\u010c"+
-		"\u0087\2\u04a1\u014b\3\2\2\2\u04a2\u04a3\7\u0090\2\2\u04a3\u04a4\5\u010c"+
-		"\u0087\2\u04a4\u04a5\7\u0089\2\2\u04a5\u04a6\5\u010c\u0087\2\u04a6\u014d"+
-		"\3\2\2\2\u04a7\u04a8\7\30\2\2\u04a8\u04a9\7\u009b\2\2\u04a9\u04af\5\u0080"+
-		"A\2\u04aa\u04ab\7\30\2\2\u04ab\u04ac\7\u009b\2\2\u04ac\u04af\5\u011a\u008e"+
+		"\u048d\3\2\2\2\u048d\u0143\3\2\2\2\u048e\u048f\7\u008e\2\2\u048f\u0490"+
+		"\5\u010c\u0087\2\u0490\u0491\7\u008b\2\2\u0491\u0492\5\u010c\u0087\2\u0492"+
+		"\u0145\3\2\2\2\u0493\u0494\7\u008f\2\2\u0494\u0495\5\u010c\u0087\2\u0495"+
+		"\u0496\7\u008b\2\2\u0496\u0497\5\u010c\u0087\2\u0497\u0147\3\2\2\2\u0498"+
+		"\u0499\7\u0090\2\2\u0499\u049a\5\u010c\u0087\2\u049a\u049b\7\u008b\2\2"+
+		"\u049b\u049c\5\u010c\u0087\2\u049c\u0149\3\2\2\2\u049d\u049e\7\u0091\2"+
+		"\2\u049e\u049f\5\u010c\u0087\2\u049f\u04a0\7\u008b\2\2\u04a0\u04a1\5\u010c"+
+		"\u0087\2\u04a1\u014b\3\2\2\2\u04a2\u04a3\7\u0092\2\2\u04a3\u04a4\5\u010c"+
+		"\u0087\2\u04a4\u04a5\7\u008b\2\2\u04a5\u04a6\5\u010c\u0087\2\u04a6\u014d"+
+		"\3\2\2\2\u04a7\u04a8\7\30\2\2\u04a8\u04a9\7\u009c\2\2\u04a9\u04af\5\u0080"+
+		"A\2\u04aa\u04ab\7\30\2\2\u04ab\u04ac\7\u009c\2\2\u04ac\u04af\5\u011a\u008e"+
 		"\2\u04ad\u04af\7\30\2\2\u04ae\u04a7\3\2\2\2\u04ae\u04aa\3\2\2\2\u04ae"+
-		"\u04ad\3\2\2\2\u04af\u014f\3\2\2\2\u04b0\u04b1\7\u0091\2\2\u04b1\u0151"+
-		"\3\2\2\2\u04b2\u04b3\7|\2\2\u04b3\u0153\3\2\2\2\u04b4\u04b6\7\u008b\2"+
+		"\u04ad\3\2\2\2\u04af\u014f\3\2\2\2\u04b0\u04b1\7\u0093\2\2\u04b1\u0151"+
+		"\3\2\2\2\u04b2\u04b3\7|\2\2\u04b3\u0153\3\2\2\2\u04b4\u04b6\7\u008d\2"+
 		"\2\u04b5\u04b4\3\2\2\2\u04b6\u04b7\3\2\2\2\u04b7\u04b5\3\2\2\2\u04b7\u04b8"+
 		"\3\2\2\2\u04b8\u0155\3\2\2\2\66\u018e\u019c\u01e6\u01f4\u0215\u0227\u029f"+
 		"\u02d0\u02dc\u02e2\u02f0\u0305\u0314\u031d\u0331\u0339\u033e\u0343\u0348"+

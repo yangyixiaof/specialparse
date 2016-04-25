@@ -46,6 +46,7 @@ public class ParseRoot
 			ParseOneSentence("L@class.A", null, true);
 			ParseOneSentence("LE@()->{}", null, true);
 			ParseOneSentence("LE@()->i", null, true);
+			ParseOneSentence("L@false", null, true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

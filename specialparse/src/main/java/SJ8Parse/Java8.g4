@@ -110,7 +110,10 @@ methodInvocationStatement : 'MI@' identifier '(' argumentList ')';
 
 fieldAccessStatement : 'FA@' fieldAccess;
 
-fieldAccess : identifier '.' referedExpression;
+fieldAccess
+	:	identifier '.' referedExpression
+	|	commonFieldRef
+	;
 
 superFieldAccess
 	:	identifier '.' 'super' '.' referedExpression
@@ -202,7 +205,7 @@ referedExpression
 	|	preExist
 	|	finalFieldRef
 	|	finalVarRef
-	|	commonFieldRef
+//	|	commonFieldRef // move to fieldAccess.
 	|	commonVarRef
 	|	thisExpression
 	|	classFieldAccess

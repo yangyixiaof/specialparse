@@ -40,6 +40,7 @@ public class ParseRoot
 			// ParseOneSentence("AM@Class.Class<?#extends#Annotation>[]#value()", null, true);
 			ParseOneSentence("[@@C0?0#A]", null, true);
 			ParseOneSentence("FA@Damage.@PE", null, true);
+			ParseOneSentence("FA@@F0?0", null, true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -174,12 +174,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSuperFieldAccess(Java8Parser.SuperFieldAccessContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#classFieldAccess}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitClassFieldAccess(Java8Parser.ClassFieldAccessContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#gtInfixExpressionStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -851,6 +845,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitNullLiteral(Java8Parser.NullLiteralContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#typeLiteral}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTypeLiteral(Java8Parser.TypeLiteralContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#type}.
 	 * @param ctx the parse tree

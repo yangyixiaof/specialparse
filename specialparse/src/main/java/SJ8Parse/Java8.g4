@@ -141,8 +141,6 @@ superFieldAccess
 	|	identifier '.' 'super'
 	;
 
-classFieldAccess : 'class' '.' type;
-
 gtInfixExpressionStatement : 'IxE@' referedExpression '>' referedExpression;
 ltInfixExpressionStatement : 'IxE@' referedExpression '<' referedExpression;
 equalInfixExpressionStatement : 'IxE@' referedExpression '==' referedExpression;
@@ -231,7 +229,6 @@ referedExpression
 //	|	commonFieldRef // move to fieldAccess.
 	|	commonVarRef
 	|	thisExpression
-	|	classFieldAccess
 	|	superFieldAccess
 	|	addPrefixExpression
 	|	subPrefixExpression
@@ -395,6 +392,7 @@ literal
 	|	characterLiteral
 	|	stringLiteral
 	|	nullLiteral
+	|	typeLiteral
 	;
 
 numberLiteral
@@ -424,6 +422,10 @@ stringLiteral
 
 nullLiteral
 	:	NullLiteralX
+	;
+	
+typeLiteral
+	:	'class' '.' type
 	;
 
 type

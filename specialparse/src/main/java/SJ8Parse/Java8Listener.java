@@ -279,16 +279,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitSuperFieldAccess(Java8Parser.SuperFieldAccessContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#classFieldAccess}.
-	 * @param ctx the parse tree
-	 */
-	void enterClassFieldAccess(Java8Parser.ClassFieldAccessContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#classFieldAccess}.
-	 * @param ctx the parse tree
-	 */
-	void exitClassFieldAccess(Java8Parser.ClassFieldAccessContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link Java8Parser#gtInfixExpressionStatement}.
 	 * @param ctx the parse tree
 	 */
@@ -1408,6 +1398,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitNullLiteral(Java8Parser.NullLiteralContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#typeLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void enterTypeLiteral(Java8Parser.TypeLiteralContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#typeLiteral}.
+	 * @param ctx the parse tree
+	 */
+	void exitTypeLiteral(Java8Parser.TypeLiteralContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#type}.
 	 * @param ctx the parse tree

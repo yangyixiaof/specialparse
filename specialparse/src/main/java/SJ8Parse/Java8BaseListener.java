@@ -341,18 +341,6 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterClassFieldAccess(Java8Parser.ClassFieldAccessContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitClassFieldAccess(Java8Parser.ClassFieldAccessContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterGtInfixExpressionStatement(Java8Parser.GtInfixExpressionStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -1692,6 +1680,18 @@ public class Java8BaseListener implements Java8Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitNullLiteral(Java8Parser.NullLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTypeLiteral(Java8Parser.TypeLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTypeLiteral(Java8Parser.TypeLiteralContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

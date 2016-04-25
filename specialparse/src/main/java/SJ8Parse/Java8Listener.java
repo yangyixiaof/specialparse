@@ -209,6 +209,36 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitCastExpressionStatement(Java8Parser.CastExpressionStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#commonMethodInvocationStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterCommonMethodInvocationStatement(Java8Parser.CommonMethodInvocationStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#commonMethodInvocationStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitCommonMethodInvocationStatement(Java8Parser.CommonMethodInvocationStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#typeCreationInvocationStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterTypeCreationInvocationStatement(Java8Parser.TypeCreationInvocationStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#typeCreationInvocationStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitTypeCreationInvocationStatement(Java8Parser.TypeCreationInvocationStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#superConstructionInvocationStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterSuperConstructionInvocationStatement(Java8Parser.SuperConstructionInvocationStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#superConstructionInvocationStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitSuperConstructionInvocationStatement(Java8Parser.SuperConstructionInvocationStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#methodInvocationStatement}.
 	 * @param ctx the parse tree
 	 */

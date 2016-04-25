@@ -49,6 +49,7 @@ public class ParseRoot
 			ParseOneSentence("L@false", null, true);
 			ParseOneSentence("L@null", null, true);
 			ParseOneSentence("MI@@K0?0(new)", null, true);
+			ParseOneSentence("MI@super(@C0?0)", null, true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

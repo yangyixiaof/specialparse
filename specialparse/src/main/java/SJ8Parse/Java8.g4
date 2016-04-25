@@ -116,9 +116,16 @@ literalStatement
 
 castExpressionStatement : 'CE@' '(' type ')' referedExpression;
 
+commonMethodInvocationStatement : 'MI@' identifier '(' argumentList ')';
+
+typeCreationInvocationStatement : 'MI@' type '(' argumentList ')'; // MI@@K0?0(new)
+
+superConstructionInvocationStatement : 'MI@' 'super' '(' argumentList ')';
+
 methodInvocationStatement
-	:	'MI@' identifier '(' argumentList ')'
-	|	'MI@' type '(' argumentList ')' // MI@@K0?0(new)
+	:	commonMethodInvocationStatement
+	|	typeCreationInvocationStatement
+	|	superConstructionInvocationStatement
 	;
 
 fieldAccessStatement : 'FA@' fieldAccess;

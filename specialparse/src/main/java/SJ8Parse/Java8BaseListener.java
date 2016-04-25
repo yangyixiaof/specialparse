@@ -257,6 +257,42 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterCommonMethodInvocationStatement(Java8Parser.CommonMethodInvocationStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCommonMethodInvocationStatement(Java8Parser.CommonMethodInvocationStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTypeCreationInvocationStatement(Java8Parser.TypeCreationInvocationStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTypeCreationInvocationStatement(Java8Parser.TypeCreationInvocationStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSuperConstructionInvocationStatement(Java8Parser.SuperConstructionInvocationStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSuperConstructionInvocationStatement(Java8Parser.SuperConstructionInvocationStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterMethodInvocationStatement(Java8Parser.MethodInvocationStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}

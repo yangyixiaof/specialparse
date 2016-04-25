@@ -110,9 +110,19 @@ methodInvocationStatement : 'MI@' identifier '(' argumentList ')';
 
 fieldAccessStatement : 'FA@' fieldAccess;
 
+directThisFieldAccess : 'this' '.' identifier;
+
+referedFieldAccess : identifier '.' referedExpression;
+
+chainFieldAccess
+	:	identifier '.' fieldAccess
+	;
+
 fieldAccess
-	:	identifier '.' referedExpression
+	:	chainFieldAccess
 	|	commonFieldRef
+	|	directThisFieldAccess
+	|	referedFieldAccess
 	;
 
 superFieldAccess

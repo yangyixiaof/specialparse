@@ -108,7 +108,7 @@ castExpressionStatement : 'CE@' '(' type ')' referedExpression;
 
 methodInvocationStatement : 'MI@' identifier '(' argumentList ')';
 
-fieldAccessStatement : 'FA' '@' fieldAccess;
+fieldAccessStatement : 'FA@' fieldAccess;
 
 fieldAccess : identifier '.' referedExpression;
 

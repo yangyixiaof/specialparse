@@ -301,7 +301,7 @@ thenStatement : 'DH@then';
 
 elseStatement : 'DH@else';
 
-arrayCreationStatement : 'AC@' type '(new)';
+arrayCreationStatement : 'AC@' type '(' 'new' ')';
 
 initializerStatement : 'IB@' 'InitialBlock';
 

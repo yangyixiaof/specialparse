@@ -246,7 +246,7 @@ anonymousClassPreStatement : 'HT@' identifier;
 
 atInterfaceStatement : 'AT@' identifier;
 
-annotationTypeMemberDeclarationStatement : 'AM@' type identifier '()' ('default' referedExpression)?;
+annotationTypeMemberDeclarationStatement : 'AM@' type identifier '(' ')' ('default' referedExpression)?;
 
 classDeclarationStatement : 'CD@' identifier;
 

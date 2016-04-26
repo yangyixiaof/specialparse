@@ -602,8 +602,8 @@ preExist : '@PE';
 
 endOfArrayDeclarationIndexExpression : (']')+;
 
-oneClassFileStartStatement : '<' 's' '>';
-oneClassFileEndStatement : '<' '/' 's' '>';
+oneClassFileStartStatement : '<s>';
+oneClassFileEndStatement : '</s>';
 
 AT : '@' ;
 

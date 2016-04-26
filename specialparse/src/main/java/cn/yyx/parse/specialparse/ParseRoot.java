@@ -51,6 +51,7 @@ public class ParseRoot
 			ParseOneSentence("MI@@K0?0(new)", null, true);
 			ParseOneSentence("MI@super(@C0?0)", null, true);
 			ParseOneSentence("MI@this(this,'$')", null, true);
+			ParseOneSentence("MR@new::AboutController", null, true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

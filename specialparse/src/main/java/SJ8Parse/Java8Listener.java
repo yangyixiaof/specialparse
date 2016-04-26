@@ -539,6 +539,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitCommonMethodReferenceStatement(Java8Parser.CommonMethodReferenceStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#commonNewMethodReferenceStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterCommonNewMethodReferenceStatement(Java8Parser.CommonNewMethodReferenceStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#commonNewMethodReferenceStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitCommonNewMethodReferenceStatement(Java8Parser.CommonNewMethodReferenceStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#superMethodReferenceStatement}.
 	 * @param ctx the parse tree
 	 */

@@ -200,10 +200,13 @@ instanceofExpressionStatement : 'InE@' referedExpression 'instanceof' type;
 
 commonMethodReferenceStatement : 'MR@' identifier '::' referedExpression;
 
+commonNewMethodReferenceStatement : 'MR@' 'new' '::' referedExpression;
+
 superMethodReferenceStatement : 'MR@' identifier '::' 'super' ('.' referedExpression)?;
 
 methodReferenceStatement
 	:	commonMethodReferenceStatement
+	|	commonNewMethodReferenceStatement
 	|	superMethodReferenceStatement
 	;
 

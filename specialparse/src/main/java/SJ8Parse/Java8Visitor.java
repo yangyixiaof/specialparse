@@ -330,6 +330,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCommonMethodReferenceStatement(Java8Parser.CommonMethodReferenceStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#commonNewMethodReferenceStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCommonNewMethodReferenceStatement(Java8Parser.CommonNewMethodReferenceStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#superMethodReferenceStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

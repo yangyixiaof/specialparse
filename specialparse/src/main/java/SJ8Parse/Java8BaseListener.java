@@ -653,6 +653,18 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterCommonNewMethodReferenceStatement(Java8Parser.CommonNewMethodReferenceStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCommonNewMethodReferenceStatement(Java8Parser.CommonNewMethodReferenceStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterSuperMethodReferenceStatement(Java8Parser.SuperMethodReferenceStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}

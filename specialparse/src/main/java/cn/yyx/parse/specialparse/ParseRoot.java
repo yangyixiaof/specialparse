@@ -9,8 +9,8 @@ import SJ8Parse.Java8BaseVisitor;
 import SJ8Parse.Java8Lexer;
 import SJ8Parse.Java8Parser;
 
-public class ParseRoot 
-{
+public class ParseRoot {
+	
 	public static String ParseOneSentence(String onesentence, Java8BaseVisitor<Integer> evalVisitor, boolean returnTreeContent) throws Exception, Error {
 		ANTLRInputStream input = new ANTLRInputStream(onesentence);
 		Java8Lexer lexer = new Java8Lexer(input);

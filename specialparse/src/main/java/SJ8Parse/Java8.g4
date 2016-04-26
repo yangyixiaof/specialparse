@@ -149,6 +149,7 @@ fieldAccess
 	|	commonFieldRef
 	|	directThisFieldAccess
 	|	referedFieldAccess
+	|	superFieldAccess
 	;
 
 superFieldAccess
@@ -265,7 +266,6 @@ referedExpression
 //	|	commonFieldRef // move to fieldAccess.
 	|	commonVarRef
 	|	thisExpression
-	|	superFieldAccess
 	|	addPrefixExpression
 	|	subPrefixExpression
 	;

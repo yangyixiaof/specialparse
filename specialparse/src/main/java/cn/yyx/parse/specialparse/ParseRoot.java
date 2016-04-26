@@ -56,6 +56,7 @@ public class ParseRoot
 			ParseOneSentence("N@@C0?0", null, true);
 			ParseOneSentence("N@@F0?0", null, true);
 			ParseOneSentence("Q@_1.@C0?0", null, true);
+			ParseOneSentence("Q@_left.super", null, true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

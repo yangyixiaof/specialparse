@@ -57,6 +57,8 @@ statement
 	|	partialMethodArgumentEndStatement
 	|	partialMethodPreRerferedExpressionEndStatement
 	|	expressionStatement
+	|	oneClassFileStartStatement
+	|	oneClassFileEndStatement
 	;
 	
 expressionStatement
@@ -599,6 +601,9 @@ codeHole : '@HO';
 preExist : '@PE';
 
 endOfArrayDeclarationIndexExpression : (']')+;
+
+oneClassFileStartStatement : '<' 's' '>';
+oneClassFileEndStatement : '<' '/' 's' '>';
 
 AT : '@' ;
 

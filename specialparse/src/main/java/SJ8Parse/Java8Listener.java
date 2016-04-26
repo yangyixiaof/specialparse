@@ -1808,4 +1808,24 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitEndOfArrayDeclarationIndexExpression(Java8Parser.EndOfArrayDeclarationIndexExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#oneClassFileStartStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterOneClassFileStartStatement(Java8Parser.OneClassFileStartStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#oneClassFileStartStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitOneClassFileStartStatement(Java8Parser.OneClassFileStartStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#oneClassFileEndStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterOneClassFileEndStatement(Java8Parser.OneClassFileEndStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#oneClassFileEndStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitOneClassFileEndStatement(Java8Parser.OneClassFileEndStatementContext ctx);
 }

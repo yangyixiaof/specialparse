@@ -136,8 +136,6 @@ qualifiedAccessStatement : 'Q@' fieldAccess;
 
 fieldAccessStatement : 'FA@' fieldAccess;
 
-directThisFieldAccess : 'this' '.' identifier;
-
 referedFieldAccess : identifier '.' referedExpression;
 
 chainFieldAccess
@@ -147,9 +145,9 @@ chainFieldAccess
 fieldAccess
 	:	chainFieldAccess
 	|	commonFieldRef
-	|	directThisFieldAccess
 	|	referedFieldAccess
 	|	superFieldAccess
+	|	thisFieldAccess
 	;
 
 superFieldAccess
@@ -265,7 +263,6 @@ referedExpression
 	|	finalVarRef
 //	|	commonFieldRef // move to fieldAccess.
 	|	commonVarRef
-	|	thisExpression
 	|	addPrefixExpression
 	|	subPrefixExpression
 	;
@@ -592,7 +589,7 @@ finalVarRef : '@X' integerLiteral '?' integerLiteral;
 commonFieldRef : '@F' integerLiteral '?' integerLiteral;
 commonVarRef : '@C' integerLiteral '?' integerLiteral;
 
-thisExpression
+thisFieldAccess
 	:	'this' '.' referedExpression
 	|	'this' '.' type
 	|	'this'

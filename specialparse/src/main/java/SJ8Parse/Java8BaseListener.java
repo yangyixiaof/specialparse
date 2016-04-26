@@ -341,18 +341,6 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDirectThisFieldAccess(Java8Parser.DirectThisFieldAccessContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitDirectThisFieldAccess(Java8Parser.DirectThisFieldAccessContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterReferedFieldAccess(Java8Parser.ReferedFieldAccessContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -2141,13 +2129,13 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterThisExpression(Java8Parser.ThisExpressionContext ctx) { }
+	@Override public void enterThisFieldAccess(Java8Parser.ThisFieldAccessContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitThisExpression(Java8Parser.ThisExpressionContext ctx) { }
+	@Override public void exitThisFieldAccess(Java8Parser.ThisFieldAccessContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

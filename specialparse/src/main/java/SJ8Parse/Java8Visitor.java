@@ -174,12 +174,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFieldAccessStatement(Java8Parser.FieldAccessStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#directThisFieldAccess}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitDirectThisFieldAccess(Java8Parser.DirectThisFieldAccessContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#referedFieldAccess}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -1074,11 +1068,11 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCommonVarRef(Java8Parser.CommonVarRefContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#thisExpression}.
+	 * Visit a parse tree produced by {@link Java8Parser#thisFieldAccess}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitThisExpression(Java8Parser.ThisExpressionContext ctx);
+	T visitThisFieldAccess(Java8Parser.ThisFieldAccessContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#codeHole}.
 	 * @param ctx the parse tree

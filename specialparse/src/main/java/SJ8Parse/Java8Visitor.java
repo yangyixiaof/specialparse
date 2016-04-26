@@ -150,6 +150,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitSuperConstructionInvocationStatement(Java8Parser.SuperConstructionInvocationStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#thisConstructionInvocationStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitThisConstructionInvocationStatement(Java8Parser.ThisConstructionInvocationStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#methodInvocationStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

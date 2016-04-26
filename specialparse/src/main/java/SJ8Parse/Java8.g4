@@ -122,10 +122,13 @@ typeCreationInvocationStatement : 'MI@' type '(' argumentList ')'; // MI@@K0?0(n
 
 superConstructionInvocationStatement : 'MI@' 'super' '(' argumentList ')';
 
+thisConstructionInvocationStatement : 'MI@' 'this' '(' argumentList ')';
+
 methodInvocationStatement
 	:	commonMethodInvocationStatement
 	|	typeCreationInvocationStatement
 	|	superConstructionInvocationStatement
+	|	thisConstructionInvocationStatement
 	;
 
 fieldAccessStatement : 'FA@' fieldAccess;

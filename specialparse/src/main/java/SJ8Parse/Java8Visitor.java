@@ -1097,16 +1097,4 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitEndOfArrayDeclarationIndexExpression(Java8Parser.EndOfArrayDeclarationIndexExpressionContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#oneClassFileStartStatement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitOneClassFileStartStatement(Java8Parser.OneClassFileStartStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#oneClassFileEndStatement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitOneClassFileEndStatement(Java8Parser.OneClassFileEndStatementContext ctx);
 }

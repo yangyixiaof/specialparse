@@ -65,6 +65,7 @@ expressionStatement
 	|	castExpressionStatement
 	|	methodInvocationStatement
 	|	fieldAccessStatement
+	|	qualifiedAccessStatement
 	|	infixExpressionStatement
 	|	instanceofExpressionStatement
 	|	methodReferenceStatement
@@ -130,6 +131,8 @@ methodInvocationStatement
 	|	superConstructionInvocationStatement
 	|	thisConstructionInvocationStatement
 	;
+
+qualifiedAccessStatement : 'Q@' fieldAccess;
 
 fieldAccessStatement : 'FA@' fieldAccess;
 

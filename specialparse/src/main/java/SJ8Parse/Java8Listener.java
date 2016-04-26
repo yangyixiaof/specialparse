@@ -259,6 +259,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitMethodInvocationStatement(Java8Parser.MethodInvocationStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#qualifiedAccessStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterQualifiedAccessStatement(Java8Parser.QualifiedAccessStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#qualifiedAccessStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitQualifiedAccessStatement(Java8Parser.QualifiedAccessStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#fieldAccessStatement}.
 	 * @param ctx the parse tree
 	 */

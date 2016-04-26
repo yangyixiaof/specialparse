@@ -162,6 +162,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitMethodInvocationStatement(Java8Parser.MethodInvocationStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#qualifiedAccessStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitQualifiedAccessStatement(Java8Parser.QualifiedAccessStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#fieldAccessStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

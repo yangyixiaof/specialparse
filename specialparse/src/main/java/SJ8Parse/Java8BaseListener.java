@@ -317,6 +317,18 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterQualifiedAccessStatement(Java8Parser.QualifiedAccessStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitQualifiedAccessStatement(Java8Parser.QualifiedAccessStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterFieldAccessStatement(Java8Parser.FieldAccessStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}

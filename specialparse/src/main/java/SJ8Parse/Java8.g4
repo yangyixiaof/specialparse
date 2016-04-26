@@ -210,7 +210,14 @@ methodReferenceStatement
 	|	superMethodReferenceStatement
 	;
 
-nameStatement : 'N@' identifier;
+commonNameStatement : 'N@' identifier;
+
+refNameStatement : 'N@' commonVarRef;
+
+nameStatement
+	:	commonNameStatement
+	|	refNameStatement
+	;
 
 bangPrefixExpressionStatement : 'PeE@' '!' referedExpression;
 tildePrefixExpressionStatement : 'PeE@' '~' referedExpression;

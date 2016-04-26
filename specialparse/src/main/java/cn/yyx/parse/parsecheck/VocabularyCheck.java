@@ -27,8 +27,8 @@ public class VocabularyCheck {
 				idx++;
 				if (idx > 4)
 				{
-					System.out.println("Now handled valid sentence:" + (idx - 4) + ".");
 					CheckOneSentenceWeaker(oneline);
+					System.out.println("Now handled valid sentence:" + (idx - 4) + ".");
 				}
 			}
 		} catch (FileNotFoundException e) {

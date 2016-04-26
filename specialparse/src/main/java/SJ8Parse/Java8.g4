@@ -212,11 +212,14 @@ methodReferenceStatement
 
 commonNameStatement : 'N@' identifier;
 
-refNameStatement : 'N@' commonVarRef;
+varRefNameStatement : 'N@' commonVarRef;
+
+fieldRefNameStatement : 'N@' commonFieldRef;
 
 nameStatement
 	:	commonNameStatement
-	|	refNameStatement
+	|	varRefNameStatement
+	|	fieldRefNameStatement
 	;
 
 bangPrefixExpressionStatement : 'PeE@' '!' referedExpression;

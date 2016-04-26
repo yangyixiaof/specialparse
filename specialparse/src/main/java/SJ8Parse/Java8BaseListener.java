@@ -701,13 +701,25 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterRefNameStatement(Java8Parser.RefNameStatementContext ctx) { }
+	@Override public void enterVarRefNameStatement(Java8Parser.VarRefNameStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitRefNameStatement(Java8Parser.RefNameStatementContext ctx) { }
+	@Override public void exitVarRefNameStatement(Java8Parser.VarRefNameStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFieldRefNameStatement(Java8Parser.FieldRefNameStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFieldRefNameStatement(Java8Parser.FieldRefNameStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

@@ -579,15 +579,25 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitCommonNameStatement(Java8Parser.CommonNameStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#refNameStatement}.
+	 * Enter a parse tree produced by {@link Java8Parser#varRefNameStatement}.
 	 * @param ctx the parse tree
 	 */
-	void enterRefNameStatement(Java8Parser.RefNameStatementContext ctx);
+	void enterVarRefNameStatement(Java8Parser.VarRefNameStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#refNameStatement}.
+	 * Exit a parse tree produced by {@link Java8Parser#varRefNameStatement}.
 	 * @param ctx the parse tree
 	 */
-	void exitRefNameStatement(Java8Parser.RefNameStatementContext ctx);
+	void exitVarRefNameStatement(Java8Parser.VarRefNameStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#fieldRefNameStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterFieldRefNameStatement(Java8Parser.FieldRefNameStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#fieldRefNameStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitFieldRefNameStatement(Java8Parser.FieldRefNameStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#nameStatement}.
 	 * @param ctx the parse tree

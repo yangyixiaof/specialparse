@@ -52,6 +52,7 @@ public class ParseRoot
 			ParseOneSentence("MI@super(@C0?0)", null, true);
 			ParseOneSentence("MI@this(this,'$')", null, true);
 			ParseOneSentence("MR@new::AboutController", null, true);
+			// TODO this two needs to be checked to see if program processor is wrong.
 			ParseOneSentence("N@@C0?0", null, true);
 			ParseOneSentence("N@@F0?0", null, true);
 		} catch (Exception e) {

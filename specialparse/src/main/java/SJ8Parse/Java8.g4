@@ -202,17 +202,19 @@ infixExpressionStatement
 
 instanceofExpressionStatement : 'InE@' referedExpression 'instanceof' type;
 
-commonMethodReferenceStatement : 'MR@' identifier '::' referedExpression;
+commonMethodReferenceExpression : identifier '::' referedExpression;
 
-commonNewMethodReferenceStatement : 'MR@' 'new' '::' referedExpression;
+commonNewMethodReferenceExpression : 'new' '::' referedExpression;
 
-superMethodReferenceStatement : 'MR@' identifier '::' 'super' ('.' referedExpression)?;
+superMethodReferenceExpression : identifier '::' 'super' ('.' referedExpression)?;
 
-methodReferenceStatement
-	:	commonMethodReferenceStatement
-	|	commonNewMethodReferenceStatement
-	|	superMethodReferenceStatement
+methodReferenceExpression
+	:	commonMethodReferenceExpression
+	|	commonNewMethodReferenceExpression
+	|	superMethodReferenceExpression
 	;
+
+methodReferenceStatement : 'MR@' methodReferenceExpression;
 
 commonNameStatement : 'N@' identifier;
 
@@ -267,6 +269,7 @@ referedExpression
 	|	commonVarRef
 	|	addPrefixExpression
 	|	subPrefixExpression
+	|	methodReferenceExpression
 	;
 
 identifier

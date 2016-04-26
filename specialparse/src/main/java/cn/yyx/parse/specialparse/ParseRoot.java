@@ -61,6 +61,8 @@ public class ParseRoot {
 			
 			ParseOneSentence("<s>", null, true);
 			ParseOneSentence("</s>", null, true);
+			
+			ParseOneSentence("VH@=new::AnnotationImpl", null, true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

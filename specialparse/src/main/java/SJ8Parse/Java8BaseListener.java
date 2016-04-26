@@ -641,37 +641,49 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCommonMethodReferenceStatement(Java8Parser.CommonMethodReferenceStatementContext ctx) { }
+	@Override public void enterCommonMethodReferenceExpression(Java8Parser.CommonMethodReferenceExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCommonMethodReferenceStatement(Java8Parser.CommonMethodReferenceStatementContext ctx) { }
+	@Override public void exitCommonMethodReferenceExpression(Java8Parser.CommonMethodReferenceExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCommonNewMethodReferenceStatement(Java8Parser.CommonNewMethodReferenceStatementContext ctx) { }
+	@Override public void enterCommonNewMethodReferenceExpression(Java8Parser.CommonNewMethodReferenceExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCommonNewMethodReferenceStatement(Java8Parser.CommonNewMethodReferenceStatementContext ctx) { }
+	@Override public void exitCommonNewMethodReferenceExpression(Java8Parser.CommonNewMethodReferenceExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSuperMethodReferenceStatement(Java8Parser.SuperMethodReferenceStatementContext ctx) { }
+	@Override public void enterSuperMethodReferenceExpression(Java8Parser.SuperMethodReferenceExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSuperMethodReferenceStatement(Java8Parser.SuperMethodReferenceStatementContext ctx) { }
+	@Override public void exitSuperMethodReferenceExpression(Java8Parser.SuperMethodReferenceExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMethodReferenceExpression(Java8Parser.MethodReferenceExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMethodReferenceExpression(Java8Parser.MethodReferenceExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

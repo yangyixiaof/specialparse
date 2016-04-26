@@ -324,23 +324,29 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitInstanceofExpressionStatement(Java8Parser.InstanceofExpressionStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#commonMethodReferenceStatement}.
+	 * Visit a parse tree produced by {@link Java8Parser#commonMethodReferenceExpression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCommonMethodReferenceStatement(Java8Parser.CommonMethodReferenceStatementContext ctx);
+	T visitCommonMethodReferenceExpression(Java8Parser.CommonMethodReferenceExpressionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#commonNewMethodReferenceStatement}.
+	 * Visit a parse tree produced by {@link Java8Parser#commonNewMethodReferenceExpression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCommonNewMethodReferenceStatement(Java8Parser.CommonNewMethodReferenceStatementContext ctx);
+	T visitCommonNewMethodReferenceExpression(Java8Parser.CommonNewMethodReferenceExpressionContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#superMethodReferenceStatement}.
+	 * Visit a parse tree produced by {@link Java8Parser#superMethodReferenceExpression}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitSuperMethodReferenceStatement(Java8Parser.SuperMethodReferenceStatementContext ctx);
+	T visitSuperMethodReferenceExpression(Java8Parser.SuperMethodReferenceExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#methodReferenceExpression}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMethodReferenceExpression(Java8Parser.MethodReferenceExpressionContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#methodReferenceStatement}.
 	 * @param ctx the parse tree

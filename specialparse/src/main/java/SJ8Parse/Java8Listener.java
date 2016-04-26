@@ -529,35 +529,45 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitInstanceofExpressionStatement(Java8Parser.InstanceofExpressionStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#commonMethodReferenceStatement}.
+	 * Enter a parse tree produced by {@link Java8Parser#commonMethodReferenceExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterCommonMethodReferenceStatement(Java8Parser.CommonMethodReferenceStatementContext ctx);
+	void enterCommonMethodReferenceExpression(Java8Parser.CommonMethodReferenceExpressionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#commonMethodReferenceStatement}.
+	 * Exit a parse tree produced by {@link Java8Parser#commonMethodReferenceExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitCommonMethodReferenceStatement(Java8Parser.CommonMethodReferenceStatementContext ctx);
+	void exitCommonMethodReferenceExpression(Java8Parser.CommonMethodReferenceExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#commonNewMethodReferenceStatement}.
+	 * Enter a parse tree produced by {@link Java8Parser#commonNewMethodReferenceExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterCommonNewMethodReferenceStatement(Java8Parser.CommonNewMethodReferenceStatementContext ctx);
+	void enterCommonNewMethodReferenceExpression(Java8Parser.CommonNewMethodReferenceExpressionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#commonNewMethodReferenceStatement}.
+	 * Exit a parse tree produced by {@link Java8Parser#commonNewMethodReferenceExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitCommonNewMethodReferenceStatement(Java8Parser.CommonNewMethodReferenceStatementContext ctx);
+	void exitCommonNewMethodReferenceExpression(Java8Parser.CommonNewMethodReferenceExpressionContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#superMethodReferenceStatement}.
+	 * Enter a parse tree produced by {@link Java8Parser#superMethodReferenceExpression}.
 	 * @param ctx the parse tree
 	 */
-	void enterSuperMethodReferenceStatement(Java8Parser.SuperMethodReferenceStatementContext ctx);
+	void enterSuperMethodReferenceExpression(Java8Parser.SuperMethodReferenceExpressionContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#superMethodReferenceStatement}.
+	 * Exit a parse tree produced by {@link Java8Parser#superMethodReferenceExpression}.
 	 * @param ctx the parse tree
 	 */
-	void exitSuperMethodReferenceStatement(Java8Parser.SuperMethodReferenceStatementContext ctx);
+	void exitSuperMethodReferenceExpression(Java8Parser.SuperMethodReferenceExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#methodReferenceExpression}.
+	 * @param ctx the parse tree
+	 */
+	void enterMethodReferenceExpression(Java8Parser.MethodReferenceExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#methodReferenceExpression}.
+	 * @param ctx the parse tree
+	 */
+	void exitMethodReferenceExpression(Java8Parser.MethodReferenceExpressionContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#methodReferenceStatement}.
 	 * @param ctx the parse tree

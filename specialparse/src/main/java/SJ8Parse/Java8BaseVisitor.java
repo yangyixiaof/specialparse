@@ -382,21 +382,28 @@ public class Java8BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitCommonMethodReferenceStatement(Java8Parser.CommonMethodReferenceStatementContext ctx) { return visitChildren(ctx); }
+	@Override public T visitCommonMethodReferenceExpression(Java8Parser.CommonMethodReferenceExpressionContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitCommonNewMethodReferenceStatement(Java8Parser.CommonNewMethodReferenceStatementContext ctx) { return visitChildren(ctx); }
+	@Override public T visitCommonNewMethodReferenceExpression(Java8Parser.CommonNewMethodReferenceExpressionContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitSuperMethodReferenceStatement(Java8Parser.SuperMethodReferenceStatementContext ctx) { return visitChildren(ctx); }
+	@Override public T visitSuperMethodReferenceExpression(Java8Parser.SuperMethodReferenceExpressionContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitMethodReferenceExpression(Java8Parser.MethodReferenceExpressionContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

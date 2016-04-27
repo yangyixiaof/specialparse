@@ -136,10 +136,22 @@ qualifiedAccessStatement : 'Q@' fieldAccess;
 
 fieldAccessStatement : 'FA@' fieldAccess;
 
-referedFieldAccess : identifier '.' referedExpression;
-
 chainFieldAccess
 	:	identifier '.' fieldAccess
+	;
+
+referedFieldAccess : identifier '.' referedExpression;
+
+superFieldAccess
+	:	identifier '.' 'super' '.' referedExpression
+	|	identifier '.' 'super' '.' type
+	|	identifier '.' 'super'
+	;
+	
+thisFieldAccess
+	:	'this' '.' referedExpression
+	|	'this' '.' type
+	|	'this'
 	;
 
 fieldAccess
@@ -148,12 +160,6 @@ fieldAccess
 	|	referedFieldAccess
 	|	superFieldAccess
 	|	thisFieldAccess
-	;
-
-superFieldAccess
-	:	identifier '.' 'super' '.' referedExpression
-	|	identifier '.' 'super' '.' type
-	|	identifier '.' 'super'
 	;
 
 gtInfixExpressionStatement : 'IxE@' referedExpression '>' referedExpression;
@@ -388,7 +394,7 @@ partialMethodArgumentEndStatement : 'DH@Ps';
 partialMethodPreRerferedExpressionEndStatement : 'DH@Pr';
 
 firstArgPreExist : '@PE';
-	
+
 firstArgReferedExpression
 	:	referedExpression
 	|	type
@@ -591,12 +597,6 @@ finalFieldRef : '@D' integerLiteral '?' integerLiteral;
 finalVarRef : '@X' integerLiteral '?' integerLiteral;
 commonFieldRef : '@F' integerLiteral '?' integerLiteral;
 commonVarRef : '@C' integerLiteral '?' integerLiteral;
-
-thisFieldAccess
-	:	'this' '.' referedExpression
-	|	'this' '.' type
-	|	'this'
-	;
 
 codeHole : '@HO';
 preExist : '@PE';

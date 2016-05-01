@@ -423,13 +423,11 @@ methodArgReferedExpression
 
 argumentList : firstArg (',' methodArgReferedExpression)*;
 
-// typeList : type (',' type)*;
+lastArgType : type '...';
 
-// argType : type;
-
-argTypeList : type (',' type)*;
-
-// argType (',' argType)*;
+argTypeList
+	:	type (',' type)* lastArgType?
+	|	lastArgType;
 
 literal
 	:	numberLiteral
@@ -604,6 +602,7 @@ preExist : '@PE';
 endOfArrayDeclarationIndexExpression : (']')+;
 
 AT : '@' ;
+ELLIPSIS : '...';
 
 IntegerLiteralX
 	:	DecimalIntegerLiteral

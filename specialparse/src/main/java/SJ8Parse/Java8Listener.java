@@ -279,16 +279,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitFieldAccessStatement(Java8Parser.FieldAccessStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#referedFieldAccess}.
-	 * @param ctx the parse tree
-	 */
-	void enterReferedFieldAccess(Java8Parser.ReferedFieldAccessContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#referedFieldAccess}.
-	 * @param ctx the parse tree
-	 */
-	void exitReferedFieldAccess(Java8Parser.ReferedFieldAccessContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link Java8Parser#chainFieldAccess}.
 	 * @param ctx the parse tree
 	 */
@@ -299,15 +289,15 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitChainFieldAccess(Java8Parser.ChainFieldAccessContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#fieldAccess}.
+	 * Enter a parse tree produced by {@link Java8Parser#referedFieldAccess}.
 	 * @param ctx the parse tree
 	 */
-	void enterFieldAccess(Java8Parser.FieldAccessContext ctx);
+	void enterReferedFieldAccess(Java8Parser.ReferedFieldAccessContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link Java8Parser#fieldAccess}.
+	 * Exit a parse tree produced by {@link Java8Parser#referedFieldAccess}.
 	 * @param ctx the parse tree
 	 */
-	void exitFieldAccess(Java8Parser.FieldAccessContext ctx);
+	void exitReferedFieldAccess(Java8Parser.ReferedFieldAccessContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#superFieldAccess}.
 	 * @param ctx the parse tree
@@ -318,6 +308,26 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSuperFieldAccess(Java8Parser.SuperFieldAccessContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#thisFieldAccess}.
+	 * @param ctx the parse tree
+	 */
+	void enterThisFieldAccess(Java8Parser.ThisFieldAccessContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#thisFieldAccess}.
+	 * @param ctx the parse tree
+	 */
+	void exitThisFieldAccess(Java8Parser.ThisFieldAccessContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#fieldAccess}.
+	 * @param ctx the parse tree
+	 */
+	void enterFieldAccess(Java8Parser.FieldAccessContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#fieldAccess}.
+	 * @param ctx the parse tree
+	 */
+	void exitFieldAccess(Java8Parser.FieldAccessContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#gtInfixExpressionStatement}.
 	 * @param ctx the parse tree
@@ -1419,6 +1429,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitArgumentList(Java8Parser.ArgumentListContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#lastArgType}.
+	 * @param ctx the parse tree
+	 */
+	void enterLastArgType(Java8Parser.LastArgTypeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#lastArgType}.
+	 * @param ctx the parse tree
+	 */
+	void exitLastArgType(Java8Parser.LastArgTypeContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#argTypeList}.
 	 * @param ctx the parse tree
 	 */
@@ -1778,16 +1798,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCommonVarRef(Java8Parser.CommonVarRefContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#thisFieldAccess}.
-	 * @param ctx the parse tree
-	 */
-	void enterThisFieldAccess(Java8Parser.ThisFieldAccessContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#thisFieldAccess}.
-	 * @param ctx the parse tree
-	 */
-	void exitThisFieldAccess(Java8Parser.ThisFieldAccessContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#codeHole}.
 	 * @param ctx the parse tree

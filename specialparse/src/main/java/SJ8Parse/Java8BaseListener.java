@@ -341,18 +341,6 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterReferedFieldAccess(Java8Parser.ReferedFieldAccessContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitReferedFieldAccess(Java8Parser.ReferedFieldAccessContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterChainFieldAccess(Java8Parser.ChainFieldAccessContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -365,13 +353,13 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFieldAccess(Java8Parser.FieldAccessContext ctx) { }
+	@Override public void enterReferedFieldAccess(Java8Parser.ReferedFieldAccessContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFieldAccess(Java8Parser.FieldAccessContext ctx) { }
+	@Override public void exitReferedFieldAccess(Java8Parser.ReferedFieldAccessContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -384,6 +372,30 @@ public class Java8BaseListener implements Java8Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitSuperFieldAccess(Java8Parser.SuperFieldAccessContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterThisFieldAccess(Java8Parser.ThisFieldAccessContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitThisFieldAccess(Java8Parser.ThisFieldAccessContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFieldAccess(Java8Parser.FieldAccessContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFieldAccess(Java8Parser.FieldAccessContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -1709,6 +1721,18 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterLastArgType(Java8Parser.LastArgTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLastArgType(Java8Parser.LastArgTypeContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterArgTypeList(Java8Parser.ArgTypeListContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -2136,18 +2160,6 @@ public class Java8BaseListener implements Java8Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitCommonVarRef(Java8Parser.CommonVarRefContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterThisFieldAccess(Java8Parser.ThisFieldAccessContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitThisFieldAccess(Java8Parser.ThisFieldAccessContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

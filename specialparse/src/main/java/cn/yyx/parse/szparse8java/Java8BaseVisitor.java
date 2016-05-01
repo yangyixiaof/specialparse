@@ -1,4 +1,4 @@
-package SJ8Parse;
+package cn.yyx.parse.szparse8java;
 
 // Generated from Java8.g4 by ANTLR 4.5.2
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;

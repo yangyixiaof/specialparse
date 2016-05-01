@@ -1,7 +1,7 @@
 package cn.yyx.parse.specialparse;
 
-import SJ8Parse.Java8BaseVisitor;
-import SJ8Parse.Java8Listener;
+import cn.yyx.parse.szparse8java.Java8BaseVisitor;
+import cn.yyx.parse.szparse8java.Java8Listener;
 
 public class TODOList {
 	

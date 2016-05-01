@@ -5,9 +5,9 @@ import org.antlr.v4.runtime.BailErrorStrategy;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-import SJ8Parse.Java8BaseVisitor;
-import SJ8Parse.Java8Lexer;
-import SJ8Parse.Java8Parser;
+import cn.yyx.parse.szparse8java.Java8BaseVisitor;
+import cn.yyx.parse.szparse8java.Java8Lexer;
+import cn.yyx.parse.szparse8java.Java8Parser;
 
 public class ParseRoot {
 	

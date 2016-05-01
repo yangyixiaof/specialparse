@@ -1,21 +1,21 @@
 package cn.yyx.parse.specialparse;
 
-import SJ8Parse.Java8BaseVisitor;
-import SJ8Parse.Java8Parser;
-import SJ8Parse.Java8Parser.ArgTypeListContext;
-import SJ8Parse.Java8Parser.ArrayInitializerEndStatementContext;
-import SJ8Parse.Java8Parser.ArrayInitializerSplitCommaStatementContext;
-import SJ8Parse.Java8Parser.CommonClassMemberInvokeContext;
-import SJ8Parse.Java8Parser.EnumConstantDeclarationSplitCommaStatementContext;
-import SJ8Parse.Java8Parser.FirstArgContext;
-import SJ8Parse.Java8Parser.FirstArgPreExistContext;
-import SJ8Parse.Java8Parser.FirstArgReferedExpressionContext;
-import SJ8Parse.Java8Parser.MethodArgPreExistContext;
-import SJ8Parse.Java8Parser.MethodArgReferedExpressionContext;
-import SJ8Parse.Java8Parser.NewClassInvokeContext;
-import SJ8Parse.Java8Parser.SelfClassMemberInvokeContext;
-import SJ8Parse.Java8Parser.SuperClassMemberInvokeContext;
-import SJ8Parse.Java8Parser.VirtualInferredTypeContext;
+import cn.yyx.parse.szparse8java.Java8BaseVisitor;
+import cn.yyx.parse.szparse8java.Java8Parser;
+import cn.yyx.parse.szparse8java.Java8Parser.ArgTypeListContext;
+import cn.yyx.parse.szparse8java.Java8Parser.ArrayInitializerEndStatementContext;
+import cn.yyx.parse.szparse8java.Java8Parser.ArrayInitializerSplitCommaStatementContext;
+import cn.yyx.parse.szparse8java.Java8Parser.CommonClassMemberInvokeContext;
+import cn.yyx.parse.szparse8java.Java8Parser.EnumConstantDeclarationSplitCommaStatementContext;
+import cn.yyx.parse.szparse8java.Java8Parser.FirstArgContext;
+import cn.yyx.parse.szparse8java.Java8Parser.FirstArgPreExistContext;
+import cn.yyx.parse.szparse8java.Java8Parser.FirstArgReferedExpressionContext;
+import cn.yyx.parse.szparse8java.Java8Parser.MethodArgPreExistContext;
+import cn.yyx.parse.szparse8java.Java8Parser.MethodArgReferedExpressionContext;
+import cn.yyx.parse.szparse8java.Java8Parser.NewClassInvokeContext;
+import cn.yyx.parse.szparse8java.Java8Parser.SelfClassMemberInvokeContext;
+import cn.yyx.parse.szparse8java.Java8Parser.SuperClassMemberInvokeContext;
+import cn.yyx.parse.szparse8java.Java8Parser.VirtualInferredTypeContext;
 
 public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	

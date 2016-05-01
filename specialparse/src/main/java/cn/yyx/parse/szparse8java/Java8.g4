@@ -356,7 +356,7 @@ partialEndArrayAccessStatement : expressionStatement endOfArrayDeclarationIndexE
 leftParentheseStatement : 'DH@' ('(')+;
 
 rightParentheseStatement : 'DH@' (')')+;
-	
+
 leftBraceStatement : 'DH@' ('{')+;
 
 rightBraceStatement : 'DH@' ('}')+;

@@ -426,7 +426,7 @@ argumentList : firstArg (',' methodArgReferedExpression)*;
 lastArgType : type '...';
 
 argTypeList
-	:	type (',' type)* lastArgType?
+	:	type (',' type)* (',' lastArgType)?
 	|	lastArgType;
 
 literal

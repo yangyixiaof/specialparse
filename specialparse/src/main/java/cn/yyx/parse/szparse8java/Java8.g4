@@ -119,16 +119,16 @@ castExpressionStatement : 'CE@' '(' type ')' referedExpression;
 
 commonMethodInvocationStatement : 'MI@' identifier '(' argumentList ')';
 
-typeCreationInvocationStatement : 'MI@' type '(' argumentList ')'; // MI@@K0?0(new)
-
 superConstructionInvocationStatement : 'MI@' 'super' '(' argumentList ')';
+
+typeCreationInvocationStatement : 'MI@' type '(' argumentList ')'; // MI@@K0?0(new)
 
 thisConstructionInvocationStatement : 'MI@' 'this' '(' argumentList ')';
 
 methodInvocationStatement
 	:	commonMethodInvocationStatement
-	|	typeCreationInvocationStatement
 	|	superConstructionInvocationStatement
+	|	typeCreationInvocationStatement
 	|	thisConstructionInvocationStatement
 	;
 

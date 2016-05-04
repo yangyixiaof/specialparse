@@ -416,7 +416,7 @@ firstArg :
 	;
 
 methodArgPreExist : '@PE';
-	
+
 methodArgReferedExpression
 	:	referedExpression
 	;

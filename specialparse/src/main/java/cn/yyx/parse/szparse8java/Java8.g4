@@ -423,10 +423,12 @@ methodArgReferedExpression
 
 argumentList : firstArg (',' methodArgReferedExpression)*;
 
+argType : type;
+
 lastArgType : type '...';
 
 argTypeList
-	:	type (',' type)* (',' lastArgType)?
+	:	argType (',' argType)* (',' lastArgType)?
 	|	lastArgType;
 
 literal

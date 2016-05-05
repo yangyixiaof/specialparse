@@ -165,14 +165,14 @@ public class Java8BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitTypeCreationInvocationStatement(Java8Parser.TypeCreationInvocationStatementContext ctx) { return visitChildren(ctx); }
+	@Override public T visitSuperConstructionInvocationStatement(Java8Parser.SuperConstructionInvocationStatementContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitSuperConstructionInvocationStatement(Java8Parser.SuperConstructionInvocationStatementContext ctx) { return visitChildren(ctx); }
+	@Override public T visitTypeCreationInvocationStatement(Java8Parser.TypeCreationInvocationStatementContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -1006,6 +1006,13 @@ public class Java8BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitArgumentList(Java8Parser.ArgumentListContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitArgType(Java8Parser.ArgTypeContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

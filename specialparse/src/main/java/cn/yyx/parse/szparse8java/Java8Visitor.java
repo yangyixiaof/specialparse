@@ -138,17 +138,17 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCommonMethodInvocationStatement(Java8Parser.CommonMethodInvocationStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#typeCreationInvocationStatement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitTypeCreationInvocationStatement(Java8Parser.TypeCreationInvocationStatementContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#superConstructionInvocationStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitSuperConstructionInvocationStatement(Java8Parser.SuperConstructionInvocationStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#typeCreationInvocationStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTypeCreationInvocationStatement(Java8Parser.TypeCreationInvocationStatementContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#thisConstructionInvocationStatement}.
 	 * @param ctx the parse tree
@@ -863,6 +863,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitArgumentList(Java8Parser.ArgumentListContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#argType}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitArgType(Java8Parser.ArgTypeContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#lastArgType}.
 	 * @param ctx the parse tree

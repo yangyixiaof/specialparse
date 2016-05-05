@@ -219,16 +219,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitCommonMethodInvocationStatement(Java8Parser.CommonMethodInvocationStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#typeCreationInvocationStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterTypeCreationInvocationStatement(Java8Parser.TypeCreationInvocationStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#typeCreationInvocationStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitTypeCreationInvocationStatement(Java8Parser.TypeCreationInvocationStatementContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link Java8Parser#superConstructionInvocationStatement}.
 	 * @param ctx the parse tree
 	 */
@@ -238,6 +228,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSuperConstructionInvocationStatement(Java8Parser.SuperConstructionInvocationStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#typeCreationInvocationStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterTypeCreationInvocationStatement(Java8Parser.TypeCreationInvocationStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#typeCreationInvocationStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitTypeCreationInvocationStatement(Java8Parser.TypeCreationInvocationStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#thisConstructionInvocationStatement}.
 	 * @param ctx the parse tree
@@ -1428,6 +1428,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitArgumentList(Java8Parser.ArgumentListContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#argType}.
+	 * @param ctx the parse tree
+	 */
+	void enterArgType(Java8Parser.ArgTypeContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#argType}.
+	 * @param ctx the parse tree
+	 */
+	void exitArgType(Java8Parser.ArgTypeContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#lastArgType}.
 	 * @param ctx the parse tree

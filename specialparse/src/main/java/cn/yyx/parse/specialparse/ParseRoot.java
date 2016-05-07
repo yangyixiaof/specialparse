@@ -66,6 +66,8 @@ public class ParseRoot {
 			ParseOneSentence("VH@=new::AnnotationImpl", null, true);
 			
 			// error one and correct it.
+			String pn = NormalLibrary.normalize("A@uberServlet.SPARQLServer=true");
+			System.out.println(pn);
 			String norm = NormalLibrary.normalize("A@überServlet.SPARQLServer=true");
 			System.out.println(norm);
 			ParseOneSentence(norm, null, true);

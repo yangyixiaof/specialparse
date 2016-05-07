@@ -59,10 +59,14 @@ public class ParseRoot {
 			ParseOneSentence("Q@_left.super", null, true);
 			ParseOneSentence("Q@this", null, true);
 			
-			ParseOneSentence("<s>", null, true);
-			ParseOneSentence("</s>", null, true);
+			// ParseOneSentence("<s>", null, true);
+			// ParseOneSentence("</s>", null, true);
 			
 			ParseOneSentence("VH@=new::AnnotationImpl", null, true);
+			
+			// error one.
+			// ParseOneSentence("A@überServlet.SPARQLServer=true", null, true);
+			ParseOneSentence("CE@(byte)'\\''", null, true);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

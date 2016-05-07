@@ -5,6 +5,7 @@ import org.antlr.v4.runtime.BailErrorStrategy;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
+import cn.yyx.parse.nomalform.NormalLibrary;
 import cn.yyx.parse.szparse8java.Java8BaseVisitor;
 import cn.yyx.parse.szparse8java.Java8Lexer;
 import cn.yyx.parse.szparse8java.Java8Parser;
@@ -64,8 +65,11 @@ public class ParseRoot {
 			
 			ParseOneSentence("VH@=new::AnnotationImpl", null, true);
 			
-			// error one.
-			// ParseOneSentence("A@überServlet.SPARQLServer=true", null, true);
+			// error one and correct it.
+			String norm = NormalLibrary.normalize("A@überServlet.SPARQLServer=true");
+			System.out.println(norm);
+			ParseOneSentence(norm, null, true);
+			
 			ParseOneSentence("CE@(byte)'\\''", null, true);
 		} catch (Exception e) {
 			e.printStackTrace();

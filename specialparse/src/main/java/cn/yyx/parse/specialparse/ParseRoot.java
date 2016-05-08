@@ -40,8 +40,8 @@ public class ParseRoot {
 		
 		try {
 			System.setErr(new PrintStream(new FileOutputStream("system_err.txt")));
-		} catch (FileNotFoundException ex) {
-			ex.printStackTrace();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
 			return;
 		}
 		

@@ -10,11 +10,12 @@ public class DescriptiveErrorListener extends BaseErrorListener {
 	@Override
 	public void syntaxError(Recognizer<?, ?> recognizer, Object offendingSymbol, int line, int charPositionInLine,
 			String msg, RecognitionException e) {
-		System.err.println("error parsed sentence is:" + recognizer.getInputStream());
+		System.err.println("error parsed sentence is:" + msg);
 		// String sourceName = recognizer.getInputStream().getSourceName();
 		// if (!sourceName.isEmpty()) {
 		// 	sourceName = String.format("%s:%d:%d: ", sourceName, line, charPositionInLine);
 		// }
 		// System.err.println(sourceName + "line " + line + ":" + charPositionInLine + " " + msg);
 	}
+	
 }

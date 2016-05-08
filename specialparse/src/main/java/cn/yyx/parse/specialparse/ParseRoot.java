@@ -1,12 +1,11 @@
 package cn.yyx.parse.specialparse;
 
 import org.antlr.v4.runtime.ANTLRInputStream;
-import org.antlr.v4.runtime.BailErrorStrategy;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 import cn.yyx.parse.nomalform.NormalLibrary;
-import cn.yyx.parse.szparse8java.DescriptiveErrorListener;
+import cn.yyx.parse.szparse8java.JThrowAllErrorStrategy;
 import cn.yyx.parse.szparse8java.Java8BaseVisitor;
 import cn.yyx.parse.szparse8java.Java8Lexer;
 import cn.yyx.parse.szparse8java.Java8Parser;
@@ -19,8 +18,8 @@ public class ParseRoot {
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		Java8Parser parser = new Java8Parser(tokens);
 		parser.setBuildParseTree(true); // tell ANTLR to build a parse tree
-		parser.setErrorHandler(new BailErrorStrategy());
-		parser.addErrorListener(DescriptiveErrorListener.INSTANCE);
+		parser.setErrorHandler(new JThrowAllErrorStrategy());
+		// parser.addErrorListener(DescriptiveErrorListener.INSTANCE);
 		ParseTree tree = parser.statement(); // parse
 		if (evalVisitor != null)
 		{

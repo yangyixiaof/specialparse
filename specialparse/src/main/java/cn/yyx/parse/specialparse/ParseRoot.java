@@ -1,11 +1,14 @@
 package cn.yyx.parse.specialparse;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+
 import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.BailErrorStrategy;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 
-import cn.yyx.parse.nomalform.NormalLibrary;
-import cn.yyx.parse.szparse8java.JThrowAllErrorStrategy;
 import cn.yyx.parse.szparse8java.Java8BaseVisitor;
 import cn.yyx.parse.szparse8java.Java8Lexer;
 import cn.yyx.parse.szparse8java.Java8Parser;
@@ -18,7 +21,7 @@ public class ParseRoot {
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		Java8Parser parser = new Java8Parser(tokens);
 		parser.setBuildParseTree(true); // tell ANTLR to build a parse tree
-		parser.setErrorHandler(new JThrowAllErrorStrategy());
+		parser.setErrorHandler(new BailErrorStrategy());
 		// parser.addErrorListener(DescriptiveErrorListener.INSTANCE);
 		ParseTree tree = parser.statement(); // parse
 		if (evalVisitor != null)
@@ -34,6 +37,14 @@ public class ParseRoot {
 	
 	public static void main(String[] args)
 	{
+		
+		try {
+			System.setErr(new PrintStream(new FileOutputStream("system_err.txt")));
+		} catch (FileNotFoundException ex) {
+			ex.printStackTrace();
+			return;
+		}
+		
 		try {
 			// ParseOneSentence("A@@C0?3=", null, true);
 			ParseOneSentence("A@@C0?0=class.int", null, true);
@@ -67,11 +78,12 @@ public class ParseRoot {
 			ParseOneSentence("VH@=new::AnnotationImpl", null, true);
 			
 			// error one and correct it.
-			String pn = NormalLibrary.normalize("A@uberServlet.SPARQLServer=true");
-			System.out.println(pn);
-			// String norm = "A@überServlet.SPARQLServer=true";
-			String norm = NormalLibrary.normalize("A@überServlet.SPARQLServer=true");
-			System.out.println(norm);
+			// String pn = NormalLibrary.normalize("A@uberServlet.SPARQLServer=true");
+			// System.out.println(pn);
+			String norm = "A@überServlet.SPARQLServer=true";
+			// String norm = NormalLibrary.normalize("A@überServlet.SPARQLServer=true");
+			// System.out.println(norm);
+			System.err.println(norm);
 			ParseOneSentence(norm, null, true);
 			
 			// ParseOneSentence("CE@(byte)'\\''", null, true);

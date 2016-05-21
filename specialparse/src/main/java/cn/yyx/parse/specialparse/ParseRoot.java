@@ -35,6 +35,26 @@ public class ParseRoot {
 		return null;
     }
 	
+	public static String ParseOneType(String onesentence, Java8BaseVisitor<Integer> evalVisitor, boolean returnTreeContent) throws Exception, Error {
+		ANTLRInputStream input = new ANTLRInputStream(onesentence);
+		Java8Lexer lexer = new Java8Lexer(input);
+		CommonTokenStream tokens = new CommonTokenStream(lexer);
+		Java8Parser parser = new Java8Parser(tokens);
+		parser.setBuildParseTree(true); // tell ANTLR to build a parse tree
+		parser.setErrorHandler(new BailErrorStrategy());
+		// parser.addErrorListener(DescriptiveErrorListener.INSTANCE);
+		ParseTree tree = parser.type(); // parse
+		if (evalVisitor != null)
+		{
+			evalVisitor.visit(tree);
+		}
+		if (returnTreeContent)
+		{
+			return tree.toStringTree(parser);
+		}
+		return null;
+    }
+	
 	public static void main(String[] args)
 	{
 		

@@ -19,6 +19,56 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitStatement(Java8Parser.StatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#commonOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterCommonOverStatement(Java8Parser.CommonOverStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#commonOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitCommonOverStatement(Java8Parser.CommonOverStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#forIniOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterForIniOverStatement(Java8Parser.ForIniOverStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#forIniOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitForIniOverStatement(Java8Parser.ForIniOverStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#forExpOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterForExpOverStatement(Java8Parser.ForExpOverStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#forExpOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitForExpOverStatement(Java8Parser.ForExpOverStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#forUpdOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterForUpdOverStatement(Java8Parser.ForUpdOverStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#forUpdOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitForUpdOverStatement(Java8Parser.ForUpdOverStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#rawStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterRawStatement(Java8Parser.RawStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#rawStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitRawStatement(Java8Parser.RawStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#expressionStatement}.
 	 * @param ctx the parse tree
 	 */
@@ -1099,16 +1149,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitInitializerStatement(Java8Parser.InitializerStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#variableDeclarationHolderStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterVariableDeclarationHolderStatement(Java8Parser.VariableDeclarationHolderStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#variableDeclarationHolderStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitVariableDeclarationHolderStatement(Java8Parser.VariableDeclarationHolderStatementContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link Java8Parser#enhancedForStatement}.
 	 * @param ctx the parse tree
 	 */
@@ -1148,26 +1188,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitRightParentheseStatement(Java8Parser.RightParentheseStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#leftBraceStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterLeftBraceStatement(Java8Parser.LeftBraceStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#leftBraceStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitLeftBraceStatement(Java8Parser.LeftBraceStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#rightBraceStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterRightBraceStatement(Java8Parser.RightBraceStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#rightBraceStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitRightBraceStatement(Java8Parser.RightBraceStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#enterMethodParamStatement}.
 	 * @param ctx the parse tree
@@ -1229,36 +1249,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitForStatement(Java8Parser.ForStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link Java8Parser#forIniOverStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterForIniOverStatement(Java8Parser.ForIniOverStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#forIniOverStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitForIniOverStatement(Java8Parser.ForIniOverStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#forExpOverStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterForExpOverStatement(Java8Parser.ForExpOverStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#forExpOverStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitForExpOverStatement(Java8Parser.ForExpOverStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#forUpdOverStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterForUpdOverStatement(Java8Parser.ForUpdOverStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#forUpdOverStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitForUpdOverStatement(Java8Parser.ForUpdOverStatementContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link Java8Parser#condExpBeginStatement}.
 	 * @param ctx the parse tree
 	 */
@@ -1298,16 +1288,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitPartialEndStatement(Java8Parser.PartialEndStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#fullEndStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterFullEndStatement(Java8Parser.FullEndStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#fullEndStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitFullEndStatement(Java8Parser.FullEndStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#partialMethodArgumentEndStatement}.
 	 * @param ctx the parse tree

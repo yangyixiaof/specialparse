@@ -1,6 +1,22 @@
 grammar Java8;
 
 statement
+	:	rawStatement
+	|	commonOverStatement
+	|	forIniOverStatement
+	|	forExpOverStatement
+	|	forUpdOverStatement
+	;
+
+commonOverStatement : rawStatement ';';
+
+forIniOverStatement : rawStatement ';FI';
+
+forExpOverStatement : rawStatement ';FE';
+
+forUpdOverStatement : rawStatement ';FU';
+
+rawStatement
 	:	anonymousClassBeginStatement
 	|	anonymousClassPlaceHolderStatement
 	|	anonymousClassPreStatement
@@ -14,7 +30,6 @@ statement
 	|	enumConstantDeclarationStatement
 	|	labeledStatement
 	|	variableDeclarationStatement
-	|	lambdaExpressionStatement
 	|	breakStatement
 	|	continueStatement
 	|	doWhileStatement
@@ -33,27 +48,24 @@ statement
 	|	elseStatement
 	|	arrayCreationStatement
 	|	initializerStatement
-	|	variableDeclarationHolderStatement
+//	|	variableDeclarationHolderStatement
 	|	enhancedForStatement
 	|	partialEndArrayAccessStatement
 	|	leftParentheseStatement
 	|	rightParentheseStatement
-	|	leftBraceStatement
-	|	rightBraceStatement
+//	|	leftBraceStatement
+//	|	rightBraceStatement
 	|	enterMethodParamStatement
 	|	arrayInitializerStartStatement
 	|	arrayInitializerSplitCommaStatement
 	|	arrayInitializerEndStatement
 	|	enumConstantDeclarationSplitCommaStatement
 	|	forStatement
-	|	forIniOverStatement
-	|	forExpOverStatement
-	|	forUpdOverStatement
 	|	condExpBeginStatement
 	|	condExpQuestionMarkStatement
 	|	condExpColonMarkStatement
 	|	partialEndStatement
-	|	fullEndStatement
+//	|	fullEndStatement
 	|	partialMethodArgumentEndStatement
 	|	partialMethodPreRerferedExpressionEndStatement
 	|	expressionStatement
@@ -61,6 +73,7 @@ statement
 	
 expressionStatement
 	:	assignmentStatement
+	|	lambdaExpressionStatement
 	|	literalStatement
 	|	castExpressionStatement
 	|	methodInvocationStatement
@@ -304,7 +317,7 @@ enumConstantDeclarationStatement : 'EMD@' identifier '(' argumentList ')';
 
 labeledStatement : 'LD@' identifier;
 
-variableDeclarationStatement : 'VD@' type;
+variableDeclarationStatement : 'VD@' type ('=' referedExpression)?;
 
 lambdaExpressionStatement
 	:	'LE@' '(' argTypeList? ')' '->' '{}'
@@ -347,7 +360,7 @@ arrayCreationStatement : 'AC@' type '(' 'new' ')';
 
 initializerStatement : 'IB@' 'InitialBlock';
 
-variableDeclarationHolderStatement : 'VH@' ('=' referedExpression)?;
+// variableDeclarationHolderStatement : 'VH@' ('=' referedExpression)?;
 
 enhancedForStatement : 'EF@' 'for(' type ':' referedExpression ')';
 
@@ -357,9 +370,9 @@ leftParentheseStatement : 'DH@' ('(')+;
 
 rightParentheseStatement : 'DH@' (')')+;
 
-leftBraceStatement : 'DH@' ('{')+;
+// leftBraceStatement : 'DH@' ('{')+;
 
-rightBraceStatement : 'DH@' ('}')+;
+// rightBraceStatement : 'DH@' ('}')+;
 
 enterMethodParamStatement : 'DH@' ('@Em')+;
 
@@ -373,11 +386,11 @@ enumConstantDeclarationSplitCommaStatement : 'DH@E,';
 
 forStatement : 'DH@for';
 
-forIniOverStatement : 'DH@forIniOver';
+// forIniOverStatement : 'DH@forIniOver';
 
-forExpOverStatement : 'DH@forExpOver';
+// forExpOverStatement : 'DH@forExpOver';
 
-forUpdOverStatement : 'DH@forUpdOver';
+// forUpdOverStatement : 'DH@forUpdOver';
 
 condExpBeginStatement : 'DH@CondExpBegin';
 
@@ -387,7 +400,7 @@ condExpColonMarkStatement : 'DH@CondExpCM';
 
 partialEndStatement : 'DH@,';
 
-fullEndStatement : 'DH@;';
+// fullEndStatement : 'DH@;';
 
 partialMethodArgumentEndStatement : 'DH@Ps';
 

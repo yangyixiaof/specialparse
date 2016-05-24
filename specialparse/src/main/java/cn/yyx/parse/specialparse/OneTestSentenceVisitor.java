@@ -237,11 +237,6 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 	}
 
 	@Override
-	public Integer visitVariableDeclarationHolderStatement(Java8Parser.VariableDeclarationHolderStatementContext ctx) {
-		return visitChildren(ctx);
-	}
-
-	@Override
 	public Integer visitEnhancedForStatement(Java8Parser.EnhancedForStatementContext ctx) {
 		return visitChildren(ctx);
 	}
@@ -263,16 +258,6 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 
 	@Override
 	public Integer visitRightParentheseStatement(Java8Parser.RightParentheseStatementContext ctx) {
-		return visitChildren(ctx);
-	}
-
-	@Override
-	public Integer visitLeftBraceStatement(Java8Parser.LeftBraceStatementContext ctx) {
-		return visitChildren(ctx);
-	}
-
-	@Override
-	public Integer visitRightBraceStatement(Java8Parser.RightBraceStatementContext ctx) {
 		return visitChildren(ctx);
 	}
 
@@ -339,11 +324,6 @@ public class OneTestSentenceVisitor extends Java8BaseVisitor<Integer> {
 
 	@Override
 	public Integer visitPartialEndStatement(Java8Parser.PartialEndStatementContext ctx) {
-		return visitChildren(ctx);
-	}
-
-	@Override
-	public Integer visitFullEndStatement(Java8Parser.FullEndStatementContext ctx) {
 		return visitChildren(ctx);
 	}
 	

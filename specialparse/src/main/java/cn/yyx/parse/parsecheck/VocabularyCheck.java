@@ -14,7 +14,8 @@ import cn.yyx.parse.specialparse.ParseRoot;
 
 public class VocabularyCheck {
 	
-	String vocabfilepath = "/home/yyx/HomeSpace/UnzipAllFiles/TransformedData/BigClassDetail/ClassWorkSpace/results/final.vocab";
+	// String vocabfilepath = "/home/yyx/HomeSpace/UnzipAllFiles/TransformedData/BigClassDetail/ClassWorkSpace/results/final.vocab";
+	String vocabfilepath = "/home/yyx/CodeComletionTestSpace/IR_yyx/BigClassDetail/ClassWorkSpace/results/final.vocab";
 	
 	public void CheckAll() throws IOException {
 		BufferedReader br = null;

@@ -6,6 +6,9 @@ statement
 	|	forIniOverStatement
 	|	forExpOverStatement
 	|	forUpdOverStatement
+	|	rawForIniOverStatement
+	|	rawForExpOverStatement
+	|	rawForUpdOverStatement
 	;
 
 commonOverStatement : rawStatement ';';
@@ -15,6 +18,12 @@ forIniOverStatement : rawStatement ';FI';
 forExpOverStatement : rawStatement ';FE';
 
 forUpdOverStatement : rawStatement ';FU';
+
+rawForIniOverStatement : 'DH@;FI';
+
+rawForExpOverStatement : 'DH@;FE';
+
+rawForUpdOverStatement : 'DH@;FU';
 
 rawStatement
 	:	anonymousClassBeginStatement

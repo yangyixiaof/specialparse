@@ -59,6 +59,36 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitForUpdOverStatement(Java8Parser.ForUpdOverStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#rawForIniOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterRawForIniOverStatement(Java8Parser.RawForIniOverStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#rawForIniOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitRawForIniOverStatement(Java8Parser.RawForIniOverStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#rawForExpOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterRawForExpOverStatement(Java8Parser.RawForExpOverStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#rawForExpOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitRawForExpOverStatement(Java8Parser.RawForExpOverStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#rawForUpdOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterRawForUpdOverStatement(Java8Parser.RawForUpdOverStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#rawForUpdOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitRawForUpdOverStatement(Java8Parser.RawForUpdOverStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#rawStatement}.
 	 * @param ctx the parse tree
 	 */

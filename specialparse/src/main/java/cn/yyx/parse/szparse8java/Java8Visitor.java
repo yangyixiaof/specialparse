@@ -42,6 +42,24 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitForUpdOverStatement(Java8Parser.ForUpdOverStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#rawForIniOverStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRawForIniOverStatement(Java8Parser.RawForIniOverStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#rawForExpOverStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRawForExpOverStatement(Java8Parser.RawForExpOverStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#rawForUpdOverStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitRawForUpdOverStatement(Java8Parser.RawForUpdOverStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#rawStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

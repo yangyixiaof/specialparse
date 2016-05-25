@@ -19,6 +19,26 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitStatement(Java8Parser.StatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#methodArgumentEndStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterMethodArgumentEndStatement(Java8Parser.MethodArgumentEndStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#methodArgumentEndStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitMethodArgumentEndStatement(Java8Parser.MethodArgumentEndStatementContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link Java8Parser#methodPreRerferedExpressionEndStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterMethodPreRerferedExpressionEndStatement(Java8Parser.MethodPreRerferedExpressionEndStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#methodPreRerferedExpressionEndStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitMethodPreRerferedExpressionEndStatement(Java8Parser.MethodPreRerferedExpressionEndStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#commonOverStatement}.
 	 * @param ctx the parse tree
 	 */
@@ -1328,26 +1348,6 @@ public interface Java8Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitPartialEndStatement(Java8Parser.PartialEndStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#partialMethodArgumentEndStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterPartialMethodArgumentEndStatement(Java8Parser.PartialMethodArgumentEndStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#partialMethodArgumentEndStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitPartialMethodArgumentEndStatement(Java8Parser.PartialMethodArgumentEndStatementContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link Java8Parser#partialMethodPreRerferedExpressionEndStatement}.
-	 * @param ctx the parse tree
-	 */
-	void enterPartialMethodPreRerferedExpressionEndStatement(Java8Parser.PartialMethodPreRerferedExpressionEndStatementContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link Java8Parser#partialMethodPreRerferedExpressionEndStatement}.
-	 * @param ctx the parse tree
-	 */
-	void exitPartialMethodPreRerferedExpressionEndStatement(Java8Parser.PartialMethodPreRerferedExpressionEndStatementContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link Java8Parser#firstArgPreExist}.
 	 * @param ctx the parse tree

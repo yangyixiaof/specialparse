@@ -18,6 +18,18 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStatement(Java8Parser.StatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#methodArgumentEndStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMethodArgumentEndStatement(Java8Parser.MethodArgumentEndStatementContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link Java8Parser#methodPreRerferedExpressionEndStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMethodPreRerferedExpressionEndStatement(Java8Parser.MethodPreRerferedExpressionEndStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#commonOverStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -803,18 +815,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitPartialEndStatement(Java8Parser.PartialEndStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#partialMethodArgumentEndStatement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPartialMethodArgumentEndStatement(Java8Parser.PartialMethodArgumentEndStatementContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link Java8Parser#partialMethodPreRerferedExpressionEndStatement}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPartialMethodPreRerferedExpressionEndStatement(Java8Parser.PartialMethodPreRerferedExpressionEndStatementContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link Java8Parser#firstArgPreExist}.
 	 * @param ctx the parse tree

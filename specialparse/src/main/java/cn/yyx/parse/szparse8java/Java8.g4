@@ -2,6 +2,8 @@ grammar Java8;
 
 statement
 	:	rawStatement
+	|	methodArgumentEndStatement
+	|	methodPreRerferedExpressionEndStatement
 	|	commonOverStatement
 	|	forIniOverStatement
 	|	forExpOverStatement
@@ -10,6 +12,10 @@ statement
 	|	rawForExpOverStatement
 	|	rawForUpdOverStatement
 	;
+
+methodArgumentEndStatement : rawStatement ';Ps';
+
+methodPreRerferedExpressionEndStatement : rawStatement ';Pr';
 
 commonOverStatement : rawStatement ';';
 
@@ -75,8 +81,8 @@ rawStatement
 	|	condExpColonMarkStatement
 	|	partialEndStatement
 //	|	fullEndStatement
-	|	partialMethodArgumentEndStatement
-	|	partialMethodPreRerferedExpressionEndStatement
+//	|	partialMethodArgumentEndStatement
+//	|	partialMethodPreRerferedExpressionEndStatement
 	|	expressionStatement
 	;
 	
@@ -410,10 +416,6 @@ condExpColonMarkStatement : 'DH@CondExpCM';
 partialEndStatement : 'DH@,';
 
 // fullEndStatement : 'DH@;';
-
-partialMethodArgumentEndStatement : 'DH@Ps';
-
-partialMethodPreRerferedExpressionEndStatement : 'DH@Pr';
 
 firstArgPreExist : '@PE';
 

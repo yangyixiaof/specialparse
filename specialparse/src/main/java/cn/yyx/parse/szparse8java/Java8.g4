@@ -57,7 +57,7 @@ rawStatement
 	|	elseStatement
 	|	arrayCreationStatement
 	|	initializerStatement
-//	|	variableDeclarationHolderStatement
+	|	variableDeclarationHolderStatement
 	|	enhancedForStatement
 	|	partialEndArrayAccessStatement
 	|	leftParentheseStatement
@@ -326,7 +326,7 @@ enumConstantDeclarationStatement : 'EMD@' identifier '(' argumentList ')';
 
 labeledStatement : 'LD@' identifier;
 
-variableDeclarationStatement : 'VD@' type ('=' referedExpression)?;
+variableDeclarationStatement : 'VD@' type;
 
 lambdaExpressionStatement
 	:	'LE@' '(' argTypeList? ')' '->' '{}'
@@ -369,7 +369,7 @@ arrayCreationStatement : 'AC@' type '(' 'new' ')';
 
 initializerStatement : 'IB@' 'InitialBlock';
 
-// variableDeclarationHolderStatement : 'VH@' ('=' referedExpression)?;
+variableDeclarationHolderStatement : 'VH@' ('=' referedExpression)?;
 
 enhancedForStatement : 'EF@' 'for(' type ':' referedExpression ')';
 

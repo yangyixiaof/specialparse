@@ -1421,6 +1421,18 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterVariableDeclarationHolderStatement(Java8Parser.VariableDeclarationHolderStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVariableDeclarationHolderStatement(Java8Parser.VariableDeclarationHolderStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterEnhancedForStatement(Java8Parser.EnhancedForStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}

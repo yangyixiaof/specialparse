@@ -1179,6 +1179,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitInitializerStatement(Java8Parser.InitializerStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#variableDeclarationHolderStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterVariableDeclarationHolderStatement(Java8Parser.VariableDeclarationHolderStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#variableDeclarationHolderStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitVariableDeclarationHolderStatement(Java8Parser.VariableDeclarationHolderStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#enhancedForStatement}.
 	 * @param ctx the parse tree
 	 */

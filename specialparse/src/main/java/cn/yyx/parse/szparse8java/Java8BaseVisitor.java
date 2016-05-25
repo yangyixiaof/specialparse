@@ -837,6 +837,13 @@ public class Java8BaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitVariableDeclarationHolderStatement(Java8Parser.VariableDeclarationHolderStatementContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitEnhancedForStatement(Java8Parser.EnhancedForStatementContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}

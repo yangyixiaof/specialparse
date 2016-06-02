@@ -78,6 +78,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitRawStatement(Java8Parser.RawStatementContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#lambdaEndStatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLambdaEndStatement(Java8Parser.LambdaEndStatementContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#expressionStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

@@ -61,33 +61,34 @@ rawStatement
 	|	ifStatement
 	|	thenStatement
 	|	elseStatement
-	|	arrayCreationStatement
 	|	initializerStatement
 	|	variableDeclarationHolderStatement
 	|	enhancedForStatement
 	|	partialEndArrayAccessStatement
-	|	leftParentheseStatement
-	|	rightParentheseStatement
-//	|	leftBraceStatement
-//	|	rightBraceStatement
-	|	enterMethodParamStatement
 	|	arrayInitializerStartStatement
 	|	arrayInitializerSplitCommaStatement
 	|	arrayInitializerEndStatement
-	|	enumConstantDeclarationSplitCommaStatement
-	|	forStatement
 	|	condExpBeginStatement
 	|	condExpQuestionMarkStatement
 	|	condExpColonMarkStatement
+//	|	leftBraceStatement
+//	|	rightBraceStatement
+	|	enterMethodParamStatement
+	|	enumConstantDeclarationSplitCommaStatement
+	|	forStatement
 	|	partialEndStatement
 //	|	fullEndStatement
 //	|	partialMethodArgumentEndStatement
 //	|	partialMethodPreRerferedExpressionEndStatement
 	|	expressionStatement
+	|	lambdaEndStatement
 	;
+	
+lambdaEndStatement : expressionStatement ';Lb';
 	
 expressionStatement
 	:	assignmentStatement
+	|	arrayCreationStatement
 	|	lambdaExpressionStatement
 	|	literalStatement
 	|	castExpressionStatement
@@ -101,6 +102,8 @@ expressionStatement
 	|	prefixExpressionStatement
 	|	postfixExpressionStatement
 	|	arrayAccessStatement
+	|	leftParentheseStatement
+	|	rightParentheseStatement
 	;
 
 assignAssignmentStatement : 'A@' referedExpression '=' referedExpression;

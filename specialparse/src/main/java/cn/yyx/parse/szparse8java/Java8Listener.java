@@ -119,6 +119,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitRawStatement(Java8Parser.RawStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#lambdaEndStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterLambdaEndStatement(Java8Parser.LambdaEndStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#lambdaEndStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitLambdaEndStatement(Java8Parser.LambdaEndStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#expressionStatement}.
 	 * @param ctx the parse tree
 	 */

@@ -316,9 +316,13 @@ anonymousClassBeginStatement : 'AB@AnonymousBegin';
 
 anonymousClassPlaceHolderStatement : 'DH@AnonymousDeclaration';
 
-anonymousClassPreStatement : 'HT@' identifier;
+anonymousClassPreStatement : 'HT@' kid;
 
-anonymousClassPreOverStatement : 'HOT@' identifier;
+anonymousClassPreOverStatement : 'HOT@' kid;
+
+kid : KIDX;
+
+KIDX : [a-zA-Z0-9@,]+;
 
 atInterfaceStatement : 'AT@' identifier;
 

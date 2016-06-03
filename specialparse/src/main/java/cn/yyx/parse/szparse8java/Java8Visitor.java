@@ -564,12 +564,6 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAnonymousClassPreOverStatement(Java8Parser.AnonymousClassPreOverStatementContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link Java8Parser#kid}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitKid(Java8Parser.KidContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link Java8Parser#atInterfaceStatement}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

@@ -919,6 +919,16 @@ public interface Java8Listener extends ParseTreeListener {
 	 */
 	void exitAnonymousClassPreStatement(Java8Parser.AnonymousClassPreStatementContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link Java8Parser#anonymousClassPreOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterAnonymousClassPreOverStatement(Java8Parser.AnonymousClassPreOverStatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link Java8Parser#anonymousClassPreOverStatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitAnonymousClassPreOverStatement(Java8Parser.AnonymousClassPreOverStatementContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link Java8Parser#atInterfaceStatement}.
 	 * @param ctx the parse tree
 	 */

@@ -1109,6 +1109,18 @@ public class Java8BaseListener implements Java8Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterAnonymousClassPreOverStatement(Java8Parser.AnonymousClassPreOverStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAnonymousClassPreOverStatement(Java8Parser.AnonymousClassPreOverStatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterAtInterfaceStatement(Java8Parser.AtInterfaceStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}

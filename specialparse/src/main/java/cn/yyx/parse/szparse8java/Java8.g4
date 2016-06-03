@@ -35,6 +35,7 @@ rawStatement
 	:	anonymousClassBeginStatement
 	|	anonymousClassPlaceHolderStatement
 	|	anonymousClassPreStatement
+	|	anonymousClassPreOverStatement
 	|	atInterfaceStatement
 	|	annotationTypeMemberDeclarationStatement
 	|	classDeclarationStatement
@@ -316,6 +317,8 @@ anonymousClassBeginStatement : 'AB@AnonymousBegin';
 anonymousClassPlaceHolderStatement : 'DH@AnonymousDeclaration';
 
 anonymousClassPreStatement : 'HT@' identifier;
+
+anonymousClassPreOverStatement : 'HOT@' identifier;
 
 atInterfaceStatement : 'AT@' identifier;
 

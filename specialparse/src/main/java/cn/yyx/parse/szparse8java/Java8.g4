@@ -500,6 +500,8 @@ nullLiteral
 typeLiteral
 	:	'class' '.' type
 	;
+	
+// varArgType : type '...';
 
 type
 	:	virtualInferredType

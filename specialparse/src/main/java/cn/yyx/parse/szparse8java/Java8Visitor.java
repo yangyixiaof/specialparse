@@ -966,6 +966,12 @@ public interface Java8Visitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitType(Java8Parser.TypeContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link Java8Parser#voidType}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVoidType(Java8Parser.VoidTypeContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link Java8Parser#virtualInferredType}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

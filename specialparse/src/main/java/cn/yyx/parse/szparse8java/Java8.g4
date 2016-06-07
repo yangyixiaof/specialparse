@@ -517,7 +517,10 @@ type
 	|	unionType
 //	|	wildCardType
 	|	classRef
+	|	voidType
 	;
+	
+voidType : 'void';
 	
 virtualInferredType
 	:	'@IT'
